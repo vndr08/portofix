@@ -14,8 +14,7 @@
       "thumbnail": "/image/projects/web/kalbe-dashboard/kalbio1.jpeg",
       "images": [
         "/image/projects/web/kalbe-dashboard/kalbio1.jpeg",
-        "/image/projects/web/kalbe-dashboard/kalbio2.jpeg",
-        "/image/projects/web/kalbe-dashboard/kalbio3.jpeg"
+        "/image/projects/web/kalbe-dashboard/kalbio2.jpeg"
       ],
       "tech": [
         "NextJS",
@@ -41,8 +40,7 @@
       "thumbnail": "/image/projects/ai/eduintel/eduintel1.jpeg",
       "images": [
         "/image/projects/ai/eduintel/eduintel1.jpeg",
-        "/image/projects/ai/eduintel/eduintel2.jpeg",
-        "/image/projects/ai/eduintel/eduintel3.jpeg"
+        "/image/projects/ai/eduintel/eduintel2.jpeg"
       ],
       "tech": [
         "Python",
@@ -95,8 +93,9 @@
       "code": "",
       "thumbnail": "/image/projects/ai/jababeka-chatbot/deduplikasi1.jpeg",
       "images": [
-        "/image/projects/ai/jababeka-chatbot/duplikatdata1.jpeg",
-        "/image/projects/ai/jababeka-chatbot/duplikatdata2.jpeg"
+        "/image/projects/ai/jababeka-chatbot/deduplikasi1.jpeg",
+        "/image/projects/ai/jababeka-chatbot/deduplikasi2.jpeg",
+        "/image/projects/ai/jababeka-chatbot/deduplikasi3.jpeg"
       ],
       "tech": [
         "Streamlit",
