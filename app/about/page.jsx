@@ -42,10 +42,11 @@ export default function Page() {
 							className="bg-slate-300 rounded-sm h-[400px] md:h-[600px] w-[80vw] md:w-[30vw] grayscale hover:grayscale-0 ">
 							<Image
 								src={Hero}
-								alt="Alvalen Shafel"
-								layout="fill"
-								objectFit="cover"
+								alt="Ivander Johana Pratama"
+								fill
+								sizes="(max-width: 768px) 80vw, 30vw"
 								placeholder="blur"
+								className="w-full h-full object-cover"
 							/>
 						</motion.div>
 					</div>

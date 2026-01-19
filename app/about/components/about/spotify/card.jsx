@@ -36,9 +36,9 @@ useEffect(() => {
 					<Image
 						src={result.albumImageUrl}
 						alt="backgroundImage"
-						layout="fill"
-						objectFit="cover"
-						className="z-0 opacity-20 absolute"
+						fill={true}
+						sizes="100vw"
+						className="z-0 opacity-20 absolute object-cover"
 					/>
 					)}
 					<div className="z-10  flex items-center">

@@ -28,8 +28,8 @@ function Wrapper({ children }) {
 }
 
 export default function Quote() {
-	const text1 = '"There are no limits to what you can accomplish'.split(" ");
-	const text2 = 'except the limits you place on your own thinking."'.split(
+	const text1 = '"I enjoy working in cross-functional teams'.split(" ");
+	const text2 = 'and thrive in fast-paced environments where problem-solving and adaptability are essential."'.split(
 		" "
 	);
 	const [ref, isIntersecting] = useIntersectionObserver();
@@ -41,18 +41,18 @@ export default function Quote() {
 					{text1.map((word, index) => (
 						<motion.span
 							key={index}
-							initial={{
-								opacity: 0,
-								filter: "blur(4px)",
-								scale: 0.92,
-							}}
-							animate={{
-								opacity: isIntersecting ? 1 : 0,
-								filter: isIntersecting
-									? "blur(0px)"
-									: "blur(4px)",
-								scale: isIntersecting ? 1 : 0.92,
-							}}
+							initial={{ opacity: 0, scale: 0.92 }}
+							animate={
+								isIntersecting
+									? {
+											opacity: 1,
+											scale: 1,
+									  }
+									: {
+											opacity: 0,
+											scale: 0.92,
+									  }
+							}
 							transition={{
 								delay: isIntersecting ? index * 0.1 : 0,
 								duration: 0.5,
@@ -64,19 +64,19 @@ export default function Quote() {
 				<h3 className="text-xl">
 					{text2.map((word, index) => (
 						<motion.span
-							key={index + text1.length}
-							initial={{
-								opacity: 0,
-								filter: "blur(4px)",
-								scale: 0.92,
-							}}
-							animate={{
-								opacity: isIntersecting ? 1 : 0,
-								filter: isIntersecting
-									? "blur(0px)"
-									: "blur(4px)",
-								scale: isIntersecting ? 1 : 0.92,
-							}}
+							key={`text2-${index}`}
+							initial={{ opacity: 0, scale: 0.92 }}
+							animate={
+								isIntersecting
+									? {
+											opacity: 1,
+											scale: 1,
+									  }
+									: {
+											opacity: 0,
+											scale: 0.92,
+									  }
+							}
 							transition={{
 								delay: isIntersecting
 									? (text1.length + index) * 0.1

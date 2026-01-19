@@ -6,9 +6,6 @@ import Button from "@/components/Button";
 import Image from "next/image";
 
 // images
-import Intervyou1 from "@/public/image/projects/web/intervyou/intervyou-1.png";
-import Intervyou2 from "@/public/image/projects/web/intervyou/intervyou-2.png";
-import Intervyou3 from "@/public/image/projects/web/intervyou/intervyou-3.png";
 import ProjectAll from "@/public/image/projects.png";
 
 import Hr from "@/components/Hr";
@@ -19,13 +16,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 const category = {
-	1: "Web Development",
-	2: "AI & Machine Learning",
-	9: "Other",
+	"1": "Web Development",
+	"2": "AI & Machine Learning",
+	"9": "Other",
 };
 
 export default function Page() {
-	const [activeCategory, setActiveCategory] = useState(1);
+	const [activeCategory, setActiveCategory] = useState("1");
 	const projects = Projects.Projects.filter((item) => item.show === true);
 
 	useEffect(() => {
@@ -46,10 +43,11 @@ export default function Page() {
 							className="bg-slate-300 rounded-sm h-[400px] md:h-[600px] w-[80vw] md:w-[30vw] grayscale hover:grayscale-0 ">
 							<Image
 								src={ProjectAll}
-								alt="Alvalens"
-								layout="fill"
-								objectFit="cover"
+								alt="Ivander"
+								fill
+								sizes="(max-width: 768px) 80vw, 30vw"
 								placeholder="blur"
+								className="w-full h-full object-cover"
 							/>
 						</motion.div>
 					</div>
@@ -83,143 +81,7 @@ export default function Page() {
 				<div className="mt-10 flex flex-col justify-start items-center w-full pl-10 md:pl-32">
 					<div className="flex justify-center items-center flex-col my-5 self-start ">
 						<Hr variant="long"></Hr>
-						<h1 className="text-3xl font-bold mt-3">Hightlight</h1>
-					</div>
-				</div>
-				<div className="relative w-screen mx-auto container gap-4 px-10 grid grid-cols-1 md:grid-cols-2 mb-10">
-					<div className="flex justify-center items-start flex-col mb-5 ">
-						<div className="images relative w-full  aspect-square">
-							<div className="absolute top-28 left-10 h-[40%]  aspect-video grayscale hover:grayscale-0 transition-all ease duration-300 hover:scale-150 z-10">
-								<motion.div
-									initial={{ opacity: 0, scale: 0.5, x: 100 }}
-									whileInView={{
-										opacity: 1,
-										scale: 1,
-										x: 0,
-									}}
-									className="w-full h-full shadow-lg">
-									<Image
-										src={Intervyou1}
-										alt="Alvalens"
-										layout="fill"
-										objectFit="cover"
-										placeholder="blur"
-										className="rat"
-									/>
-								</motion.div>
-							</div>
-							<div className="absolute top-10 right-28 h-[30%]  aspect-video grayscale hover:grayscale-0 transition-all ease duration-300 hover:scale-150">
-								<motion.div
-									initial={{
-										opacity: 0,
-										scale: 0.5,
-										x: -100,
-									}}
-									whileInView={{
-										opacity: 1,
-										scale: 1,
-										x: 0,
-									}}
-									transition={{ delay: 0.3 }}
-									className="w-full h-full shadow-lg ">
-									<Image
-										src={Intervyou3}
-										alt="Alvalens"
-										layout="fill"
-										objectFit="cover"
-										placeholder="blur"
-										objectPosition="0% 0%"
-									/>
-								</motion.div>
-							</div>
-							<div className="absolute bottom-10 md:bottom-26 right-20 h-[35%]  aspect-video grayscale hover:grayscale-0 transition-all ease duration-300 hover:scale-150">
-								<motion.div
-									initial={{
-										opacity: 0,
-										scale: 0.5,
-										x: -100,
-									}}
-									whileInView={{
-										opacity: 1,
-										scale: 1,
-										x: 0,
-									}}
-									transition={{
-										delay: 0.5,
-									}}
-									className="w-full h-full shadow-lg">
-									<Image
-										src={Intervyou2}
-										alt="Alvalens"
-										layout="fill"
-										objectFit="cover"
-										placeholder="blur"
-									/>
-								</motion.div>
-							</div>
-						</div>
-					</div>
-					<motion.div
-						className="flex justify-center items-start flex-col mb-5 md:px-10"
-						initial={{
-							opacity: 0,
-							x: 200,
-						}}
-						whileInView={{
-							opacity: 1,
-							x: 0,
-						}}
-						transition={{
-							delay: 0.5,
-							type: "spring",
-						}}>
-						<h2 className="text-2xl font-bold tracking-wider mb-3">
-							Intervyou AI
-						</h2>
-						<p className="text-gray-600 text-justify title text-lg">
-							AI Based interview Preparation Website created to help fresh
-							graduates and job seekers prepare for interviews and optimize
-							their CV through AI-powered features. The website is built using
-							Next.js, TypeScript, Tailwind CSS, Shadcn UI, Prisma, and MySQL
-							(TiDB). This website can comprehensively analyze the user&apos;s
-							interview performance by providing a analysis of the user&apos;s
-							answer, gesture, and material recommendation to improve the user&apos;s
-							interview skills.
-						</p>{" "}
-						<div className="mt-3">
-							<Button variation="primary">
-								<Link href="projects/intervyou">More</Link>
-							</Button>
-							<Button variation="secondary">
-								<a
-									href="https://www.intervyou.me"
-									target="_blank"
-									rel="noopener noreferrer">
-									Preview
-								</a>
-							</Button>
-						</div>
-					</motion.div>
-				</div>
-				<div className="mt-16 flex flex-col justify-start items-center w-full pl-10 md:pl-32">
-					<div className="flex justify-center items-center flex-col my-5 self-start">
-						<Hr variant="long"></Hr>
-						<motion.h1
-							className="text-3xl font-bold mt-3"
-							initial={{
-								opacity: 0,
-								x: -200,
-							}}
-							whileInView={{
-								opacity: 1,
-								x: 0,
-							}}
-							transition={{
-								delay: 0.7,
-								type: "spring",
-							}}>
-							Other Note Worthy Projects
-						</motion.h1>
+						<h1 className="text-3xl font-bold mt-3">Other Note Worthy Projects</h1>
 					</div>
 				</div>
 
@@ -237,26 +99,32 @@ export default function Page() {
 						type: "spring",
 					}}
 					className="flex flex-row justify-center items-start flex-wrap gap-3 md:gap-5 my-5 ">
-					{Object.keys(category).map((key, index) => (
-						<button
-							key={index}
-							className={`px-2 md:px-4 py-2 rounded-lg cursor-pointer transition-all ease duration-300 focus:bg-gray-300 focus:text-black focus:ring focus:ring-slate-500 ${
-								activeCategory === key
-									? "bg-gray-300 text-black hover:bg-gray-700 hover:text-white"
-									: "bg-gray-700 text-white hover:bg-gray-300 hover:text-black"
-							}`}
-							onClick={() => setActiveCategory(key)}>
-							{category[key]}
-						</button>
-					))}
+				{Object.keys(category).map((key) => (
+					<motion.button
+						key={key}
+						type="button"
+						whileHover={{ scale: 1.05 }}
+						whileTap={{ scale: 0.98 }}
+						className={`px-4 md:px-6 py-2 rounded-lg cursor-pointer transition-all ease duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 font-medium ${
+							String(activeCategory) === String(key)
+								? "bg-emerald-600 text-white shadow-lg"
+								: "bg-gray-600 text-white hover:bg-emerald-500"
+						}`}
+						onClick={(e) => {
+							e.preventDefault();
+							setActiveCategory(String(key));
+						}}>
+						{category[key]}
+					</motion.button>
+				))}
 				</motion.div>
 
 				{/* projects */}
 				<div className="w-screen mx-auto container gap-4 px-10 grid grid-cols-1 md:grid-cols-2 mb-10 cursor-pointer">
-					{projects.map((project, index) => (
+					{projects.map((project) => (
 						<ProjectCard
 							project={project}
-							key={index}
+							key={project.slug}
 							activeCategory={activeCategory}
 						/>
 					))}

@@ -80,9 +80,9 @@ export default function Page() {
 								</tr>
 							</thead>
 							<tbody>
-								{projects.map((project, index) => (
-									<tr
-										key={index}
+							{projects.map((project) => (
+								<tr
+									key={project.slug}
 										className="hover:shadow-md transition-all ease duration-500">
 										<td>{project.year}</td>
 										<td>

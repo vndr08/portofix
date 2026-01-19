@@ -193,26 +193,32 @@ const Navbar = () => {
 				className={`navbar px-5 md:px-24 w-screen fixed transition-colors ease duration-500 ${
 					isNavOpen
 						? "backdrop-filter backdrop-blur-md bg-gray-700 bg-opacity-50"
-						: "backdrop-filter backdrop-blur-md"
-				} inset-0  bg-opacity-50 flex flex-row justify-between items-center h-16 z-50 `}>
+					: "backdrop-filter backdrop-blur-md bg-opacity-30"
+			} flex flex-row justify-between items-center h-16 z-40 top-0 left-0 right-0`}>
 				<div>
 					<h1
 						className={`text-2xl ml-2 md:ml-0 transition-colors ease duration-500 ${
 							isNavOpen ? "text-white" : ""
 						}`}>
-						Alvalens
+						Ivan
 					</h1>
 				</div>
 				<div className="flex flex-row items-center">
 					<button
-						className="burger button flex flex-col justify-center items-center space-y-1.5 "
-						onClick={toggleNav}>
+						className="burger button flex flex-col justify-center items-center space-y-1.5 relative w-12 h-12 z-50 hover:bg-gray-200 rounded-lg transition-colors"
+						onClick={(e) => {
+							e.preventDefault();
+							e.stopPropagation();
+							toggleNav();
+						}}
+						type="button"
+						aria-label="Toggle navigation menu">
 						<div
-							className={`w-10 h-1 bg-black rounded-full transition-all ease duration-300 ${
-								isNavOpen ? "rotate-45   bg-white translate-y-[2px]" : ""
+							className={`w-6 h-0.5 bg-black rounded-full transition-all ease duration-300 ${
+								isNavOpen ? "rotate-45 bg-white translate-y-2" : ""
 							}`}></div>
 						<div
-							className={`w-10 h-1 bg-black rounded-full transition-all ease duration-300 ${
+							className={`w-6 h-0.5 bg-black rounded-full transition-all ease duration-300 ${
 								isNavOpen ? "-rotate-45 -translate-y-2 bg-white" : ""
 							}`}></div>
 					</button>

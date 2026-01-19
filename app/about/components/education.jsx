@@ -43,87 +43,89 @@ export default function Education() {
 	const [isExpanded, setIsExpanded] = useState(false);
 
 	const achievementsByYear = {
-		2025: [
+		Current: [
 			{
-				icon: faMedal,
-				title: "1st place (Gold Medal)",
-				subtitle: "Fesmaro IT Business Competition",
-				date: "Mar 2025",
+				icon: faGraduationCap,
+				title: "Information System - Data Science",
+				subtitle: "President University | GPA 3.67",
+				date: "Current",
+				color: "from-green-400 to-emerald-600",
+			},
+		],
+		Certifications: [
+			{
+				icon: faAward,
+				title: "AWS Training & Certification",
+				subtitle: "Amazon QuickSight: Getting Started",
+				date: "Completed",
 				color: "from-yellow-400 to-orange-500",
 			},
 			{
 				icon: faAward,
-				title: "Finalist",
-				subtitle: "Hackfest Build to Billion 2025",
-				date: "Apr 2025",
-				color: "from-blue-500 to-purple-600",
+				title: "Machine Learning Fundamentals",
+				subtitle: "Fundamentals of Machine Learning and Artificial Intelligence",
+				date: "Completed",
+				color: "from-blue-400 to-cyan-600",
 			},
 			{
-				icon: faMedal,
-				title: "3rd place (Bronze Medal)",
-				subtitle: "Faculty of Engineering Most Outstanding Student",
-				date: "Feb 2025",
-				color: "from-amber-600 to-yellow-600",
+				icon: faAward,
+				title: "Generative AI Course",
+				subtitle: "Introduction to Generative AI: Art of the Possible",
+				date: "Completed",
+				color: "from-purple-400 to-pink-600",
+			},
+			{
+				icon: faAward,
+				title: "Machine Learning Course",
+				subtitle: "Introduction to Machine Learning: Art of the Possible",
+				date: "Completed",
+				color: "from-indigo-400 to-blue-600",
 			},
 		],
-		2024: [
+		Events: [
 			{
 				icon: faTrophy,
-				title: "Special Award | Gold Medal | Incubation Opportunity",
-				subtitle: "Indonesia Inventor Day 2024 (IID)",
-				date: "Aug 2024",
-				color: "from-yellow-400 to-orange-500",
+				title: "President University Fashion Week 2024",
+				subtitle: "Event Certificate",
+				date: "2024",
+				color: "from-pink-400 to-rose-600",
 			},
 			{
-				icon: faMedal,
-				title: "1st place (Gold Medal)",
-				subtitle: "Tech & Trade Expo 2024",
-				date: "Jul 2024",
-				color: "from-yellow-400 to-orange-500",
+				icon: faTrophy,
+				title: "Student Awarding Night 2024",
+				subtitle: "Event Certificate",
+				date: "2024",
+				color: "from-amber-400 to-orange-600",
 			},
 			{
-				icon: faMedal,
-				title: "2nd place (Silver Medal)",
-				subtitle: "IdeaFest 2024",
-				date: "Jul 2024",
-				color: "from-slate-400 to-slate-500",
+				icon: faTrophy,
+				title: "Mr. & Ms. President University 2024",
+				subtitle: "Event Certificate",
+				date: "2024",
+				color: "from-red-400 to-pink-600",
 			},
 			{
-				icon: faAward,
-				title: "Finalist",
-				subtitle: "37th National Student Science Week (PIMNAS)",
-				date: "Oct 2024",
-				color: "from-blue-500 to-purple-600",
+				icon: faTrophy,
+				title: "PUSH Cup Dormitory Games 2024",
+				subtitle: "Event Certificate",
+				date: "2024",
+				color: "from-cyan-400 to-blue-600",
 			},
 			{
-				icon: faMedal,
-				title: "3rd place (Bronze Medal)",
-				subtitle: "Student Digital Innovation Competition (LIDM)",
-				date: "Jun 2024",
-				color: "from-amber-600 to-yellow-600",
-			},
-			{
-				icon: faMedal,
-				title: "3rd place (Bronze Medal)",
-				subtitle: "Fesmaro UI/UX Design",
-				date: "Jun 2024",
-				color: "from-amber-600 to-yellow-600",
+				icon: faTrophy,
+				title: "Computing Sport Games Olympiad 2024",
+				subtitle: "Event Certificate",
+				date: "2024",
+				color: "from-green-400 to-emerald-600",
 			},
 		],
-		2023: [
+		Education: [
 			{
-				icon: faAward,
-				title: "Finalist",
-				subtitle: "36th National Student Science Week (PIMNAS)",
-				date: "Nov 2023",
-				color: "from-blue-500 to-purple-600",
-			},
-			{
-				icon: faMedal,
-				title: "3rd place (Bronze Medal)",
-				subtitle: "FORKAFEST 3.0 Web Development competition",
-				date: "Jan 2023",
-				color: "from-amber-600 to-yellow-600",
+				icon: faGraduationCap,
+				title: "Senior High School Diploma",
+				subtitle: "SMAN 4 Tambun Selatan",
+				date: "Jul 2020 - May 2023",
+				color: "from-indigo-400 to-blue-600",
 			},
 		],
 	};
@@ -165,93 +167,82 @@ export default function Education() {
 						initial={{ opacity: 0, x: -50 }}
 						whileInView={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.8, delay: 0.2 }}>
-						<div className="font-medium text-lg mb-4">2022 - Present</div>
-						<div>
-							<h2 className="font-semibold text-xl">
-								Universitas Negeri Malang
-							</h2>
-							<h3 className="text-md font-normal mb-3">
-								S1 Teknik Informatika | Computer Science
+					<div className="font-medium text-lg mb-4">Aug 2025 - Present</div>
+					<div>
+						<h2 className="font-semibold text-xl">
+							President University
+						</h2>
+						<h3 className="text-md font-normal mb-3">
+							Information System - Data Science
 							</h3>
 							<div className="gap-4 mb-4 flex items-stretch md:h-[300px] xl:h-[400px]">
-								<div className="flex-[1] transition-all duration-300 ease-in-out hover:flex-[3] group">
+								<div className="flex-[1] transition-all duration-300 ease-in-out hover:flex-[3] group relative">
 									<Image
 										src={Me5}
-										width={400}
-										height={225}
 										alt="University"
+									fill={true}
+										sizes="(max-width: 768px) 100vw, 33vw"
 										className="rounded-lg w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300 ease-in-out"
 									/>
 								</div>
-								<div className="flex-[1] transition-all duration-300 ease-in-out hover:flex-[3] group">
+								<div className="flex-[1] transition-all duration-300 ease-in-out hover:flex-[3] group relative">
 									<Image
 										src={Me4}
-										width={400}
-										height={225}
 										alt="University"
+									fill={true}
+										sizes="(max-width: 768px) 100vw, 33vw"
 										className="rounded-lg w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300 ease-in-out"
 									/>
 								</div>
-								<div className="flex-[1] transition-all duration-300 ease-in-out hover:flex-[3] group">
+								<div className="flex-[1] transition-all duration-300 ease-in-out hover:flex-[3] group relative">
 									<Image
 										src={Me6}
-										width={400}
-										height={225}
 										alt="University"
+									fill={true}
+										sizes="(max-width: 768px) 100vw, 33vw"
 										className="rounded-lg w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300 ease-in-out"
 									/>
 								</div>
 							</div>
 							<div className="flex items-center gap-2">
 								<p className="text-gray-600 text-justify title text-lg">
-									Aspiring to become a professional Software Engineer, I&rsquo;m
-									currently pursuing my Bachelor&rsquo;s degree in{" "}
+									I&rsquo;m a final year Information Systems student at{" "}
 									<span className="text-black font-medium">
-										Computer Science
-									</span>{" "}
-									at{" "}
-									<span className="text-black font-medium">
-										Universitas Negeri Malang
+										President University
 									</span>
-									. My journey in tech is driven by curiosity and
-									creativity—combining web development with cutting-edge AI
-									research and implementation.
+									, specializing in{" "}
+									<span className="text-black font-medium">
+										Data Science, software development, and AI automation
+									</span>
+									. My passion lies in building practical solutions that leverage
+									data and artificial intelligence to solve real-world problems.
 									<br />
 									<br />
-									As the{" "}
+									I have hands-on experience developing an{" "}
 									<span className="text-black font-medium">
-										Co-Lead of Google Developer Group on Campus (GDGoC)
+										enterprise-level helpdesk chatbot for PT Jababeka Tbk
 									</span>{" "}
-									at my university, I&rsquo;ve led technical initiatives,
-									mentored peers, and helped build impactful digital solutions.
-									I&rsquo;ve actively participated in various{" "}
+									that integrates machine learning, NLP, OCR, and automated ticket
+									creation. I&rsquo;m skilled in{" "}
 									<span className="text-black font-medium">
-										national or international technology competitions
-									</span>
-									, earning recognition through awards such as{" "}
-									<span className="text-black font-medium">
-										PIMNAS Finalist, Indonesia Inventor Day Gold Medalist, Top 3
-										at LIDM 2024
-									</span>
-									, and more.
+										web application development, implementing data pipelines, and
+										applying machine learning techniques
+									</span>{" "}
+									for analysis and automation.
 									<br />
-									<br />I am passionate about solving real-world problems
-									through code, especially at the intersection of{" "}
+									<br />
+									I enjoy working in{" "}
 									<span className="text-black font-medium">
-										Web Development
+										cross-functional teams
 									</span>{" "}
-									and{" "}
-									<span className="text-black font-medium">
-										Artificial Intelligence
-									</span>
-									. Constantly learning, building, and collaborating—I&rsquo;m
-									excited to keep growing and contributing to the evolving tech
-									landscape.
+									and thrive in fast-paced environments where problem-solving and
+									adaptability are essential. Constantly learning and building to
+									contribute meaningfully to the tech landscape.
 								</p>
 							</div>
 							<div className="flex flex-wrap gap-2 mt-4 text-sm">
 								<div className="bg-gray-300 text-black px-2 py-1 rounded-2xl">
-									GPA: 3.9 out of 4
+								GPA: 3.67 out of 4
 								</div>
 							</div>
 						</div>

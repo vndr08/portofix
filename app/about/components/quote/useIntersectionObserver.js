@@ -1,31 +1,38 @@
 // useIntersectionObserver.js
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 
 export function useIntersectionObserver() {
 	const [isIntersecting, setIsIntersecting] = useState(false);
 	const ref = useRef(null);
+	const observerRef = useRef(null);
 
 	useEffect(() => {
-		const observer = new IntersectionObserver(
-			([entry]) => {
-				setIsIntersecting(entry.isIntersecting);
-			},
-			{
-				root: null,
-				rootMargin: "0px",
-				threshold: 0.1,
-			}
-		);
+		// Only run on client side
+		if (typeof window === "undefined") return;
 
-		const currentRef = ref.current; // Store the ref value in a variable
+		const observerCallback = (entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					setIsIntersecting(true);
+				}
+			});
+		};
 
-		if (currentRef) {
-			observer.observe(currentRef);
+		observerRef.current = new IntersectionObserver(observerCallback, {
+			root: null,
+			rootMargin: "0px",
+			threshold: 0.1,
+		});
+
+		const currentRef = ref.current;
+		if (currentRef && observerRef.current) {
+			observerRef.current.observe(currentRef);
 		}
 
 		return () => {
-			if (currentRef) {
-				observer.unobserve(currentRef);
+			if (currentRef && observerRef.current) {
+				observerRef.current.unobserve(currentRef);
+				observerRef.current.disconnect();
 			}
 		};
 	}, []);

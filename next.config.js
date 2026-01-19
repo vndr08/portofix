@@ -1,7 +1,8 @@
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
 	enabled: process.env.ANALYZE === "true",
 });
-module.exports = withBundleAnalyzer({
+
+const config = {
 	// your Next.js configuration
 	images: {
 		remotePatterns: [
@@ -13,14 +14,6 @@ module.exports = withBundleAnalyzer({
 		// Add image optimization settings
 		formats: ["image/avif", "image/webp"],
 		minimumCacheTTL: 60,
-	},
-	webpack: (config, options) => {
-		config.module.rules.push({
-			test: /\.pdf$/i,
-			type: "asset/source",
-		});
-
-		return config;
 	},
 	async headers() {
 		return [
@@ -66,4 +59,6 @@ module.exports = withBundleAnalyzer({
 				  }
 				: false,
 	},
-});
+};
+
+module.exports = process.env.ANALYZE === "true" ? withBundleAnalyzer(config) : config;

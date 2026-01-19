@@ -1,16 +1,16 @@
 {
-  "name": "alvalen-portfolio-website",
+  "name": "ivan-portfolio",
   "author": {
-    "name": "Alvalen Shafelbilyunazra",
-    "email": "alvalen.shafel04@gmail.com",
-    "url": "https://alvalens.my.id"
+    "name": "Ivander Johana Pratama",
+    "email": "ivanderjohanapratama@gmail.com",
+    "url": "https://ivan-porto.id"
   },
-  "license": "GPL-3.0",
-  "copyright": "Copyright (C) 2025 Alvalen Shafelbilyunazra",
+  "license": "MIT",
+  "copyright": "Copyright (C) 2026 Ivander Johana Pratama",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev --turbopack -p 9000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",

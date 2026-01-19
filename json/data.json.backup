@@ -11,11 +11,11 @@
       "year": "2025",
       "preview": "",
       "code": "",
-      "thumbnail": "/image/projects/web/kalbe-dashboard/kalbio1.jpeg",
+      "thumbnail": "/image/projects/web/kalbe/kalbe-thumbnail.jpg",
       "images": [
-        "/image/projects/web/kalbe-dashboard/kalbio1.jpeg",
-        "/image/projects/web/kalbe-dashboard/kalbio2.jpeg",
-        "/image/projects/web/kalbe-dashboard/kalbio3.jpeg"
+        "/image/projects/web/kalbe/kalbe-1.png",
+        "/image/projects/web/kalbe/kalbe-2.png",
+        "/image/projects/web/kalbe/kalbe-3.png"
       ],
       "tech": [
         "NextJS",
@@ -38,11 +38,11 @@
       "year": "2025",
       "preview": "",
       "code": "",
-      "thumbnail": "/image/projects/ai/eduintel/eduintel1.jpeg",
+      "thumbnail": "/image/projects/web/eduintel/eduintel-thumbnail.jpg",
       "images": [
-        "/image/projects/ai/eduintel/eduintel1.jpeg",
-        "/image/projects/ai/eduintel/eduintel2.jpeg",
-        "/image/projects/ai/eduintel/eduintel3.jpeg"
+        "/image/projects/web/eduintel/eduintel-1.png",
+        "/image/projects/web/eduintel/eduintel-2.png",
+        "/image/projects/web/eduintel/eduintel-3.png"
       ],
       "tech": [
         "Python",
@@ -66,9 +66,11 @@
       "year": "2025",
       "preview": "",
       "code": "",
-      "thumbnail": "/image/projects/ai/jababeka-chatbot/aichatbot1.jpeg",
+      "thumbnail": "/image/projects/web/jababeka-chatbot/chatbot-thumbnail.jpg",
       "images": [
-        "/image/projects/ai/jababeka-chatbot/aichatbot1.jpeg"
+        "/image/projects/web/jababeka-chatbot/chatbot-1.png",
+        "/image/projects/web/jababeka-chatbot/chatbot-2.png",
+        "/image/projects/web/jababeka-chatbot/chatbot-3.png"
       ],
       "tech": [
         "LangChain",
@@ -93,10 +95,10 @@
       "year": "2025",
       "preview": "",
       "code": "",
-      "thumbnail": "/image/projects/ai/jababeka-chatbot/deduplikasi1.jpeg",
+      "thumbnail": "/image/projects/web/automation/automation-thumbnail.jpg",
       "images": [
-        "/image/projects/ai/jababeka-chatbot/duplikatdata1.jpeg",
-        "/image/projects/ai/jababeka-chatbot/duplikatdata2.jpeg"
+        "/image/projects/web/automation/automation-1.png",
+        "/image/projects/web/automation/automation-2.png"
       ],
       "tech": [
         "Streamlit",
@@ -118,10 +120,11 @@
       "year": "2025",
       "preview": "",
       "code": "",
-      "thumbnail": "/image/projects/other/hospital-management/hospital1.jpeg",
+      "thumbnail": "/image/projects/web/revenue/revenue-thumbnail.jpg",
       "images": [
-        "/image/projects/other/hospital-management/hospital1.jpeg",
-        "/image/projects/other/hospital-management/hospital2.jpeg"
+        "/image/projects/web/revenue/revenue-1.png",
+        "/image/projects/web/revenue/revenue-2.png",
+        "/image/projects/web/revenue/revenue-3.png"
       ],
       "tech": [
         "Next.js",
@@ -143,10 +146,11 @@
       "year": "2025",
       "preview": "",
       "code": "",
-      "thumbnail": "/image/projects/web/larissa-website/larissa1.jpeg",
+      "thumbnail": "/image/projects/web/larissa/larissa-thumbnail.jpg",
       "images": [
-        "/image/projects/web/larissa-website/larissa1.jpeg",
-        "/image/projects/web/larissa-website/larissa2.jpeg"
+        "/image/projects/web/larissa/larissa-1.png",
+        "/image/projects/web/larissa/larissa-2.png",
+        "/image/projects/web/larissa/larissa-3.png"
       ],
       "tech": [
         "Next.js",
@@ -168,10 +172,11 @@
       "year": "2024",
       "preview": "",
       "code": "",
-      "thumbnail": "/image/projects/other/bersuara/bersuara1.jpeg",
+      "thumbnail": "/image/projects/mobile/bersuara/bersuara-thumbnail.jpg",
       "images": [
-        "/image/projects/other/bersuara/bersuara1.jpeg",
-        "/image/projects/other/bersuara/bersuara2.jpeg"
+        "/image/projects/mobile/bersuara/bersuara-1.png",
+        "/image/projects/mobile/bersuara/bersuara-2.png",
+        "/image/projects/mobile/bersuara/bersuara-3.png"
       ],
       "tech": [
         "Android Studio",
@@ -193,8 +198,12 @@
       "year": "2024",
       "preview": "",
       "code": "",
-      "thumbnail": "/image/projects.png",
-      "images": [],
+      "thumbnail": "/image/projects/other/empathy-shadow/shadow-thumbnail.jpg",
+      "images": [
+        "/image/projects/other/empathy-shadow/shadow-1.png",
+        "/image/projects/other/empathy-shadow/shadow-2.png",
+        "/image/projects/other/empathy-shadow/shadow-3.png"
+      ],
       "tech": [
         "Generative AI",
         "AI Image Generation",
@@ -215,10 +224,11 @@
       "year": "2024",
       "preview": "",
       "code": "",
-      "thumbnail": "/image/projects/other/hospital-management/hospital1.jpeg",
+      "thumbnail": "/image/projects/web/hospital/hospital-thumbnail.jpg",
       "images": [
-        "/image/projects/other/hospital-management/hospital1.jpeg",
-        "/image/projects/other/hospital-management/hospital2.jpeg"
+        "/image/projects/web/hospital/hospital-1.png",
+        "/image/projects/web/hospital/hospital-2.png",
+        "/image/projects/web/hospital/hospital-3.png"
       ],
       "tech": [
         "Next.js",
@@ -240,8 +250,12 @@
       "year": "2024",
       "preview": "",
       "code": "",
-      "thumbnail": "/image/projects.png",
-      "images": [],
+      "thumbnail": "/image/projects/web/preloved/preloved-thumbnail.jpg",
+      "images": [
+        "/image/projects/web/preloved/preloved-1.png",
+        "/image/projects/web/preloved/preloved-2.png",
+        "/image/projects/web/preloved/preloved-3.png"
+      ],
       "tech": [
         "React",
         "Node.js",
@@ -262,8 +276,12 @@
       "year": "2023",
       "preview": "",
       "code": "",
-      "thumbnail": "/image/projects.png",
-      "images": [],
+      "thumbnail": "/image/projects/web/barbershop/barbershop-thumbnail.jpg",
+      "images": [
+        "/image/projects/web/barbershop/barbershop-1.png",
+        "/image/projects/web/barbershop/barbershop-2.png",
+        "/image/projects/web/barbershop/barbershop-3.png"
+      ],
       "tech": [
         "HTML",
         "CSS",

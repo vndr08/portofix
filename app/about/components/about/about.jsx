@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Card from "./spotify/card";
 import { motion } from "framer-motion";
 import Me1 from "@/public/image/me1.jpg";
 import Me2 from "@/public/image/me2.jpg";
@@ -35,10 +34,11 @@ export default function About() {
 								className="w-full h-full">
 								<Image
 									src={Me1}
-									alt="Alvalens"
-									layout="fill"
-									objectFit="cover"
+									alt="Ivander"
+									fill={true}
+									sizes="(max-width: 768px) 100vw, 50vw"
 									placeholder="blur"
+									className="w-full h-full object-cover"
 								/>
 							</motion.div>
 						</div>
@@ -58,10 +58,11 @@ export default function About() {
 								className="w-full h-full">
 								<Image
 									src={Me2}
-									alt="Alvalens"
-									layout="fill"
-									objectFit="cover"
+									alt="Ivander"
+									fill={true}
+									sizes="(max-width: 768px) 100vw, 30vw"
 									placeholder="blur"
+									className="w-full h-full object-cover"
 								/>
 							</motion.div>
 						</div>
@@ -83,10 +84,11 @@ export default function About() {
 								className="w-full h-full">
 								<Image
 									src={Me3}
-									alt="Alvalens"
-									layout="fill"
-									objectFit="cover"
+									alt="Ivander"
+									fill
+									sizes="(max-width: 768px) 100vw, 40vw"
 									placeholder="blur"
+									className="w-full h-full object-cover"
 								/>
 							</motion.div>
 						</div>
@@ -108,38 +110,48 @@ export default function About() {
 						type: "spring",
 					}}>
 					<h2 className="text-2xl font-bold tracking-wider mb-3">
-						Alvalen Shafelbilyunazra
+							Ivander Johana Pratama
 					</h2>
 					<p className="text-gray-600 text-justify title text-lg">
-						Hey there, I&rsquo;m Alvalen Shafelbilyunazra, a
+						Final year
 						<span className="text-black font-medium">
 							{" "}
-							passionate Web Developer
-						</span>{" "}
-						with a growing expertise in
-						<span className="text-black font-medium">
-							{" "}
-							Artificial Intelligence.
-						</span>{" "}
-						Hailing from Pasuruan, East Java, Indonesia, I&rsquo;m currently
-						pursuing my degree in{" "}
-						<span className="text-black font-medium">
-							Computer Science
+							Information Systems student
 						</span>{" "}
 						at{" "}
 						<span className="text-black font-medium">
-							Universitas Negeri Malang.
+							President University
 						</span>{" "}
-						My work bridges modern web technologies and intelligent systems—from
-						building responsive, scalable websites to exploring generative AI
-						and LLM-based solutions. Beyond development, I stay curious about
-						design and emerging technologies. In today&rsquo;s ever-changing
-						digital landscape, I believe being a
-						<span className="text-black font-medium"> lifelong learner</span> is
-						essential. Let&rsquo;s connect and explore the evolving intersection
-						of web and AI together!
+						specializing in
+						<span className="text-black font-medium">
+							{" "}
+							Data Science, software development, and AI automation
+						</span>
+						. I have hands-on experience building internal AI systems, including an enterprise-level helpdesk chatbot for
+						<span className="text-black font-medium">
+							{" "}
+							PT Jababeka Tbk
+						</span>{" "}
+						that integrates machine learning, NLP, OCR, and automated ticket creation.
 					</p>
-					<Card />
+					<p className="text-gray-600 text-justify title text-lg mt-4">
+						I am skilled in developing
+						<span className="text-black font-medium">
+							{" "}
+							web applications, implementing data pipelines, and applying machine learning techniques
+						</span>{" "}
+						for analysis and automation. I enjoy working in
+						<span className="text-black font-medium">
+							{" "}
+							cross-functional teams
+						</span>{" "}
+						and thrive in fast-paced environments where
+						<span className="text-black font-medium">
+							{" "}
+							problem-solving and adaptability
+						</span>{" "}
+						are essential.
+					</p>
 				</motion.div>
 			</div>
 		</>

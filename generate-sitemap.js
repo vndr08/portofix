@@ -5,7 +5,7 @@ const fs = require("fs");
 
 async function generateSitemap() {
 	const sitemap = new SitemapStream({
-		hostname: "https://alvalens.my.id/",
+		hostname: "http://localhost:9000/",
 	});
 
 	// Add URLs to your sitemap
