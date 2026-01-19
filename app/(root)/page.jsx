@@ -40,7 +40,7 @@ const MyPage = () => {
   const fullpageOptions = {
     anchors: ["home", "about", "projects", "contact"],
     scrollingSpeed: 1000,
-    licenseKey: "gplv3-license",
+    licenseKey: process.env.NODE_ENV === "production" ? "" : "gplv3-license",
     menu: "#sidebar",
     lockAnchors: false,
     responsiveWidth: 768,
