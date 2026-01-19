@@ -11,10 +11,16 @@ const Card = () => {
 
 useEffect(() => {
 	const fetchData = async () => {
-		const results = await Promise.all([getNowPlayingItem()]);
-		console.log(results);
-		setResult(results[0]);
-		setLoading(false);
+		try {
+			const results = await Promise.all([getNowPlayingItem()]);
+			console.log(results);
+			setResult(results[0] || {});
+		} catch (error) {
+			console.error("Spotify fetch error:", error);
+			setResult({});
+		} finally {
+			setLoading(false);
+		}
 	};
 	fetchData(); // Fetch data immediately on component mount
 

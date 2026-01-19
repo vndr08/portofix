@@ -61,6 +61,7 @@ const MyPage = () => {
                   className="flex flex-col justify-center items-center md:items-start text-center md:text-start"
                   initial={{ x: -100, opacity: 0 }}
                   whileInView={{ x: 0, opacity: 1 }}
+                  viewport={{ once: true, amount: 0.3 }}
                   transition={{ type: "spring", duration: 0.8 }}
                 >
                   {/* Profile Photo Mobile */}
