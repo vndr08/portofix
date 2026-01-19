@@ -522,7 +522,7 @@ const MyPage = () => {
                     className="space-y-3 text-slate-400 text-sm"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    transition={{ staggerChildren: 0.1, delayChildren: 0.3 }}
+                    transition={{ duration: 0.6 }}
                   >
                     <motion.p
                       initial={{ opacity: 0, x: -20 }}
