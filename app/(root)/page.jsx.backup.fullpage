@@ -22,37 +22,25 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { faMapPin, faPhone } from "@fortawesome/free-solid-svg-icons";
 
 const MyPage = () => {
-  // Suppress fullPage.js warnings
+  // Suppress fullPage.js license warning in development
   useEffect(() => {
     const originalError = console.error;
-    const originalWarn = console.warn;
-    
     console.error = function(...args) {
-      const msg = args[0]?.toString?.() || "";
-      if (msg.includes("fullPage") || msg.includes("licenseKey")) {
+      if (args[0]?.includes?.("fullPage") || args[0]?.toString?.().includes?.("licenseKey")) {
         return;
       }
       originalError.apply(console, args);
     };
     
-    console.warn = function(...args) {
-      const msg = args[0]?.toString?.() || "";
-      if (msg.includes("fullPage") || msg.includes("licenseKey")) {
-        return;
-      }
-      originalWarn.apply(console, args);
-    };
-    
     return () => {
       console.error = originalError;
-      console.warn = originalWarn;
     };
   }, []);
 
   const fullpageOptions = {
     anchors: ["home", "about", "projects", "contact"],
     scrollingSpeed: 1000,
-    licenseKey: "YOUR_LICENSE_KEY",
+    licenseKey: process.env.NODE_ENV === "production" ? "" : "gplv3-license",
     menu: "#sidebar",
     lockAnchors: false,
     responsiveWidth: 768,
