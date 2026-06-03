@@ -1,213 +1,252 @@
-"use client";
-import { useState, useEffect, use } from "react";
-import { motion } from "framer-motion";
+import Image from "next/image";
+import { notFound } from "next/navigation";
 import jsonData from "@/json/data.json";
-
+import profile from "@/json/profile.json";
+import BlurImage from "@/public/image/placeholder/blur.jpg";
+import FixedButton from "@/components/FixedButton";
+import Button from "@/components/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
-import NotFound from "@/app/not-found";
-import Image from "next/image";
-import BlurImage from "@/public/image/placeholder/blur.jpg";
-import FixedButon from "@/components/FixedButton";
-import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
-import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import {
+	faArrowUpRightFromSquare,
+	faChevronLeft,
+	faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
 
-function ScrollDownButton() {
-  const [isAtBottom, setIsAtBottom] = useState(false);
+const projects = jsonData.Projects.filter((project) => project.show);
 
-  const handleScroll = () => {
-    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    if (scrollTop < document.documentElement.scrollHeight - document.documentElement.clientHeight) {
-
-      window.scrollTo({
-        top: document.documentElement.scrollHeight,
-        behavior: "smooth",
-      });
-				setIsAtBottom(true);
-			
-    } else {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-			setIsAtBottom(false);
-    }
-  };
-
-  return (
-    <div className="fixed bottom-5 left-0 right-0 flex justify-center items-center mb-10">
-      <motion.div
-        className="h-10 w-10 bg-neutral-900 rounded-full flex justify-center items-center cursor-pointer"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        onClick={handleScroll}
-      >
-        <FontAwesomeIcon
-          icon={isAtBottom ? faChevronUp : faChevronDown}
-          className="text-white text-2xl"
-        />
-      </motion.div>
-    </div>
-  );
+function getProject(slug) {
+	return projects.find((project) => project.slug === slug);
 }
 
+export function generateStaticParams() {
+	return projects.map((project) => ({
+		slug: project.slug,
+	}));
+}
 
-function Page(props) {
-    const params = use(props.params);
-    const [data, setData] = useState(null);
-    useEffect(() => {
-		const selectedData = jsonData.Projects.find(
-			(item) => item.slug === params.slug
-		);
-		if (selectedData === undefined) {
-			setData("404");
-		} else {
-			setData(selectedData);
-		}
-	}, [params.slug]);
+export async function generateMetadata({ params }) {
+	const { slug } = await params;
+	const project = getProject(slug);
 
-    if (data === "404") {
-		return (
-			<>
-				<NotFound />
-			</>
-		);
-	} else if (!data) {
-		return (
-			<div className="relative min-h-screen w-full  gap-4 p-10 flex justify-center items-center flex-col mb-10 ">
-				<div className="min-h-screen flex justify-center items-center w-full">
-					<div className="mx-auto grid grid-cols-1 md:grid-cols-2  w-full">
-						<div className="flex justify-center items-start flex-col mb-5 space-y-10 w-ful p-4">
-							<div className="animate-pulse bg-neutral-400 h-20 w-full rounded shadow-lg"></div>
-							<div className="animate-pulse bg-neutral-400 h-20 w-full rounded shadow-lg"></div>
-							<div className="animate-pulse bg-neutral-400 h-20 w-full rounded shadow-lg"></div>
-							<div className="animate-pulse bg-neutral-400 h-20 w-full rounded shadow-lg"></div>
-							<div className="animate-pulse bg-neutral-400 h-20 w-full rounded shadow-lg"></div>
-						</div>
-						<div className="flex justify-start items-start flex-col mb-5 w-full p-4">
-							<div className="animate-pulse duration-500 shadow-lg bg-neutral-400 rounded  w-full h-full "></div>
-						</div>
-					</div>
-				</div>
-				{/* images */}
-				<div className="mx-auto grid grid-cols-1 p-5 md:p-20  w-full h-auto">
-					<div className="w-full h-auto aspect-video">
-						<div className="animate-pulse duration-500 shadow-lg bg-neutral-400 h-full w-full rounded"></div>
-					</div>
-				</div>
-			</div>
-		);
+	if (!project) {
+		return {
+			title: "Project Not Found | Ivan Portfolio",
+		};
 	}
-    return (
-		<div className="relative min-h-screen w-full gap-4 p-10 flex justify-center items-center flex-col mb-10 ">
-			<FixedButon href="/projects">
-				<FontAwesomeIcon
-					icon={faChevronLeft}
-					className="text-black pr-10"
-				/>
-			</FixedButon>
-			<ScrollDownButton />
-			<div className="min-h-screen flex justify-center items-center">
-				<div className="mx-auto grid grid-cols-1 md:grid-cols-2  mt-10 md:mt-0">
-					<div className="min-h-screen sm:min-h-0 flex justify-center items-start flex-col mb-5 space-y-10 mx-auto">
-						<div>
-							<h2 className="uppercase font-normal text-lg tracking-[8px] text-neutral-400">
-								Project
-							</h2>
-							<h1 className="text-4xl font-medium text-neutral-900">
-								{data.title}
-							</h1>
-						</div>
-						<div>
-							<h2 className="uppercase font-normal text-lg tracking-[8px] text-neutral-400">
-								Technology
-							</h2>
-							<p className="text-2xl font-normal text-neutral-900">
-								{data.tech.join(", ")}
-							</p>
-						</div>
-						<div>
-							<h2 className="uppercase font-normal text-lg tracking-[8px] text-neutral-400">
-								Year
-							</h2>
-							<p className="text-2xl font-normal text-neutral-900">
-								{data.year}
-							</p>
-						</div>
-						{data.preview && (
-							<div>
-								<h2 className="uppercase font-normal text-lg tracking-[8px] text-neutral-400">
-									Preview
-								</h2>
-								<p className="text-2xl font-normal text-neutral-900">
-									<a
-										href={data.preview}
-										target="_blank"
-										rel="noopener noreferrer">
-										Preview{" "}
-										<FontAwesomeIcon
-											icon={faArrowUpRightFromSquare}
-											className="ml-3"
-										/>
-									</a>
+
+	const title = `${project.title} | Ivan Portfolio`;
+	const description = project.summary || project.desc[0];
+
+	return {
+		title,
+		description,
+		alternates: {
+			canonical: `/projects/${project.slug}`,
+		},
+		openGraph: {
+			title,
+			description,
+			type: "article",
+			url: `${profile.canonicalUrl}/projects/${project.slug}`,
+			images: [
+				{
+					url: project.thumbnail,
+					alt: project.title,
+				},
+			],
+		},
+		twitter: {
+			card: "summary_large_image",
+			title,
+			description,
+			images: [project.thumbnail],
+		},
+	};
+}
+
+export default async function Page({ params }) {
+	const { slug } = await params;
+	const data = getProject(slug);
+
+	if (!data) {
+		notFound();
+	}
+
+	const gallery = data.images.length > 0 ? data.images : [data.thumbnail];
+
+	return (
+		<main className="theme-page relative">
+			<div className="hero-grid-bg pointer-events-none absolute inset-x-0 top-0 h-[620px] opacity-45" />
+
+			<FixedButton href="/projects">
+				<FontAwesomeIcon icon={faChevronLeft} className="h-4 w-4" />
+			</FixedButton>
+
+			<section className="theme-section px-6 pb-16 pt-28 md:px-10 lg:px-20">
+				<div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+					<div>
+						<p className="mb-3 text-sm font-bold uppercase tracking-[0.24em] theme-accent">
+							Project Case Study
+						</p>
+						<h1 className="text-4xl font-bold leading-tight theme-text md:text-6xl">
+							{data.title}
+						</h1>
+						<p className="mt-5 max-w-2xl text-base leading-8 theme-muted md:text-lg">
+							{data.summary || data.desc[0]}
+						</p>
+
+						<div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
+							<div className="theme-card rounded-2xl p-4">
+								<p className="text-xs font-bold uppercase tracking-[0.18em] theme-muted">
+									Year
+								</p>
+								<p className="mt-2 font-bold theme-text">{data.year}</p>
+							</div>
+							<div className="theme-card rounded-2xl p-4">
+								<p className="text-xs font-bold uppercase tracking-[0.18em] theme-muted">
+									Role
+								</p>
+								<p className="mt-2 font-bold theme-text">
+									{data.role || "Project Builder"}
 								</p>
 							</div>
-						)}
-						{data.code && (
-							<div>
-								<h2 className="uppercase font-normal text-lg tracking-[8px] text-neutral-400">
-									Source Code
-								</h2>
-								<p className="text-2xl font-normal text-neutral-900">
-									<a
-										href={data.code}
-										target="_blank"
-										rel="noopener noreferrer">
-										Github{" "}
-										<FontAwesomeIcon
-											icon={faGithub}
-											className="ml-3"
-										/>
-									</a>
+							<div className="theme-card rounded-2xl p-4">
+								<p className="text-xs font-bold uppercase tracking-[0.18em] theme-muted">
+									Focus
 								</p>
+								<p className="mt-2 font-bold theme-text">
+									{data.category.includes(2) ? "AI / Data" : "Software"}
+								</p>
+							</div>
+						</div>
+
+						<div className="mt-8 flex flex-wrap gap-3">
+							{data.preview && (
+								<Button href={data.preview} target="_blank" rel="noopener noreferrer" variation="primary">
+									Preview
+									<FontAwesomeIcon
+										icon={faArrowUpRightFromSquare}
+										className="h-4 w-4"
+									/>
+								</Button>
+							)}
+							{data.code && (
+								<Button href={data.code} target="_blank" rel="noopener noreferrer">
+									GitHub
+									<FontAwesomeIcon icon={faGithub} className="h-4 w-4" />
+								</Button>
+							)}
+							<Button href={`mailto:${profile.email}`}>
+								Ask About This Project
+								<FontAwesomeIcon icon={faEnvelope} className="h-4 w-4" />
+							</Button>
+						</div>
+					</div>
+
+					<div className="theme-card relative overflow-hidden rounded-[2rem] p-3">
+						<div className="relative aspect-[16/10] overflow-hidden rounded-[1.5rem]">
+							<Image
+								src={data.thumbnail}
+								alt={data.title}
+								fill
+								priority
+								sizes="(max-width: 1024px) 90vw, 46vw"
+								placeholder="blur"
+								blurDataURL={BlurImage.src}
+								className="object-cover"
+							/>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section className="theme-section theme-band px-6 py-16 md:px-10 lg:px-20">
+				<div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 lg:grid-cols-[0.7fr_1fr]">
+					<div>
+						<p className="mb-3 text-sm font-bold uppercase tracking-[0.24em] theme-accent">
+							Technical stack
+						</p>
+						<div className="flex flex-wrap gap-2">
+							{data.tech.map((tech) => (
+								<span
+									key={tech}
+									className="rounded-full px-3 py-1.5 text-sm font-bold theme-chip">
+									{tech}
+								</span>
+							))}
+						</div>
+						{data.impact && (
+							<div className="theme-card mt-8 rounded-[1.5rem] p-5">
+								<p className="text-xs font-bold uppercase tracking-[0.18em] theme-accent">
+									Impact
+								</p>
+								<p className="mt-3 text-sm leading-7 theme-muted">{data.impact}</p>
 							</div>
 						)}
 					</div>
-					<div className="flex justify-start items-start flex-col mb-5 ">
-						<h2 className="uppercase font-normal text-lg tracking-[8px] text-neutral-400">
-							Description
+
+					<div>
+						<p className="mb-3 text-sm font-bold uppercase tracking-[0.24em] theme-accent">
+							Overview
+						</p>
+						<div className="space-y-5">
+							{data.desc.map((desc) => (
+								<p key={desc} className="text-base leading-8 theme-muted">
+									{desc}
+								</p>
+							))}
+						</div>
+						{data.highlights?.length > 0 && (
+							<div className="mt-10">
+								<h2 className="text-2xl font-bold theme-text">
+									What this shows
+								</h2>
+								<ul className="mt-5 grid grid-cols-1 gap-3">
+									{data.highlights.map((highlight) => (
+										<li
+											key={highlight}
+											className="theme-card rounded-2xl p-4 text-sm leading-6 theme-soft">
+											{highlight}
+										</li>
+									))}
+								</ul>
+							</div>
+						)}
+					</div>
+				</div>
+			</section>
+
+			<section className="theme-section px-6 py-16 md:px-10 lg:px-20">
+				<div className="mx-auto max-w-7xl">
+					<div className="mb-8">
+						<p className="mb-3 text-sm font-bold uppercase tracking-[0.24em] theme-accent">
+							Gallery
+						</p>
+						<h2 className="text-3xl font-bold theme-text md:text-5xl">
+							Project visuals
 						</h2>
-						{data.desc.map((desc, index) => (
-							<p
-								key={index}
-								className="text-xl text-justify tracking-wide font-normal text-gray-500 mb-5">
-								{desc}
-							</p>
+					</div>
+					<div className="grid grid-cols-1 gap-6">
+						{gallery.map((image, index) => (
+							<div
+								key={`${image}-${index}`}
+								className="theme-card overflow-hidden rounded-[1.5rem] p-3">
+								<Image
+									src={image}
+									alt={`${data.title} screenshot ${index + 1}`}
+									className="h-auto w-full rounded-[1rem]"
+									width={1920}
+									height={1080}
+									blurDataURL={BlurImage.src}
+									placeholder="blur"
+									sizes="100vw"
+								/>
+							</div>
 						))}
 					</div>
 				</div>
-			</div>
-			{/* images */}
-			<div className="mx-auto grid grid-cols-1 p-5 md:p-20 w-full">
-				<div className="w-full h-auto text-center flex flex-col justify-center ">
-					{data.images.map((image, index) => (
-						<Image
-							key={index}
-							src={image}
-							alt={`Project Image ${index + 1}`}
-							className="mb-5 h-auto max-h-screen max-w-7xl mx-auto"
-							width={1920}
-							height={1080}
-							blurDataURL={BlurImage.src}
-							sizes="100vw"
-						/>
-					))}
-				</div>
-			</div>
-		</div>
+			</section>
+		</main>
 	);
 }
-
-export default Page;

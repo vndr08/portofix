@@ -2,7 +2,12 @@
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Ivander | Projects"
+  title: "Projects | Ivander Johana Pratama",
+  description:
+    "AI, data automation, dashboard, and full-stack projects by Ivander Johana Pratama.",
+  alternates: {
+    canonical: "/projects",
+  },
 };
 export default function Layout({ children }) {
   return (

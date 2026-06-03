@@ -1,582 +1,493 @@
-// Copyright (C) 2026 Ivander Johana Pratama
-// Ivan's Professional Portfolio
-// Licensed under MIT License
-
 "use client";
-import ReactFullpage from "@fullpage/react-fullpage";
+
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Link from "next/link";
-import { useEffect } from "react";
-
-// components
+import { motion } from "framer-motion";
 import Button from "@/components/Button";
+import ThemeToggle from "@/components/ThemeToggle";
+import TypewriterText from "@/components/TypewriterText";
+import profile from "@/json/profile.json";
+import resume from "@/json/resume.json";
+import data from "@/json/data.json";
 import Me from "@/public/image/ivander.jpg";
-
-// icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { faMapPin, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import {
+	faArrowRight,
+	faAward,
+	faBriefcase,
+	faCode,
+	faDownload,
+	faEnvelope,
+	faLayerGroup,
+	faPhone,
+	faRobot,
+	faServer,
+} from "@fortawesome/free-solid-svg-icons";
 
-const MyPage = () => {
-  // Suppress fullPage.js warnings
-  useEffect(() => {
-    const originalError = console.error;
-    const originalWarn = console.warn;
-    
-    console.error = function(...args) {
-      const msg = args[0]?.toString?.() || "";
-      if (msg.includes("fullPage") || msg.includes("licenseKey")) {
-        return;
-      }
-      originalError.apply(console, args);
-    };
-    
-    console.warn = function(...args) {
-      const msg = args[0]?.toString?.() || "";
-      if (msg.includes("fullPage") || msg.includes("licenseKey")) {
-        return;
-      }
-      originalWarn.apply(console, args);
-    };
-    
-    return () => {
-      console.error = originalError;
-      console.warn = originalWarn;
-    };
-  }, []);
+const shownProjects = data.Projects.filter((project) => project.show);
+const featuredProjects = shownProjects
+	.filter((project) => project.featured)
+	.slice(0, 5);
+const projectsForHome =
+	featuredProjects.length > 0 ? featuredProjects : shownProjects.slice(0, 5);
 
-  const fullpageOptions = {
-    anchors: ["home", "about", "projects", "contact"],
-    scrollingSpeed: 1000,
-    licenseKey: "YOUR_LICENSE_KEY",
-    menu: "#sidebar",
-    lockAnchors: false,
-    responsiveWidth: 768,
-    responsiveHeight: 600,
-    fitToSection: true,
-  };
+const roleCards = [
+	{
+		title: "AI Engineer",
+		icon: faRobot,
+		text: "AI agents, retrieval workflows, NLP, data automation, and model-driven tools.",
+	},
+	{
+		title: "Software Engineer",
+		icon: faCode,
+		text: "Enterprise finance modules, bug fixing, UI migration, and reliable workflow delivery.",
+	},
+	{
+		title: "Full Stack Engineer",
+		icon: faServer,
+		text: "Dashboards, backend integrations, database-backed apps, and responsive interfaces.",
+	},
+];
 
-  return (
-    <div>
-      <ReactFullpage
-        {...fullpageOptions}
-        render={({ state, fullpageApi }) => (
-          <ReactFullpage.Wrapper>
-            {/* HOME SECTION */}
-            <div className="section">
-              <div className="mx-auto container grid grid-cols-1 md:grid-cols-2 gap-8 p-10 overflow-hidden md:px-20 h-screen flex items-center">
-                <motion.div
-                  className="flex flex-col justify-center items-center md:items-start text-center md:text-start"
-                  initial={{ x: -100, opacity: 0 }}
-                  whileInView={{ x: 0, opacity: 1 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ type: "spring", duration: 0.8 }}
-                >
-                  {/* Profile Photo Mobile */}
-                  <motion.div 
-                    className="block md:hidden col-span-1 mx-auto mb-10"
-                    initial={{ scale: 0.5, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 1 }}
-                    transition={{ type: "spring", damping: 10, stiffness: 100, duration: 0.8 }}
-                  >
-                    <motion.div 
-                      className="bg-gradient-to-br from-emerald-400 via-emerald-500 to-emerald-600 rounded-2xl h-48 w-48 shadow-2xl overflow-hidden"
-                      whileHover={{ 
-                        scale: 1.05,
-                        boxShadow: "0 25px 50px -12px rgba(16, 185, 129, 0.5)"
-                      }}
-                      transition={{ type: "spring", damping: 15 }}
-                    >
-                      <Image
-                        src={Me}
-                        alt="Ivander Johana Pratama"
-                        className="rounded-2xl w-full h-full object-cover"
-                        priority
-                        quality={85}
-                      />
-                    </motion.div>
-                  </motion.div>
+const skillGroups = [
+	resume.skills[0],
+	{
+		group: "Software and Web",
+		items: ["JavaScript", "ASP.NET", "FastAPI", "Django", "Streamlit", "Java", "PHP", "HTML", "CSS"],
+	},
+	{
+		group: "Systems and Tools",
+		items: ["PostgreSQL", "MySQL", "Firebase", "Kendo UI Telerik", "Git", "Docker", "Power BI", "Figma"],
+	},
+];
 
-                  {/* Location Badge */}
-                  <motion.div
-                    className="inline-flex items-center gap-2 text-sm text-emerald-600 font-semibold mb-4"
-                    initial={{ x: -100, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ delay: 0.05, type: "spring", duration: 0.8 }}
-                  >
-                    <FontAwesomeIcon icon={faMapPin} width={14} />
-                    Cikarang, Bekasi | Indonesia
-                  </motion.div>
+const timeline = resume.experience.map((item) => ({
+	period: item.period,
+	title: item.role,
+	meta: item.company,
+	text: `${item.summary} ${item.highlights[0]}`,
+}));
 
-                  {/* Name */}
-                  <motion.h1
-                    className="text-slate-900 text-4xl md:text-5xl lg:text-6xl font-bold my-2 md:my-3"
-                    initial={{ x: -100, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ delay: 0.1, type: "spring", duration: 0.8 }}
-                  >
-                    Ivander Johana Pratama
-                  </motion.h1>
+const achievementCards = [
+	...resume.recruiterHighlights,
+	{
+		value: "3rd",
+		label: "SETSsail Biz Accel",
+		detail: "Service Category, 2024",
+	},
+];
 
-                  {/* Subtitle */}
-                  <motion.p
-                    className="text-xl md:text-2xl font-semibold text-emerald-600 mb-2"
-                    initial={{ x: -100, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ delay: 0.15, type: "spring", duration: 0.8 }}
-                  >
-                    Application Support & AI Developer
-                  </motion.p>
-
-                  {/* Description */}
-                  <motion.p
-                    className="text-base md:text-lg text-slate-600 leading-relaxed mb-6 max-w-lg"
-                    initial={{ x: -100, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ delay: 0.2, type: "spring", duration: 0.8 }}
-                  >
-                    Final year Information Systems student at <span className="font-semibold text-slate-900">President University</span> specializing in Data Science. Currently interning at <span className="font-semibold text-slate-900">PT Jababeka Tbk</span> developing enterprise-level AI systems, chatbots, and data automation solutions. Passionate about building scalable applications that solve real problems.
-                  </motion.p>
-
-                  {/* Key Skills */}
-                  <motion.div
-                    className="flex flex-wrap gap-2 mb-8"
-                    initial={{ x: -100, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ delay: 0.25, type: "spring", duration: 0.8 }}
-                  >
-                    {["Python", "Data Science", "AI/ML", "Web Development", "React", "FastAPI"].map((skill, idx) => (
-                      <span key={idx} className="bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full">
-                        {skill}
-                      </span>
-                    ))}
-                  </motion.div>
-
-                  {/* CTA Buttons */}
-                  <motion.div
-                    className="flex flex-col sm:flex-row gap-4 mb-8"
-                    initial={{ x: -100, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ delay: 0.3, type: "spring", duration: 0.8 }}
-                  >
-                    <motion.div
-                      whileHover={{ scale: 1.05, y: -3 }}
-                      whileTap={{ scale: 0.98 }}
-                      transition={{ type: "spring", damping: 20 }}
-                    >
-                      <Button>
-                        <Link href="/about" className="flex items-center gap-2">
-                          About Me <FontAwesomeIcon icon={faArrowRight} width={16} />
-                        </Link>
-                      </Button>
-                    </motion.div>
-                    <motion.div
-                      whileHover={{ scale: 1.05, y: -3 }}
-                      whileTap={{ scale: 0.98 }}
-                      transition={{ type: "spring", damping: 20 }}
-                    >
-                      <Button style={{ background: "transparent", border: "2px solid #10B981", color: "#10B981" }}>
-                        <a href="mailto:ivanderjohanapratama@gmail.com" className="flex items-center gap-2">
-                          Get in Touch
-                        </a>
-                      </Button>
-                    </motion.div>
-                  </motion.div>
-
-                  {/* Contact Info */}
-                  <motion.div
-                    className="flex flex-col gap-2 text-sm text-slate-600 mb-6"
-                    initial={{ x: -100, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ delay: 0.35, type: "spring", duration: 0.8 }}
-                  >
-                    <div className="flex items-center gap-2">
-                      <FontAwesomeIcon icon={faEnvelope} width={16} />
-                      <a href="mailto:ivanderjohanapratama@gmail.com" className="hover:text-emerald-600 transition-colors">
-                        ivanderjohanapratama@gmail.com
-                      </a>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <FontAwesomeIcon icon={faPhone} width={16} />
-                      <a href="tel:+628217515473" className="hover:text-emerald-600 transition-colors">
-                        +62 821 7515 4739
-                      </a>
-                    </div>
-                  </motion.div>
-
-                  {/* Social Links */}
-                  <motion.div
-                    className="flex gap-4"
-                    initial={{ x: -100, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ delay: 0.4, type: "spring", duration: 0.8 }}
-                  >
-                    <Link href="https://linkedin.com/in/ivanderjohanapratama" target="_blank" rel="noopener noreferrer">
-                      <FontAwesomeIcon icon={faLinkedin} width={24} className="text-slate-600 hover:text-emerald-600 transition-colors" />
-                    </Link>
-                    <Link href="https://github.com" target="_blank" rel="noopener noreferrer">
-                      <FontAwesomeIcon icon={faGithub} width={24} className="text-slate-600 hover:text-emerald-600 transition-colors" />
-                    </Link>
-                  </motion.div>
-                </motion.div>
-
-                {/* Profile Photo Desktop */}
-                <motion.div
-                  className="hidden md:flex justify-center items-center"
-                  initial={{ x: 100, opacity: 0 }}
-                  whileInView={{ x: 0, opacity: 1 }}
-                  transition={{ type: "spring", duration: 0.8 }}
-                >
-                  <motion.div 
-                    className="bg-gradient-to-br from-emerald-400 via-emerald-500 to-emerald-600 rounded-3xl h-96 w-96 shadow-2xl overflow-hidden relative"
-                    whileHover={{ 
-                      scale: 1.03,
-                      rotateZ: 2,
-                      boxShadow: "0 50px 100px -20px rgba(16, 185, 129, 0.6)"
-                    }}
-                    transition={{ type: "spring", damping: 12, stiffness: 100 }}
-                  >
-                    {/* Animated background glow */}
-                    <motion.div 
-                      className="absolute inset-0 bg-gradient-to-br from-emerald-400/20 to-transparent rounded-3xl"
-                      animate={{ 
-                        opacity: [0.3, 0.6, 0.3],
-                      }}
-                      transition={{ duration: 4, repeat: Infinity }}
-                    />
-                    <Image
-                      src={Me}
-                      alt="Ivander Johana Pratama"
-                      className="rounded-3xl w-full h-full object-cover relative z-10"
-                      priority
-                      quality={85}
-                    />
-                  </motion.div>
-                </motion.div>
-              </div>
-            </div>
-
-            {/* ABOUT SECTION */}
-            <div className="section bg-gradient-to-br from-slate-50 to-emerald-50">
-              <div className="mx-auto container p-10 md:px-20 min-h-screen flex items-center">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                  <motion.div
-                    initial={{ x: -100, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ type: "spring", duration: 0.8 }}
-                  >
-                    <motion.h2 
-                      className="text-4xl md:text-5xl font-bold text-slate-900 mb-6"
-                      initial={{ opacity: 0, y: -20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.1, type: "spring", duration: 0.6 }}
-                    >
-                      About Me
-                    </motion.h2>
-                    <div className="space-y-4 text-lg text-slate-600 leading-relaxed">
-                      <motion.p
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.15, type: "spring" }}
-                      >
-                        I&rsquo;m an <span className="font-semibold text-emerald-600">Application Support & AI Developer</span> combining enterprise infrastructure expertise with cutting-edge artificial intelligence. Currently interning at <span className="font-semibold text-slate-900">PT Jababeka Tbk</span>, I design and deploy intelligent systems that streamline operations and drive digital transformation.
-                      </motion.p>
-                      <motion.p
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2, type: "spring" }}
-                      >
-                        As a final-year <span className="font-semibold text-slate-900">Information Systems student</span> at President University specializing in Data Science, I bridge the gap between technical infrastructure and intelligent automation. My work spans full-stack development, machine learning models, and enterprise data workflows—all crafted with a focus on scalability and real-world impact.
-                      </motion.p>
-                      <motion.p
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.25, type: "spring" }}
-                      >
-                        Beyond code, I bring <span className="font-semibold text-emerald-600">strategic leadership</span>, <span className="font-semibold text-emerald-600">cross-functional collaboration</span>, and a results-driven mindset honed through extensive campus involvement and real-world project deployments. I thrive when solving complex problems at the intersection of technology and business needs.
-                      </motion.p>
-                    </div>
-                  </motion.div>
-
-                  <motion.div
-                    className="space-y-4"
-                    initial={{ x: 100, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ type: "spring", duration: 0.8 }}
-                  >
-                    <motion.div 
-                      className="bg-white border-l-4 border-emerald-600 p-6 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all"
-                      whileHover={{ scale: 1.02 }}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.15, type: "spring" }}
-                    >
-                      <h3 className="text-xs font-bold text-emerald-600 mb-2 tracking-widest">EDUCATION</h3>
-                      <p className="text-xl font-bold text-slate-900">President University</p>
-                      <p className="text-slate-600 font-medium">B.Sc Information Systems</p>
-                      <p className="text-slate-500 text-sm">Data Science Specialization</p>
-                      <p className="text-emerald-600 font-bold mt-3 text-lg">3.67 GPA</p>
-                    </motion.div>
-
-                    <motion.div 
-                      className="bg-gradient-to-br from-emerald-50 to-emerald-100 border-l-4 border-emerald-600 p-6 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all"
-                      whileHover={{ scale: 1.02 }}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.2, type: "spring" }}
-                    >
-                      <h3 className="text-xs font-bold text-emerald-600 mb-2 tracking-widest">CURRENT ROLE</h3>
-                      <p className="text-xl font-bold text-slate-900">Application Support Intern</p>
-                      <p className="text-slate-600 font-medium">PT Jababeka Tbk</p>
-                      <p className="text-emerald-600 font-semibold mt-2">Aug 2025 - Present</p>
-                    </motion.div>
-
-                    <div className="grid grid-cols-2 gap-4">
-                      {[
-                        { number: "9", label: "Projects Deployed" },
-                        { number: "15+", label: "Tech Skills" },
-                        { number: "8", label: "Certifications" },
-                        { number: "3.67", label: "GPA" }
-                      ].map((stat, idx) => (
-                        <motion.div 
-                          key={idx}
-                          className="bg-gradient-to-br from-emerald-400 to-emerald-600 p-5 rounded-lg text-center shadow-lg hover:shadow-xl"
-                          whileHover={{ scale: 1.05, rotateY: 10 }}
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          whileInView={{ opacity: 1, scale: 1 }}
-                          transition={{ delay: 0.25 + idx * 0.05, type: "spring" }}
-                        >
-                          <h3 className="text-3xl font-bold text-white">{stat.number}</h3>
-                          <p className="text-white font-semibold text-sm">{stat.label}</p>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </motion.div>
-                </div>
-              </div>
-            </div>
-
-            {/* PROJECTS SECTION */}
-            <div className="section">
-              <div className="mx-auto container p-10 md:px-20 min-h-screen flex flex-col justify-center">
-                <motion.div
-                  initial={{ y: -50, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  transition={{ type: "spring", duration: 0.8 }}
-                  className="mb-12"
-                >
-                  <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-                    Featured Projects
-                  </h2>
-                  <p className="text-lg text-slate-600">
-                    Recent work showcasing my expertise in AI, web development, and data science
-                  </p>
-                </motion.div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {[
-                    {
-                      title: "AI Agent Chatbot System",
-                      desc: "Enterprise-level helpdesk chatbot using LangChain, FastAPI & Ollama",
-                      date: "Aug 2025 - Present",
-                      tech: ["LangChain", "FastAPI", "Ollama", "NLP"],
-                    },
-                    {
-                      title: "EduIntel",
-                      desc: "ML system for detecting underperforming students using Random Forest",
-                      date: "May 2025",
-                      tech: ["Python", "Django", "ML"],
-                    },
-                    {
-                      title: "Kalbio Dashboard",
-                      desc: "Real-time engineering monitoring dashboard with energy & MTTR tracking",
-                      date: "Jul 2025",
-                      tech: ["Next.js", "Node.js", "PostgreSQL"],
-                    },
-                    {
-                      title: "Streamlit Automation Tool",
-                      desc: "Internal tool for detecting duplicate data in CSV/Excel files",
-                      date: "Aug 2025",
-                      tech: ["Streamlit", "Python", "Pandas"],
-                    },
-                    {
-                      title: "BERSUARA App",
-                      desc: "Anonymous chat application with auto-generated usernames",
-                      date: "Sep - Dec 2024",
-                      tech: ["Android", "Firebase", "Java"],
-                    },
-                    {
-                      title: "Hospital System",
-                      desc: "Revenue cycle & patient management system simulation",
-                      date: "May 2025",
-                      tech: ["PHP", "MySQL", "Database Design"],
-                    },
-                  ].map((project, idx) => (
-                    <motion.div
-                      key={idx}
-                      initial={{ y: 50, opacity: 0, rotate: -5 }}
-                      whileInView={{ y: 0, opacity: 1, rotate: 0 }}
-                      whileHover={{ y: -10, scale: 1.02, boxShadow: "0 20px 40px -10px rgba(16, 185, 129, 0.2)" }}
-                      transition={{ delay: idx * 0.1, type: "spring", stiffness: 100, damping: 15 }}
-                      className="bg-white border border-slate-200 p-6 rounded-xl group cursor-pointer"
-                    >
-                      <motion.h3 
-                        className="text-lg font-bold text-slate-900 mb-2 group-hover:text-emerald-600 transition-colors"
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ delay: idx * 0.1 + 0.05 }}
-                      >
-                        {project.title}
-                      </motion.h3>
-                      <motion.p 
-                        className="text-slate-600 text-sm mb-3"
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ delay: idx * 0.1 + 0.1 }}
-                      >
-                        {project.desc}
-                      </motion.p>
-                      <motion.p 
-                        className="text-xs text-slate-500 font-semibold mb-3"
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ delay: idx * 0.1 + 0.15 }}
-                      >
-                        {project.date}
-                      </motion.p>
-                      <motion.div 
-                        className="flex flex-wrap gap-2"
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ delay: idx * 0.1 + 0.2 }}
-                      >
-                        {project.tech.map((tech, i) => (
-                          <motion.span 
-                            key={i} 
-                            className="bg-gradient-to-r from-emerald-100 to-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full border border-emerald-300 hover:border-emerald-500"
-                            whileHover={{ scale: 1.1, backgroundColor: "rgba(16, 185, 129, 0.1)" }}
-                            transition={{ type: "spring", stiffness: 200 }}
-                          >
-                            {tech}
-                          </motion.span>
-                        ))}
-                      </motion.div>
-                    </motion.div>
-                  ))}
-                </div>
-
-                <motion.div
-                  className="mt-12 text-center"
-                  initial={{ y: 50, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.3, type: "spring", duration: 0.8 }}
-                >
-                  <motion.div
-                    whileHover={{ scale: 1.05, y: -5 }}
-                    whileTap={{ scale: 0.98 }}
-                    transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                  >
-                    <Button>
-                      <Link href="/projects" className="flex items-center gap-2">
-                        View All Projects & Details <FontAwesomeIcon icon={faArrowRight} width={16} />
-                      </Link>
-                    </Button>
-                  </motion.div>
-                </motion.div>
-              </div>
-            </div>
-
-            {/* CONTACT SECTION */}
-            <div className="section bg-gradient-to-br from-slate-900 to-slate-800">
-              <div className="mx-auto container p-10 md:px-20 h-screen flex items-center justify-center">
-                <motion.div
-                  className="text-center max-w-2xl"
-                  initial={{ y: 50, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  transition={{ type: "spring", duration: 0.8 }}
-                >
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                    Let&rsquo;s Work Together
-                  </h2>
-                  <p className="text-lg md:text-xl text-slate-300 mb-12">
-                    I&rsquo;m always interested in new opportunities, collaborations, and challenges. Whether you have a project in mind or just want to chat, feel free to reach out!
-                  </p>
-
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-                    <motion.div
-                      whileHover={{ scale: 1.05, y: -5 }}
-                      whileTap={{ scale: 0.98 }}
-                      transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                    >
-                      <Button>
-                        <a href="mailto:ivanderjohanapratama@gmail.com" className="flex items-center gap-2">
-                          Send Email <FontAwesomeIcon icon={faEnvelope} width={16} />
-                        </a>
-                      </Button>
-                    </motion.div>
-                    <motion.div
-                      whileHover={{ scale: 1.05, y: -5 }}
-                      whileTap={{ scale: 0.98 }}
-                      transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                    >
-                      <Button style={{ background: "white", border: "2px solid white", color: "#0F172A" }}>
-                        <a href="https://linkedin.com/in/ivanderjohanapratama" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                          Connect on LinkedIn
-                        </a>
-                      </Button>
-                    </motion.div>
-                  </div>
-
-                  <motion.div 
-                    className="space-y-3 text-slate-400 text-sm"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    <motion.p
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ type: "spring", stiffness: 100 }}
-                      className="hover:text-emerald-400 transition-colors cursor-pointer"
-                    >
-                      📍 Cikarang, Bekasi, Indonesia
-                    </motion.p>
-                    <motion.p
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ type: "spring", stiffness: 100, delay: 0.05 }}
-                      className="hover:text-emerald-400 transition-colors cursor-pointer"
-                    >
-                      📧 ivanderjohanapratama@gmail.com
-                    </motion.p>
-                    <motion.p
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ type: "spring", stiffness: 100, delay: 0.1 }}
-                      className="hover:text-emerald-400 transition-colors cursor-pointer"
-                    >
-                      📱 +62 821 7515 4739
-                    </motion.p>
-                  </motion.div>
-
-                  <div className="mt-16 pt-8 border-t border-slate-700">
-                    <p className="text-slate-400">
-                      © 2026 Ivander Johana Pratama. All rights reserved.
-                    </p>
-                  </div>
-                </motion.div>
-              </div>
-            </div>
-          </ReactFullpage.Wrapper>
-        )}
-        options={fullpageOptions}
-      />
-    </div>
-  );
+const fadeUp = {
+	initial: { opacity: 0, y: 28 },
+	whileInView: { opacity: 1, y: 0 },
+	viewport: { once: true, amount: 0.2 },
+	transition: { duration: 0.55, ease: "easeOut" },
 };
 
-export default MyPage;
+const stagger = {
+	animate: {
+		transition: {
+			staggerChildren: 0.08,
+		},
+	},
+};
+
+const child = {
+	initial: { opacity: 0, y: 24 },
+	animate: { opacity: 1, y: 0 },
+};
+
+function SectionHeader({ eyebrow, title, description }) {
+	return (
+		<motion.div {...fadeUp} className="mb-10 max-w-3xl">
+			<p className="mb-3 text-sm font-bold uppercase tracking-[0.24em] theme-accent">
+				{eyebrow}
+			</p>
+			<h2 className="text-3xl font-bold md:text-5xl theme-text">{title}</h2>
+			{description && (
+				<p className="mt-4 text-base leading-7 md:text-lg theme-muted">
+					{description}
+				</p>
+			)}
+		</motion.div>
+	);
+}
+
+function ActionRail() {
+	return (
+		<div className="fixed right-4 top-1/2 z-40 hidden -translate-y-1/2 flex-col gap-3 lg:flex">
+			<ThemeToggle />
+			<a
+				href={`mailto:${profile.email}`}
+				aria-label="Email Ivan"
+				title="Email Ivan"
+				className="inline-flex h-10 w-10 items-center justify-center rounded-full theme-card-solid theme-text transition hover:-translate-y-0.5 hover:text-emerald-600">
+				<FontAwesomeIcon icon={faEnvelope} className="h-4 w-4" />
+			</a>
+			<a
+				href={profile.linkedin}
+				target="_blank"
+				rel="noopener noreferrer"
+				aria-label="LinkedIn"
+				title="LinkedIn"
+				className="inline-flex h-10 w-10 items-center justify-center rounded-full theme-card-solid theme-text transition hover:-translate-y-0.5 hover:text-emerald-600">
+				<FontAwesomeIcon icon={faLinkedin} className="h-4 w-4" />
+			</a>
+		</div>
+	);
+}
+
+function HeroVisual() {
+	return (
+		<motion.div
+			initial={{ opacity: 0, x: 40 }}
+			animate={{ opacity: 1, x: 0 }}
+			transition={{ duration: 0.75, ease: "easeOut", delay: 0.1 }}
+			className="relative mx-auto w-full max-w-lg lg:max-w-none">
+			<div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-tr from-emerald-300/25 via-cyan-200/25 to-transparent blur-2xl" />
+			<div className="theme-card relative overflow-hidden rounded-[2rem] p-4">
+				<div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem]">
+					<Image
+						src={Me}
+						alt={profile.name}
+						fill
+						priority
+						sizes="(max-width: 1024px) 90vw, 42vw"
+						className="object-cover transition duration-700 hover:scale-[1.03]"
+					/>
+				</div>
+			</div>
+			<motion.div
+				className="floating-orbit theme-card absolute -left-3 top-8 rounded-2xl px-4 py-3 sm:-left-8"
+				initial={{ opacity: 0, scale: 0.9 }}
+				animate={{ opacity: 1, scale: 1 }}
+				transition={{ delay: 0.45 }}>
+				<p className="text-xs font-bold uppercase tracking-[0.18em] theme-muted">
+					Current GPA
+				</p>
+				<p className="text-3xl font-bold theme-text">3.67</p>
+			</motion.div>
+			<motion.div
+				className="floating-orbit-delay theme-card absolute -right-2 bottom-16 rounded-2xl px-4 py-3 sm:-right-8"
+				initial={{ opacity: 0, scale: 0.9 }}
+				animate={{ opacity: 1, scale: 1 }}
+				transition={{ delay: 0.6 }}>
+				<p className="text-xs font-bold uppercase tracking-[0.18em] theme-muted">
+					Focus
+				</p>
+				<p className="text-sm font-bold theme-text">
+					AI + Software + Full Stack
+				</p>
+			</motion.div>
+			<motion.div
+				className="theme-card absolute bottom-0 left-6 right-6 translate-y-1/2 rounded-2xl p-4"
+				initial={{ opacity: 0, y: 20 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ delay: 0.75 }}>
+				<div className="flex items-center gap-3">
+					<div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-500 text-white">
+						<FontAwesomeIcon icon={faBriefcase} className="h-5 w-5" />
+					</div>
+					<div>
+						<p className="text-xs font-semibold theme-muted">Open for roles</p>
+						<p className="text-sm font-bold theme-text">{profile.headline}</p>
+					</div>
+				</div>
+			</motion.div>
+		</motion.div>
+	);
+}
+
+function ProjectMosaicCard({ project, index }) {
+	return (
+		<motion.article
+			{...fadeUp}
+			transition={{ ...fadeUp.transition, delay: index * 0.06 }}
+			className="group hover-in-shadow outer-shadow theme-card overflow-hidden rounded-[1.5rem] transition duration-300 hover:-translate-y-2">
+			<Link href={`/projects/${project.slug}`} className="block h-full">
+				<div className="relative aspect-[16/10] overflow-hidden">
+					<Image
+						src={project.thumbnail}
+						alt={project.title}
+						fill
+						sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+						className="project-hover-image object-cover"
+					/>
+					<div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/15 to-transparent" />
+					<div className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-slate-900">
+						{project.year}
+					</div>
+					<div className="view-project-pill absolute bottom-4 left-4 rounded-full bg-emerald-500 px-4 py-2 text-sm font-bold text-white">
+						View project
+					</div>
+				</div>
+				<div className="p-5">
+					<p className="text-xs font-bold uppercase tracking-[0.18em] theme-accent">
+						{project.role || "Project"}
+					</p>
+					<h3 className="mt-2 text-xl font-bold theme-text">
+						{project.title}
+					</h3>
+					<p className="mt-3 line-clamp-2 text-sm leading-6 theme-muted">
+						{project.summary || project.desc[0]}
+					</p>
+					<div className="mt-5 flex items-center gap-2 text-sm font-bold theme-accent">
+						Read case study
+						<FontAwesomeIcon icon={faArrowRight} className="h-3.5 w-3.5 transition group-hover:translate-x-1" />
+					</div>
+				</div>
+			</Link>
+		</motion.article>
+	);
+}
+
+export default function MyPage() {
+	return (
+		<main className="theme-page relative">
+			<ActionRail />
+			<div className="hero-grid-bg pointer-events-none absolute inset-x-0 top-0 h-[760px] opacity-50" />
+			<div className="shape shape-ring left-[7%] top-28" />
+			<div className="shape shape-dots right-[12%] top-32" />
+			<div className="shape shape-plus bottom-[18%] left-[12%]" />
+
+			<section
+				id="home"
+				className="theme-section flex min-h-screen items-center px-6 pt-24 md:px-10 lg:px-20">
+				<div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-16 py-12 lg:grid-cols-[1.05fr_0.95fr]">
+					<motion.div
+						variants={stagger}
+						initial="initial"
+						animate="animate"
+						className="relative z-10">
+						<motion.div
+							variants={child}
+							className="mb-5 inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-bold theme-chip">
+							<span className="relative flex h-2 w-2">
+								<span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+								<span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+							</span>
+							Available for Opportunities - {profile.location}
+						</motion.div>
+						<motion.h1
+							variants={child}
+							className="max-w-4xl text-5xl font-bold leading-[1.02] tracking-tight theme-text md:text-7xl lg:text-8xl">
+							Hi, I&apos;m {profile.shortName}
+						</motion.h1>
+						<motion.div
+							variants={child}
+							className="mt-5 flex flex-wrap items-center gap-2 text-2xl font-semibold theme-soft md:text-3xl">
+							<span>I build as an</span>
+							<TypewriterText
+								words={profile.roleFocus}
+								className="min-w-[230px] font-bold theme-accent sm:min-w-[320px]"
+							/>
+						</motion.div>
+						<motion.p
+							variants={child}
+							className="mt-6 max-w-2xl text-base leading-8 theme-muted md:text-lg">
+							{profile.pitch}
+						</motion.p>
+						<motion.div variants={child} className="mt-7 flex flex-wrap gap-2">
+							{profile.roleFocus.map((role) => (
+								<span key={role} className="rounded-full px-4 py-2 text-sm font-bold theme-chip">
+									{role}
+								</span>
+							))}
+						</motion.div>
+						<motion.div variants={child} className="mt-9 flex flex-col gap-3 sm:flex-row">
+							<Button href="/projects" variation="primary">
+								View Projects
+								<FontAwesomeIcon icon={faArrowRight} className="h-4 w-4" />
+							</Button>
+							<Button href={profile.cvUrl} target="_blank" rel="noopener noreferrer">
+								Download Resume
+								<FontAwesomeIcon icon={faDownload} className="h-4 w-4" />
+							</Button>
+							<Button href={`mailto:${profile.email}`}>
+								Contact
+								<FontAwesomeIcon icon={faEnvelope} className="h-4 w-4" />
+							</Button>
+						</motion.div>
+						<motion.div variants={child} className="mt-8 flex flex-wrap items-center gap-6 text-sm font-bold theme-muted">
+							<a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 transition hover:text-emerald-600">
+								<FontAwesomeIcon icon={faLinkedin} className="h-5 w-5 theme-accent" />
+								LinkedIn
+							</a>
+							<a href={profile.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 transition hover:text-emerald-600">
+								<FontAwesomeIcon icon={faGithub} className="h-5 w-5 theme-accent" />
+								GitHub
+							</a>
+							<a href={profile.phoneHref} className="inline-flex items-center gap-2 transition hover:text-emerald-600">
+								<FontAwesomeIcon icon={faPhone} className="h-4 w-4 theme-accent" />
+								{profile.phone}
+							</a>
+						</motion.div>
+					</motion.div>
+
+					<HeroVisual />
+				</div>
+			</section>
+
+			<section id="about" className="theme-section px-6 py-24 md:px-10 lg:px-20">
+				<div className="mx-auto max-w-7xl">
+					<SectionHeader
+						eyebrow="What I Do"
+						title="Balanced engineering with real production context."
+						description="A recruiter-friendly view of Ivan's strongest lanes: AI automation, enterprise software delivery, and full-stack systems."
+					/>
+					<div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+						{roleCards.map((card, index) => (
+							<motion.article
+								key={card.title}
+								{...fadeUp}
+								transition={{ ...fadeUp.transition, delay: index * 0.08 }}
+								className="theme-card rounded-[1.5rem] p-6 transition hover:-translate-y-2">
+								<div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500 text-white">
+									<FontAwesomeIcon icon={card.icon} className="h-5 w-5" />
+								</div>
+								<h3 className="text-xl font-bold theme-text">{card.title}</h3>
+								<p className="mt-3 text-sm leading-6 theme-muted">{card.text}</p>
+							</motion.article>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<section id="projects" className="theme-section theme-band px-6 py-24 md:px-10 lg:px-20">
+				<div className="mx-auto max-w-7xl">
+					<div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+						<SectionHeader
+							eyebrow="Selected Work"
+							title="Featured projects with equal focus."
+							description="Inspired by animated portfolio grids, but every project gets room to stand on its own."
+						/>
+						<motion.div {...fadeUp} className="mb-10">
+							<Button href="/projects">
+								All Projects
+								<FontAwesomeIcon icon={faArrowRight} className="h-4 w-4" />
+							</Button>
+						</motion.div>
+					</div>
+					<div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-5">
+						{projectsForHome.map((project, index) => (
+							<ProjectMosaicCard project={project} index={index} key={project.slug} />
+						))}
+					</div>
+				</div>
+			</section>
+
+			<section id="skills" className="theme-section px-6 py-24 md:px-10 lg:px-20">
+				<div className="mx-auto max-w-7xl">
+					<SectionHeader
+						eyebrow="Stack"
+						title="Skills shown with movement, not stiff boxes."
+						description="The bars are visual grouping indicators, not fabricated proficiency scores."
+					/>
+					<div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
+						{skillGroups.map((group, index) => (
+							<motion.div
+								key={group.group}
+								{...fadeUp}
+								transition={{ ...fadeUp.transition, delay: index * 0.08 }}
+								className="theme-card rounded-[1.5rem] p-6">
+								<div className="mb-5 flex items-center justify-between">
+									<h3 className="text-xl font-bold theme-text">{group.group}</h3>
+									<FontAwesomeIcon icon={faLayerGroup} className="h-4 w-4 theme-accent" />
+								</div>
+								<div className="space-y-3">
+									{group.items.slice(0, 7).map((item, itemIndex) => (
+										<div key={item}>
+											<div className="mb-1 flex justify-between text-sm font-semibold theme-soft">
+												<span>{item}</span>
+												<span>{itemIndex < 3 ? "Core" : "Used"}</span>
+											</div>
+											<div className="h-2 overflow-hidden rounded-full bg-[color-mix(in_srgb,var(--border)_55%,transparent)]">
+												<motion.div
+													initial={{ width: 0 }}
+													whileInView={{ width: `${88 - itemIndex * 6}%` }}
+													viewport={{ once: true }}
+													transition={{ duration: 0.8, ease: "easeOut" }}
+													className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-cyan-400"
+												/>
+											</div>
+										</div>
+									))}
+								</div>
+							</motion.div>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<section id="experience" className="theme-section theme-band px-6 py-24 md:px-10 lg:px-20">
+				<div className="mx-auto max-w-7xl">
+					<SectionHeader
+						eyebrow="Experience"
+						title="A timeline shaped by support, data, and software delivery."
+						description="Professional software and AI engineering history at PT Jababeka Tbk."
+					/>
+					<div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+						{timeline.map((item, index) => (
+							<motion.article
+								key={item.title}
+								{...fadeUp}
+								transition={{ ...fadeUp.transition, delay: index * 0.08 }}
+								className="theme-card rounded-[1.5rem] p-6">
+								<p className="text-sm font-bold theme-accent">{item.period}</p>
+								<h3 className="mt-4 text-xl font-bold theme-text">{item.title}</h3>
+								<p className="mt-1 text-sm font-semibold theme-muted">{item.meta}</p>
+								<p className="mt-4 text-sm leading-6 theme-muted">{item.text}</p>
+							</motion.article>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<section className="theme-section px-6 py-16 md:px-10 lg:px-20">
+				<div className="mx-auto max-w-7xl">
+					<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
+						{achievementCards.map((item, index) => (
+							<motion.article
+								key={`${item.value}-${item.label}`}
+								{...fadeUp}
+								transition={{ ...fadeUp.transition, delay: index * 0.05 }}
+								className="theme-card rounded-[1.5rem] p-5">
+								<p className="text-3xl font-bold theme-accent">{item.value}</p>
+								<h3 className="mt-3 text-sm font-bold theme-text">{item.label}</h3>
+								<p className="mt-2 text-xs leading-5 theme-muted">{item.detail}</p>
+							</motion.article>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<section id="contact" className="theme-section px-6 pb-24 pt-8 md:px-10 lg:px-20">
+				<div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 rounded-[2rem] p-8 md:grid-cols-[1fr_0.8fr] md:p-10 theme-card">
+					<motion.div {...fadeUp}>
+						<p className="mb-3 text-sm font-bold uppercase tracking-[0.24em] theme-accent">
+							Contact
+						</p>
+						<h2 className="text-3xl font-bold md:text-5xl theme-text">
+							Let&apos;s talk about the next role or project.
+						</h2>
+						<p className="mt-5 max-w-2xl leading-7 theme-muted">
+							{profile.availability} Reach out for AI engineering, software
+							engineering, full-stack, or application support opportunities.
+						</p>
+					</motion.div>
+					<motion.div {...fadeUp} className="flex flex-col justify-center gap-3 text-sm font-semibold">
+						<Button href={`mailto:${profile.email}`} variation="primary">
+							Email Me
+							<FontAwesomeIcon icon={faEnvelope} className="h-4 w-4" />
+						</Button>
+						<Button href={profile.cvUrl} target="_blank" rel="noopener noreferrer">
+							Resume
+							<FontAwesomeIcon icon={faDownload} className="h-4 w-4" />
+						</Button>
+					</motion.div>
+				</div>
+			</section>
+		</main>
+	);
+}

@@ -55,6 +55,20 @@ export default function Education() {
 		Certifications: [
 			{
 				icon: faAward,
+				title: "Future-Ready Industrial Parks",
+				subtitle: "Mastering AI Trends & Agentic Workflows — 7-Network / JETData.AI",
+				date: "Completed",
+				color: "from-emerald-400 to-teal-600",
+			},
+			{
+				icon: faAward,
+				title: "AI & Data Platform Training",
+				subtitle: "Discover AI — Snowflake",
+				date: "Completed",
+				color: "from-blue-400 to-indigo-600",
+			},
+			{
+				icon: faAward,
 				title: "AWS Training & Certification",
 				subtitle: "Amazon QuickSight: Getting Started",
 				date: "Completed",
@@ -132,7 +146,6 @@ export default function Education() {
 
 	// Flatten all achievements into a single array for easier limiting
 	const allAchievements = Object.entries(achievementsByYear)
-		.sort(([a], [b]) => parseInt(b) - parseInt(a))
 		.flatMap(([year, achievements]) =>
 			achievements.map((achievement) => ({ ...achievement, year }))
 		);
@@ -144,74 +157,73 @@ export default function Education() {
 
 	return (
 		<Wrapper>
-			<section className="grid gap-8 md:gap-12">
-				{" "}
+			<section className="grid gap-8 md:gap-12 w-full">
 				{/* Header */}
 				<motion.div
 					className="text-center space-y-2"
 					initial={{ opacity: 0, y: 30 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6 }}>
-					<h1 className="text-3xl md:text-4xl font-bold tracking-tighter">
-						Education
+					<h1 className="text-3xl md:text-4xl font-bold tracking-tighter text-white">
+						Education & Certifications
 					</h1>
-					<p className="text-muted-foreground max-w-[800px] mx-auto">
-						Get to know more about my educational background.
+					<p className="text-slate-400 max-w-[800px] mx-auto">
+						My formal educational background and verified professional certifications.
 					</p>
 				</motion.div>
 				{/* Main Content */}
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
 					{/* Education Section - Left */}
 					<motion.div
 						className="px-5"
 						initial={{ opacity: 0, x: -50 }}
 						whileInView={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.8, delay: 0.2 }}>
-					<div className="font-medium text-lg mb-4">Aug 2025 - Present</div>
-					<div>
-						<h2 className="font-semibold text-xl">
-							President University
-						</h2>
-						<h3 className="text-md font-normal mb-3">
-							Information System - Data Science
+						<div className="font-medium text-lg mb-4 text-emerald-400">Current Studies</div>
+						<div>
+							<h2 className="font-semibold text-xl text-white">
+								President University
+							</h2>
+							<h3 className="text-md font-normal mb-3 text-slate-300">
+								Information System - Data Science
 							</h3>
 							<div className="gap-4 mb-4 flex items-stretch md:h-[300px] xl:h-[400px]">
 								<div className="flex-[1] transition-all duration-300 ease-in-out hover:flex-[3] group relative">
 									<Image
 										src={Me5}
-										alt="University"
-									fill={true}
+										alt="University Event"
+										fill={true}
 										sizes="(max-width: 768px) 100vw, 33vw"
-										className="rounded-lg w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300 ease-in-out"
+										className="rounded-lg w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300 ease-in-out border border-slate-800"
 									/>
 								</div>
 								<div className="flex-[1] transition-all duration-300 ease-in-out hover:flex-[3] group relative">
 									<Image
 										src={Me4}
-										alt="University"
-									fill={true}
+										alt="Graduation Previews"
+										fill={true}
 										sizes="(max-width: 768px) 100vw, 33vw"
-										className="rounded-lg w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300 ease-in-out"
+										className="rounded-lg w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300 ease-in-out border border-slate-800"
 									/>
 								</div>
 								<div className="flex-[1] transition-all duration-300 ease-in-out hover:flex-[3] group relative">
 									<Image
 										src={Me6}
-										alt="University"
-									fill={true}
+										alt="University Activities"
+										fill={true}
 										sizes="(max-width: 768px) 100vw, 33vw"
-										className="rounded-lg w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300 ease-in-out"
+										className="rounded-lg w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300 ease-in-out border border-slate-800"
 									/>
 								</div>
 							</div>
 							<div className="flex items-center gap-2">
-								<p className="text-gray-600 text-justify title text-lg">
+								<p className="text-slate-400 text-justify title text-lg leading-relaxed">
 									I&rsquo;m a final year Information Systems student at{" "}
-									<span className="text-black font-medium">
+									<span className="text-white font-semibold">
 										President University
 									</span>
 									, specializing in{" "}
-									<span className="text-black font-medium">
+									<span className="text-white font-semibold">
 										Data Science, software development, and AI automation
 									</span>
 									. My passion lies in building practical solutions that leverage
@@ -219,12 +231,12 @@ export default function Education() {
 									<br />
 									<br />
 									I have hands-on experience developing an{" "}
-									<span className="text-black font-medium">
+									<span className="text-white font-semibold">
 										enterprise-level helpdesk chatbot for PT Jababeka Tbk
 									</span>{" "}
 									that integrates machine learning, NLP, OCR, and automated ticket
 									creation. I&rsquo;m skilled in{" "}
-									<span className="text-black font-medium">
+									<span className="text-white font-semibold">
 										web application development, implementing data pipelines, and
 										applying machine learning techniques
 									</span>{" "}
@@ -232,7 +244,7 @@ export default function Education() {
 									<br />
 									<br />
 									I enjoy working in{" "}
-									<span className="text-black font-medium">
+									<span className="text-white font-semibold">
 										cross-functional teams
 									</span>{" "}
 									and thrive in fast-paced environments where problem-solving and
@@ -241,21 +253,21 @@ export default function Education() {
 								</p>
 							</div>
 							<div className="flex flex-wrap gap-2 mt-4 text-sm">
-								<div className="bg-gray-300 text-black px-2 py-1 rounded-2xl">
-								GPA: 3.67 out of 4
+								<div className="bg-slate-900 border border-slate-800 text-slate-300 px-3.5 py-1.5 rounded-full font-semibold">
+									GPA: 3.67 out of 4.00
 								</div>
 							</div>
 						</div>
-					</motion.div>{" "}
+					</motion.div>
 					{/* Achievements Section - Right */}
 					<motion.div
 						className="flex flex-col justify-start px-5 md:px-0"
 						initial={{ opacity: 0, x: 50 }}
 						whileInView={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.8, delay: 0.4 }}>
-						<h2 className="font-semibold text-xl mt-7">Achievements</h2>
-						<p className="text-md font-normal mb-3 md:mb-6">
-							Some of my achievements during my study.
+						<h2 className="font-semibold text-xl mt-7 text-emerald-400">Achievements & Credentials</h2>
+						<p className="text-md font-normal mb-3 md:mb-6 text-slate-300">
+							Professional training, course credentials, and event achievements.
 						</p>
 
 						{/* Achievements Container with transparent bottom effect */}
@@ -276,17 +288,17 @@ export default function Education() {
 											visibleAchievements[index - 1]?.year !==
 												achievement.year ? (
 												<div className="flex items-center gap-3 mb-3 mt-2">
-													<div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
-														<span className="text-xs font-bold text-gray-600">
+													<div className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center">
+														<span className="text-xs font-bold text-slate-300">
 															{achievement.year}
 														</span>
 													</div>
-													<div className="flex-1 h-px bg-gradient-to-r from-gray-300 to-transparent"></div>
+													<div className="flex-1 h-[1px] bg-gradient-to-r from-slate-800 to-transparent"></div>
 												</div>
 											) : null}
 
-											{/* Glassmorphism achievement card with monochrome to color effect */}
-											<div className="bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl p-4 shadow-lg hover:bg-white/30 transition-all duration-300 hover:shadow-xl grayscale hover:grayscale-0">
+											{/* Glassmorphism achievement card */}
+											<div className="bg-slate-900/40 backdrop-blur-md border border-slate-900 rounded-2xl p-4 shadow-lg hover:bg-slate-900/60 transition-all duration-300 hover:shadow-xl hover:border-emerald-500/20">
 												<div className="flex items-center gap-4">
 													<div
 														className={`aspect-square w-10 rounded-full bg-gradient-to-r ${achievement.color} flex items-center justify-center text-primary-foreground transition-all duration-300`}>
@@ -296,9 +308,9 @@ export default function Education() {
 														/>
 													</div>
 													<div>
-														<h3 className="font-medium">{achievement.title}</h3>
-														<p className="text-sm">{achievement.subtitle}</p>
-														<div className="text-xs text-gray-500 mt-1">
+														<h3 className="font-semibold text-white text-base">{achievement.title}</h3>
+														<p className="text-sm text-slate-400">{achievement.subtitle}</p>
+														<div className="text-xs text-slate-500 mt-1">
 															{achievement.date}
 														</div>
 													</div>
@@ -311,7 +323,7 @@ export default function Education() {
 
 							{/* Transparent bottom overlay when not expanded */}
 							{!isExpanded && hasMoreAchievements && (
-								<div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-stale-300 via-stale/70 to-transparent pointer-events-none"></div>
+								<div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#020617] via-[#020617]/70 to-transparent pointer-events-none"></div>
 							)}
 
 							{/* Expand/Collapse Button */}
@@ -323,11 +335,11 @@ export default function Education() {
 									transition={{ delay: 0.5 }}>
 									<button
 										onClick={() => setIsExpanded(!isExpanded)}
-										className="flex items-center gap-2 px-6 py-3 bg-white/30 backdrop-blur-md border border-white/40 rounded-full hover:bg-white/40 transition-all duration-300 text-sm font-medium shadow-lg hover:shadow-xl">
+										className="flex items-center gap-2 px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-slate-950 rounded-full transition-all duration-300 text-sm font-bold shadow-lg">
 										<span>
 											{isExpanded
 												? `Show Less`
-												: `Show ${allAchievements.length - 4} More`}
+												: `Show ${allAchievements.length - 6} More`}
 										</span>
 										<FontAwesomeIcon
 											icon={isExpanded ? faChevronUp : faChevronDown}

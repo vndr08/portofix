@@ -1,115 +1,105 @@
 "use client";
-import { motion } from "framer-motion";
 
+import { motion } from "framer-motion";
+import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
-import FixedButon from "@/components/FixedButton";
-import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import {
+	faArrowUpRightFromSquare,
+	faChevronLeft,
+} from "@fortawesome/free-solid-svg-icons";
+import FixedButton from "@/components/FixedButton";
 import Projects from "@/json/data.json";
-import Link from "next/link";
 
 export default function Page() {
-	const projects = Projects.Projects;
-	return (
-		<>
-			<main className="overflow-hidden">
-				<FixedButon href="/projects">
-					<FontAwesomeIcon icon={faChevronLeft} className="text-black pr-10" />
-				</FixedButon>
-				<div className="min-h-screen w-screen mt-10 md:mt-0  p-10 flex justify-center items-center flex-col mb-10">
-					<div className="flex justify-center items-center flex-col my-5 self-start ">
-						<motion.div
-							className="bg-gray-700 w-28 h-1 rounded-full mb-3 self-start"
-							initial={{
-								opacity: 0,
-								x: -250,
-							}}
-							animate={{
-								opacity: 1,
-								x: 50,
-							}}
-							transition={{
-								delay: 0.5,
-								duration: 1,
-								type: "spring",
-							}}></motion.div>
-						<motion.div
-							className="bg-gray-700 w-28 h-1 rounded-full"
-							initial={{
-								opacity: 0,
-								x: 200,
-							}}
-							animate={{
-								opacity: 1,
-								x: 0,
-							}}
-							transition={{
-								delay: 0.5,
-								duration: 1,
-								type: "spring",
-							}}></motion.div>
-						<motion.h1
-							className="text-3xl font-bold mt-3"
-							initial={{
-								opacity: 0,
-								x: -200,
-							}}
-							animate={{
-								opacity: 1,
-								x: 0,
-							}}
-							transition={{
-								delay: 0.7,
-								duration: 1,
-								type: "spring",
-							}}>
-							Archive
-						</motion.h1>
-					</div>
+	const projects = Projects.Projects.filter((project) => project.show);
 
-					<div className="mx-auto container md:px-10 grid grid-cols-1 mb-">
-						{/* invisible table */}
-						<table className="space-y-3">
-							<thead>
-								<tr className=" hover:shadow-md  transition-all ease duration-500">
-									<th className="text-start">Year</th>
-									<th className="text-start">Title</th>
-									<th className="text-start">Technology</th>
-									<th className="text-start">Link</th>
+	return (
+		<main className="theme-page px-6 pb-16 pt-28 md:px-10 lg:px-20">
+			<FixedButton href="/projects">
+				<FontAwesomeIcon icon={faChevronLeft} className="h-4 w-4" />
+			</FixedButton>
+
+			<div className="mx-auto max-w-7xl">
+				<motion.div
+					initial={{ opacity: 0, y: 24 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.55, ease: "easeOut" }}
+					className="mb-10">
+					<p className="mb-3 text-sm font-bold uppercase tracking-[0.24em] theme-accent">
+						Archive
+					</p>
+					<h1 className="text-4xl font-bold theme-text md:text-6xl">
+						Project index
+					</h1>
+					<p className="mt-4 max-w-2xl text-base leading-7 theme-muted">
+						A compact list for quickly scanning years, titles, roles, and
+						technologies.
+					</p>
+				</motion.div>
+
+				<div className="theme-card overflow-hidden rounded-[1.5rem]">
+					<div className="overflow-x-auto">
+						<table className="w-full min-w-[820px] border-collapse text-left text-sm">
+							<thead className="bg-emerald-500 text-white">
+								<tr>
+									<th className="px-5 py-4 font-semibold">Year</th>
+									<th className="px-5 py-4 font-semibold">Title</th>
+									<th className="px-5 py-4 font-semibold">Role</th>
+									<th className="px-5 py-4 font-semibold">Technology</th>
+									<th className="px-5 py-4 font-semibold">Links</th>
 								</tr>
 							</thead>
 							<tbody>
-							{projects.map((project) => (
-								<tr
-									key={project.slug}
-										className="hover:shadow-md transition-all ease duration-500">
-										<td>{project.year}</td>
-										<td>
-											<Link href={`/projects/${project.slug}`}>
+								{projects.map((project) => (
+									<tr
+										key={project.slug}
+										className="border-t transition hover:bg-[color-mix(in_srgb,var(--accent-soft)_70%,transparent)] theme-border">
+										<td className="px-5 py-4 font-semibold theme-soft">
+											{project.year}
+										</td>
+										<td className="px-5 py-4">
+											<Link
+												href={`/projects/${project.slug}`}
+												className="font-bold theme-text transition hover:text-emerald-600">
 												{project.title}
 											</Link>
 										</td>
-										<td>{project.tech.map((t) => `${t}, `)}</td>
-										<td>
-											<div className="flex flex-row justify-center items-center">
+										<td className="px-5 py-4 theme-muted">
+											{project.role || "Project"}
+										</td>
+										<td className="px-5 py-4 theme-muted">
+											{project.tech.join(", ")}
+										</td>
+										<td className="px-5 py-4">
+											<div className="flex items-center gap-3">
 												{project.code && (
-													<a href={project.code} title="Link to GitHub">
-														<FontAwesomeIcon
-															icon={faGithub}
-															className="text-xl mr-2"
-														/>
+													<a
+														href={project.code}
+														target="_blank"
+														rel="noopener noreferrer"
+														title="Link to GitHub"
+														className="theme-muted transition hover:text-emerald-600">
+														<FontAwesomeIcon icon={faGithub} className="h-4 w-4" />
 													</a>
 												)}
 												{project.preview && (
 													<a
 														href={project.preview}
-														title="Link to project preview">
+														target="_blank"
+														rel="noopener noreferrer"
+														title="Link to project preview"
+														className="theme-muted transition hover:text-emerald-600">
 														<FontAwesomeIcon
 															icon={faArrowUpRightFromSquare}
-															className="text-xl"
+															className="h-4 w-4"
 														/>
 													</a>
+												)}
+												{!project.code && !project.preview && (
+													<span className="text-xs font-semibold theme-muted">
+														Details only
+													</span>
 												)}
 											</div>
 										</td>
@@ -119,7 +109,7 @@ export default function Page() {
 						</table>
 					</div>
 				</div>
-			</main>
-		</>
+			</div>
+		</main>
 	);
 }

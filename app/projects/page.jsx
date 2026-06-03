@@ -1,149 +1,162 @@
 "use client";
+
 import { useEffect, useState } from "react";
-import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Button from "@/components/Button";
-import Image from "next/image";
-
-// images
 import ProjectAll from "@/public/image/projects.png";
-
-import Hr from "@/components/Hr";
 import ProjectCard from "./components/ProjectCard";
 import Projects from "@/json/data.json";
-import FixedButon from "@/components/FixedButton";
+import profile from "@/json/profile.json";
+import FixedButton from "@/components/FixedButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import {
+	faArrowDown,
+	faChevronLeft,
+	faDownload,
+	faLayerGroup,
+} from "@fortawesome/free-solid-svg-icons";
 
-const category = {
+const categories = {
+	all: "All",
 	"1": "Web Development",
 	"2": "AI & Machine Learning",
-	"9": "Other",
 };
 
 export default function Page() {
-	const [activeCategory, setActiveCategory] = useState("1");
+	const [activeCategory, setActiveCategory] = useState("all");
 	const projects = Projects.Projects.filter((item) => item.show === true);
+	const featuredCount = projects.filter((project) => project.featured).length;
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
+
 	return (
-		<>
-			<main className="overflow-hidden">
-				<FixedButon href="/#projects">
-					<FontAwesomeIcon icon={faChevronLeft} className="text-black pr-10" />
-				</FixedButon>
-				<div className="relative h-screen w-screen  gap-4 p-10 flex justify-center items-center flex-col mb-10 overflow-hidden">
-					<div className="z-0 mb-48 md:mb-0  md:absolute top-1/4  md:right-[10%] md:-translate-y-16 ">
-						<motion.div
-							initial={{ scale: 1 }}
-							animate={{ scale: 1.6 }}
-							transition={{ duration: 1, ease: "circOut" }}
-							className="bg-slate-300 rounded-sm h-[400px] md:h-[600px] w-[80vw] md:w-[30vw] grayscale hover:grayscale-0 ">
-							<Image
-								src={ProjectAll}
-								alt="Ivander"
-								fill
-								sizes="(max-width: 768px) 80vw, 30vw"
-								placeholder="blur"
-								className="w-full h-full object-cover"
-							/>
-						</motion.div>
-					</div>
-					<div className="z-10 w-full absolute md:w-auto md:left-[10%] top-[60%] md:top-1/3 col-span-2 flex flex-col justify-center items-start md:items-start text-start px-10 pt-4 backdrop-filter backdrop-blur-sm md:backdrop-blur-none md:backdrop-filter-none bg-gray-100 bg-opacity-50 md:bg-transparent md:pt-0">
-						<h1 className="md:bg-white bg-transparent lg:bg-transparent bg-opacity-50 md-px-0 text-black text-5xl md:text-8xl font-bold">
-							My Projects
-						</h1>
-						<Hr />
-						<p className="title  text-xl mt-4 tracking-wider text-gray-900 leading-[1.7rem] mb-5">
-							List of my projects that I have done and{" "}
-							<span className="bg-transparent md:bg-gray-100 bg-opacity-50 xl:bg-transparent">
-								{" "}
-								currently working on.
-							</span>
+		<main className="theme-page relative">
+			<div className="hero-grid-bg pointer-events-none absolute inset-x-0 top-0 h-[620px] opacity-45" />
+			<div className="shape shape-ring right-[12%] top-28" />
+			<div className="shape shape-dots left-[7%] top-48" />
+			<FixedButton href="/#projects">
+				<FontAwesomeIcon icon={faChevronLeft} className="h-4 w-4" />
+			</FixedButton>
+
+			<section className="theme-section px-6 pb-16 pt-28 md:px-10 lg:px-20">
+				<div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 lg:grid-cols-[1fr_0.8fr]">
+					<motion.div
+						initial={{ opacity: 0, y: 24 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.55, ease: "easeOut" }}>
+						<p className="mb-3 text-sm font-bold uppercase tracking-[0.24em] theme-accent">
+							Projects
 						</p>
-						<motion.div
-							initial={{ opacity: 0, y: 100 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.5, ease: "circOut" }}
-							onClick={() => {
-								window.scrollTo({
-									top: 1000,
-									behavior: "smooth",
-								});
-							}}
-							className="mb-3">
-							<Button variation="primary">Scroll Down</Button>
-						</motion.div>
+						<h1 className="text-4xl font-bold leading-tight theme-text md:text-6xl">
+							Animated work grid for AI, software, and full-stack projects.
+						</h1>
+						<p className="mt-5 max-w-2xl text-base leading-8 theme-muted md:text-lg">
+							A curated collection of dashboards, AI tools, data automation, and
+							application systems built from real project contexts.
+						</p>
+						<div className="mt-8 flex flex-col gap-3 sm:flex-row">
+							<Button href="#project-list" variation="primary">
+								Browse Work
+								<FontAwesomeIcon icon={faArrowDown} className="h-4 w-4" />
+							</Button>
+							<Button href={profile.cvUrl} target="_blank" rel="noopener noreferrer">
+								Open Resume
+								<FontAwesomeIcon icon={faDownload} className="h-4 w-4" />
+							</Button>
+						</div>
+					</motion.div>
+					<motion.div
+						initial={{ opacity: 0, x: 30 }}
+						animate={{ opacity: 1, x: 0 }}
+						transition={{ duration: 0.65, ease: "easeOut", delay: 0.1 }}
+						className="relative">
+						<div className="theme-card relative aspect-[4/3] overflow-hidden rounded-[2rem] p-3">
+							<div className="relative h-full overflow-hidden rounded-[1.5rem]">
+								<Image
+									src={ProjectAll}
+									alt="Portfolio projects preview"
+									fill
+									priority
+									sizes="(max-width: 1024px) 90vw, 40vw"
+									placeholder="blur"
+									className="object-cover"
+								/>
+							</div>
+						</div>
+						<div className="floating-orbit theme-card absolute -bottom-5 left-5 rounded-2xl px-5 py-4">
+							<p className="text-3xl font-bold theme-text">{projects.length}</p>
+							<p className="text-xs font-bold uppercase tracking-wider theme-muted">
+								projects documented
+							</p>
+						</div>
+						<div className="floating-orbit-delay theme-card absolute -right-2 top-8 hidden rounded-2xl px-5 py-4 sm:block">
+							<p className="text-3xl font-bold theme-accent">{featuredCount}</p>
+							<p className="text-xs font-bold uppercase tracking-wider theme-muted">
+								featured
+							</p>
+						</div>
+					</motion.div>
+				</div>
+			</section>
+
+			<section id="project-list" className="theme-section theme-band px-6 py-16 md:px-10 lg:px-20">
+				<div className="mx-auto max-w-7xl">
+					<div className="mb-8 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+						<div>
+							<p className="mb-3 text-sm font-bold uppercase tracking-[0.24em] theme-accent">
+								Portfolio Grid
+							</p>
+							<h2 className="text-3xl font-bold theme-text md:text-5xl">
+								Filter, scan, and open case studies.
+							</h2>
+						</div>
+						<div className="flex flex-wrap gap-3">
+							{Object.entries(categories).map(([key, label]) => {
+								const count =
+									key === "all"
+										? projects.length
+										: projects.filter((project) =>
+												project.category.includes(Number(key))
+										  ).length;
+
+								return (
+									<button
+										key={key}
+										type="button"
+										className={`rounded-full px-4 py-2 text-sm font-bold transition ${
+											activeCategory === key
+												? "bg-emerald-500 text-white theme-button-shadow"
+												: "theme-chip hover:text-emerald-600"
+										}`}
+										onClick={() => setActiveCategory(key)}>
+										{label} ({count})
+									</button>
+								);
+							})}
+						</div>
+					</div>
+
+					<div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+						{projects.map((project) => (
+							<ProjectCard
+								project={project}
+								key={project.slug}
+								activeCategory={activeCategory}
+							/>
+						))}
+					</div>
+
+					<div className="mt-10 flex justify-center">
+						<Button href="/projects/archive">
+							<FontAwesomeIcon icon={faLayerGroup} className="h-4 w-4" />
+							View Compact Archive
+						</Button>
 					</div>
 				</div>
-				<div className="mt-10 flex flex-col justify-start items-center w-full pl-10 md:pl-32">
-					<div className="flex justify-center items-center flex-col my-5 self-start ">
-						<Hr variant="long"></Hr>
-						<h1 className="text-3xl font-bold mt-3">Other Note Worthy Projects</h1>
-					</div>
-				</div>
-
-				{/* choose category */}
-				<motion.div
-					initial={{
-						opacity: 0,
-						x: 200,
-					}}
-					whileInView={{
-						opacity: 1,
-						x: 0,
-					}}
-					transition={{
-						type: "spring",
-					}}
-					className="flex flex-row justify-center items-start flex-wrap gap-3 md:gap-5 my-5 ">
-				{Object.keys(category).map((key) => (
-					<motion.button
-						key={key}
-						type="button"
-						whileHover={{ scale: 1.05 }}
-						whileTap={{ scale: 0.98 }}
-						className={`px-4 md:px-6 py-2 rounded-lg cursor-pointer transition-all ease duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 font-medium ${
-							String(activeCategory) === String(key)
-								? "bg-emerald-600 text-white shadow-lg"
-								: "bg-gray-600 text-white hover:bg-emerald-500"
-						}`}
-						onClick={(e) => {
-							e.preventDefault();
-							setActiveCategory(String(key));
-						}}>
-						{category[key]}
-					</motion.button>
-				))}
-				</motion.div>
-
-				{/* projects */}
-				<div className="w-screen mx-auto container gap-4 px-10 grid grid-cols-1 md:grid-cols-2 mb-10 cursor-pointer">
-					{projects.map((project) => (
-						<ProjectCard
-							project={project}
-							key={project.slug}
-							activeCategory={activeCategory}
-						/>
-					))}
-				</div>
-
-				{/* view in archive btn */}
-				<motion.div
-					initial={{
-						opacity: 0,
-					}}
-					whileInView={{
-						opacity: 1,
-					}}
-					className="flex justify-center items-center flex-col my-5 self-start ">
-					<Button variation="primary">
-						<Link href="projects/archive">View In Archive</Link>
-					</Button>
-				</motion.div>
-			</main>
-		</>
+			</section>
+		</main>
 	);
 }

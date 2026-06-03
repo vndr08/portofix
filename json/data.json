@@ -2,11 +2,54 @@
   "Projects": [
     {
       "show": true,
+      "title": "WhatsApp-Based Issue Reporting & Analytics Dashboard",
+      "desc": [
+        "Developed an AI-powered WhatsApp chatbot for automated issue reporting, intent detection, and ticket creation integrated with the osTicket system for PT Andakara Informatika Nusantara.",
+        "Built a comprehensive analytics dashboard to visualize issue trends, reporting frequencies, and resolution statistics for management decision-making.",
+        "Handled chatbot core logic, WhatsApp Gateway integration, NLP using Gemini AI, and backend integration with the TRAMOS Web system."
+      ],
+      "featured": true,
+      "summary": "AI-powered WhatsApp chatbot for automated issue reporting integrated with osTicket, plus an analytics dashboard.",
+      "role": "AI & Full-stack Developer",
+      "impact": "Automated ticket creation workflows and provided real-time issue statistics, reducing manual ticket dispatching and improving data visibility.",
+      "highlights": [
+        "Built chatbot core logic and Gemini AI integration for natural language understanding.",
+        "Connected WhatsApp Gateway with osTicket system for automated support ticket dispatch.",
+        "Developed an analytics dashboard for management reporting and trend visualization."
+      ],
+      "year": "2025",
+      "preview": "",
+      "code": "",
+      "thumbnail": "/image/projects.png",
+      "images": [],
+      "tech": [
+        "Gemini AI",
+        "FastAPI",
+        "React",
+        "NodeJS",
+        "MySQL",
+        "WhatsApp API",
+        "osTicket"
+      ],
+      "slug": "whatsapp-issue-reporting",
+      "category": [1, 2]
+    },
+    {
+      "show": true,
       "title": "Kalbe Engineering System Dashboard",
       "desc": [
         "Built an interactive web dashboard for PT Kalbio Global Medika to monitor energy consumption, work orders, MTTR (Mean Time To Repair), MTBF (Mean Time Between Failures), and CAPA (Corrective and Preventive Actions).",
         "Implemented real-time data visualization and monitoring capabilities. Presented and implemented solution based on client needs, delivering a professional dashboard for engineering team oversight and performance tracking.",
         "The dashboard provides critical insights for operational efficiency and helps identify areas for improvement in maintenance workflows."
+      ],
+      "featured": true,
+      "summary": "Engineering dashboard for monitoring energy, work orders, maintenance metrics, and CAPA workflows.",
+      "role": "Dashboard Developer",
+      "impact": "Helped the engineering team review operational performance through clearer maintenance and energy monitoring.",
+      "highlights": [
+        "Built dashboard views for energy consumption, work orders, MTTR, MTBF, and CAPA.",
+        "Translated client needs into a professional monitoring interface.",
+        "Focused on operational visibility for maintenance workflows."
       ],
       "year": "2025",
       "preview": "",
@@ -33,6 +76,15 @@
         "Developed a web-based system to detect student performance issues using machine learning algorithms, specifically the Random Forest classifier. This system helps educators identify students who are at risk of underperformance early in the academic term.",
         "Integrated interactive dashboards and model testing interface for practical use by educators. The system enables teachers to upload student data and receive predictions on performance issues, allowing for more targeted early intervention.",
         "Helped improve early intervention strategies in student learning, enabling more targeted support and potentially better academic outcomes for at-risk students."
+      ],
+      "featured": true,
+      "summary": "Machine learning web system for detecting student performance issues with a Random Forest classifier.",
+      "role": "Machine Learning Developer",
+      "impact": "Supported early intervention decisions by turning student data into performance-risk predictions.",
+      "highlights": [
+        "Built a model testing interface for educators.",
+        "Implemented Random Forest classification for performance issue detection.",
+        "Connected dashboard workflows with practical student support use cases."
       ],
       "year": "2025",
       "preview": "",
@@ -61,6 +113,15 @@
         "Features include knowledge-base retrieval for quick answers, intelligent troubleshooting, and automated helpdesk ticket creation. The system handles employee inquiries efficiently and escalates complex issues to the appropriate support team.",
         "Successfully deployed in production environment at PT Jababeka Tbk, reducing support response time and improving employee satisfaction with technical support services."
       ],
+      "featured": true,
+      "summary": "Internal AI agent chatbot for employee support with retrieval, troubleshooting, OCR, and ticket creation.",
+      "role": "AI Application Developer",
+      "impact": "Improved internal support workflows by automating answers, troubleshooting, and helpdesk ticket creation.",
+      "highlights": [
+        "Built an AI support system with LangChain, FastAPI, and Ollama.",
+        "Integrated NLP, OCR, knowledge-base retrieval, and ticket creation.",
+        "Designed for enterprise employee-support workflows."
+      ],
       "year": "2025",
       "preview": "",
       "code": "",
@@ -88,6 +149,15 @@
         "The application provides an intuitive interface for uploading files, configuring detection parameters, and viewing detailed reports of duplicates found. Features include column matching, threshold configuration, and export functionality.",
         "Successfully deployed at PT Jababeka Tbk to streamline data validation processes and improve data integrity across business operations."
       ],
+      "featured": true,
+      "summary": "Streamlit automation tool for detecting duplicate records in CSV and Excel files.",
+      "role": "Data Automation Developer",
+      "impact": "Reduced manual data-quality review by providing a dedicated duplicate-detection workflow.",
+      "highlights": [
+        "Built upload, configuration, report, and export workflows.",
+        "Supported CSV and Excel data validation.",
+        "Created for internal data quality operations at PT Jababeka Tbk."
+      ],
       "year": "2025",
       "preview": "",
       "code": "",
@@ -114,6 +184,14 @@
         "The system handles patient billing, insurance processing, payment tracking, and financial reporting. Includes features for managing receivables, processing payments, and generating financial statements.",
         "Provides insights into healthcare revenue management and demonstrates proficiency in accounting system design and implementation."
       ],
+      "summary": "Hospital revenue-cycle simulation covering billing, transactions, receivables, and reporting workflows.",
+      "role": "Full-stack Developer",
+      "impact": "Demonstrated how accounting information system concepts can be translated into a working healthcare workflow.",
+      "highlights": [
+        "Modeled patient billing and insurance processing flows.",
+        "Implemented transaction tracking and reporting concepts.",
+        "Focused on financial workflow clarity in a healthcare setting."
+      ],
       "year": "2025",
       "preview": "",
       "code": "",
@@ -138,6 +216,14 @@
         "Designed and built a clean, responsive company profile website for a construction firm. The website showcases the company's services, portfolio, and professional capabilities.",
         "Features include branding elements, comprehensive service listings, project portfolio gallery, team information, and contact features. The site is fully responsive and optimized for all devices.",
         "Demonstrates proficiency in creating professional corporate web presence with modern design principles and user-friendly navigation."
+      ],
+      "summary": "Responsive company profile website for a construction firm with services, portfolio, team, and contact sections.",
+      "role": "Frontend Developer",
+      "impact": "Helped present company services and project capabilities through a clean professional web presence.",
+      "highlights": [
+        "Designed responsive company-profile pages.",
+        "Organized services, portfolio, team, and contact content.",
+        "Focused on corporate clarity and user-friendly navigation."
       ],
       "year": "2025",
       "preview": "",
@@ -164,6 +250,14 @@
         "Built using Firebase for real-time messaging and database management, with Android Studio for native mobile application development. Features include real-time notifications, user authentication, and message history.",
         "Successfully deployed to support campus community engagement and provides a platform for candid discussions while maintaining user privacy and anonymity."
       ],
+      "summary": "Anonymous campus chat application with generated usernames and real-time Firebase messaging.",
+      "role": "Mobile Developer",
+      "impact": "Created a private communication space for campus community engagement.",
+      "highlights": [
+        "Built real-time messaging with Firebase.",
+        "Implemented generated usernames for anonymous discussion.",
+        "Developed the app through Android Studio with Java."
+      ],
       "year": "2024",
       "preview": "",
       "code": "",
@@ -189,6 +283,14 @@
         "Utilized generative AI tools for scene generation, character creation, and visual effects. The narrative explores themes of personal growth, redemption, and emotional resilience through an innovative AI-generated medium.",
         "Demonstrates expertise in AI applications beyond traditional business use cases and highlights creative problem-solving using emerging technologies."
       ],
+      "summary": "Generative AI short film exploring AI-assisted storytelling, scene generation, and visual production.",
+      "role": "Generative AI Creator",
+      "impact": "Showed creative AI use beyond business automation through narrative and visual experimentation.",
+      "highlights": [
+        "Used generative AI tools for scenes, character visuals, and effects.",
+        "Combined AI generation with storytelling and editing.",
+        "Explored creative applications of emerging AI tools."
+      ],
       "year": "2024",
       "preview": "",
       "code": "",
@@ -210,6 +312,14 @@
         "Developed a comprehensive hospital management system using web technologies for patient and doctor data management. The system streamlines hospital operations including patient registration, medical records, and doctor scheduling.",
         "Implemented database optimization and efficient SQL queries for fast data retrieval. Features include patient intake forms, appointment scheduling, medical history tracking, and administrative dashboards.",
         "Demonstrates proficiency in building enterprise-level systems that handle critical healthcare data with security and efficiency."
+      ],
+      "summary": "Hospital management system for patient registration, records, scheduling, and administrative workflows.",
+      "role": "Full-stack Developer",
+      "impact": "Translated hospital operations into structured web workflows and database-backed features.",
+      "highlights": [
+        "Built patient, doctor, appointment, and records management concepts.",
+        "Implemented database queries for healthcare data workflows.",
+        "Focused on administrative usability and operational structure."
       ],
       "year": "2024",
       "preview": "",
@@ -236,6 +346,14 @@
         "Oversaw marketing strategy, UX design, and team operations. Implemented features for product listings, seller profiles, transaction management, and buyer reviews.",
         "Successfully launched the platform and achieved recognition in business plan competitions, demonstrating both technical and entrepreneurial capabilities."
       ],
+      "summary": "Student-led consignment marketplace concept for secondhand fashion and lifestyle products.",
+      "role": "Team Lead and Product Builder",
+      "impact": "Combined product planning, UX thinking, and team operations in a student business context.",
+      "highlights": [
+        "Led student team operations and product direction.",
+        "Planned seller, product listing, transaction, and review features.",
+        "Connected technical work with marketing and business strategy."
+      ],
       "year": "2024",
       "preview": "",
       "code": "",
@@ -257,6 +375,14 @@
         "Designed and implemented an online appointment booking system for barbershops with a clean, intuitive UI/UX. The system allows customers to browse available time slots and book appointments seamlessly.",
         "Features include barber/service selection, real-time availability checking, appointment confirmation, and customer notifications. Backend handles scheduling conflicts and booking management.",
         "Earned 3rd place recognition in the SETsail Biz Accel Exhibition in the Service Category, validating the practical value and user-centric design of the system."
+      ],
+      "summary": "Appointment booking system for barbershop services with time-slot browsing and booking management.",
+      "role": "Web Developer",
+      "impact": "Validated a practical service-booking idea through a competition-recognized project.",
+      "highlights": [
+        "Designed booking flows for services, barbers, and time slots.",
+        "Handled appointment confirmation and scheduling-conflict concepts.",
+        "Earned 3rd place at SETsail Biz Accel Exhibition in the Service Category."
       ],
       "year": "2023",
       "preview": "",

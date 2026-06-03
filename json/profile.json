@@ -1,0 +1,20 @@
+{
+  "name": "Ivander Johana Pratama",
+  "shortName": "Ivan",
+  "headline": "AI Engineer, Software Engineer, and Full Stack Engineer",
+  "roleFocus": [
+    "AI Engineer",
+    "Software Engineer",
+    "Full Stack Engineer"
+  ],
+  "email": "ivanderjohanapratama@gmail.com",
+  "phone": "+62 821 7515 4739",
+  "phoneHref": "tel:+6282175154739",
+  "location": "Cikarang, Bekasi, Indonesia",
+  "canonicalUrl": "https://portofix-three.vercel.app",
+  "github": "https://github.com/vndr08",
+  "linkedin": "https://linkedin.com/in/ivanderjohanapratama",
+  "cvUrl": "/docs/cv.pdf",
+  "pitch": "Final-year Information Systems student at President University specializing in Data Science, building AI automation, enterprise software support tools, and full-stack dashboards for practical business workflows.",
+  "availability": "Open to AI Engineer, Software Engineer, and Full Stack Engineer opportunities."
+}

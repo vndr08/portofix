@@ -1,232 +1,120 @@
 "use client";
-import { useRef, useState, useEffect } from "react";
-import { motion } from "framer-motion";
+
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
+import profile from "@/json/profile.json";
+import ThemeToggle from "@/components/ThemeToggle";
 
-const NavItems = ({ isNavOpen, setIsNavOpen }) => {
-	const [isMobile, setIsMobile] = useState(false);
+const navLinks = [
+	{ href: "/#home", label: "Home" },
+	{ href: "/#about", label: "About" },
+	{ href: "/#projects", label: "Projects" },
+	{ href: "/#skills", label: "Skills" },
+	{ href: "/#contact", label: "Contact" },
+];
 
-	const handleItemClick = () => {
-		setIsNavOpen(false);
-	};
-	const navVariant = {
-		open: {
-			clipPath: `circle(1920px at calc(100% - 40px) 40px)`,
-			transition: {
-				type: "spring",
-				stiffness: 400,
-				damping: 40,
-			},
-		},
-		closed: {
-			clipPath: "circle(0px at calc(100% - 120px) 35px)",
-			transition: {
-				delay: 0.5,
-				type: "spring",
-				stiffness: 400,
-				damping: 30,
-			},
-		},
-	};
-	useEffect(() => {
-		const updateScreenWidth = () => {
-			setIsMobile(window.innerWidth <= 768);
-		};
-
-		// Initial check and event listener
-		updateScreenWidth();
-		window.addEventListener("resize", updateScreenWidth);
-
-		// Clean up the event listener on unmount
-		return () => {
-			window.removeEventListener("resize", updateScreenWidth);
-		};
-	}, []);
-
-	// Check screen width and adjust clipPath for smaller screens
-	if (isMobile) {
-		(navVariant.open = {
-			clipPath: `circle(1920px at calc(100% - 40px) 40px)`,
-			transition: {
-				type: "tween",
-			},
-		}),
-			(navVariant.closed = {
-				clipPath: "circle(0px at calc(100% - 35px) 35px)",
-				transition: {
-					delay: 0.5,
-					type: "spring",
-					stiffness: 400,
-					damping: 40,
-				},
-			});
-	} else {
-		(navVariant.open = {
-			clipPath: `circle(2444px at calc(100% - 40px) 40px)`,
-			transition: {
-				type: "spring",
-				stiffness: 400,
-				damping: 40,
-			},
-		}),
-			(navVariant.closed = {
-				clipPath: "circle(0px at calc(100% - 120px) 35px)",
-				transition: {
-					delay: 0.5,
-					type: "spring",
-					stiffness: 400,
-					damping: 40,
-				},
-			});
-	}
-	const itemVariants = {
-		open: (custom) => ({
-			opacity: 1,
-			x: 0,
-			rotate: 0,
-			transition: {
-				delay: custom,
-				type: "spring",
-				stiffness: 400,
-				damping: 40,
-			},
-		}),
-		closed: {
-			opacity: 0,
-			x: -80,
-			rotate: 0,
-			transition: {
-				type: "spring",
-				stiffness: 400,
-				damping: 40,
-			},
-		},
-	};
-
-	return (
-		<>
-			<motion.div
-				className={`fixed z-[45] w-full h-screen flex items-center justify-center backdrop-blur-sm transition-all ease duration-700 overflow-hidden`}
-				variants={navVariant}
-				animate={isNavOpen ? "open" : "closed"}
-				initial={false}>
-				<div className="relative backdrop-blur-sm opacity-95 flex flex-col items-center space-x-8 min-h-[100vh] bg-gray-700 min-w-[100vw] ">
-					<div className="flex flex-col items-center space-y-8 my-auto mx-0 z-50">
-						{/* title */}
-						<motion.h1
-							variants={itemVariants}
-							animate={isNavOpen ? "open" : "closed"}
-							className="text-6xl font-bold text-white ">
-							Menu
-						</motion.h1>
-						<Link href="/#home">
-							<div
-								className="text-2xl font-bold text-white"
-								onClick={handleItemClick}>
-								<motion.h2
-									className="text-white"
-									variants={itemVariants}
-									animate={isNavOpen ? "open" : "closed"}
-									custom={0.1}>
-									Home
-								</motion.h2>
-							</div>
-						</Link>
-						<Link href="/about">
-							<div
-								onClick={handleItemClick}
-								className="text-2xl font-bold text-white">
-								<motion.h2
-									className="text-white"
-									variants={itemVariants}
-									animate={isNavOpen ? "open" : "closed"}
-									custom={0.2}>
-									About
-								</motion.h2>
-							</div>
-						</Link>
-						<Link href="/projects">
-							<div
-								onClick={handleItemClick}
-								className="text-2xl font-bold text-white">
-								<motion.h2
-									className="text-white"
-									variants={itemVariants}
-									animate={isNavOpen ? "open" : "closed"}
-									custom={0.3}>
-									Projects
-								</motion.h2>
-							</div>
-						</Link>
-						<Link href="/#contact">
-							<div
-								onClick={handleItemClick}
-								className="text-2xl font-bold text-white">
-								<motion.h2
-									className="text-white"
-									variants={itemVariants}
-									animate={isNavOpen ? "open" : "closed"}
-									custom={0.4}>
-									Contact
-								</motion.h2>
-							</div>
-						</Link>
-					</div>
-				</div>
-			</motion.div>
-		</>
-	);
-};
-
-const Navbar = () => {
-	const navRef = useRef(null);
+export default function Navbar() {
 	const [isNavOpen, setIsNavOpen] = useState(false);
 
-	const toggleNav = () => {
-		setIsNavOpen(!isNavOpen);
-	};
+	const closeNav = () => setIsNavOpen(false);
 
 	return (
 		<>
-			<nav
-				ref={navRef}
-				className={`navbar px-5 md:px-24 w-screen fixed transition-colors ease duration-500 ${
-					isNavOpen
-						? "backdrop-filter backdrop-blur-md bg-gray-700 bg-opacity-50"
-					: "backdrop-filter backdrop-blur-md bg-opacity-30"
-			} flex flex-row justify-between items-center h-16 z-40 top-0 left-0 right-0`}>
-				<div>
-					<h1
-						className={`text-2xl ml-2 md:ml-0 transition-colors ease duration-500 ${
-							isNavOpen ? "text-white" : ""
-						}`}>
-						Ivan
-					</h1>
-				</div>
-				<div className="flex flex-row items-center">
+			<nav className="navbar fixed left-0 right-0 top-0 z-50 border-b px-5 backdrop-blur-xl transition md:px-10 lg:px-20 theme-border bg-[color-mix(in_srgb,var(--surface-solid)_82%,transparent)]">
+				<div className="mx-auto flex h-16 max-w-7xl items-center justify-between">
+					<Link
+						href="/#home"
+						className="text-xl font-bold tracking-tight theme-text transition hover:text-emerald-500"
+						onClick={closeNav}>
+						{profile.shortName}
+					</Link>
+
+					<div className="hidden items-center gap-6 md:flex">
+						{navLinks.map((link) => (
+							<Link
+								key={link.href}
+								href={link.href}
+								className="text-sm font-semibold theme-soft transition hover:text-emerald-500">
+								{link.label}
+							</Link>
+						))}
+						<ThemeToggle />
+						<a
+							href={profile.cvUrl}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="rounded-full border border-emerald-500 bg-emerald-500 px-4 py-2 text-sm font-bold text-white transition-all duration-300 hover:bg-emerald-600 theme-button-shadow">
+							Resume
+						</a>
+					</div>
+
 					<button
-						className="burger button flex flex-col justify-center items-center space-y-1.5 relative w-12 h-12 z-50 hover:bg-gray-200 rounded-lg transition-colors"
-						onClick={(e) => {
-							e.preventDefault();
-							e.stopPropagation();
-							toggleNav();
-						}}
+						className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-full border md:hidden theme-card-solid"
+						onClick={() => setIsNavOpen((value) => !value)}
 						type="button"
-						aria-label="Toggle navigation menu">
-						<div
-							className={`w-6 h-0.5 bg-black rounded-full transition-all ease duration-300 ${
-								isNavOpen ? "rotate-45 bg-white translate-y-2" : ""
-							}`}></div>
-						<div
-							className={`w-6 h-0.5 bg-black rounded-full transition-all ease duration-300 ${
-								isNavOpen ? "-rotate-45 -translate-y-2 bg-white" : ""
-							}`}></div>
+						aria-label="Toggle navigation menu"
+						aria-expanded={isNavOpen}>
+						<span
+							className={`h-0.5 w-5 rounded-full bg-current theme-text transition ${
+								isNavOpen ? "translate-y-2 rotate-45" : ""
+							}`}
+						/>
+						<span
+							className={`h-0.5 w-5 rounded-full bg-current theme-text transition ${
+								isNavOpen ? "opacity-0" : ""
+							}`}
+						/>
+						<span
+							className={`h-0.5 w-5 rounded-full bg-current theme-text transition ${
+								isNavOpen ? "-translate-y-2 -rotate-45" : ""
+							}`}
+						/>
 					</button>
 				</div>
 			</nav>
-			{/* items */}
-			<NavItems isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
+
+			<AnimatePresence>
+				{isNavOpen && (
+					<motion.div
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						exit={{ opacity: 0 }}
+						className="fixed inset-0 z-40 px-6 pt-24 md:hidden theme-page">
+						<motion.div
+							initial={{ opacity: 0, scale: 0.98 }}
+							animate={{ opacity: 1, scale: 1 }}
+							exit={{ opacity: 0, scale: 0.98 }}
+							className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,var(--accent-soft),transparent_22rem)]"
+						/>
+						<div className="relative mx-auto flex max-w-sm flex-col gap-3">
+							{navLinks.map((link, index) => (
+								<motion.div
+									key={link.href}
+									initial={{ opacity: 0, y: 12 }}
+									animate={{ opacity: 1, y: 0 }}
+									transition={{ delay: index * 0.04 }}>
+									<Link
+										href={link.href}
+										onClick={closeNav}
+										className="block rounded-2xl px-4 py-4 text-xl font-bold transition hover:text-emerald-500 theme-card-solid theme-text">
+										{link.label}
+									</Link>
+								</motion.div>
+							))}
+							<ThemeToggle label className="mt-3 w-full rounded-2xl py-5" />
+							<a
+								href={profile.cvUrl}
+								target="_blank"
+								rel="noopener noreferrer"
+								onClick={closeNav}
+								className="block rounded-2xl bg-emerald-500 px-4 py-4 text-center text-base font-bold text-white theme-button-shadow">
+								Open Resume
+							</a>
+						</div>
+					</motion.div>
+				)}
+			</AnimatePresence>
 		</>
 	);
-};
-export default Navbar;
+}

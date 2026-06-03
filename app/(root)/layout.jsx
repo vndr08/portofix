@@ -1,11 +1,10 @@
-"use client"
-import Sidebar from "@/components/Sidebar";
+import Footer from "@/components/Footer";
 
 export default function RootLayout({ children }) {
 	return (
 		<>
-			<Sidebar />
 			{children}
+			<Footer />
 		</>
 	);
 }

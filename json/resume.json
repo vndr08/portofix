@@ -1,0 +1,173 @@
+{
+  "summary": [
+    "Final-year Information Systems student at President University specializing in Data Science, with hands-on experience in software engineering, AI development, and enterprise system maintenance.",
+    "Maintained a large-scale financial system, built AI automation tools, and delivered projects across data, web, and mobile domains.",
+    "Adaptable, fast learner, and comfortable working in both technical and cross-functional team settings."
+  ],
+  "education": {
+    "school": "President University",
+    "program": "Information System - Data Science",
+    "period": "Aug 2023 - Present",
+    "gpa": "3.67",
+    "description": "Developed strong skills in programming, data analysis, and application development through coursework and projects."
+  },
+  "recruiterHighlights": [
+    {
+      "value": "3.67",
+      "label": "Current GPA",
+      "detail": "Information System - Data Science"
+    },
+    {
+      "value": "10+",
+      "label": "Brand partners",
+      "detail": "Secured for President University Fashion Week 2024"
+    },
+    {
+      "value": "20+",
+      "label": "Sponsors",
+      "detail": "Secured for Mr. & Ms. President University 2024"
+    },
+    {
+      "value": "75%",
+      "label": "Tuition covered",
+      "detail": "Jababeka Scholarship Awardee"
+    }
+  ],
+  "experience": [
+    {
+      "company": "PT Jababeka Tbk",
+      "role": "Software Engineering Partnership",
+      "period": "Aug 2023 - Present",
+      "location": "Cikarang, Bekasi",
+      "summary": "Maintained and developed JIFAS, an accounting system built on ASP.NET and Kendo UI Telerik.",
+      "highlights": [
+        "Performed bug fixing and feature development across Balance Sheet, Cash Flow, Bulk Posting, and PUM Realization modules.",
+        "Led UI migration from legacy Bootstrap to the updated Telerik framework.",
+        "Developed and maintained AI chatbot integration within the JIFAS ecosystem."
+      ],
+      "skills": ["ASP.NET", "Kendo UI Telerik", "Finance Modules", "SQL", "AI Chatbot"]
+    },
+    {
+      "company": "PT Jababeka Tbk",
+      "role": "AI Engineer Intern",
+      "period": "Aug 2025 - Feb 2026",
+      "location": "Cikarang, Bekasi",
+      "summary": "Developed internal AI and data automation tools for employee support and financial workflows.",
+      "highlights": [
+        "Built an internal AI Agent chatbot using LangChain, FastAPI, and Ollama for support, retrieval, and ticket creation.",
+        "Built a duplicate data detection tool using Python and Streamlit for financial CSV and Excel data analysis.",
+        "Provided technical support for PUM, invoicing, and bank transaction workflows."
+      ],
+      "skills": ["LangChain", "FastAPI", "Ollama", "Python", "Streamlit"]
+    }
+  ],
+  "workExperience": [
+    {
+      "role": "Model & Talent",
+      "organization": "Vun Diego Perfume Commercial",
+      "period": "May 2025",
+      "summary": "Appeared in video campaigns and worked with a creative team to produce promotional content."
+    },
+    {
+      "role": "Polling Station Supervisor (PTPS)",
+      "organization": "Regional Elections 2024",
+      "period": "Nov 2024",
+      "summary": "Supervised voting transparency, coordinated with officials, and filed official reports to Bawaslu."
+    },
+    {
+      "role": "Warehouse Sorter",
+      "organization": "Shopee Xpress",
+      "period": "Jun - Jul 2023",
+      "summary": "Handled package scanning, sorting, labeling, and timely processing under logistics pressure."
+    }
+  ],
+  "organizations": [
+    {
+      "role": "PIC Sponsorship",
+      "organization": "President University Fashion Week (PUFW) 2024",
+      "period": "Sep - Dec 2024",
+      "summary": "Led sponsorship strategy, secured 10+ brand partners, negotiated benefits, and maintained external communication."
+    },
+    {
+      "role": "PIC Sponsorship",
+      "organization": "Student Awarding Night (SAN) 2024",
+      "period": "Sep - Nov 2024",
+      "summary": "Assisted fundraising and sponsor branding for the annual awards night."
+    },
+    {
+      "role": "PIC Sponsorship",
+      "organization": "Mr. & Ms. President University 2024",
+      "period": "Jan - Mar 2024",
+      "summary": "Secured 20+ sponsors, coordinated with vendors, and oversaw benefit delivery."
+    },
+    {
+      "role": "Volunteer",
+      "organization": "AIESEC ImpactED 1.0",
+      "period": "Dec 2023 - Jan 2024",
+      "summary": "Delivered hygiene awareness lessons to elementary students in Cikarang and strengthened public speaking skills."
+    }
+  ],
+  "achievements": [
+    "3rd Place - SETSsail Biz Accel Exhibition 2024, Service Category",
+    "Jababeka Scholarship Awardee - covers 75% of tuition at President University",
+    "Managed event sponsorship portfolios worth tens of millions in value",
+    "Trusted by Bawaslu to supervise PTPS during national elections"
+  ],
+  "certifications": [
+    {
+      "group": "AWS Training & Certification",
+      "items": [
+        "Amazon QuickSight: Getting Started",
+        "Fundamentals of Machine Learning and Artificial Intelligence",
+        "Introduction to Generative AI: Art of the Possible",
+        "Introduction to Machine Learning: Art of the Possible"
+      ]
+    },
+    {
+      "group": "AI & Data Platform Training",
+      "items": [
+        "Future-Ready Industrial Parks: Mastering AI Trends & Agentic Workflows",
+        "Snowflake Discover AI",
+        "AI & Data Platform Training - Snowflake"
+      ]
+    },
+    {
+      "group": "Event Certificates",
+      "items": [
+        "President University Fashion Week 2024",
+        "Student Awarding Night 2024",
+        "Mr. & Ms. President University 2024",
+        "PUSH Cup 2024",
+        "Computing Sport Games Olympiade 2024"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "group": "AI and Data",
+      "items": ["Python", "Pandas", "NumPy", "Scikit-learn", "Random Forest", "Ollama", "Gemini AI", "NLP", "Machine Learning"]
+    },
+    {
+      "group": "Software and Web",
+      "items": ["JavaScript", "HTML", "CSS", "PHP", "Java", ".NET", "ASP.NET", "FastAPI", "Django", "Streamlit"]
+    },
+    {
+      "group": "Database and Backend",
+      "items": ["MySQL", "Firebase", "PhpMyAdmin", "PostgreSQL", "Kendo UI Telerik", "Git", "Docker", "VPS Deployment"]
+    },
+    {
+      "group": "Product and Collaboration",
+      "items": ["Power BI", "Figma", "VS Code", "Teamwork", "Leadership", "Public Speaking", "Event Planning", "Problem-Solving"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Indonesian",
+      "level": "Native / Fluent"
+    },
+    {
+      "language": "English",
+      "level": "Intermediate - Conversational & Working Proficiency"
+    }
+  ]
+}
