@@ -13,7 +13,7 @@ engineering, full-stack projects, experience, and a direct CV/contact flow.
 - Project data in `json/data.json` with optional featured, summary, role, impact,
   and highlights fields.
 - SEO metadata, generated Open Graph image route, robots file, and gzipped sitemap.
-- CV linked from `public/docs/cv.pdf`; the PDF is not generated or modified by the app.
+- CV linked from `public/docs/CV_IVANDERJP_ATS.pdf`; generate it with `pnpm generate-resume`.
 
 ## Tech Stack
 
@@ -58,7 +58,8 @@ pnpm generate-sitemap
 - Keep the canonical public URL aligned with `json/profile.json`.
 - Update recruiter highlights in `json/resume.json`.
 - Update projects in `json/data.json`.
-- Keep `public/docs/cv.pdf` as the source CV file unless intentionally replacing the CV.
+- Keep `public/docs/CV_IVANDERJP.pdf` as the original source CV file unless intentionally replacing the CV.
+- Regenerate the polished ATS resume with `pnpm generate-resume` after profile, resume, or project data changes.
 
 ## License
 
