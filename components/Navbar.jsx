@@ -78,19 +78,26 @@ export default function Navbar() {
 					</Link>
 
 					<div className="hidden items-center gap-6 md:flex">
-						{navLinks.map((link) => (
-							<Link
-								key={link.href}
-								href={link.href}
-								aria-current={activeSection === link.id ? "page" : undefined}
-								className={`relative py-2 text-sm font-semibold transition after:absolute after:bottom-0 after:left-0 after:h-0.5 after:rounded-full after:bg-emerald-500 after:transition-all after:duration-300 hover:text-emerald-500 ${
-									activeSection === link.id
-										? "text-emerald-500 after:w-full"
-										: "theme-soft after:w-0 hover:after:w-full"
-								}`}>
-								{link.label}
-							</Link>
-						))}
+						{navLinks.map((link) => {
+							const isActive = activeSection === link.id;
+
+							return (
+								<Link
+									key={link.href}
+									href={link.href}
+									aria-current={isActive ? "page" : undefined}
+									className={`group nav-link relative inline-flex flex-col items-center gap-1 py-2 text-sm font-semibold transition hover:text-emerald-500 ${
+										isActive ? "nav-link-active" : "theme-soft"
+									}`}>
+									<span>{link.label}</span>
+									<span
+										className={`h-1 rounded-full bg-emerald-500 transition-all duration-300 ${
+											isActive ? "w-full opacity-100" : "w-0 opacity-0 group-hover:w-full group-hover:opacity-100"
+										}`}
+									/>
+								</Link>
+							);
+						})}
 						<ThemeToggle />
 						<a
 							href={profile.cvUrl}

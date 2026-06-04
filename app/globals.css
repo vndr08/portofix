@@ -153,6 +153,10 @@ td, th {
 	color: var(--accent);
 }
 
+.nav-link-active {
+	color: var(--accent) !important;
+}
+
 .theme-button-shadow {
 	box-shadow: 0 16px 34px color-mix(in srgb, var(--accent) 26%, transparent);
 }
