@@ -282,6 +282,68 @@ td, th {
 	opacity: 1;
 }
 
+.stack-showcase {
+	border-color: var(--border);
+	background:
+		radial-gradient(circle at 14% 16%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 18rem),
+		radial-gradient(circle at 84% 12%, color-mix(in srgb, var(--cyan) 16%, transparent), transparent 20rem),
+		linear-gradient(135deg, color-mix(in srgb, var(--surface-solid) 82%, transparent), color-mix(in srgb, var(--bg-soft) 52%, transparent));
+	box-shadow: var(--shadow-soft);
+}
+
+[data-theme="dark"] .stack-showcase {
+	background:
+		radial-gradient(circle at 16% 18%, rgba(52, 211, 153, 0.12), transparent 20rem),
+		radial-gradient(circle at 82% 12%, rgba(168, 85, 247, 0.14), transparent 22rem),
+		linear-gradient(135deg, #020617, #07111f 58%, #0f172a);
+}
+
+.stack-orb {
+	border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+	background:
+		linear-gradient(145deg, color-mix(in srgb, var(--surface-raised) 92%, transparent), color-mix(in srgb, var(--surface-solid) 62%, transparent));
+	box-shadow:
+		0 18px 35px color-mix(in srgb, var(--text) 10%, transparent),
+		inset 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.stack-star {
+	position: absolute;
+	width: 4px;
+	height: 4px;
+	border-radius: 999px;
+	background: color-mix(in srgb, var(--text) 78%, white);
+	box-shadow: 0 0 14px color-mix(in srgb, var(--cyan) 70%, transparent);
+	opacity: 0.36;
+	animation: star-twinkle 3.2s ease-in-out infinite;
+}
+
+[data-theme="dark"] .stack-star {
+	background: #ffffff;
+	opacity: 0.72;
+}
+
+.stack-comet {
+	position: absolute;
+	width: 110px;
+	height: 5px;
+	border-radius: 999px;
+	background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--text) 72%, white), transparent);
+	filter: drop-shadow(0 0 12px color-mix(in srgb, var(--cyan) 56%, transparent));
+	opacity: 0.28;
+	transform: rotate(42deg);
+	animation: comet-slide 6s ease-in-out infinite;
+}
+
+[data-theme="dark"] .stack-comet {
+	opacity: 0.68;
+}
+
+.stack-comet-delay {
+	animation-delay: 1.8s;
+	transform: rotate(38deg);
+}
+
 @keyframes float-soft {
 	0%, 100% {
 		transform: translate3d(0, 0, 0) rotate(0deg);
@@ -321,6 +383,26 @@ td, th {
 	}
 	50%, 100% {
 		opacity: 0;
+	}
+}
+
+@keyframes star-twinkle {
+	0%, 100% {
+		transform: scale(0.8);
+		opacity: 0.25;
+	}
+	50% {
+		transform: scale(1.45);
+		opacity: 0.75;
+	}
+}
+
+@keyframes comet-slide {
+	0%, 100% {
+		transform: translate3d(0, 0, 0) rotate(42deg);
+	}
+	50% {
+		transform: translate3d(28px, 18px, 0) rotate(42deg);
 	}
 }
 

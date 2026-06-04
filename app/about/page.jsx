@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import Button from "@/components/Button";
+import StackShowcase from "@/components/StackShowcase";
 import profile from "@/json/profile.json";
 import resume from "@/json/resume.json";
 import Hero from "@/public/image/me2.jpg";
@@ -17,7 +18,6 @@ import {
 	faEnvelope,
 	faGraduationCap,
 	faLanguage,
-	faLayerGroup,
 	faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -48,44 +48,6 @@ function SectionHeader({ eyebrow, title, description }) {
 				</p>
 			)}
 		</motion.div>
-	);
-}
-
-function SkillBars() {
-	return (
-		<div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-			{resume.skills.map((group, groupIndex) => (
-				<motion.article
-					key={group.group}
-					initial={{ opacity: 0, y: 18 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ delay: groupIndex * 0.06 }}
-					className="theme-card rounded-[1.5rem] p-5">
-					<div className="mb-5 flex items-center justify-between">
-						<h3 className="font-bold theme-text">{group.group}</h3>
-						<FontAwesomeIcon icon={faLayerGroup} className="h-4 w-4 theme-accent" />
-					</div>
-					<div className="space-y-3">
-						{group.items.slice(0, 6).map((skill, index) => (
-							<div key={skill}>
-								<div className="mb-1 flex justify-between text-sm font-semibold theme-soft">
-									<span>{skill}</span>
-									<span>{index < 2 ? "Core" : "Used"}</span>
-								</div>
-								<div className="h-2 overflow-hidden rounded-full bg-[color-mix(in_srgb,var(--border)_60%,transparent)]">
-									<motion.div
-										initial={{ width: 0 }}
-										animate={{ width: `${90 - index * 7}%` }}
-										transition={{ delay: 0.1 + index * 0.04, duration: 0.7 }}
-										className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-cyan-400"
-									/>
-								</div>
-							</div>
-						))}
-					</div>
-				</motion.article>
-			))}
-		</div>
 	);
 }
 
@@ -179,7 +141,7 @@ function CertificationsTab() {
 
 function TabContent({ activeTab }) {
 	const content = {
-		skills: <SkillBars />,
+		skills: <StackShowcase compact />,
 		experience: <ExperienceTab />,
 		education: <EducationTab />,
 		certifications: <CertificationsTab />,

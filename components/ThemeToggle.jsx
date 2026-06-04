@@ -18,7 +18,7 @@ export default function ThemeToggle({ label = false, className = "" }) {
 
 	const toggleTheme = () => {
 		document.documentElement.setAttribute("data-theme", nextTheme);
-		window.localStorage.setItem("ivan-theme", nextTheme);
+		window.localStorage.setItem("ivan-theme-v2", nextTheme);
 		setTheme(nextTheme);
 	};
 

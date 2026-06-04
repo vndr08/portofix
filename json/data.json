@@ -20,8 +20,11 @@
       "year": "2025",
       "preview": "",
       "code": "",
-      "thumbnail": "/image/projects.png",
-      "images": [],
+      "thumbnail": "/image/projects/ai/whatsapp-issue-reporting/tramos.png",
+      "images": [
+        "/image/projects/ai/whatsapp-issue-reporting/tramos.png",
+        "/image/projects/ai/whatsapp-issue-reporting/tramos2.png"
+      ],
       "tech": [
         "Gemini AI",
         "FastAPI",

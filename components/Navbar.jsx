@@ -1,23 +1,70 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import profile from "@/json/profile.json";
 import ThemeToggle from "@/components/ThemeToggle";
 
 const navLinks = [
-	{ href: "/#home", label: "Home" },
-	{ href: "/#about", label: "About" },
-	{ href: "/#projects", label: "Projects" },
-	{ href: "/#skills", label: "Skills" },
-	{ href: "/#contact", label: "Contact" },
+	{ href: "/#home", label: "Home", id: "home" },
+	{ href: "/#about", label: "About", id: "about" },
+	{ href: "/#projects", label: "Projects", id: "projects" },
+	{ href: "/#skills", label: "Skills", id: "skills" },
+	{ href: "/#contact", label: "Contact", id: "contact" },
 ];
 
 export default function Navbar() {
 	const [isNavOpen, setIsNavOpen] = useState(false);
+	const [activeSection, setActiveSection] = useState("home");
+	const pathname = usePathname();
 
 	const closeNav = () => setIsNavOpen(false);
+
+	useEffect(() => {
+		if (pathname?.startsWith("/projects")) {
+			setActiveSection("projects");
+			return undefined;
+		}
+
+		if (pathname === "/about") {
+			setActiveSection("about");
+			return undefined;
+		}
+
+		if (pathname !== "/") {
+			setActiveSection("");
+			return undefined;
+		}
+
+		const sectionIds = navLinks.map((link) => link.id);
+		const sections = sectionIds
+			.map((id) => document.getElementById(id))
+			.filter(Boolean);
+
+		const syncFromScroll = () => {
+			const current = sections
+				.map((section) => ({
+					id: section.id,
+					distance: Math.abs(section.getBoundingClientRect().top - 96),
+					top: section.getBoundingClientRect().top,
+				}))
+				.filter((section) => section.top < window.innerHeight * 0.68)
+				.sort((a, b) => a.distance - b.distance)[0];
+
+			setActiveSection(current?.id || "home");
+		};
+
+		syncFromScroll();
+		window.addEventListener("scroll", syncFromScroll, { passive: true });
+		window.addEventListener("hashchange", syncFromScroll);
+
+		return () => {
+			window.removeEventListener("scroll", syncFromScroll);
+			window.removeEventListener("hashchange", syncFromScroll);
+		};
+	}, [pathname]);
 
 	return (
 		<>
@@ -35,7 +82,12 @@ export default function Navbar() {
 							<Link
 								key={link.href}
 								href={link.href}
-								className="text-sm font-semibold theme-soft transition hover:text-emerald-500">
+								aria-current={activeSection === link.id ? "page" : undefined}
+								className={`relative py-2 text-sm font-semibold transition after:absolute after:bottom-0 after:left-0 after:h-0.5 after:rounded-full after:bg-emerald-500 after:transition-all after:duration-300 hover:text-emerald-500 ${
+									activeSection === link.id
+										? "text-emerald-500 after:w-full"
+										: "theme-soft after:w-0 hover:after:w-full"
+								}`}>
 								{link.label}
 							</Link>
 						))}
@@ -97,8 +149,18 @@ export default function Navbar() {
 									<Link
 										href={link.href}
 										onClick={closeNav}
-										className="block rounded-2xl px-4 py-4 text-xl font-bold transition hover:text-emerald-500 theme-card-solid theme-text">
-										{link.label}
+										aria-current={activeSection === link.id ? "page" : undefined}
+										className={`block rounded-2xl px-4 py-4 text-xl font-bold transition hover:text-emerald-500 theme-card-solid ${
+											activeSection === link.id ? "text-emerald-500" : "theme-text"
+										}`}>
+										<span className="flex items-center justify-between gap-4">
+											{link.label}
+											<span
+												className={`h-0.5 rounded-full bg-emerald-500 transition-all ${
+													activeSection === link.id ? "w-10" : "w-0"
+												}`}
+											/>
+										</span>
 									</Link>
 								</motion.div>
 							))}

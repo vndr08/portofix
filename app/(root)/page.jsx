@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Button from "@/components/Button";
+import StackShowcase from "@/components/StackShowcase";
 import ThemeToggle from "@/components/ThemeToggle";
 import TypewriterText from "@/components/TypewriterText";
 import profile from "@/json/profile.json";
@@ -19,7 +20,6 @@ import {
 	faCode,
 	faDownload,
 	faEnvelope,
-	faLayerGroup,
 	faPhone,
 	faRobot,
 	faServer,
@@ -47,18 +47,6 @@ const roleCards = [
 		title: "Full Stack Engineer",
 		icon: faServer,
 		text: "Dashboards, backend integrations, database-backed apps, and responsive interfaces.",
-	},
-];
-
-const skillGroups = [
-	resume.skills[0],
-	{
-		group: "Software and Web",
-		items: ["JavaScript", "ASP.NET", "FastAPI", "Django", "Streamlit", "Java", "PHP", "HTML", "CSS"],
-	},
-	{
-		group: "Systems and Tools",
-		items: ["PostgreSQL", "MySQL", "Firebase", "Kendo UI Telerik", "Git", "Docker", "Power BI", "Figma"],
 	},
 ];
 
@@ -379,44 +367,7 @@ export default function MyPage() {
 
 			<section id="skills" className="theme-section px-6 py-24 md:px-10 lg:px-20">
 				<div className="mx-auto max-w-7xl">
-					<SectionHeader
-						eyebrow="Stack"
-						title="Skills shown with movement, not stiff boxes."
-						description="The bars are visual grouping indicators, not fabricated proficiency scores."
-					/>
-					<div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
-						{skillGroups.map((group, index) => (
-							<motion.div
-								key={group.group}
-								{...fadeUp}
-								transition={{ ...fadeUp.transition, delay: index * 0.08 }}
-								className="theme-card rounded-[1.5rem] p-6">
-								<div className="mb-5 flex items-center justify-between">
-									<h3 className="text-xl font-bold theme-text">{group.group}</h3>
-									<FontAwesomeIcon icon={faLayerGroup} className="h-4 w-4 theme-accent" />
-								</div>
-								<div className="space-y-3">
-									{group.items.slice(0, 7).map((item, itemIndex) => (
-										<div key={item}>
-											<div className="mb-1 flex justify-between text-sm font-semibold theme-soft">
-												<span>{item}</span>
-												<span>{itemIndex < 3 ? "Core" : "Used"}</span>
-											</div>
-											<div className="h-2 overflow-hidden rounded-full bg-[color-mix(in_srgb,var(--border)_55%,transparent)]">
-												<motion.div
-													initial={{ width: 0 }}
-													whileInView={{ width: `${88 - itemIndex * 6}%` }}
-													viewport={{ once: true }}
-													transition={{ duration: 0.8, ease: "easeOut" }}
-													className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-cyan-400"
-												/>
-											</div>
-										</div>
-									))}
-								</div>
-							</motion.div>
-						))}
-					</div>
+					<StackShowcase />
 				</div>
 			</section>
 
