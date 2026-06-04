@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://portofix-three.vercel.app/sitemap.xml.gz
+Sitemap: https://ivanderjp.vercel.app/sitemap.xml.gz
