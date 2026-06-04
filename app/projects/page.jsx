@@ -41,7 +41,7 @@ export default function Page() {
 				<FontAwesomeIcon icon={faChevronLeft} className="h-4 w-4" />
 			</FixedButton>
 
-			<section className="theme-section px-6 pb-16 pt-28 md:px-10 lg:px-20">
+			<section className="theme-section px-4 pb-16 pt-24 sm:px-6 sm:pt-28 md:px-10 lg:px-20">
 				<div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 lg:grid-cols-[1fr_0.8fr]">
 					<motion.div
 						initial={{ opacity: 0, y: 24 }}
@@ -50,14 +50,14 @@ export default function Page() {
 						<p className="mb-3 text-sm font-bold uppercase tracking-[0.24em] theme-accent">
 							Projects
 						</p>
-						<h1 className="text-4xl font-bold leading-tight theme-text md:text-6xl">
+						<h1 className="text-3xl font-bold leading-tight theme-text sm:text-4xl md:text-6xl">
 							Animated work grid for AI, software, and full-stack projects.
 						</h1>
 						<p className="mt-5 max-w-2xl text-base leading-8 theme-muted md:text-lg">
 							A curated collection of dashboards, AI tools, data automation, and
 							application systems built from real project contexts.
 						</p>
-						<div className="mt-8 flex flex-col gap-3 sm:flex-row">
+						<div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
 							<Button href="#project-list" variation="primary">
 								Browse Work
 								<FontAwesomeIcon icon={faArrowDown} className="h-4 w-4" />
@@ -72,7 +72,7 @@ export default function Page() {
 						initial={{ opacity: 0, x: 30 }}
 						animate={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.65, ease: "easeOut", delay: 0.1 }}
-						className="relative">
+						className="relative pb-10 sm:pb-0">
 						<div className="theme-card relative aspect-[4/3] overflow-hidden rounded-[2rem] p-3">
 							<div className="relative h-full overflow-hidden rounded-[1.5rem]">
 								<Image
@@ -86,7 +86,7 @@ export default function Page() {
 								/>
 							</div>
 						</div>
-						<div className="floating-orbit theme-card absolute -bottom-5 left-5 rounded-2xl px-5 py-4">
+						<div className="floating-orbit theme-card absolute -bottom-5 left-4 rounded-2xl px-4 py-3 sm:left-5 sm:px-5 sm:py-4">
 							<p className="text-3xl font-bold theme-text">{projects.length}</p>
 							<p className="text-xs font-bold uppercase tracking-wider theme-muted">
 								projects documented
@@ -102,18 +102,18 @@ export default function Page() {
 				</div>
 			</section>
 
-			<section id="project-list" className="theme-section theme-band px-6 py-16 md:px-10 lg:px-20">
+			<section id="project-list" className="theme-section theme-band px-4 py-16 sm:px-6 md:px-10 lg:px-20">
 				<div className="mx-auto max-w-7xl">
 					<div className="mb-8 flex flex-col justify-between gap-6 md:flex-row md:items-end">
 						<div>
 							<p className="mb-3 text-sm font-bold uppercase tracking-[0.24em] theme-accent">
 								Portfolio Grid
 							</p>
-							<h2 className="text-3xl font-bold theme-text md:text-5xl">
+							<h2 className="text-3xl font-bold leading-tight theme-text md:text-5xl">
 								Filter, scan, and open case studies.
 							</h2>
 						</div>
-						<div className="flex flex-wrap gap-3">
+						<div className="-mx-1 flex gap-2 overflow-x-auto px-1 pb-2 sm:mx-0 sm:flex-wrap sm:gap-3 sm:overflow-visible sm:px-0 sm:pb-0">
 							{Object.entries(categories).map(([key, label]) => {
 								const count =
 									key === "all"
@@ -126,7 +126,7 @@ export default function Page() {
 									<button
 										key={key}
 										type="button"
-										className={`rounded-full px-4 py-2 text-sm font-bold transition ${
+										className={`shrink-0 rounded-full px-4 py-2 text-sm font-bold transition ${
 											activeCategory === key
 												? "bg-emerald-500 text-white theme-button-shadow"
 												: "theme-chip hover:text-emerald-600"

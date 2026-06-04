@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const getClasses = (variation, className = "") =>
-	`title inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-bold transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 ${
+	`title inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-center text-sm font-bold transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 sm:w-auto sm:px-6 ${
 		variation === "primary"
 			? "border-2 border-emerald-500 bg-emerald-500 text-white hover:border-emerald-600 hover:bg-emerald-600 theme-button-shadow hover:-translate-y-0.5"
 			: "border-2 theme-border theme-card-solid theme-text hover:border-emerald-400 hover:text-emerald-600 hover:-translate-y-0.5"

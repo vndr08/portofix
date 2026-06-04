@@ -72,7 +72,7 @@ export default function Navbar() {
 				<div className="mx-auto flex h-16 max-w-7xl items-center justify-between">
 					<Link
 						href="/#home"
-						className="text-xl font-bold tracking-tight theme-text transition hover:text-emerald-500"
+						className="max-w-[11rem] truncate text-xl font-bold tracking-tight theme-text transition hover:text-emerald-500 sm:max-w-none"
 						onClick={closeNav}>
 						{profile.shortName}
 					</Link>
@@ -139,14 +139,14 @@ export default function Navbar() {
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
 						exit={{ opacity: 0 }}
-						className="fixed inset-0 z-40 px-6 pt-24 md:hidden theme-page">
+						className="fixed inset-0 z-40 h-dvh overflow-y-auto px-4 pb-8 pt-24 md:hidden theme-page sm:px-6">
 						<motion.div
 							initial={{ opacity: 0, scale: 0.98 }}
 							animate={{ opacity: 1, scale: 1 }}
 							exit={{ opacity: 0, scale: 0.98 }}
 							className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,var(--accent-soft),transparent_22rem)]"
 						/>
-						<div className="relative mx-auto flex max-w-sm flex-col gap-3">
+						<div className="relative mx-auto flex max-w-sm flex-col gap-3 pb-10">
 							{navLinks.map((link, index) => (
 								<motion.div
 									key={link.href}

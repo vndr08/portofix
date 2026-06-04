@@ -15,7 +15,7 @@ export default function Page() {
 	const projects = Projects.Projects.filter((project) => project.show);
 
 	return (
-		<main className="theme-page px-6 pb-16 pt-28 md:px-10 lg:px-20">
+		<main className="theme-page px-4 pb-16 pt-24 sm:px-6 sm:pt-28 md:px-10 lg:px-20">
 			<FixedButton href="/projects">
 				<FontAwesomeIcon icon={faChevronLeft} className="h-4 w-4" />
 			</FixedButton>
@@ -29,7 +29,7 @@ export default function Page() {
 					<p className="mb-3 text-sm font-bold uppercase tracking-[0.24em] theme-accent">
 						Archive
 					</p>
-					<h1 className="text-4xl font-bold theme-text md:text-6xl">
+					<h1 className="text-3xl font-bold leading-tight theme-text sm:text-4xl md:text-6xl">
 						Project index
 					</h1>
 					<p className="mt-4 max-w-2xl text-base leading-7 theme-muted">
@@ -40,6 +40,9 @@ export default function Page() {
 
 				<div className="theme-card overflow-hidden rounded-[1.5rem]">
 					<div className="overflow-x-auto">
+						<p className="sr-only">
+							This table scrolls horizontally on small screens.
+						</p>
 						<table className="w-full min-w-[820px] border-collapse text-left text-sm">
 							<thead className="bg-emerald-500 text-white">
 								<tr>

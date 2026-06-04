@@ -83,13 +83,13 @@ export default async function Page({ params }) {
 				<FontAwesomeIcon icon={faChevronLeft} className="h-4 w-4" />
 			</FixedButton>
 
-			<section className="theme-section px-6 pb-16 pt-28 md:px-10 lg:px-20">
+			<section className="theme-section px-4 pb-16 pt-24 sm:px-6 sm:pt-28 md:px-10 lg:px-20">
 				<div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 lg:grid-cols-[0.95fr_1.05fr]">
 					<div>
 						<p className="mb-3 text-sm font-bold uppercase tracking-[0.24em] theme-accent">
 							Project Case Study
 						</p>
-						<h1 className="text-4xl font-bold leading-tight theme-text md:text-6xl">
+						<h1 className="text-3xl font-bold leading-tight theme-text sm:text-4xl md:text-6xl">
 							{data.title}
 						</h1>
 						<p className="mt-5 max-w-2xl text-base leading-8 theme-muted md:text-lg">
@@ -121,7 +121,7 @@ export default async function Page({ params }) {
 							</div>
 						</div>
 
-						<div className="mt-8 flex flex-wrap gap-3">
+						<div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
 							{data.preview && (
 								<Button href={data.preview} target="_blank" rel="noopener noreferrer" variation="primary">
 									Preview
@@ -161,7 +161,7 @@ export default async function Page({ params }) {
 				</div>
 			</section>
 
-			<section className="theme-section theme-band px-6 py-16 md:px-10 lg:px-20">
+			<section className="theme-section theme-band px-4 py-16 sm:px-6 md:px-10 lg:px-20">
 				<div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 lg:grid-cols-[0.7fr_1fr]">
 					<div>
 						<p className="mb-3 text-sm font-bold uppercase tracking-[0.24em] theme-accent">
@@ -217,13 +217,13 @@ export default async function Page({ params }) {
 				</div>
 			</section>
 
-			<section className="theme-section px-6 py-16 md:px-10 lg:px-20">
+			<section className="theme-section px-4 py-16 sm:px-6 md:px-10 lg:px-20">
 				<div className="mx-auto max-w-7xl">
 					<div className="mb-8">
 						<p className="mb-3 text-sm font-bold uppercase tracking-[0.24em] theme-accent">
 							Gallery
 						</p>
-						<h2 className="text-3xl font-bold theme-text md:text-5xl">
+						<h2 className="text-3xl font-bold leading-tight theme-text md:text-5xl">
 							Project visuals
 						</h2>
 					</div>

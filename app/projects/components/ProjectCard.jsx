@@ -40,11 +40,11 @@ export default function ProjectCard({ project, activeCategory }) {
 						View case study
 					</div>
 				</div>
-				<div className="p-5">
+				<div className="p-4 sm:p-5">
 					<p className="text-xs font-bold uppercase tracking-[0.18em] text-emerald-400">
 						{project.role || "Project"}
 					</p>
-					<h2 className="mt-2 text-xl font-bold theme-text transition group-hover:text-emerald-500">
+					<h2 className="mt-2 text-lg font-bold leading-snug theme-text transition group-hover:text-emerald-500 sm:text-xl">
 						{project.title}
 					</h2>
 					<p className="mt-3 line-clamp-2 text-sm leading-6 theme-muted">

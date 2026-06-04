@@ -237,14 +237,14 @@ function SkillBubble({ name, index, compact = false }) {
 			viewport={{ once: true, amount: 0.2 }}
 			transition={{ delay: Math.min(index * 0.035, 0.45), duration: 0.45, ease: "easeOut" }}
 			whileHover={{ y: -8, scale: 1.04 }}
-			className="group flex min-w-[7.5rem] flex-col items-center gap-3">
-			<div className="stack-orb outer-shadow relative flex h-20 w-20 items-center justify-center rounded-full border sm:h-24 sm:w-24">
+			className="group flex min-w-0 flex-col items-center gap-3">
+			<div className="stack-orb outer-shadow relative flex h-16 w-16 items-center justify-center rounded-full border sm:h-20 sm:w-20 lg:h-24 lg:w-24">
 				<div className={`absolute inset-3 rounded-2xl bg-gradient-to-br ${getTone(name)} opacity-[0.16] blur-md transition group-hover:opacity-35`} />
-				<div className={`relative flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${getTone(name)} text-white shadow-lg sm:h-14 sm:w-14`}>
-					<FontAwesomeIcon icon={getIcon(name)} className="h-6 w-6 sm:h-7 sm:w-7" />
+				<div className={`relative flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br ${getTone(name)} text-white shadow-lg sm:h-12 sm:w-12 lg:h-14 lg:w-14`}>
+					<FontAwesomeIcon icon={getIcon(name)} className="h-5 w-5 sm:h-6 sm:w-6 lg:h-7 lg:w-7" />
 				</div>
 			</div>
-			<p className={`${compact ? "text-sm" : "text-base"} text-center font-bold theme-soft`}>
+			<p className={`${compact ? "text-xs sm:text-sm" : "text-xs sm:text-sm lg:text-base"} max-w-[7rem] text-center font-bold leading-snug theme-soft`}>
 				{name}
 			</p>
 		</motion.div>
@@ -277,7 +277,7 @@ export default function StackShowcase({ compact = false }) {
 	const marqueeItems = useMemo(() => [...skillTabs[0].items.slice(0, 12), ...skillTabs[0].items.slice(0, 12)], []);
 
 	return (
-		<div className={`stack-showcase relative overflow-hidden rounded-[2rem] border p-5 sm:p-8 ${compact ? "" : "lg:p-10"}`}>
+		<div className={`stack-showcase relative overflow-hidden rounded-[1.5rem] border p-4 sm:rounded-[2rem] sm:p-8 ${compact ? "" : "lg:p-10"}`}>
 			<MovingDots />
 
 			<div className="relative z-10">
@@ -286,7 +286,7 @@ export default function StackShowcase({ compact = false }) {
 						<p className="mb-3 text-sm font-bold uppercase tracking-[0.24em] theme-accent">
 							Skills & Stack
 						</p>
-						<h3 className="text-3xl font-bold theme-text md:text-5xl">
+						<h3 className="text-2xl font-bold leading-tight theme-text sm:text-3xl md:text-5xl">
 							Tech stack and soft skills with more motion.
 						</h3>
 						<p className="mt-4 text-base leading-7 theme-muted">
@@ -294,13 +294,13 @@ export default function StackShowcase({ compact = false }) {
 						</p>
 					</div>
 
-					<div className="flex flex-wrap gap-3">
+					<div className="-mx-1 flex gap-2 overflow-x-auto px-1 pb-2 sm:mx-0 sm:flex-wrap sm:gap-3 sm:overflow-visible sm:px-0 sm:pb-0">
 						{skillTabs.map((tab) => (
 							<button
 								key={tab.id}
 								type="button"
 								onClick={() => setActiveTab(tab.id)}
-								className={`rounded-full px-5 py-3 text-sm font-bold transition ${
+								className={`shrink-0 rounded-full px-4 py-2.5 text-sm font-bold transition sm:px-5 sm:py-3 ${
 									activeTab === tab.id
 										? "bg-gradient-to-r from-emerald-500 to-cyan-400 text-white shadow-lg shadow-emerald-500/20"
 										: "theme-chip hover:-translate-y-0.5"
@@ -312,7 +312,7 @@ export default function StackShowcase({ compact = false }) {
 					</div>
 				</div>
 
-				<div className="mt-10 overflow-hidden border-y py-5 theme-border">
+				<div className="mt-8 overflow-hidden border-y py-4 theme-border sm:mt-10 sm:py-5">
 					<motion.div
 						className="flex w-max gap-8"
 						animate={{ x: ["0%", "-50%"] }}
@@ -335,12 +335,12 @@ export default function StackShowcase({ compact = false }) {
 						animate={{ opacity: 1, y: 0 }}
 						exit={{ opacity: 0, y: -18 }}
 						transition={{ duration: 0.28 }}
-						className="mt-10 grid grid-cols-1 gap-8 xl:grid-cols-[0.78fr_1.22fr]">
-						<div className="theme-card rounded-[1.5rem] p-6">
+						className="mt-8 grid grid-cols-1 gap-7 sm:mt-10 xl:grid-cols-[0.78fr_1.22fr]">
+						<div className="theme-card rounded-[1.5rem] p-5 sm:p-6">
 							<div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-cyan-400 text-white">
 								<FontAwesomeIcon icon={active.id === "ai" ? faBrain : active.id === "tools" ? faTerminal : active.id === "soft" ? faHandshake : faLayerGroup} className="h-6 w-6" />
 							</div>
-							<h4 className="text-2xl font-bold theme-text">{active.title}</h4>
+							<h4 className="text-xl font-bold leading-snug theme-text sm:text-2xl">{active.title}</h4>
 							<p className="mt-4 text-sm leading-7 theme-muted">{active.description}</p>
 							<div className="mt-6 flex flex-wrap gap-2">
 								{active.items.slice(0, 6).map((item) => (
@@ -351,7 +351,7 @@ export default function StackShowcase({ compact = false }) {
 							</div>
 						</div>
 
-						<div className="grid grid-cols-2 gap-x-5 gap-y-8 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+						<div className="grid grid-cols-3 gap-x-3 gap-y-6 sm:grid-cols-3 sm:gap-x-5 sm:gap-y-8 lg:grid-cols-4 xl:grid-cols-5">
 							{active.items.map((item, index) => (
 								<SkillBubble key={item} name={item} index={index} compact={compact} />
 							))}

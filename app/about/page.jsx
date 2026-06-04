@@ -41,7 +41,7 @@ function SectionHeader({ eyebrow, title, description }) {
 			<p className="mb-3 text-sm font-bold uppercase tracking-[0.24em] theme-accent">
 				{eyebrow}
 			</p>
-			<h2 className="text-3xl font-bold theme-text md:text-5xl">{title}</h2>
+			<h2 className="text-3xl font-bold leading-tight theme-text md:text-5xl">{title}</h2>
 			{description && (
 				<p className="mt-4 text-base leading-7 theme-muted md:text-lg">
 					{description}
@@ -60,7 +60,7 @@ function ExperienceTab() {
 					initial={{ opacity: 0, y: 18 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ delay: index * 0.06 }}
-					className="theme-card rounded-[1.5rem] p-6">
+					className="theme-card rounded-[1.5rem] p-5 sm:p-6">
 					<p className="text-sm font-bold theme-accent">{item.period}</p>
 					<h3 className="mt-3 text-xl font-bold theme-text">{item.role}</h3>
 					<p className="mt-1 text-sm font-semibold theme-muted">{item.company}</p>
@@ -85,7 +85,7 @@ function EducationTab() {
 			<motion.article
 				initial={{ opacity: 0, y: 18 }}
 				animate={{ opacity: 1, y: 0 }}
-				className="theme-card rounded-[1.5rem] p-6">
+				className="theme-card rounded-[1.5rem] p-5 sm:p-6">
 				<div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500 text-white">
 					<FontAwesomeIcon icon={faGraduationCap} className="h-5 w-5" />
 				</div>
@@ -170,7 +170,7 @@ export default function Page() {
 			<div className="shape shape-ring left-[8%] top-32" />
 			<div className="shape shape-plus right-[12%] top-40" />
 
-			<section className="theme-section px-6 pb-16 pt-28 md:px-10 lg:px-20">
+			<section className="theme-section px-4 pb-16 pt-24 sm:px-6 sm:pt-28 md:px-10 lg:px-20">
 				<div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
 					<motion.div
 						initial={{ opacity: 0, y: 24 }}
@@ -179,7 +179,7 @@ export default function Page() {
 						<p className="mb-3 text-sm font-bold uppercase tracking-[0.24em] theme-accent">
 							About Ivan
 						</p>
-						<h1 className="text-4xl font-bold leading-tight theme-text md:text-6xl">
+						<h1 className="text-3xl font-bold leading-tight theme-text sm:text-4xl md:text-6xl">
 							A practical builder across AI, software, and full-stack delivery.
 						</h1>
 						<div className="mt-6 space-y-4">
@@ -189,7 +189,7 @@ export default function Page() {
 								</p>
 							))}
 						</div>
-						<div className="mt-8 flex flex-col gap-3 sm:flex-row">
+						<div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
 							<Button href={profile.cvUrl} target="_blank" rel="noopener noreferrer" variation="primary">
 								Open Resume
 								<FontAwesomeIcon icon={faDownload} className="h-4 w-4" />
@@ -244,20 +244,20 @@ export default function Page() {
 				</div>
 			</section>
 
-			<section className="theme-section theme-band px-6 py-20 md:px-10 lg:px-20">
+			<section className="theme-section theme-band px-4 py-16 sm:px-6 md:px-10 md:py-20 lg:px-20">
 				<div className="mx-auto max-w-7xl">
 					<SectionHeader
 						eyebrow="Interactive Profile"
 						title="Recruiter details without the stiff resume wall."
 						description="Tabs keep the page focused while still showing Ivan's strongest CV-backed evidence."
 					/>
-					<div className="mb-8 flex flex-wrap gap-3">
+					<div className="-mx-1 mb-8 flex gap-2 overflow-x-auto px-1 pb-2 sm:mx-0 sm:flex-wrap sm:gap-3 sm:overflow-visible sm:px-0 sm:pb-0">
 						{tabs.map((tab) => (
 							<button
 								key={tab.id}
 								type="button"
 								onClick={() => setActiveTab(tab.id)}
-								className={`rounded-full px-5 py-3 text-sm font-bold transition ${
+								className={`shrink-0 rounded-full px-4 py-2.5 text-sm font-bold transition sm:px-5 sm:py-3 ${
 									activeTab === tab.id
 										? "bg-emerald-500 text-white theme-button-shadow"
 										: "theme-chip hover:text-emerald-600"
@@ -270,7 +270,7 @@ export default function Page() {
 				</div>
 			</section>
 
-			<section className="theme-section px-6 py-20 md:px-10 lg:px-20">
+			<section className="theme-section px-4 py-16 sm:px-6 md:px-10 md:py-20 lg:px-20">
 				<div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 lg:grid-cols-[0.8fr_1.2fr]">
 					<div>
 						<SectionHeader
@@ -317,10 +317,10 @@ export default function Page() {
 				</div>
 			</section>
 
-			<section className="theme-section px-6 pb-20 md:px-10 lg:px-20">
+			<section className="theme-section px-4 pb-16 sm:px-6 md:px-10 md:pb-20 lg:px-20">
 				<motion.div
 					{...fadeUp}
-					className="theme-card mx-auto flex max-w-7xl flex-col justify-between gap-6 rounded-[2rem] p-8 md:flex-row md:items-center md:p-10">
+					className="theme-card mx-auto flex max-w-7xl flex-col justify-between gap-6 rounded-[2rem] p-5 sm:p-8 md:flex-row md:items-center md:p-10">
 					<div>
 						<h2 className="text-3xl font-bold theme-text">Ready for recruiter review.</h2>
 						<p className="mt-3 max-w-2xl theme-muted">

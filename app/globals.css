@@ -59,6 +59,28 @@ body {
 	overflow-x: hidden;
 }
 
+* {
+	min-width: 0;
+}
+
+a,
+button,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span {
+	overflow-wrap: anywhere;
+}
+
+button,
+a {
+	-webkit-tap-highlight-color: transparent;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Jost', sans-serif !important;
 }
@@ -147,6 +169,12 @@ td, th {
 	border: 1px solid var(--border);
 	background: color-mix(in srgb, var(--surface-raised) 88%, transparent);
 	color: var(--text-soft);
+}
+
+.theme-chip,
+.theme-card,
+.theme-card-solid {
+	min-width: 0;
 }
 
 .theme-accent {
@@ -491,4 +519,24 @@ td, th {
 
 ::-webkit-scrollbar-thumb:hover {
 	background: #10b981;
+}
+
+@media (max-width: 640px) {
+	.outer-shadow {
+		box-shadow: 0 16px 34px color-mix(in srgb, var(--text) 8%, transparent);
+	}
+
+	.shape-ring,
+	.shape-dots,
+	.shape-plus {
+		opacity: 0.35;
+	}
+
+	.project-hover-image {
+		transform: none !important;
+	}
+
+	.view-project-pill {
+		display: none;
+	}
 }

@@ -92,7 +92,7 @@ function SectionHeader({ eyebrow, title, description }) {
 			<p className="mb-3 text-sm font-bold uppercase tracking-[0.24em] theme-accent">
 				{eyebrow}
 			</p>
-			<h2 className="text-3xl font-bold md:text-5xl theme-text">{title}</h2>
+			<h2 className="text-3xl font-bold leading-tight md:text-5xl theme-text">{title}</h2>
 			{description && (
 				<p className="mt-4 text-base leading-7 md:text-lg theme-muted">
 					{description}
@@ -132,7 +132,7 @@ function HeroVisual() {
 			initial={{ opacity: 0, x: 40 }}
 			animate={{ opacity: 1, x: 0 }}
 			transition={{ duration: 0.75, ease: "easeOut", delay: 0.1 }}
-			className="relative mx-auto w-full max-w-lg lg:max-w-none">
+			className="relative mx-auto w-full max-w-lg pb-20 sm:pb-16 lg:max-w-none lg:pb-0">
 			<div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-tr from-emerald-300/25 via-cyan-200/25 to-transparent blur-2xl" />
 			<div className="theme-card relative overflow-hidden rounded-[2rem] p-4">
 				<div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem]">
@@ -169,7 +169,7 @@ function HeroVisual() {
 				</p>
 			</motion.div>
 			<motion.div
-				className="theme-card absolute bottom-0 left-6 right-6 translate-y-1/2 rounded-2xl p-4"
+				className="theme-card absolute bottom-0 left-3 right-3 translate-y-1/2 rounded-2xl p-4 sm:left-6 sm:right-6"
 				initial={{ opacity: 0, y: 20 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ delay: 0.75 }}>
@@ -214,7 +214,7 @@ function ProjectMosaicCard({ project, index }) {
 					<p className="text-xs font-bold uppercase tracking-[0.18em] theme-accent">
 						{project.role || "Project"}
 					</p>
-					<h3 className="mt-2 text-xl font-bold theme-text">
+					<h3 className="mt-2 text-lg font-bold leading-snug theme-text sm:text-xl">
 						{project.title}
 					</h3>
 					<p className="mt-3 line-clamp-2 text-sm leading-6 theme-muted">
@@ -241,8 +241,8 @@ export default function MyPage() {
 
 			<section
 				id="home"
-				className="theme-section flex min-h-screen items-center px-6 pt-24 md:px-10 lg:px-20">
-				<div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-16 py-12 lg:grid-cols-[1.05fr_0.95fr]">
+				className="theme-section flex min-h-screen items-center px-4 pt-24 sm:px-6 md:px-10 lg:px-20">
+				<div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-14 py-10 sm:py-12 lg:grid-cols-[1.05fr_0.95fr]">
 					<motion.div
 						variants={stagger}
 						initial="initial"
@@ -259,16 +259,16 @@ export default function MyPage() {
 						</motion.div>
 						<motion.h1
 							variants={child}
-							className="max-w-4xl text-5xl font-bold leading-[1.02] tracking-tight theme-text md:text-7xl lg:text-8xl">
+							className="max-w-4xl text-4xl font-bold leading-[1.05] tracking-tight theme-text sm:text-5xl md:text-7xl lg:text-8xl">
 							Hi, I&apos;m {profile.shortName}
 						</motion.h1>
 						<motion.div
 							variants={child}
-							className="mt-5 flex flex-wrap items-center gap-2 text-2xl font-semibold theme-soft md:text-3xl">
+							className="mt-5 flex flex-wrap items-center gap-2 text-xl font-semibold theme-soft sm:text-2xl md:text-3xl">
 							<span>I build as an</span>
 							<TypewriterText
 								words={profile.roleFocus}
-								className="min-w-[230px] font-bold theme-accent sm:min-w-[320px]"
+								className="min-w-0 font-bold theme-accent sm:min-w-[320px]"
 							/>
 						</motion.div>
 						<motion.p
@@ -283,7 +283,7 @@ export default function MyPage() {
 								</span>
 							))}
 						</motion.div>
-						<motion.div variants={child} className="mt-9 flex flex-col gap-3 sm:flex-row">
+						<motion.div variants={child} className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
 							<Button href="/projects" variation="primary">
 								View Projects
 								<FontAwesomeIcon icon={faArrowRight} className="h-4 w-4" />
@@ -317,7 +317,7 @@ export default function MyPage() {
 				</div>
 			</section>
 
-			<section id="about" className="theme-section px-6 py-24 md:px-10 lg:px-20">
+			<section id="about" className="theme-section px-4 py-20 sm:px-6 md:px-10 md:py-24 lg:px-20">
 				<div className="mx-auto max-w-7xl">
 					<SectionHeader
 						eyebrow="What I Do"
@@ -342,7 +342,7 @@ export default function MyPage() {
 				</div>
 			</section>
 
-			<section id="projects" className="theme-section theme-band px-6 py-24 md:px-10 lg:px-20">
+			<section id="projects" className="theme-section theme-band px-4 py-20 sm:px-6 md:px-10 md:py-24 lg:px-20">
 				<div className="mx-auto max-w-7xl">
 					<div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
 						<SectionHeader
@@ -357,7 +357,7 @@ export default function MyPage() {
 							</Button>
 						</motion.div>
 					</div>
-					<div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-5">
+					<div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5">
 						{projectsForHome.map((project, index) => (
 							<ProjectMosaicCard project={project} index={index} key={project.slug} />
 						))}
@@ -365,13 +365,13 @@ export default function MyPage() {
 				</div>
 			</section>
 
-			<section id="skills" className="theme-section px-6 py-24 md:px-10 lg:px-20">
+			<section id="skills" className="theme-section px-4 py-20 sm:px-6 md:px-10 md:py-24 lg:px-20">
 				<div className="mx-auto max-w-7xl">
 					<StackShowcase />
 				</div>
 			</section>
 
-			<section id="experience" className="theme-section theme-band px-6 py-24 md:px-10 lg:px-20">
+			<section id="experience" className="theme-section theme-band px-4 py-20 sm:px-6 md:px-10 md:py-24 lg:px-20">
 				<div className="mx-auto max-w-7xl">
 					<SectionHeader
 						eyebrow="Experience"
@@ -395,7 +395,7 @@ export default function MyPage() {
 				</div>
 			</section>
 
-			<section className="theme-section px-6 py-16 md:px-10 lg:px-20">
+			<section className="theme-section px-4 py-14 sm:px-6 md:px-10 md:py-16 lg:px-20">
 				<div className="mx-auto max-w-7xl">
 					<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
 						{achievementCards.map((item, index) => (
@@ -413,8 +413,8 @@ export default function MyPage() {
 				</div>
 			</section>
 
-			<section id="contact" className="theme-section px-6 pb-24 pt-8 md:px-10 lg:px-20">
-				<div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 rounded-[2rem] p-8 md:grid-cols-[1fr_0.8fr] md:p-10 theme-card">
+			<section id="contact" className="theme-section px-4 pb-20 pt-8 sm:px-6 md:px-10 md:pb-24 lg:px-20">
+				<div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 rounded-[2rem] p-5 sm:p-8 md:grid-cols-[1fr_0.8fr] md:p-10 theme-card">
 					<motion.div {...fadeUp}>
 						<p className="mb-3 text-sm font-bold uppercase tracking-[0.24em] theme-accent">
 							Contact
