@@ -154,7 +154,7 @@ function HeroVisual() {
 				<p className="text-xs font-bold uppercase tracking-[0.18em] theme-muted">
 					Current GPA
 				</p>
-				<p className="text-3xl font-bold theme-text">3.67</p>
+				<p className="text-3xl font-bold theme-text">3.72</p>
 			</motion.div>
 			<motion.div
 				className="floating-orbit-delay theme-card absolute -right-2 bottom-16 rounded-2xl px-4 py-3 sm:-right-8"

@@ -47,7 +47,7 @@ export default function Education() {
 			{
 				icon: faGraduationCap,
 				title: "Information System - Data Science",
-				subtitle: "President University | GPA 3.67",
+				subtitle: "President University | GPA 3.72",
 				date: "Current",
 				color: "from-green-400 to-emerald-600",
 			},
@@ -254,7 +254,7 @@ export default function Education() {
 							</div>
 							<div className="flex flex-wrap gap-2 mt-4 text-sm">
 								<div className="bg-slate-900 border border-slate-800 text-slate-300 px-3.5 py-1.5 rounded-full font-semibold">
-									GPA: 3.67 out of 4.00
+									GPA: 3.72 out of 4.00
 								</div>
 							</div>
 						</div>
