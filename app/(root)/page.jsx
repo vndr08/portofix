@@ -8,9 +8,6 @@ import StackShowcase from "@/components/StackShowcase";
 import ThemeToggle from "@/components/ThemeToggle";
 import TypewriterText from "@/components/TypewriterText";
 import ContactForm from "@/components/ContactForm";
-import Testimonials from "@/components/Testimonials";
-import BlogSection from "@/components/BlogSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
 import profile from "@/json/profile.json";
 import resume from "@/json/resume.json";
@@ -425,15 +422,6 @@ export default function MyPage() {
 					</div>
 				</div>
 			</section>
-
-			{/* Testimonials Section */}
-			<Testimonials />
-
-			{/* Blog Section */}
-			<BlogSection />
-
-			{/* Newsletter Section */}
-			<NewsletterSignup />
 
 			<section id="contact" className="theme-section px-4 pb-20 pt-8 sm:px-6 md:px-10 md:pb-24 lg:px-20">
 				<div className="mx-auto max-w-7xl">
