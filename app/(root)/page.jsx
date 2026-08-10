@@ -7,6 +7,11 @@ import Button from "@/components/Button";
 import StackShowcase from "@/components/StackShowcase";
 import ThemeToggle from "@/components/ThemeToggle";
 import TypewriterText from "@/components/TypewriterText";
+import ContactForm from "@/components/ContactForm";
+import Testimonials from "@/components/Testimonials";
+import BlogSection from "@/components/BlogSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
+import CaseStudiesSection from "@/components/CaseStudiesSection";
 import profile from "@/json/profile.json";
 import resume from "@/json/resume.json";
 import data from "@/json/data.json";
@@ -15,7 +20,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import {
 	faArrowRight,
-	faAward,
 	faBriefcase,
 	faCode,
 	faDownload,
@@ -371,6 +375,9 @@ export default function MyPage() {
 				</div>
 			</section>
 
+			{/* Case Studies Section */}
+			<CaseStudiesSection />
+
 			<section id="skills" className="theme-section px-4 py-20 sm:px-6 md:px-10 md:py-24 lg:px-20">
 				<div className="mx-auto max-w-7xl">
 					<StackShowcase />
@@ -419,29 +426,45 @@ export default function MyPage() {
 				</div>
 			</section>
 
+			{/* Testimonials Section */}
+			<Testimonials />
+
+			{/* Blog Section */}
+			<BlogSection />
+
+			{/* Newsletter Section */}
+			<NewsletterSignup />
+
 			<section id="contact" className="theme-section px-4 pb-20 pt-8 sm:px-6 md:px-10 md:pb-24 lg:px-20">
-				<div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 rounded-[2rem] p-5 sm:p-8 md:grid-cols-[1fr_0.8fr] md:p-10 theme-card">
-					<motion.div {...fadeUp}>
-						<p className="mb-3 text-sm font-bold uppercase tracking-[0.24em] theme-accent">
-							Contact
-						</p>
-						<h2 className="text-3xl font-bold md:text-5xl theme-text">
-							Let&apos;s talk about the next role or project.
-						</h2>
-						<p className="mt-5 max-w-2xl leading-7 theme-muted">
-							{profile.availability} Reach out for AI engineering, software
-							engineering, full-stack, or application support opportunities.
-						</p>
-					</motion.div>
-					<motion.div {...fadeUp} className="flex flex-col justify-center gap-3 text-sm font-semibold">
-						<Button href={`mailto:${profile.email}`} variation="primary">
-							Email Me
-							<FontAwesomeIcon icon={faEnvelope} className="h-4 w-4" />
-						</Button>
-						<Button href={profile.cvUrl} target="_blank" rel="noopener noreferrer">
-							Resume
-							<FontAwesomeIcon icon={faDownload} className="h-4 w-4" />
-						</Button>
+				<div className="mx-auto max-w-7xl">
+					<div className="grid grid-cols-1 gap-8 rounded-[2rem] p-5 sm:p-8 md:grid-cols-[1fr_0.8fr] md:p-10 theme-card">
+						<motion.div {...fadeUp}>
+							<p className="mb-3 text-sm font-bold uppercase tracking-[0.24em] theme-accent">
+								Contact
+							</p>
+							<h2 className="text-3xl font-bold md:text-5xl theme-text">
+								Let&apos;s talk about the next role or project.
+							</h2>
+							<p className="mt-5 max-w-2xl leading-7 theme-muted">
+								{profile.availability} Reach out for AI engineering, software
+								engineering, full-stack, or application support opportunities.
+							</p>
+						</motion.div>
+						<motion.div {...fadeUp} className="flex flex-col justify-center gap-3 text-sm font-semibold">
+							<Button href={`mailto:${profile.email}`} variation="primary">
+								Email Me
+								<FontAwesomeIcon icon={faEnvelope} className="h-4 w-4" />
+							</Button>
+							<Button href={profile.cvUrl} target="_blank" rel="noopener noreferrer">
+								Resume
+								<FontAwesomeIcon icon={faDownload} className="h-4 w-4" />
+							</Button>
+						</motion.div>
+					</div>
+
+					{/* Contact Form */}
+					<motion.div {...fadeUp} className="mt-8 rounded-[2rem] border p-5 sm:p-8 md:p-10 theme-card">
+						<ContactForm />
 					</motion.div>
 				</div>
 			</section>

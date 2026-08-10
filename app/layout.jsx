@@ -8,6 +8,7 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
 import { Analytics } from "@vercel/analytics/react";
+import { PWAProvider } from "@/components/PWAProvider";
 import profile from "@/json/profile.json";
 
 const siteUrl = profile.canonicalUrl;
@@ -91,6 +92,22 @@ export const metadata = {
 	verification: {
 		google: "your-google-verification-code",
 	},
+	manifest: "/manifest.json",
+	appleWebApp: {
+		capable: true,
+		statusBarStyle: "default",
+		title: "Ivan.dev",
+	},
+	icons: {
+		icon: [
+			{ url: "/icons/icon-192x192.png", sizes: "192x192", type: "image/png" },
+			{ url: "/icons/icon-512x512.png", sizes: "512x512", type: "image/png" },
+		],
+		apple: [
+			{ url: "/icons/icon-192x192.png", sizes: "192x192", type: "image/png" },
+			{ url: "/icons/icon-512x512.png", sizes: "512x512", type: "image/png" },
+		],
+	},
 };
 
 export default function RootLayout({ children }) {
@@ -101,23 +118,25 @@ export default function RootLayout({ children }) {
 				<PersonStructuredData />
 				<WebsiteStructuredData />
 				<ProfessionalServiceStructuredData />
-				<link rel="alternate" type="application/rss+xml" title={`${siteName} RSS Feed`} />
+				<link rel="alternate" type="application/rss+xml" title={`${siteName} RSS Feed`} href="/feed.xml" />
 				<link rel="me" href={linkedInUrl} />
 				<link rel="me" href={githubUrl} />
 			</head>
 			<body>
-				<ScrollProgress />
-				<BackToTop />
-				<a
-					href="#main-content"
-					className="sr-only left-4 top-4 z-[100] rounded-lg bg-emerald-500 px-4 py-2 text-white focus:not-sr-only focus:absolute">
-					Skip to main content
-				</a>
-				<Navbar />
-				<main id="main-content" tabIndex={-1}>
-					{children}
-				</main>
-				<Analytics />
+				<PWAProvider>
+					<ScrollProgress />
+					<BackToTop />
+					<a
+						href="#main-content"
+						className="sr-only left-4 top-4 z-[100] rounded-lg bg-emerald-500 px-4 py-2 text-white focus:not-sr-only focus:absolute">
+						Skip to main content
+					</a>
+					<Navbar />
+					<main id="main-content" tabIndex={-1}>
+						{children}
+					</main>
+					<Analytics />
+				</PWAProvider>
 			</body>
 		</html>
 	);

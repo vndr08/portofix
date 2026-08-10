@@ -1,0 +1,40 @@
+{
+	"posts": [
+		{
+			"slug": "building-ai-chatbot-with-langchain",
+			"title": "Building an AI Chatbot with LangChain and FastAPI",
+			"excerpt": "A practical guide to building production-ready AI chatbots using LangChain for orchestration and FastAPI for the backend API.",
+			"content": "Building an AI Chatbot with LangChain and FastAPI...",
+			"date": "2025-12-15",
+			"author": "Ivander Johana Pratama",
+			"tags": ["AI", "LangChain", "FastAPI", "Python"],
+			"coverImage": "/image/blog/chatbot.jpg",
+			"readTime": "8 min read",
+			"featured": true
+		},
+		{
+			"slug": "nextjs-performance-optimization",
+			"title": "Next.js Performance Optimization Techniques",
+			"excerpt": "Essential tips and tricks to make your Next.js applications blazing fast, from image optimization to server-side rendering strategies.",
+			"content": "Next.js Performance Optimization Techniques...",
+			"date": "2025-11-20",
+			"author": "Ivander Johana Pratama",
+			"tags": ["Next.js", "Performance", "React"],
+			"coverImage": "/image/blog/nextjs.jpg",
+			"readTime": "6 min read",
+			"featured": false
+		},
+		{
+			"slug": "enterprise-software-development-lessons",
+			"title": "Lessons from Enterprise Software Development",
+			"excerpt": "Key takeaways from working on enterprise applications at PT Jababeka, including code maintainability, documentation, and collaboration.",
+			"content": "Lessons from Enterprise Software Development...",
+			"date": "2025-10-10",
+			"author": "Ivander Johana Pratama",
+			"tags": ["Career", "Enterprise", "Software Engineering"],
+			"coverImage": "/image/blog/enterprise.jpg",
+			"readTime": "5 min read",
+			"featured": false
+		}
+	]
+}
