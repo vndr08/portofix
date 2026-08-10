@@ -192,7 +192,8 @@ function ProjectMosaicCard({ project, index }) {
 		<motion.article
 			{...fadeUp}
 			transition={{ ...fadeUp.transition, delay: index * 0.06 }}
-			className="group hover-in-shadow outer-shadow theme-card overflow-hidden rounded-[1.5rem] transition duration-300 hover:-translate-y-2">
+			className="group hover-in-shadow outer-shadow theme-card overflow-hidden rounded-[1.5rem] transition-all duration-300 hover:-translate-y-3"
+			whileHover={{ y: -6 }}>
 			<Link href={`/projects/${project.slug}`} className="block h-full">
 				<div className="relative aspect-[16/10] overflow-hidden">
 					<Image
@@ -200,13 +201,18 @@ function ProjectMosaicCard({ project, index }) {
 						alt={project.title}
 						fill
 						sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-						className="project-hover-image object-cover"
+						className="project-hover-image object-cover transition-transform duration-500 group-hover:scale-105"
 					/>
-					<div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/15 to-transparent" />
+					<div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/15 to-transparent transition-opacity duration-300 group-hover:opacity-90" />
 					<div className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-slate-900">
 						{project.year}
 					</div>
-					<div className="view-project-pill absolute bottom-4 left-4 rounded-full bg-emerald-500 px-4 py-2 text-sm font-bold text-white">
+					{project.featured && (
+						<div className="absolute right-4 top-4 rounded-full bg-emerald-500 px-3 py-1 text-xs font-bold text-white">
+							Featured
+						</div>
+					)}
+					<div className="view-project-pill absolute bottom-4 left-4 rounded-full bg-emerald-500 px-4 py-2 text-sm font-bold text-white shadow-lg shadow-emerald-500/30">
 						View project
 					</div>
 				</div>
@@ -214,15 +220,15 @@ function ProjectMosaicCard({ project, index }) {
 					<p className="text-xs font-bold uppercase tracking-[0.18em] theme-accent">
 						{project.role || "Project"}
 					</p>
-					<h3 className="mt-2 text-lg font-bold leading-snug theme-text sm:text-xl">
+					<h3 className="mt-2 text-lg font-bold leading-snug theme-text transition-colors duration-300 group-hover:text-emerald-500 sm:text-xl">
 						{project.title}
 					</h3>
 					<p className="mt-3 line-clamp-2 text-sm leading-6 theme-muted">
 						{project.summary || project.desc[0]}
 					</p>
-					<div className="mt-5 flex items-center gap-2 text-sm font-bold theme-accent">
+					<div className="mt-5 flex items-center gap-2 text-sm font-bold theme-accent transition-all duration-300 group-hover:gap-3">
 						Read case study
-						<FontAwesomeIcon icon={faArrowRight} className="h-3.5 w-3.5 transition group-hover:translate-x-1" />
+						<FontAwesomeIcon icon={faArrowRight} className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
 					</div>
 				</div>
 			</Link>

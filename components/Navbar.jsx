@@ -113,21 +113,25 @@ export default function Navbar() {
 						onClick={() => setIsNavOpen((value) => !value)}
 						type="button"
 						aria-label="Toggle navigation menu"
-						aria-expanded={isNavOpen}>
+						aria-expanded={isNavOpen}
+						aria-controls="mobile-menu">
 						<span
 							className={`h-0.5 w-5 rounded-full bg-current theme-text transition ${
 								isNavOpen ? "translate-y-2 rotate-45" : ""
 							}`}
+							aria-hidden="true"
 						/>
 						<span
 							className={`h-0.5 w-5 rounded-full bg-current theme-text transition ${
 								isNavOpen ? "opacity-0" : ""
 							}`}
+							aria-hidden="true"
 						/>
 						<span
 							className={`h-0.5 w-5 rounded-full bg-current theme-text transition ${
 								isNavOpen ? "-translate-y-2 -rotate-45" : ""
 							}`}
+							aria-hidden="true"
 						/>
 					</button>
 				</div>
@@ -136,6 +140,7 @@ export default function Navbar() {
 			<AnimatePresence>
 				{isNavOpen && (
 					<motion.div
+						id="mobile-menu"
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
 						exit={{ opacity: 0 }}

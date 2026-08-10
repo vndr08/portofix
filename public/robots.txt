@@ -1,4 +1,31 @@
-User-agent: *
-Disallow:
+# robots.txt - Ivander Portfolio
+# https://ivanderjp.vercel.app
 
+User-agent: *
+Allow: /
+
+# Sitemap location
 Sitemap: https://ivanderjp.vercel.app/sitemap.xml.gz
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Block API routes from indexing
+Disallow: /api/
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Block bad bots (basic protection)
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
