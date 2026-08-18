@@ -2,6 +2,47 @@
   "Projects": [
     {
       "show": true,
+      "title": "VANGUARD - Fleet Control Tower",
+      "desc": [
+        "Designed and built a desktop Fleet Control Tower that lets dispatchers, safety teams, and management monitor an entire vehicle fleet from a single cockpit. The application spans 14 operational pages organized into four workflow layers: Monitor, Operation, Evidence, and Administration.",
+        "Implemented realtime vehicle tracking with MapLibre GL, including planned versus actual route comparison and route deviation detection, plus a trip replay system with playback controls and telemetry interpolation. The backend uses async FastAPI with WebSocket broadcasting, fed by a GPS simulator streaming telemetry for 25 trucks across Java.",
+        "Created a custom industrial design system called Graphite Command, optimized for high information density and long control room sessions with tabular numerals, compact table rows, and motion used to communicate data change rather than decoration."
+      ],
+      "featured": true,
+      "summary": "Realtime fleet monitoring cockpit with live GPS tracking, trip replay, and task dispatch for control room operators.",
+      "role": "Full-stack Developer & Product Designer",
+      "impact": "Designed the information architecture and design system from scratch for a complex fleet management domain, then built the operational surface with an end-to-end realtime telemetry pipeline.",
+      "highlights": [
+        "Built realtime vehicle tracking with MapLibre GL, planned versus actual routes, and deviation detection.",
+        "Implemented trip replay with playback speed controls and telemetry interpolation.",
+        "Developed an async FastAPI backend with WebSocket broadcast and a 25-unit GPS simulator."
+      ],
+      "year": "2026",
+      "preview": "",
+      "code": "https://github.com/vndr08/VANGUARD",
+      "thumbnail": "/image/projects/web/vanguard/vanguard1.png",
+      "images": [
+        "/image/projects/web/vanguard/vanguard1.png",
+        "/image/projects/web/vanguard/vanguard2.png"
+      ],
+      "tech": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "MapLibre GL",
+        "FastAPI",
+        "SQLAlchemy",
+        "WebSocket",
+        "PostgreSQL",
+        "Docker"
+      ],
+      "slug": "vanguard",
+      "category": [
+        1
+      ]
+    },
+    {
+      "show": true,
       "title": "WhatsApp-Based Issue Reporting & Analytics Dashboard",
       "desc": [
         "Developed an AI-powered WhatsApp chatbot for automated issue reporting, intent detection, and ticket creation integrated with the osTicket system for PT Andakara Informatika Nusantara.",
@@ -35,7 +76,10 @@
         "osTicket"
       ],
       "slug": "whatsapp-issue-reporting",
-      "category": [1, 2]
+      "category": [
+        1,
+        2
+      ]
     },
     {
       "show": true,
@@ -68,9 +112,11 @@
         "Tailwind CSS",
         "PostgreSQL",
         "Real-time Data"
-      ], 
+      ],
       "slug": "kalbe-dashboard",
-      "category": [1]
+      "category": [
+        1
+      ]
     },
     {
       "show": true,
@@ -104,9 +150,12 @@
         "Random Forest",
         "PostgreSQL",
         "Pandas"
-      ], 
+      ],
       "slug": "eduintel",
-      "category": [1, 2]
+      "category": [
+        1,
+        2
+      ]
     },
     {
       "show": true,
@@ -140,9 +189,11 @@
         "NLP",
         "OCR",
         "Machine Learning"
-      ], 
+      ],
       "slug": "jababeka-chatbot",
-      "category": [2]
+      "category": [
+        2
+      ]
     },
     {
       "show": true,
@@ -175,9 +226,12 @@
         "Python",
         "Pandas",
         "Data Analysis"
-      ], 
+      ],
       "slug": "duplicate-detection",
-      "category": [1, 2]
+      "category": [
+        1,
+        2
+      ]
     },
     {
       "show": true,
@@ -208,9 +262,11 @@
         "TypeScript",
         "MySQL",
         "Accounting Systems"
-      ], 
+      ],
       "slug": "revenue-cycle",
-      "category": [1]
+      "category": [
+        1
+      ]
     },
     {
       "show": true,
@@ -241,9 +297,11 @@
         "React",
         "Tailwind CSS",
         "TypeScript"
-      ], 
+      ],
       "slug": "larissa-website",
-      "category": [1]
+      "category": [
+        1
+      ]
     },
     {
       "show": true,
@@ -274,9 +332,11 @@
         "Java",
         "Firebase",
         "Real-time Database"
-      ], 
+      ],
       "slug": "bersuara",
-      "category": [1]
+      "category": [
+        1
+      ]
     },
     {
       "show": true,
@@ -304,9 +364,11 @@
         "AI Image Generation",
         "Video Editing",
         "Storytelling"
-      ], 
+      ],
       "slug": "empathy-shadow",
-      "category": [2]
+      "category": [
+        2
+      ]
     },
     {
       "show": true,
@@ -337,9 +399,11 @@
         "MySQL",
         "TypeScript",
         "Tailwind CSS"
-      ], 
+      ],
       "slug": "hospital-system",
-      "category": [1]
+      "category": [
+        1
+      ]
     },
     {
       "show": true,
@@ -367,9 +431,11 @@
         "Node.js",
         "MongoDB",
         "Express"
-      ], 
+      ],
       "slug": "preloved-marketplace",
-      "category": [1]
+      "category": [
+        1
+      ]
     },
     {
       "show": true,
@@ -398,9 +464,11 @@
         "JavaScript",
         "PHP",
         "MySQL"
-      ], 
+      ],
       "slug": "barbershop-system",
-      "category": [1]
+      "category": [
+        1
+      ]
     }
   ]
 }
