@@ -20,10 +20,9 @@
       "year": "2026",
       "preview": "",
       "code": "https://github.com/vndr08/VANGUARD",
-      "thumbnail": "/image/projects/web/vanguard/vanguard1.png",
+      "thumbnail": "/image/projects/vanguard/vanguard.png",
       "images": [
-        "/image/projects/web/vanguard/vanguard1.png",
-        "/image/projects/web/vanguard/vanguard2.png"
+        "/image/projects/vanguard/vanguard.png"
       ],
       "tech": [
         "Next.js",

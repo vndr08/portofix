@@ -9,8 +9,8 @@ import ThemeToggle from "@/components/ThemeToggle";
 
 const navLinks = [
 	{ href: "/#home", label: "Home", id: "home" },
-	{ href: "/#about", label: "About", id: "about" },
 	{ href: "/#projects", label: "Projects", id: "projects" },
+	{ href: "/#experience", label: "Experience", id: "experience" },
 	{ href: "/#skills", label: "Skills", id: "skills" },
 	{ href: "/#contact", label: "Contact", id: "contact" },
 ];
@@ -21,6 +21,22 @@ export default function Navbar() {
 	const pathname = usePathname();
 
 	const closeNav = () => setIsNavOpen(false);
+
+	useEffect(() => {
+		if (!isNavOpen) return undefined;
+
+		const handleKeyDown = (event) => {
+			if (event.key === "Escape") setIsNavOpen(false);
+		};
+
+		document.body.style.overflow = "hidden";
+		window.addEventListener("keydown", handleKeyDown);
+
+		return () => {
+			document.body.style.overflow = "";
+			window.removeEventListener("keydown", handleKeyDown);
+		};
+	}, [isNavOpen]);
 
 	useEffect(() => {
 		if (pathname?.startsWith("/projects")) {

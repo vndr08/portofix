@@ -15,6 +15,14 @@ const config = {
 		formats: ["image/avif", "image/webp"],
 		minimumCacheTTL: 60,
 	},
+	async redirects() {
+		return [
+			{ source: "/case-studies", destination: "/projects", permanent: true },
+			{ source: "/case-studies/ai-chatbot-jababeka", destination: "/projects/jababeka-chatbot", permanent: true },
+			{ source: "/case-studies/duplicate-detection-system", destination: "/projects/duplicate-detection", permanent: true },
+			{ source: "/case-studies/financial-dashboard", destination: "/projects", permanent: true },
+		];
+	},
 	async headers() {
 		return [
 			{
