@@ -128,13 +128,13 @@ export default function OpenGraphImage() {
 							fontWeight: 600,
 						}}>
 						<span style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-							<span style={{ color: "#10b981" }}>◆</span> AI Automation
+							<span style={{ color: "#10b981" }}>+</span> AI Automation
 						</span>
 						<span style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-							<span style={{ color: "#06b6d4" }}>◆</span> Software Engineering
+							<span style={{ color: "#06b6d4" }}>+</span> Software Engineering
 						</span>
 						<span style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-							<span style={{ color: "#8b5cf6" }}>◆</span> Full-Stack
+							<span style={{ color: "#8b5cf6" }}>+</span> Full-Stack
 						</span>
 					</div>
 				</div>

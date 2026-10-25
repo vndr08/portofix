@@ -44,16 +44,16 @@
       "show": true,
       "title": "WhatsApp-Based Issue Reporting & Analytics Dashboard",
       "desc": [
-        "Developed an AI-powered WhatsApp chatbot for automated issue reporting, intent detection, and ticket creation integrated with the osTicket system for PT Andakara Informatika Nusantara.",
+      "Led product delivery for an AI-powered WhatsApp chatbot for automated issue reporting, intent detection, and ticket creation for PT Andakara Informatika Nusantara.",
         "Built a comprehensive analytics dashboard to visualize issue trends, reporting frequencies, and resolution statistics for management decision-making.",
-        "Handled chatbot core logic, WhatsApp Gateway integration, NLP using Gemini AI, and backend integration with the TRAMOS Web system."
+      "Handled chatbot core logic, WhatsApp Gateway integration, NLP using Claude AI, and backend integration with the TRAMOS Web system."
       ],
       "featured": true,
       "summary": "AI-powered WhatsApp chatbot for automated issue reporting integrated with osTicket, plus an analytics dashboard.",
       "role": "AI & Full-stack Developer",
       "impact": "Automated ticket creation workflows and provided real-time issue statistics, reducing manual ticket dispatching and improving data visibility.",
       "highlights": [
-        "Built chatbot core logic and Gemini AI integration for natural language understanding.",
+      "Built chatbot core logic and Claude AI integration for natural language understanding.",
         "Connected WhatsApp Gateway with osTicket system for automated support ticket dispatch.",
         "Developed an analytics dashboard for management reporting and trend visualization."
       ],
@@ -66,7 +66,7 @@
         "/image/projects/ai/whatsapp-issue-reporting/tramos2.png"
       ],
       "tech": [
-        "Gemini AI",
+      "Claude AI",
         "FastAPI",
         "React",
         "NodeJS",

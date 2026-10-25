@@ -99,14 +99,8 @@ export const metadata = {
 		title: "Ivan.dev",
 	},
 	icons: {
-		icon: [
-			{ url: "/icons/icon-192x192.png", sizes: "192x192", type: "image/png" },
-			{ url: "/icons/icon-512x512.png", sizes: "512x512", type: "image/png" },
-		],
-		apple: [
-			{ url: "/icons/icon-192x192.png", sizes: "192x192", type: "image/png" },
-			{ url: "/icons/icon-512x512.png", sizes: "512x512", type: "image/png" },
-		],
+		icon: [{ url: "/icon.svg", sizes: "any", type: "image/svg+xml" }],
+		apple: [{ url: "/icon.svg", sizes: "any", type: "image/svg+xml" }],
 	},
 };
 
@@ -135,7 +129,7 @@ export default function RootLayout({ children }) {
 					<main id="main-content" tabIndex={-1}>
 						{children}
 					</main>
-					<Analytics />
+					{process.env.VERCEL ? <Analytics /> : null}
 				</PWAProvider>
 			</body>
 		</html>

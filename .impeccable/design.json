@@ -1,0 +1,258 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-25T15:49:58Z",
+  "title": "Design System: Registered Lightfield Folio",
+  "extensions": {
+    "colorMeta": {
+      "gallery-black": {
+        "role": "neutral",
+        "displayName": "Gallery Black",
+        "canonical": "#070a10",
+        "tonalRamp": ["oklch(15% 0.012 255)", "oklch(24% 0.012 255)", "oklch(35% 0.012 255)", "oklch(47% 0.012 255)", "oklch(59% 0.012 255)", "oklch(71% 0.012 255)", "oklch(83% 0.012 255)", "oklch(95% 0.012 255)"]
+      },
+      "film-black": {
+        "role": "neutral",
+        "displayName": "Film Black",
+        "canonical": "#0b1119",
+        "tonalRamp": ["oklch(15% 0.018 250)", "oklch(24% 0.018 250)", "oklch(35% 0.018 250)", "oklch(47% 0.018 250)", "oklch(59% 0.018 250)", "oklch(71% 0.018 250)", "oklch(83% 0.018 250)", "oklch(95% 0.018 250)"]
+      },
+      "paper-white": {
+        "role": "neutral",
+        "displayName": "Paper White",
+        "canonical": "#f1f5f2",
+        "tonalRamp": ["oklch(15% 0.008 155)", "oklch(24% 0.008 155)", "oklch(35% 0.008 155)", "oklch(47% 0.008 155)", "oklch(59% 0.008 155)", "oklch(71% 0.008 155)", "oklch(83% 0.008 155)", "oklch(95% 0.008 155)"]
+      },
+      "warm-paper": {
+        "role": "neutral",
+        "displayName": "Warm Paper",
+        "canonical": "#f1ede9",
+        "tonalRamp": ["oklch(15% 0.012 65)", "oklch(24% 0.012 65)", "oklch(35% 0.012 65)", "oklch(47% 0.012 65)", "oklch(59% 0.012 65)", "oklch(71% 0.012 65)", "oklch(83% 0.012 65)", "oklch(95% 0.012 65)"]
+      },
+      "optic-mint": {
+        "role": "primary",
+        "displayName": "Optic Mint",
+        "canonical": "#a8ffea",
+        "tonalRamp": ["oklch(15% 0.11 175)", "oklch(24% 0.11 175)", "oklch(35% 0.11 175)", "oklch(47% 0.11 175)", "oklch(59% 0.11 175)", "oklch(71% 0.11 175)", "oklch(83% 0.11 175)", "oklch(95% 0.06 175)"]
+      },
+      "prism-violet": {
+        "role": "secondary",
+        "displayName": "Prism Violet",
+        "canonical": "#c8a7ff",
+        "tonalRamp": ["oklch(15% 0.15 295)", "oklch(24% 0.15 295)", "oklch(35% 0.15 295)", "oklch(47% 0.15 295)", "oklch(59% 0.15 295)", "oklch(71% 0.15 295)", "oklch(83% 0.12 295)", "oklch(95% 0.05 295)"]
+      },
+      "signal-orange": {
+        "role": "tertiary",
+        "displayName": "Signal Orange",
+        "canonical": "#ff914d",
+        "tonalRamp": ["oklch(15% 0.16 48)", "oklch(24% 0.16 48)", "oklch(35% 0.16 48)", "oklch(47% 0.16 48)", "oklch(59% 0.16 48)", "oklch(71% 0.16 48)", "oklch(83% 0.11 48)", "oklch(95% 0.04 48)"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Editorial Display",
+        "purpose": "Identity and chapter-scale uppercase statements."
+      },
+      "headline": {
+        "displayName": "Evidence Headline",
+        "purpose": "Project, role, and system names in compact records."
+      },
+      "body": {
+        "displayName": "Technical Body",
+        "purpose": "Project summaries, experience detail, and explanatory copy."
+      },
+      "label": {
+        "displayName": "Registration Label",
+        "purpose": "Indices, dates, technologies, navigation, rails, and controls."
+      }
+    },
+    "shadows": [
+      {
+        "name": "mint-status-glow",
+        "value": "0 0 14px rgba(100, 255, 180, 0.48)",
+        "purpose": "Availability signal only."
+      },
+      {
+        "name": "film-atmosphere",
+        "value": "0 0 38px rgba(42, 240, 218, 0.08), inset 0 0 42px rgba(174, 139, 255, 0.04)",
+        "purpose": "Subtle optical depth on overlapping experience planes."
+      },
+      {
+        "name": "registered-edge",
+        "value": "0 0 22px rgba(100, 233, 209, 0.55)",
+        "purpose": "Narrow illuminated edge on a selected film record."
+      },
+      {
+        "name": "scroll-beam",
+        "value": "0 0 16px rgba(168, 255, 234, 0.7), 0 0 32px rgba(200, 167, 255, 0.36)",
+        "purpose": "Dual-color glow around the two-pixel progress beam."
+      }
+    ],
+    "motion": [
+      {
+        "name": "pointer-film-spring",
+        "value": "stiffness 120, damping 24, mass 0.7",
+        "purpose": "Smooth shallow pointer tilt on desktop project films."
+      },
+      {
+        "name": "scroll-registration-spring",
+        "value": "stiffness 90, damping 28, mass 0.5",
+        "purpose": "Scroll beam and spatial section movement."
+      },
+      {
+        "name": "control-color",
+        "value": "220ms ease",
+        "purpose": "Button background, text, and border response."
+      },
+      {
+        "name": "surface-response",
+        "value": "240ms ease",
+        "purpose": "System row translation and background response."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "0.01ms; scroll beam hidden",
+        "purpose": "Removes nonessential transitions, tilt, parallax, drift, and orbit motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact",
+        "value": "900px"
+      },
+      {
+        "name": "mid-desktop",
+        "value": "1240px"
+      },
+      {
+        "name": "reference-frame",
+        "value": "1536px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Action",
+      "kind": "button",
+      "refersTo": "action-primary",
+      "description": "Square warm-paper action for the main route in a decision cluster.",
+      "html": "<a class=\"ds-action-primary\" href=\"#\"><span>Explore selected work</span><svg viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2.5 8h10M8.75 4.25 12.5 8l-3.75 3.75\"/></svg></a>",
+      "css": ".ds-action-primary { display:flex; align-items:center; justify-content:space-between; min-width:214px; height:52px; padding:0 22px; background:#f1ede9; color:#070a10; font:600 12px/1.2 Manrope,sans-serif; text-decoration:none; transition:background-color 220ms ease,color 220ms ease; } .ds-action-primary svg { width:1.2em; height:1.2em; fill:none; stroke:currentColor; stroke-width:1.35; stroke-linecap:square; stroke-linejoin:miter; } .ds-action-primary:hover { background:#a8ffea; } .ds-action-primary:focus-visible { outline:2px solid #a8ffea; outline-offset:4px; } .ds-action-primary:active { background:#c8a7ff; }"
+    },
+    {
+      "name": "Secondary Action",
+      "kind": "button",
+      "refersTo": "action-secondary",
+      "description": "Transparent square action for résumé and alternate destinations.",
+      "html": "<a class=\"ds-action-secondary\" href=\"#\"><span>Download résumé</span><svg viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2.5 8h10M8.75 4.25 12.5 8l-3.75 3.75\"/></svg></a>",
+      "css": ".ds-action-secondary { display:flex; align-items:center; justify-content:space-between; min-width:180px; height:52px; padding:0 22px; border:1px solid rgba(241,245,242,.52); background:transparent; color:#f1f5f2; font:600 12px/1.2 Manrope,sans-serif; text-decoration:none; transition:border-color 220ms ease,color 220ms ease; } .ds-action-secondary svg { width:1.2em; height:1.2em; transform:rotate(90deg); fill:none; stroke:currentColor; stroke-width:1.35; stroke-linecap:square; stroke-linejoin:miter; } .ds-action-secondary:hover { border-color:#c8a7ff; color:#c8a7ff; } .ds-action-secondary:focus-visible { outline:2px solid #a8ffea; outline-offset:4px; } .ds-action-secondary:active { border-color:#ff914d; color:#ff914d; }"
+    },
+    {
+      "name": "Technology Tags",
+      "kind": "chip",
+      "refersTo": "technology-tag",
+      "description": "Three restrained spectral tags identify a project's working stack.",
+      "html": "<div class=\"ds-tags\" aria-label=\"Technologies\"><span>Next.js</span><span>FastAPI</span><span>WebSocket</span></div>",
+      "css": ".ds-tags { display:flex; align-items:center; gap:9px; font-family:Manrope,sans-serif; } .ds-tags span { display:inline-flex; align-items:center; height:24px; padding:0 10px; border:1px solid rgba(168,255,234,.7); border-radius:6px; color:#a8ffea; font-size:11px; } .ds-tags span:nth-child(2) { border-color:rgba(200,167,255,.72); color:#c8a7ff; } .ds-tags span:nth-child(3) { border-color:rgba(255,145,77,.76); color:#ff914d; }"
+    },
+    {
+      "name": "Primary Navigation",
+      "kind": "nav",
+      "description": "A compact row of explicit portfolio destinations registered to the top rule.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Primary navigation\"><a href=\"#\">Work</a><a href=\"#\">About</a><a href=\"#\">Résumé</a><a href=\"#\">Contact</a></nav>",
+      "css": ".ds-nav { display:flex; align-items:center; gap:28px; font:400 11px/1.3 Manrope,sans-serif; } .ds-nav a { color:rgba(241,245,242,.86); text-decoration-thickness:1px; text-underline-offset:5px; } .ds-nav a:hover { color:#a8ffea; text-decoration-line:underline; } .ds-nav a:focus-visible { outline:2px solid #a8ffea; outline-offset:4px; } .ds-nav a:active { color:#c8a7ff; }"
+    },
+    {
+      "name": "Film Record",
+      "kind": "card",
+      "refersTo": "film-record",
+      "description": "A square translucent evidence record with quiet metadata and one illuminated edge.",
+      "html": "<article class=\"ds-film-record\"><div class=\"ds-record-code\"><span>EXP / 01</span><span>MAR—AUG 2026</span></div><p class=\"ds-record-company\">PT JABABEKA TBK</p><h3>Software Engineering Partnership</h3><p>Product decisions, interface design, software architecture, and business operations meet in one record.</p></article>",
+      "css": ".ds-film-record { position:relative; width:min(100%,610px); padding:42px; border:1px solid rgba(202,221,255,.32); background:rgba(11,17,25,.9); color:#f1f5f2; box-shadow:0 0 38px rgba(42,240,218,.08),inset 0 0 42px rgba(174,139,255,.04); font-family:Manrope,sans-serif; } .ds-film-record::after { content:''; position:absolute; left:-1px; right:-1px; bottom:-1px; height:2px; background:#64e9d1; box-shadow:0 0 22px rgba(100,233,209,.55); } .ds-record-code { display:flex; justify-content:space-between; padding-bottom:16px; border-bottom:1px solid rgba(241,245,242,.16); color:rgba(241,245,242,.52); font-size:8px; letter-spacing:.13em; } .ds-record-company { margin:30px 0 0; color:#ff914d; font-size:11px; letter-spacing:.16em; } .ds-film-record h3 { margin:9px 0 0; font-size:32px; font-weight:500; line-height:1.05; } .ds-film-record h3 + p { margin:22px 0 0; color:rgba(241,245,242,.7); font-size:13px; line-height:1.7; }"
+    },
+    {
+      "name": "Project Entry Link",
+      "kind": "custom",
+      "description": "A quiet text route with a square-capped signal arrow.",
+      "html": "<a class=\"ds-project-entry\" href=\"#\"><span>View project details</span><svg viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2.5 8h10M8.75 4.25 12.5 8l-3.75 3.75\"/></svg></a>",
+      "css": ".ds-project-entry { display:flex; align-items:center; justify-content:space-between; width:196px; color:rgba(241,245,242,.86); font:400 11px/1.3 Manrope,sans-serif; text-decoration-thickness:1px; text-underline-offset:5px; } .ds-project-entry svg { width:1.2em; height:1.2em; fill:none; stroke:currentColor; stroke-width:1.35; stroke-linecap:square; stroke-linejoin:miter; } .ds-project-entry:hover { color:#a8ffea; text-decoration-line:underline; } .ds-project-entry:focus-visible { outline:2px solid #a8ffea; outline-offset:4px; } .ds-project-entry:active { color:#ff914d; }"
+    },
+    {
+      "name": "Registration Rail",
+      "kind": "custom",
+      "description": "Decorative crosshair rail that establishes the measured contact-sheet coordinate system.",
+      "html": "<div class=\"ds-registration-rail\" aria-hidden=\"true\"><span></span><span></span><span></span></div>",
+      "css": ".ds-registration-rail { position:relative; width:28px; height:320px; border-left:1px solid rgba(241,245,242,.34); background:repeating-linear-gradient(to bottom,transparent 0 14%,rgba(241,245,242,.3) 14% calc(14% + 1px),transparent calc(14% + 1px) 28%); } .ds-registration-rail span { position:absolute; left:-10px; width:20px; height:20px; border:1px solid rgba(241,245,242,.34); border-radius:50%; } .ds-registration-rail span::before,.ds-registration-rail span::after { content:''; position:absolute; background:rgba(241,245,242,.38); } .ds-registration-rail span::before { left:9px; top:-8px; width:1px; height:34px; } .ds-registration-rail span::after { left:-8px; top:9px; width:34px; height:1px; } .ds-registration-rail span:first-child { top:0; } .ds-registration-rail span:nth-child(2) { top:49%; } .ds-registration-rail span:last-child { bottom:0; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Registered Lightfield Folio",
+    "overview": "The portfolio behaves like an editorial contact sheet laid on a dark inspection table. Engineering evidence is the artwork: project interfaces sit inside translucent optical film, while hairline rules, registration marks, indices, and compact metadata make the composition feel measured rather than ornamental. The visual world is cinematic and spatial, but its purpose is fast evaluation by recruiters.\n\nDensity is intentional. Large, narrow display type establishes chapters; compact Manrope text carries facts; and broad areas of near-black preserve focus around the project planes. Mint, violet, and warm orange appear as controlled refractions, never as broad decorative fills. Active Theory informs the spatial confidence and motion, while ambiguous navigation is explicitly excluded: work, résumé, project details, and contact remain visible, semantic actions.",
+    "keyCharacteristics": [
+      "Near-black editorial gallery with off-white type and hairline registration structure.",
+      "Project screenshots presented as luminous, translucent film planes rather than generic cards.",
+      "Bahianita display typography paired with compact, highly legible Manrope UI and body text.",
+      "Mint, violet, and orange accents used as optical signals, indices, and edge light.",
+      "Square actions, clipped planes, and precise coordinate-like alignment.",
+      "CSS perspective and restrained Framer Motion create depth without gating content."
+    ],
+    "rules": [
+      {
+        "name": "The Refraction Rule",
+        "body": "Mint, violet, and orange identify signals and depth; they do not become large background fields.",
+        "section": "colors"
+      },
+      {
+        "name": "The Alpha Hierarchy Rule",
+        "body": "Use paper white at full strength for key facts, around 60–78% for explanations, and around 14–34% for registration rules and structural borders.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two-Voice Rule",
+        "body": "Bahianita owns identity and chapter-scale statements; Manrope owns facts, controls, project names, and operational detail.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tall-Type Rule",
+        "body": "Never replace Bahianita with a generic bold grotesk or stretch Manrope to imitate it; the narrow, irregular display silhouette is foundational.",
+        "section": "typography"
+      },
+      {
+        "name": "The Registered Edge Rule",
+        "body": "Major content aligns to the recurring left rails and section insets; do not center ordinary sections merely to fill space.",
+        "section": "layout"
+      },
+      {
+        "name": "The Edge-Light Rule",
+        "body": "Depth comes from overlapping planes and illuminated edges; never lift every surface with a soft generic shadow.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Motion-Is-Registration Rule",
+        "body": "Pointer and scroll motion should reveal how layers relate. It must remain subtle, spring-smoothed, and removable without losing information.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Instrument Geometry Rule",
+        "body": "Reserve circles for signals and measurement; keep actionable surfaces rectilinear.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do lead with real project evidence and keep the work, résumé, and contact routes obvious.",
+      "Do maintain the near-black ground, warm editorial display type, and restrained three-color refraction system.",
+      "Do use semantic sections, headings, navigation, links, lists, and descriptions underneath the spatial composition.",
+      "Do preserve 2px optic-mint :focus-visible outlines with clear offset on every immersive link.",
+      "Do give meaningful project imagery useful alt text while marking registration marks and purely optical layers decorative.",
+      "Do provide the stacked 900px fallback and test that it remains usable at browser zoom and narrow phone widths.",
+      "Do honor both useReducedMotion() and prefers-reduced-motion; core content must not depend on tilt, parallax, or the progress beam."
+    ],
+    "donts": [
+      "Don't turn the experience into a centered developer headline followed by equal rounded cards.",
+      "Don't use large accent-color fills, rainbow gradients, pill-shaped actions, or generic glassmorphism as the primary visual language.",
+      "Don't add motion that delays access, creates a hidden navigation model, or changes the reading order.",
+      "Don't use circles for routine controls or soften the square film geometry with broad corner radii.",
+      "Don't invent project metrics, outcomes, or imagery to make a plane look busier.",
+      "Don't preserve desktop absolute positioning on mobile; flatten the structure and keep evidence readable."
+    ]
+  }
+}

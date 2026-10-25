@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Ivan portfolio mark">
+  <rect width="512" height="512" rx="72" fill="#070a10"/>
+  <circle cx="256" cy="256" r="177" fill="none" stroke="#a8ffea" stroke-width="3" opacity=".75"/>
+  <circle cx="256" cy="256" r="142" fill="none" stroke="#c8a7ff" stroke-width="2" opacity=".55"/>
+  <path d="M256 52v44M256 416v44M52 256h44M416 256h44" stroke="#ff914d" stroke-width="4"/>
+  <path d="M208 151h96v24h-32v162h32v24h-96v-24h32V175h-32z" fill="#f1ede9"/>
+</svg>

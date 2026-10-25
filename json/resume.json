@@ -1,19 +1,19 @@
 {
   "summary": [
-    "Final-year Information Systems student at President University specializing in Data Science, with hands-on experience in software engineering, AI development, and enterprise system maintenance.",
-    "Maintained a large-scale financial system, built AI automation tools, and delivered projects across data, web, and mobile domains.",
-    "Adaptable, fast learner, and comfortable working in both technical and cross-functional team settings."
+    "Information Systems professional who builds AI-powered products and enterprise systems end-to-end.",
+    "Combines software engineering across Python, REST APIs, React, and LLM integration with product lifecycle ownership and stakeholder collaboration.",
+    "Focused on aligning technical delivery with user needs, business goals, and reliable operational rollout."
   ],
   "education": {
     "school": "President University",
     "program": "Information System - Data Science",
-    "period": "Aug 2023 - Present",
-    "gpa": "3.72",
+    "period": "2023 - 2026",
+    "gpa": "3.76",
     "description": "Developed strong skills in programming, data analysis, and application development through coursework and projects."
   },
   "recruiterHighlights": [
     {
-      "value": "3.72",
+      "value": "3.76",
       "label": "Current GPA",
       "detail": "Information System - Data Science"
     },
@@ -37,13 +37,13 @@
     {
       "company": "PT Jababeka Tbk",
       "role": "Software Engineering Partnership",
-      "period": "Aug 2023 - Present",
-      "location": "Cikarang, Bekasi",
-      "summary": "Maintained and developed JIFAS, an accounting system built on ASP.NET and Kendo UI Telerik.",
+      "period": "Mar 2026 - Aug 2026",
+      "location": "Jakarta, Indonesia",
+      "summary": "Co-managed the product lifecycle of JIFAS, an enterprise financial system, while delivering feature and UI improvements across accounting and finance workflows.",
       "highlights": [
-        "Performed bug fixing and feature development across Balance Sheet, Cash Flow, Bulk Posting, and PUM Realization modules.",
-        "Led UI migration from legacy Bootstrap to the updated Telerik framework.",
-        "Developed and maintained AI chatbot integration within the JIFAS ecosystem."
+        "Identified user pain points and delivered feature enhancements across accounting and finance modules.",
+        "Spearheaded the front-end UI/UX migration to the Telerik framework for improved usability and responsiveness.",
+        "Collaborated with business stakeholders to refine and integrate an internal AI chatbot into JIFAS workflows."
       ],
       "skills": ["ASP.NET", "Kendo UI Telerik", "Finance Modules", "SQL", "AI Chatbot"]
     },
@@ -51,12 +51,12 @@
       "company": "PT Jababeka Tbk",
       "role": "AI Engineer Intern",
       "period": "Aug 2025 - Feb 2026",
-      "location": "Cikarang, Bekasi",
-      "summary": "Developed internal AI and data automation tools for employee support and financial workflows.",
+      "location": "Jakarta, Indonesia",
+      "summary": "Led requirements and technical delivery for internal AI and data automation tools supporting employee and financial workflows.",
       "highlights": [
-        "Built an internal AI Agent chatbot using LangChain, FastAPI, and Ollama for support, retrieval, and ticket creation.",
-        "Built a duplicate data detection tool using Python and Streamlit for financial CSV and Excel data analysis.",
-        "Provided technical support for PUM, invoicing, and bank transaction workflows."
+        "Acted as technical product lead for an internal AI Agent chatbot supporting ticket creation and knowledge retrieval.",
+        "Designed and implemented a Python duplicate-data detection tool for financial reporting workflows.",
+        "Gathered requirements from employee support teams and aligned automation behavior with operational needs."
       ],
       "skills": ["LangChain", "FastAPI", "Ollama", "Python", "Streamlit"]
     }
