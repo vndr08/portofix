@@ -1,6 +1,3 @@
-// generate layour with footer
-import Footer from "@/components/Footer";
-
 export const metadata = {
   title: "Projects | Ivander Johana Pratama",
   description:
@@ -10,10 +7,5 @@ export const metadata = {
   },
 };
 export default function Layout({ children }) {
-  return (
-    <>
-      {children}
-      <Footer />
-    </>
-  );
+  return children;
 }

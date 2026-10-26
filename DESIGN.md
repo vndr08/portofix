@@ -1,6 +1,6 @@
 ---
-name: "Spatial Film Corridor"
-description: "An identity-first portfolio whose desktop scroll becomes camera travel through a live corridor of engineering artifacts."
+name: "Spatial Portfolio World"
+description: "An identity-first portfolio where every route becomes a distinct spatial instrument for inspecting engineering work."
 colors:
   corridor-black: "#05070b"
   section-black: "#0a0e14"
@@ -73,17 +73,21 @@ components:
     padding: "30px 42px"
 ---
 
-# Design System: Spatial Film Corridor
+# Design System: Spatial Portfolio World
 
 ## Overview
 
-**Creative North Star: "The Spatial Film Corridor"**
+**Creative North Star: "The Spatial Portfolio World"**
 
 The portfolio opens on Ivan’s identity inside a live GPU-rendered system. A fixed transparent WebGL canvas places a rotating wireframe topology core and 120 orbiting data packets inside a long tunnel of receding frames and sparse signal particles. The first viewport contains no project imagery: the name, role, thesis, work route, and résumé route lead while the generative system establishes technical authorship.
 
 Scroll becomes camera travel. After one warm-paper manifesto interlude, the camera advances through three suspended project films at measured depths while the semantic DOM supplies the project name, role, explanation, stack, and case-study link. The second scene reverses the copy position to vary the passage through the corridor. Practice, experience, evidence, and contact become progressively quieter after the WebGL journey.
 
 The corridor is progressive enhancement, not a dependency. At widths below 821px, under reduced motion, after WebGL construction failure, or after context loss, the fixed canvas remains invisible and the complete CSS/DOM Spatial Systems Chamber fallback stays visible. The fallback includes the cube-and-orbit hero and depth-stacked project images; it is not the primary desktop visual world.
+
+The corridor is only the entrance. The project index becomes a **System Atlas** exposing all fourteen projects; individual projects become **Evidence Rooms** with real interface artifacts and build decisions; About becomes a **Career Constellation**; Archive becomes a compact **Technical Index**; loading, offline, and not-found states become coherent signal states. Shared route geometry, atmospheric particles, pointer-responsive project frames, and restrained spectral accents make these pages feel like chambers of the same world rather than leftover templates.
+
+Ten projects use screenshots supplied in the repository. Four projects without original interface captures use bespoke conceptual covers and are explicitly marked **Concept Cover** wherever they appear. Concept art may establish subject and mood, but must never masquerade as shipped interface evidence.
 
 **Key Characteristics:**
 
@@ -94,6 +98,9 @@ The corridor is progressive enhancement, not a dependency. At widths below 821px
 - Mint, violet, and orange identify systems against a near-black fogged corridor.
 - One warm-paper manifesto and one warm-paper experience section reset the dark spatial journey.
 - CSS 3D hero and DOM project films form the complete static fallback.
+- Every major route has a specific visual job instead of reusing a generic card page.
+- Fourteen projects remain discoverable, while real screenshots are prioritized as evidence.
+- Generated concept imagery is visibly labeled and separated from implementation proof.
 
 ## Colors
 

@@ -100,8 +100,10 @@
       "year": "May 2026",
       "preview": "",
       "code": "",
-      "thumbnail": "/image/projects.png",
-      "images": [],
+      "thumbnail": "/image/projects/concept-covers/amanteken.webp",
+      "images": [
+        "/image/projects/concept-covers/amanteken.webp"
+      ],
       "tech": [
         "React",
         "Vite",
@@ -137,7 +139,7 @@
       "year": "Jun - Jul 2025",
       "preview": "",
       "code": "",
-      "thumbnail": "/image/projects/web/kalbe-dashboard/kalbio1.jpeg",
+      "thumbnail": "/image/projects/web/kalbe-dashboard/kalbio2.jpeg",
       "images": [
         "/image/projects/web/kalbe-dashboard/kalbio1.jpeg",
         "/image/projects/web/kalbe-dashboard/kalbio2.jpeg"
@@ -174,7 +176,7 @@
       "year": "2025",
       "preview": "",
       "code": "",
-      "thumbnail": "/image/projects/ai/eduintel/eduintel1.jpeg",
+      "thumbnail": "/image/projects/ai/eduintel/eduintel2.jpeg",
       "images": [
         "/image/projects/ai/eduintel/eduintel1.jpeg",
         "/image/projects/ai/eduintel/eduintel2.jpeg"
@@ -251,7 +253,7 @@
       "year": "2025",
       "preview": "",
       "code": "",
-      "thumbnail": "/image/projects/ai/jababeka-chatbot/deduplikasi1.jpeg",
+      "thumbnail": "/image/projects/ai/jababeka-chatbot/deduplikasi3.jpeg",
       "images": [
         "/image/projects/ai/jababeka-chatbot/deduplikasi1.jpeg",
         "/image/projects/ai/jababeka-chatbot/deduplikasi2.jpeg",
@@ -288,7 +290,7 @@
       "year": "2025",
       "preview": "",
       "code": "",
-      "thumbnail": "/image/projects/other/hospital-management/hospital1.jpeg",
+      "thumbnail": "/image/projects/other/hospital-management/hospital3.jpeg",
       "images": [
         "/image/projects/other/hospital-management/hospital1.jpeg",
         "/image/projects/other/hospital-management/hospital2.jpeg"
@@ -323,7 +325,7 @@
       "year": "2025",
       "preview": "",
       "code": "",
-      "thumbnail": "/image/projects/web/larissa-website/larissa1.jpeg",
+      "thumbnail": "/image/projects/web/larissa-website/larissa2.jpeg",
       "images": [
         "/image/projects/web/larissa-website/larissa1.jpeg",
         "/image/projects/web/larissa-website/larissa2.jpeg"
@@ -358,7 +360,7 @@
       "year": "2024",
       "preview": "",
       "code": "",
-      "thumbnail": "/image/projects/other/bersuara/bersuara1.jpeg",
+      "thumbnail": "/image/projects/other/bersuara/bersuara2.jpeg",
       "images": [
         "/image/projects/other/bersuara/bersuara1.jpeg",
         "/image/projects/other/bersuara/bersuara2.jpeg"
@@ -393,8 +395,10 @@
       "year": "2024",
       "preview": "",
       "code": "",
-      "thumbnail": "/image/projects.png",
-      "images": [],
+      "thumbnail": "/image/projects/concept-covers/empathy-shadow.webp",
+      "images": [
+        "/image/projects/concept-covers/empathy-shadow.webp"
+      ],
       "tech": [
         "Generative AI",
         "AI Image Generation",
@@ -425,7 +429,7 @@
       "year": "2024",
       "preview": "",
       "code": "",
-      "thumbnail": "/image/projects/other/hospital-management/hospital1.jpeg",
+      "thumbnail": "/image/projects/other/hospital-management/hospital2.jpeg",
       "images": [
         "/image/projects/other/hospital-management/hospital1.jpeg",
         "/image/projects/other/hospital-management/hospital2.jpeg"
@@ -460,8 +464,10 @@
       "year": "2024",
       "preview": "",
       "code": "",
-      "thumbnail": "/image/projects.png",
-      "images": [],
+      "thumbnail": "/image/projects/concept-covers/preloved-marketplace.webp",
+      "images": [
+        "/image/projects/concept-covers/preloved-marketplace.webp"
+      ],
       "tech": [
         "React",
         "Node.js",
@@ -492,8 +498,10 @@
       "year": "2023",
       "preview": "",
       "code": "",
-      "thumbnail": "/image/projects.png",
-      "images": [],
+      "thumbnail": "/image/projects/concept-covers/barbershop-system.webp",
+      "images": [
+        "/image/projects/concept-covers/barbershop-system.webp"
+      ],
       "tech": [
         "HTML",
         "CSS",

@@ -6,11 +6,12 @@ import Image from "next/image";
 import { motion, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
 import profile from "@/json/profile.json";
 import SignalIcon from "@/components/SignalIcon";
+import ProjectConstellation from "@/components/ProjectConstellation";
 
 const projects = [
-	{ slug: "vanguard", name: "VANGUARD", role: "Fleet Control Tower · July 2026", detail: "A 14-module realtime fleet-monitoring web app with live mapping, geofencing, and automated alerts for logistics dispatchers.", image: "/image/lightfield/vanguard-film.png", width: 2030, height: 966, alt: "VANGUARD fleet control tower interface shown across layered screens", stack: ["FastAPI", "SQLAlchemy", "WebSocket", "PostgreSQL"], tone: "mint" },
-	{ slug: "whatsapp-issue-reporting", name: "AI WHATSAPP", role: "Capstone · PT Andakara Informatika Nusantara", detail: "An AI chatbot and analytics dashboard that turns WhatsApp issue reports into structured workflows integrated with TRAMOS Web.", image: "/image/lightfield/whatsapp-visual.png", width: 1550, height: 564, alt: "WhatsApp issue report transformed into a structured support workflow", stack: ["Claude AI", "WhatsApp Gateway", "TRAMOS Web"], tone: "violet" },
-	{ slug: "kalbe-dashboard", name: "KALBE OPS", role: "Bootcamp client project · June—July 2025", detail: "Energy, work orders, equipment performance, MTTR, MTBF, and CAPA translated into one clear engineering decision surface.", image: "/image/lightfield/kalbe-visual.png", width: 1658, height: 592, alt: "Kalbe operational metrics dashboard", stack: ["Requirements", "Dashboard", "Engineering ops"], tone: "orange" },
+	{ slug: "vanguard", name: "VANGUARD", role: "Fleet Control Tower · July 2026", detail: "A 14-module realtime fleet-monitoring web app with live mapping, geofencing, and automated alerts for logistics dispatchers.", image: "/image/lightfield/vanguard-film.webp", width: 2030, height: 966, alt: "VANGUARD fleet control tower interface shown across layered screens", stack: ["FastAPI", "SQLAlchemy", "WebSocket", "PostgreSQL"], tone: "mint" },
+	{ slug: "whatsapp-issue-reporting", name: "AI WHATSAPP", role: "Capstone · PT Andakara Informatika Nusantara", detail: "An AI chatbot and analytics dashboard that turns WhatsApp issue reports into structured workflows integrated with TRAMOS Web.", image: "/image/lightfield/whatsapp-visual.webp", width: 1550, height: 564, alt: "WhatsApp issue report transformed into a structured support workflow", stack: ["Claude AI", "WhatsApp Gateway", "TRAMOS Web"], tone: "violet" },
+	{ slug: "kalbe-dashboard", name: "KALBE OPS", role: "Bootcamp client project · June—July 2025", detail: "Energy, work orders, equipment performance, MTTR, MTBF, and CAPA translated into one clear engineering decision surface.", image: "/image/lightfield/kalbe-visual.webp", width: 1658, height: 592, alt: "Kalbe operational metrics dashboard", stack: ["Requirements", "Dashboard", "Engineering ops"], tone: "orange" },
 ];
 
 const capabilities = [
@@ -73,6 +74,8 @@ export default function ImmersiveSections() {
 				<div className="practice-heading"><h2 id="practice-title">ONE PRACTICE.<br />THREE LENSES.</h2><p>My Information Systems background lets me move between AI behavior, enterprise architecture, and product decisions without losing sight of the people using the system.</p></div>
 				<div className="capability-list">{capabilities.map(([title, detail], index) => <div className="capability-row" key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{detail}</p></div>)}</div>
 			</section>
+
+			<ProjectConstellation />
 
 			<section className="experience-section-v2" aria-labelledby="experience-title-v2">
 				<h2 id="experience-title-v2">BUILT WITH<br />JABABEKA.</h2>

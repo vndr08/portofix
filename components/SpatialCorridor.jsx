@@ -4,9 +4,9 @@ import { useEffect, useRef } from "react";
 import * as THREE from "three";
 
 const PROJECTS = [
-	{ selector: ".project-scene:nth-of-type(1)", z: -23, x: 2.4, image: "/image/lightfield/vanguard-film.png", color: 0xa8ffea, aspect: 2030 / 966 },
-	{ selector: ".project-scene:nth-of-type(2)", z: -42, x: -2.2, image: "/image/lightfield/whatsapp-visual.png", color: 0xc8a7ff, aspect: 1550 / 564 },
-	{ selector: ".project-scene:nth-of-type(3)", z: -61, x: 2.2, image: "/image/lightfield/kalbe-visual.png", color: 0xff914d, aspect: 1658 / 592 },
+	{ selector: ".project-scene:nth-of-type(1)", z: -23, x: 2.4, image: "/image/lightfield/vanguard-film.webp", color: 0xa8ffea, aspect: 2030 / 966 },
+	{ selector: ".project-scene:nth-of-type(2)", z: -42, x: -2.2, image: "/image/lightfield/whatsapp-visual.webp", color: 0xc8a7ff, aspect: 1550 / 564 },
+	{ selector: ".project-scene:nth-of-type(3)", z: -61, x: 2.2, image: "/image/lightfield/kalbe-visual.webp", color: 0xff914d, aspect: 1658 / 592 },
 ];
 
 function interpolateAnchors(scrollY, anchors, values) {
@@ -98,6 +98,20 @@ export default function SpatialCorridor() {
 		const particles = new THREE.Points(particleGeometry, new THREE.PointsMaterial({ color: 0xa8ffea, size: 0.026, transparent: true, opacity: 0.52, sizeAttenuation: true }));
 		world.add(particles);
 
+		const speedLineGeometry = new THREE.BufferGeometry();
+		const speedLinePositions = [];
+		for (let index = 0; index < 34; index += 1) {
+			const angle = index * 2.399;
+			const radius = 3.2 + (index % 7) * 0.64;
+			const startZ = 7 - (index % 11) * 7.2;
+			speedLinePositions.push(Math.cos(angle) * radius, Math.sin(angle) * radius * 0.6, startZ);
+			speedLinePositions.push(Math.cos(angle) * radius, Math.sin(angle) * radius * 0.6, startZ - 2.8 - (index % 4));
+		}
+		speedLineGeometry.setAttribute("position", new THREE.Float32BufferAttribute(speedLinePositions, 3));
+		const speedLineMaterial = new THREE.LineBasicMaterial({ color: 0xa8ffea, transparent: true, opacity: 0.08 });
+		const speedLines = new THREE.LineSegments(speedLineGeometry, speedLineMaterial);
+		world.add(speedLines);
+
 		const textureLoader = new THREE.TextureLoader();
 		const projectGroups = [];
 		PROJECTS.forEach((project, index) => {
@@ -142,6 +156,8 @@ export default function SpatialCorridor() {
 		let cameraY = 0;
 		let frameId;
 		let lastTime = performance.now();
+		let lastScroll = window.scrollY;
+		let scrollVelocity = 0;
 
 		const onPointerMove = (event) => {
 			mouseX = (event.clientX / window.innerWidth - 0.5) * 2;
@@ -162,8 +178,12 @@ export default function SpatialCorridor() {
 		const animate = (time) => {
 			const delta = Math.min((time - lastTime) / 1000, 0.05);
 			lastTime = time;
-			const targetZ = interpolateAnchors(window.scrollY, anchors, [11, -16.5, -35.5, -54.5]);
-			const targetX = interpolateAnchors(window.scrollY, anchors, [0, -0.9, 0.9, -0.8]) + mouseX * 0.48;
+			const currentScroll = window.scrollY;
+			const rawVelocity = delta > 0 ? (currentScroll - lastScroll) / delta : 0;
+			lastScroll = currentScroll;
+			scrollVelocity = THREE.MathUtils.lerp(scrollVelocity, THREE.MathUtils.clamp(rawVelocity / 1800, -1, 1), 1 - Math.exp(-delta * 7));
+			const targetZ = interpolateAnchors(currentScroll, anchors, [11, -16.5, -35.5, -54.5]);
+			const targetX = interpolateAnchors(currentScroll, anchors, [0, -0.9, 0.9, -0.8]) + mouseX * 0.48;
 			const targetY = mouseY * -0.34;
 			const damping = 1 - Math.exp(-delta * 3.6);
 			cameraZ = THREE.MathUtils.lerp(cameraZ, targetZ, damping);
@@ -171,14 +191,19 @@ export default function SpatialCorridor() {
 			cameraY = THREE.MathUtils.lerp(cameraY, targetY, damping);
 			camera.position.set(cameraX, cameraY, cameraZ);
 			camera.lookAt(cameraX * 0.28, cameraY * 0.2, cameraZ - 11);
+			camera.rotation.z = mouseX * -0.012 + scrollVelocity * -0.025;
 
 			core.rotation.x = time * 0.00013 + mouseY * 0.12;
 			core.rotation.y = time * 0.00018 + mouseX * 0.16;
 			packets.rotation.z = time * 0.000055;
 			particles.rotation.z = -time * 0.000012;
+			speedLines.rotation.z = time * 0.000018;
+			speedLineMaterial.opacity = 0.055 + Math.abs(scrollVelocity) * 0.22;
+			world.position.z = scrollVelocity * 0.38;
 			projectGroups.forEach((group, index) => {
 				group.visible = Math.abs(cameraZ - group.position.z) < 25;
 				group.rotation.z = Math.sin(time * 0.00032 + index) * 0.012;
+				group.position.y = Math.sin(time * 0.00042 + index * 1.7) * 0.09 + scrollVelocity * (index % 2 ? -0.18 : 0.18);
 			});
 
 			const work = document.querySelector(".work-section");
@@ -207,6 +232,8 @@ export default function SpatialCorridor() {
 			coreMaterial.dispose();
 			particleGeometry.dispose();
 			particles.material.dispose();
+			speedLineGeometry.dispose();
+			speedLineMaterial.dispose();
 			projectGroups.forEach((group) => group.traverse((child) => {
 				if (child.geometry) child.geometry.dispose();
 				if (child.material) {

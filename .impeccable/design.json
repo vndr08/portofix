@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "generatedAt": "2026-10-26T04:25:31Z",
-  "title": "Design System: Spatial Film Corridor",
+  "title": "Design System: Spatial Portfolio World",
   "extensions": {
     "colorMeta": {
       "corridor-black": { "role": "neutral", "displayName": "Corridor Black", "canonical": "#05070b", "tonalRamp": ["oklch(15% 0.012 255)", "oklch(24% 0.012 255)", "oklch(35% 0.012 255)", "oklch(47% 0.012 255)", "oklch(59% 0.012 255)", "oklch(71% 0.012 255)", "oklch(83% 0.012 255)", "oklch(95% 0.012 255)"] },
@@ -83,8 +83,8 @@
     }
   ],
   "narrative": {
-    "northStar": "The Spatial Film Corridor",
-    "overview": "The portfolio opens on Ivan’s identity inside a live GPU-rendered system. A fixed transparent WebGL canvas places a rotating wireframe topology core and 120 orbiting data packets inside a long tunnel of receding frames and sparse signal particles. The first viewport contains no project imagery: the name, role, thesis, work route, and résumé route lead while the generative system establishes technical authorship.\n\nScroll becomes camera travel. After one warm-paper manifesto interlude, the camera advances through three suspended project films at measured depths while the semantic DOM supplies the project name, role, explanation, stack, and case-study link. The second scene reverses the copy position to vary the passage through the corridor. Practice, experience, evidence, and contact become progressively quieter after the WebGL journey.\n\nThe corridor is progressive enhancement, not a dependency. At widths below 821px, under reduced motion, after WebGL construction failure, or after context loss, the fixed canvas remains invisible and the complete CSS/DOM Spatial Systems Chamber fallback stays visible. The fallback includes the cube-and-orbit hero and depth-stacked project images; it is not the primary desktop visual world.",
+    "northStar": "The Spatial Portfolio World",
+    "overview": "The portfolio opens on Ivan’s identity inside a live GPU-rendered system. A fixed transparent WebGL canvas places a rotating wireframe topology core and orbiting data packets inside a long corridor. The first viewport contains no project imagery, so identity and technical authorship lead.\n\nThe corridor is the entrance to a connected spatial world: the project index is a System Atlas exposing all fourteen projects, individual projects are Evidence Rooms, About is a Career Constellation, Archive is a Technical Index, and utility routes are signal states. Shared geometry, atmospheric particles, pointer-responsive artifact frames, and spectral accents connect the routes without reducing them to one repeated template.\n\nTen projects use supplied interface screenshots. Four projects without original captures use bespoke conceptual covers that are explicitly labeled wherever they appear and never presented as shipped interface evidence. The system remains progressive enhancement: semantic DOM content, focus order, meaningful alternatives, reduced-motion behavior, and static fallbacks remain authoritative.",
     "keyCharacteristics": [
       "Identity-first, project-free hero built around a live topology core and moving data packets.",
       "Fixed Three.js canvas with scroll-smoothed camera travel through sixteen wireframe tunnel frames.",
@@ -92,7 +92,10 @@
       "Semantic DOM copy remains above the canvas and owns navigation, reading order, alt text, and actions.",
       "Mint, violet, and orange identify systems against a near-black fogged corridor.",
       "One warm-paper manifesto and one warm-paper experience section reset the dark spatial journey.",
-      "CSS 3D hero and DOM project films form the complete static fallback."
+      "CSS 3D hero and DOM project films form the complete static fallback.",
+      "Every major route has a specific visual role instead of reusing a generic card page.",
+      "All fourteen projects remain discoverable while real screenshots are prioritized as evidence.",
+      "Generated concept imagery is visibly labeled and separated from implementation proof."
     ],
     "rules": [
       { "name": "The Emitted-Signal Rule", "body": "Mint, violet, and orange belong to light, linework, indices, particles, tags, and per-project identity; never spread them across large opaque backgrounds.", "section": "colors" },

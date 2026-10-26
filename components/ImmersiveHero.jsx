@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Link from "next/link";
 import { motion, useMotionValue, useReducedMotion, useSpring, useTransform } from "framer-motion";
 import profile from "@/json/profile.json";
 import SignalIcon from "@/components/SignalIcon";
@@ -39,7 +40,7 @@ export default function ImmersiveHero() {
 			<header className="portal-header">
 				<a className="portal-wordmark" href="#home" aria-label="Ivan, back to top">IVAN<span>®</span></a>
 				<nav aria-label="Primary navigation">
-					<a href="#work">Work</a><a href="#about">About</a>
+					<a href="#work">Featured</a><Link href="/projects">Archive</Link><Link href="/about">Profile</Link>
 					<a href={profile.cvUrl} target="_blank" rel="noopener noreferrer">Résumé</a><a href="#contact">Contact</a>
 				</nav>
 				<p className="portal-status"><i aria-hidden="true" /> Jakarta · available</p>
