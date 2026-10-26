@@ -32,7 +32,7 @@ export default function Page() {
 				<header><h2 id="career-title">CAREER<br />SIGNAL.</h2><p>A progression from applied AI delivery into enterprise product lifecycle ownership.</p></header>
 				<div className="career-timeline">
 					{resume.experience.map((item, index) => (
-						<motion.article key={`${item.role}-${item.period}`} initial={reduceMotion ? false : { opacity: 0, x: index % 2 ? 50 : -50 }} whileInView={reduceMotion ? undefined : { opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}>
+						<motion.article key={`${item.role}-${item.period}`} initial={false} whileInView={reduceMotion ? undefined : { opacity: [0.82, 1], x: [index % 2 ? 18 : -18, 0] }} viewport={{ once: true, amount: 0.18 }} transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}>
 							<time>{item.period}</time><h3>{item.role}</h3><strong>{item.company}</strong><p>{item.summary}</p>
 							<ul>{item.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}</ul>
 						</motion.article>

@@ -12,8 +12,8 @@ export default function ProjectCard({ project, activeCategory, index }) {
 	return (
 		<motion.article
 			className="atlas-project"
-			initial={reduceMotion ? false : { opacity: 0, y: 44 }}
-			whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+			initial={false}
+			whileInView={reduceMotion ? undefined : { opacity: [0.86, 1], y: [22, 0] }}
 			viewport={{ once: true, amount: 0.16 }}
 			transition={{ duration: 0.65, delay: Math.min(index * 0.025, 0.18), ease: [0.16, 1, 0.3, 1] }}>
 			<Link href={`/projects/${project.slug}`} className="atlas-project-link">
