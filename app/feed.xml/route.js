@@ -52,7 +52,7 @@ export async function GET() {
   <channel>
     <title>${siteName}</title>
     <link>${siteUrl}</link>
-    <description>AI Engineer, Software Engineer, and Full Stack Engineer portfolio - Technical blog and insights</description>
+    <description>AI Engineer and Software Engineer portfolio - Technical blog and insights</description>
     <language>en-us</language>
     <managingEditor>${authorEmail} (${authorName})</managingEditor>
     <webMaster>${authorEmail} (${authorName})</webMaster>

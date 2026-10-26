@@ -63,22 +63,22 @@
   ],
   "workExperience": [
     {
-      "role": "Model & Talent",
-      "organization": "Vun Diego Perfume Commercial",
-      "period": "May 2025",
-      "summary": "Appeared in video campaigns and worked with a creative team to produce promotional content."
+      "role": "PIC Sponsorship",
+      "organization": "President University Fashion Week",
+      "period": "Sep - Dec 2024",
+      "summary": "Secured 10+ corporate partners, negotiated benefits, and managed external B2B communication."
     },
     {
-      "role": "Polling Station Supervisor (PTPS)",
-      "organization": "Regional Elections 2024",
-      "period": "Nov 2024",
-      "summary": "Supervised voting transparency, coordinated with officials, and filed official reports to Bawaslu."
+      "role": "PIC Sponsorship",
+      "organization": "Mr. & Ms. President University",
+      "period": "Jan - Mar 2024",
+      "summary": "Coordinated 20+ sponsors, vendors, internal teams, and sponsor-benefit delivery."
     },
     {
-      "role": "Warehouse Sorter",
-      "organization": "Shopee Xpress",
-      "period": "Jun - Jul 2023",
-      "summary": "Handled package scanning, sorting, labeling, and timely processing under logistics pressure."
+      "role": "Volunteer",
+      "organization": "AIESEC ImpactED 1.0",
+      "period": "Dec 2023 - Jan 2024",
+      "summary": "Facilitated hygiene-awareness learning for elementary students through public speaking and empathetic communication."
     }
   ],
   "organizations": [
@@ -101,6 +101,24 @@
       "summary": "Secured 20+ sponsors, coordinated with vendors, and oversaw benefit delivery."
     },
     {
+      "role": "PIC Mobile Legends",
+      "organization": "PUSH Cup Dormitory Games 2024",
+      "period": "Jun 2024",
+      "summary": "Designed tournament systems and rules while coordinating technical and event logistics."
+    },
+    {
+      "role": "PIC Fundraising",
+      "organization": "COMPUTING Sport Olympiad CSGO 2024",
+      "period": "Sep - Nov 2024",
+      "summary": "Supported fundraising execution and sponsor-branding delivery."
+    },
+    {
+      "role": "PIC Event Organizer",
+      "organization": "President University Sport Tournament",
+      "period": "Sep - Dec 2023",
+      "summary": "Coordinated event operations, logistics, and cross-team delivery."
+    },
+    {
       "role": "Volunteer",
       "organization": "AIESEC ImpactED 1.0",
       "period": "Dec 2023 - Jan 2024",
@@ -110,8 +128,8 @@
   "achievements": [
     "3rd Place - SETSsail Biz Accel Exhibition 2024, Service Category",
     "Jababeka Scholarship Awardee - covers 75% of tuition at President University",
-    "Managed event sponsorship portfolios worth tens of millions in value",
-    "Trusted by Bawaslu to supervise PTPS during national elections"
+    "Secured 10+ corporate partners for President University Fashion Week 2024",
+    "Coordinated 20+ sponsors for Mr. & Ms. President University 2024"
   ],
   "certifications": [
     {
@@ -120,54 +138,50 @@
         "Amazon QuickSight: Getting Started",
         "Fundamentals of Machine Learning and Artificial Intelligence",
         "Introduction to Generative AI: Art of the Possible",
-        "Introduction to Machine Learning: Art of the Possible"
+        "Introduction to Machine Learning: Art of the Possible",
+        "Executive’s Guide to Generative AI Success",
+        "Fundamentals of Prompt Engineering with Claude",
+        "Building a Generative AI-Ready Organization",
+        "Designing Secure RAG Applications with AWS",
+        "Developing Generative AI Solutions",
+        "Generative AI for Executives",
+        "Optimizing Foundation Models",
+        "Planning a Generative AI Project"
       ]
     },
     {
-      "group": "AI & Data Platform Training",
+      "group": "AI, Data & Developer Programs",
       "items": [
-        "Future-Ready Industrial Parks: Mastering AI Trends & Agentic Workflows",
+        "GDG #JuaraVibeCoding 2026",
+        "GDG Vibe Coding Study Jam",
+        "Snowflake AI & Data Platform Training",
         "Snowflake Discover AI",
-        "AI & Data Platform Training - Snowflake"
-      ]
-    },
-    {
-      "group": "Event Certificates",
-      "items": [
-        "President University Fashion Week 2024",
-        "Student Awarding Night 2024",
-        "Mr. & Ms. President University 2024",
-        "PUSH Cup 2024",
-        "Computing Sport Games Olympiade 2024"
+        "Future-Ready Industrial Parks: AI Trends & Agentic Workflows — 7-Network / JETData.AI"
       ]
     }
   ],
   "skills": [
     {
-      "group": "AI and Data",
-      "items": ["Python", "Pandas", "NumPy", "Scikit-learn", "Random Forest", "Ollama", "Gemini AI", "NLP", "Machine Learning"]
+      "group": "Tools & Technologies",
+      "items": ["Python", "React", "C# / .NET", "PostgreSQL", "MySQL", "Docker", "LangChain", "Gemini AI", "Claude AI", "Ollama"]
     },
     {
-      "group": "Software and Web",
-      "items": ["JavaScript", "HTML", "CSS", "PHP", "Java", ".NET", "ASP.NET", "FastAPI", "Django", "Streamlit"]
+      "group": "Product & Delivery",
+      "items": ["Product Lifecycle Management", "Requirement Gathering", "Stakeholder Communication", "B2B Negotiation", "Cross-Functional Leadership", "UI/UX Strategy", "Agile / Scrum"]
     },
     {
-      "group": "Database and Backend",
-      "items": ["MySQL", "Firebase", "PhpMyAdmin", "PostgreSQL", "Kendo UI Telerik", "Git", "Docker", "VPS Deployment"]
-    },
-    {
-      "group": "Product and Collaboration",
-      "items": ["Power BI", "Figma", "VS Code", "Teamwork", "Leadership", "Public Speaking", "Event Planning", "Problem-Solving"]
+      "group": "Technical Foundations",
+      "items": ["AI / ML Integration", "LLMs", "RAG", "NLP", "System Architecture", "RESTful APIs", "AWS", "GCP"]
     }
   ],
   "languages": [
     {
       "language": "Indonesian",
-      "level": "Native / Fluent"
+      "level": "Native"
     },
     {
       "language": "English",
-      "level": "Intermediate - Conversational & Working Proficiency"
+      "level": "Professional Working Proficiency"
     }
   ]
 }

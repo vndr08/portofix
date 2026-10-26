@@ -3,13 +3,13 @@ export default function PersonStructuredData() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Ivander Johana Pratama",
-    jobTitle: "AI Engineer, Software Engineer, and Full Stack Engineer",
+    jobTitle: "AI Engineer and Software Engineer",
     email: "ivanderjohanapratama@gmail.com",
     telephone: "+62 821 7515 4739",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Cikarang",
-      addressRegion: "Bekasi",
+      addressLocality: "Jakarta",
+      addressRegion: "DKI Jakarta",
       addressCountry: "ID"
     },
     url: "https://ivanderjp.vercel.app",
@@ -31,7 +31,7 @@ export default function PersonStructuredData() {
       "FastAPI",
       "React",
       "Next.js",
-      "Full Stack Development",
+      "Product Lifecycle Management",
       "Data Science"
     ],
     mainEntityOfPage: {

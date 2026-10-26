@@ -48,7 +48,7 @@ export default function ImmersiveHero() {
 			<div className="portal-copy">
 				<h1 id="portal-title"><span>IVANDER</span><span>JOHANA</span><span>PRATAMA</span></h1>
 				<p className="portal-role">AI engineer · software engineer</p>
-				<p className="portal-thesis">I turn complex operations into intelligent products people can actually use.</p>
+				<p className="portal-thesis">I build AI-powered products and enterprise systems end-to-end—from requirements to operational rollout.</p>
 				<div className="portal-actions">
 					<a href="#work">Enter selected work <SignalIcon /></a>
 					<a href={profile.cvUrl} target="_blank" rel="noopener noreferrer">Open résumé <SignalIcon direction="up-right" /></a>

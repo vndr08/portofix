@@ -84,7 +84,7 @@ def main():
     profile = load_json("json/profile.json")
     resume = load_json("json/resume.json")
     projects = [p for p in load_json("json/data.json")["Projects"] if p.get("show")]
-    featured = [p for p in projects if p.get("featured")][:5]
+    featured = [p for p in projects if p.get("featured")][:4]
 
     doc = SimpleDocTemplate(
         str(OUTPUT),
@@ -208,16 +208,13 @@ def main():
     story.append(Paragraph(esc(" ".join(resume["summary"])), styles["Pitch"]))
 
     story.extend(section("Core Strengths", styles))
-    strength_rows = [
-        [
-            Paragraph(f"<b>{esc(group['group'])}</b><br/>{esc(', '.join(group['items']))}", styles["Small"])
-            for group in resume["skills"][:2]
-        ],
-        [
-            Paragraph(f"<b>{esc(group['group'])}</b><br/>{esc(', '.join(group['items']))}", styles["Small"])
-            for group in resume["skills"][2:4]
-        ],
+    strength_cells = [
+        Paragraph(f"<b>{esc(group['group'])}</b><br/>{esc(', '.join(group['items']))}", styles["Small"])
+        for group in resume["skills"]
     ]
+    if len(strength_cells) % 2:
+        strength_cells.append(Paragraph("", styles["Small"]))
+    strength_rows = [strength_cells[index:index + 2] for index in range(0, len(strength_cells), 2)]
     table = Table(strength_rows, colWidths=[87 * mm, 87 * mm], hAlign="LEFT")
     table.setStyle(
         TableStyle(
@@ -267,13 +264,20 @@ def main():
     )
 
     story.extend(section("Leadership, Achievements, and Certifications", styles))
-    leadership = [org["summary"] for org in resume["organizations"][:3]]
+    featured_leadership = {
+        "PUSH Cup Dormitory Games 2024",
+        "COMPUTING Sport Olympiad CSGO 2024",
+        "President University Sport Tournament",
+    }
+    leadership = [
+        org["summary"]
+        for org in resume["organizations"]
+        if org["organization"] in featured_leadership
+    ]
     achievement_items = resume["achievements"] + leadership
     story.append(bullets(achievement_items[:7], styles["Body"], gap=2))
-    cert_text = []
     for group in resume["certifications"]:
-        cert_text.append(f"{group['group']}: {', '.join(group['items'])}")
-    story.append(Paragraph(f"<b>Certifications:</b> {esc(' | '.join(cert_text))}", styles["Small"]))
+        story.append(Paragraph(f"<b>{esc(group['group'])}:</b> {esc(', '.join(group['items']))}", styles["Small"]))
     languages = ", ".join([f"{item['language']} ({item['level']})" for item in resume["languages"]])
     story.append(Paragraph(f"<b>Languages:</b> {esc(languages)}", styles["Small"]))
 

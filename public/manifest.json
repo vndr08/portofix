@@ -1,7 +1,7 @@
 {
   "name": "Ivander Portfolio",
   "short_name": "Ivan.dev",
-  "description": "AI Engineer, Software Engineer, and Full Stack Engineer portfolio",
+  "description": "AI Engineer and Software Engineer portfolio",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#070a10",

@@ -8,15 +8,15 @@ import profile from "@/json/profile.json";
 import SignalIcon from "@/components/SignalIcon";
 
 const projects = [
-	{ slug: "vanguard", name: "VANGUARD", role: "Fleet Control Tower · Full-stack & Product Design", detail: "A 14-module operational cockpit unifying live vehicle mapping, planned-versus-actual routes, geofencing, trip replay, and alerts.", image: "/image/lightfield/vanguard-film.png", width: 2030, height: 966, alt: "VANGUARD fleet control tower interface shown across layered screens", stack: ["Next.js", "FastAPI", "WebSocket"], tone: "mint" },
-	{ slug: "whatsapp-issue-reporting", name: "ISSUE SIGNAL", role: "AI automation · WhatsApp field reporting", detail: "Natural-language field reports become structured osTicket cases through Claude AI, a WhatsApp gateway, and an analytics surface.", image: "/image/lightfield/whatsapp-visual.png", width: 1550, height: 564, alt: "WhatsApp issue report transformed into a structured support ticket", stack: ["Claude AI", "WhatsApp API", "osTicket"], tone: "violet" },
-	{ slug: "kalbe-dashboard", name: "KALBE OPS", role: "Engineering intelligence dashboard", detail: "Energy, work orders, MTTR, MTBF, and CAPA translated from operational workflows into one clear decision surface.", image: "/image/lightfield/kalbe-visual.png", width: 1658, height: 592, alt: "Kalbe operational metrics dashboard", stack: ["Data integration", "Dashboard", "Operations"], tone: "orange" },
+	{ slug: "vanguard", name: "VANGUARD", role: "Fleet Control Tower · July 2026", detail: "A 14-module realtime fleet-monitoring web app with live mapping, geofencing, and automated alerts for logistics dispatchers.", image: "/image/lightfield/vanguard-film.png", width: 2030, height: 966, alt: "VANGUARD fleet control tower interface shown across layered screens", stack: ["FastAPI", "SQLAlchemy", "WebSocket", "PostgreSQL"], tone: "mint" },
+	{ slug: "whatsapp-issue-reporting", name: "AI WHATSAPP", role: "Capstone · PT Andakara Informatika Nusantara", detail: "An AI chatbot and analytics dashboard that turns WhatsApp issue reports into structured workflows integrated with TRAMOS Web.", image: "/image/lightfield/whatsapp-visual.png", width: 1550, height: 564, alt: "WhatsApp issue report transformed into a structured support workflow", stack: ["Claude AI", "WhatsApp Gateway", "TRAMOS Web"], tone: "violet" },
+	{ slug: "kalbe-dashboard", name: "KALBE OPS", role: "Bootcamp client project · June—July 2025", detail: "Energy, work orders, equipment performance, MTTR, MTBF, and CAPA translated into one clear engineering decision surface.", image: "/image/lightfield/kalbe-visual.png", width: 1658, height: 592, alt: "Kalbe operational metrics dashboard", stack: ["Requirements", "Dashboard", "Engineering ops"], tone: "orange" },
 ];
 
 const capabilities = [
-	["Applied intelligence", "LLM orchestration · retrieval · NLP · OCR · workflow automation"],
-	["Software systems", "Async APIs · realtime data · enterprise integrations · production delivery"],
-	["Product interfaces", "Operational UX · design systems · dense data made legible"],
+	["AI & architecture", "LLMs · RAG · NLP · REST APIs · AWS / GCP cloud deployment"],
+	["Software systems", "Python · React · C# / .NET · PostgreSQL · MySQL · Docker"],
+	["Product leadership", "Product lifecycle · requirements · UI/UX strategy · B2B negotiation · Agile / Scrum"],
 ];
 
 function ProjectScene({ project, index }) {
@@ -59,7 +59,7 @@ export default function ImmersiveSections() {
 			<motion.div className="page-progress" style={reduceMotion ? undefined : { scaleX: progress }} aria-hidden="true" />
 			<section id="manifesto" className="manifesto-section" aria-labelledby="manifesto-title">
 				<p>Software should feel less like machinery<br />and more like clarity arriving.</p>
-				<h2 id="manifesto-title">I work across AI, product, and engineering to make complicated systems feel inevitable.</h2>
+				<h2 id="manifesto-title">I connect product requirements, system architecture, and interface design—then carry the work through implementation and rollout.</h2>
 				<div className="manifesto-axis" aria-hidden="true"><span>ASK</span><i /><span>MODEL</span><i /><span>BUILD</span><i /><span>SHIP</span></div>
 			</section>
 
@@ -70,15 +70,15 @@ export default function ImmersiveSections() {
 			</section>
 
 			<section id="about" className="practice-section" aria-labelledby="practice-title">
-				<div className="practice-heading"><h2 id="practice-title">ONE PRACTICE.<br />THREE LENSES.</h2><p>I move between model behavior, system architecture, and interface decisions—because the seams between them are where products usually break.</p></div>
+				<div className="practice-heading"><h2 id="practice-title">ONE PRACTICE.<br />THREE LENSES.</h2><p>My Information Systems background lets me move between AI behavior, enterprise architecture, and product decisions without losing sight of the people using the system.</p></div>
 				<div className="capability-list">{capabilities.map(([title, detail], index) => <div className="capability-row" key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{detail}</p></div>)}</div>
 			</section>
 
 			<section className="experience-section-v2" aria-labelledby="experience-title-v2">
-				<h2 id="experience-title-v2">CURRENTLY<br />BUILDING AT<br />JABABEKA.</h2>
+				<h2 id="experience-title-v2">BUILT WITH<br />JABABEKA.</h2>
 				<div className="experience-line">
-					<article><time>2026 — NOW</time><h3>Software Engineering Partnership</h3><p>Co-managing JIFAS product delivery, migrating front-end systems to Kendo UI Telerik, and improving an internal AI assistant with business stakeholders.</p></article>
-					<article><time>2025 — 2026</time><h3>AI Engineer Intern</h3><p>Led requirements and technical delivery for internal AI, ticketing, and data-automation tools.</p></article>
+					<article><time>MAR — AUG 2026</time><h3>Software Engineering Partnership</h3><p>Co-managed the JIFAS enterprise financial system lifecycle, led its Telerik UI/UX migration, and collaborated with stakeholders on an internal AI chatbot.</p></article>
+					<article><time>AUG 2025 — FEB 2026</time><h3>AI Engineer Intern</h3><p>Served as technical product lead for an internal AI Agent and built a Python duplicate-detection tool for financial reporting.</p></article>
 				</div>
 				<div className="evidence-line"><span><b>3.76</b> GPA</span><span><b>3rd</b> SETSsail Biz Accel</span><span><b>75%</b> scholarship</span></div>
 			</section>

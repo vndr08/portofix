@@ -4,20 +4,20 @@
       "show": true,
       "title": "VANGUARD - Fleet Control Tower",
       "desc": [
-        "Designed and built a desktop Fleet Control Tower that lets dispatchers, safety teams, and management monitor an entire vehicle fleet from a single cockpit. The application spans 14 operational pages organized into four workflow layers: Monitor, Operation, Evidence, and Administration.",
-        "Implemented realtime vehicle tracking with MapLibre GL, including planned versus actual route comparison and route deviation detection, plus a trip replay system with playback controls and telemetry interpolation. The backend uses async FastAPI with WebSocket broadcasting, fed by a GPS simulator streaming telemetry for 25 trucks across Java.",
-        "Created a custom industrial design system called Graphite Command, optimized for high information density and long control room sessions with tabular numerals, compact table rows, and motion used to communicate data change rather than decoration."
+        "Defined product requirements and built a 14-module realtime fleet-monitoring web application for logistics dispatchers.",
+        "Delivered live mapping, geofencing, and automated alerts to support day-to-day fleet visibility and operational response.",
+        "Built the backend with FastAPI REST APIs, SQLAlchemy, PostgreSQL or SQLite, and WebSocket-based live telemetry."
       ],
       "featured": true,
-      "summary": "Realtime fleet monitoring cockpit with live GPS tracking, trip replay, and task dispatch for control room operators.",
-      "role": "Full-stack Developer & Product Designer",
-      "impact": "Designed the information architecture and design system from scratch for a complex fleet management domain, then built the operational surface with an end-to-end realtime telemetry pipeline.",
+      "summary": "A 14-module realtime Fleet Control Tower with live mapping, geofencing, and automated alerts.",
+      "role": "Product Requirements & Full-stack Engineering",
+      "impact": "Turned a logistics-dispatch workflow into an end-to-end monitoring product backed by realtime telemetry.",
       "highlights": [
-        "Built realtime vehicle tracking with MapLibre GL, planned versus actual routes, and deviation detection.",
-        "Implemented trip replay with playback speed controls and telemetry interpolation.",
-        "Developed an async FastAPI backend with WebSocket broadcast and a 25-unit GPS simulator."
+        "Defined the requirements for a 14-module operational web application.",
+        "Implemented live mapping, geofencing, and automated alerts.",
+        "Developed FastAPI REST APIs with SQLAlchemy, WebSocket telemetry, and PostgreSQL or SQLite."
       ],
-      "year": "2026",
+      "year": "Jul 2026",
       "preview": "",
       "code": "https://github.com/vndr08/VANGUARD",
       "thumbnail": "/image/projects/vanguard/vanguard.png",
@@ -49,15 +49,15 @@
       "Handled chatbot core logic, WhatsApp Gateway integration, NLP using Claude AI, and backend integration with the TRAMOS Web system."
       ],
       "featured": true,
-      "summary": "AI-powered WhatsApp chatbot for automated issue reporting integrated with osTicket, plus an analytics dashboard.",
-      "role": "AI & Full-stack Developer",
-      "impact": "Automated ticket creation workflows and provided real-time issue statistics, reducing manual ticket dispatching and improving data visibility.",
+      "summary": "AI-powered WhatsApp issue reporting and an analytics dashboard integrated with TRAMOS Web.",
+      "role": "Product Lead & AI / Backend Developer",
+      "impact": "Aligned client business needs with technical constraints and made issue trends visible through a dedicated dashboard.",
       "highlights": [
-      "Built chatbot core logic and Claude AI integration for natural language understanding.",
-        "Connected WhatsApp Gateway with osTicket system for automated support ticket dispatch.",
-        "Developed an analytics dashboard for management reporting and trend visualization."
+        "Led product delivery from client requirements through technical integration.",
+        "Built chatbot logic with a WhatsApp Gateway and Claude AI NLP.",
+        "Integrated the backend with TRAMOS Web and visualized issue trends."
       ],
-      "year": "2025",
+      "year": "Dec 2025 - Jun 2026",
       "preview": "",
       "code": "",
       "thumbnail": "/image/projects/ai/whatsapp-issue-reporting/tramos.png",
@@ -71,10 +71,47 @@
         "React",
         "NodeJS",
         "MySQL",
-        "WhatsApp API",
-        "osTicket"
+        "WhatsApp Gateway",
+        "TRAMOS Web"
       ],
       "slug": "whatsapp-issue-reporting",
+      "category": [
+        1,
+        2
+      ]
+    },
+    {
+      "show": true,
+      "title": "AmanTeken - AI Legal Document Risk Analyzer",
+      "desc": [
+        "Built an AI legal-tech product that turns uploaded PDF documents into an actionable risk score.",
+        "Combined multimodal document analysis with text-to-speech summaries to make legal risks easier to review.",
+        "Delivered the product with React and Vite, Django REST Framework, Python, Docker, Nginx, and Google Cloud Run for #JuaraVibeCoding 2026."
+      ],
+      "featured": true,
+      "summary": "AI legal document analysis that converts PDFs into risk scores and spoken summaries.",
+      "role": "Full-stack AI Product Developer",
+      "impact": "Made document risk easier to inspect through a focused upload-to-analysis workflow.",
+      "highlights": [
+        "Designed an actionable legal-document risk scoring experience.",
+        "Implemented multimodal analysis and text-to-speech summaries.",
+        "Deployed a containerized application on Google Cloud Run."
+      ],
+      "year": "May 2026",
+      "preview": "",
+      "code": "",
+      "thumbnail": "/image/projects.png",
+      "images": [],
+      "tech": [
+        "React",
+        "Vite",
+        "Django REST Framework",
+        "Python",
+        "Docker",
+        "Nginx",
+        "Google Cloud Run"
+      ],
+      "slug": "amanteken",
       "category": [
         1,
         2
@@ -90,14 +127,14 @@
       ],
       "featured": true,
       "summary": "Engineering dashboard for monitoring energy, work orders, maintenance metrics, and CAPA workflows.",
-      "role": "Dashboard Developer",
-      "impact": "Helped the engineering team review operational performance through clearer maintenance and energy monitoring.",
+      "role": "Requirements & Dashboard Delivery",
+      "impact": "Consolidated energy, work-order, and equipment-performance data into a clearer decision surface for the client.",
       "highlights": [
         "Built dashboard views for energy consumption, work orders, MTTR, MTBF, and CAPA.",
         "Translated client needs into a professional monitoring interface.",
         "Focused on operational visibility for maintenance workflows."
       ],
-      "year": "2025",
+      "year": "Jun - Jul 2025",
       "preview": "",
       "code": "",
       "thumbnail": "/image/projects/web/kalbe-dashboard/kalbio1.jpeg",

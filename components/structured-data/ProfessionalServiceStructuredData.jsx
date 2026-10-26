@@ -3,21 +3,16 @@ export default function ProfessionalServiceStructuredData() {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     name: "Ivander Johana Pratama",
-    description: "AI Engineer, Software Engineer, and Full Stack Engineer specializing in AI automation, enterprise software development, and full-stack dashboards.",
+    description: "AI Engineer and Software Engineer building AI-powered products and enterprise systems end-to-end.",
     url: "https://ivanderjp.vercel.app",
     image: "https://ivanderjp.vercel.app/image/ivander.jpg",
     email: "ivanderjohanapratama@gmail.com",
     telephone: "+62 821 7515 4739",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Cikarang",
-      addressRegion: "Bekasi",
+      addressLocality: "Jakarta",
+      addressRegion: "DKI Jakarta",
       addressCountry: "ID"
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: -6.2397,
-      longitude: 107.1581
     },
     priceRange: "$$",
     openingHoursSpecification: {
@@ -56,8 +51,8 @@ export default function ProfessionalServiceStructuredData() {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Full Stack Engineering",
-            description: "Dashboards, backend integrations, database-backed apps, and responsive interfaces"
+            name: "Product Engineering",
+            description: "Requirements, system architecture, backend integrations, and operational interfaces"
           }
         }
       ]

@@ -180,7 +180,7 @@ export default function Page() {
 							About Ivan
 						</p>
 						<h1 className="text-3xl font-bold leading-tight theme-text sm:text-4xl md:text-6xl">
-							A practical builder across AI, software, and full-stack delivery.
+							An Information Systems builder shipping AI products and enterprise software end-to-end.
 						</h1>
 						<div className="mt-6 space-y-4">
 							{resume.summary.map((paragraph) => (
@@ -276,7 +276,7 @@ export default function Page() {
 						<SectionHeader
 							eyebrow="Achievements"
 							title="Concrete signals."
-							description="Competition, scholarship, sponsorship, and public-duty highlights."
+							description="Competition, scholarship, and sponsorship highlights grounded in the CV."
 						/>
 						<div className="grid grid-cols-1 gap-3">
 							{resume.achievements.map((item, index) => (
@@ -294,7 +294,7 @@ export default function Page() {
 					<div>
 						<SectionHeader
 							eyebrow="Additional Experience"
-							title="Adaptability outside engineering."
+							title="Leadership beyond engineering."
 						/>
 						<div className="grid grid-cols-1 gap-5 md:grid-cols-3">
 							{resume.workExperience.map((item, index) => (

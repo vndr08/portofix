@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import ThemeScript from "@/components/ThemeScript";
 import ScrollProgress from "@/components/ScrollProgress";
 import BackToTop from "@/components/BackToTop";
-import { PersonStructuredData, WebsiteStructuredData, ProfessionalServiceStructuredData } from "@/components/structured-data";
+import { PersonStructuredData, WebsiteStructuredData } from "@/components/structured-data";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
@@ -15,7 +15,7 @@ const siteUrl = profile.canonicalUrl;
 const siteName = "Ivander Portfolio";
 const title = `${profile.name} | ${profile.headline}`;
 const description =
-	"Ivander Johana Pratama builds AI automation, enterprise software support tools, and full-stack dashboards for practical business workflows.";
+	"Ivander Johana Pratama builds AI-powered products and enterprise systems end-to-end, from product requirements to operational rollout.";
 const imageUrl = `${siteUrl}/opengraph-image`;
 const twitterHandle = "@ivanderjp";
 const linkedInUrl = "https://linkedin.com/in/ivanderjohanapratama";
@@ -48,7 +48,7 @@ export const metadata = {
 		"ivander johana pratama",
 		"ai engineer",
 		"software engineer",
-		"full stack engineer",
+		"product engineering",
 		"application support",
 		"data science",
 		"pt jababeka",
@@ -59,7 +59,7 @@ export const metadata = {
 		"nextjs",
 		"machine learning",
 		"python",
-		"cikarang",
+		"jakarta",
 		"indonesia",
 	],
 	categories: ["technology", "software", "ai"],
@@ -111,7 +111,6 @@ export default function RootLayout({ children }) {
 				<ThemeScript />
 				<PersonStructuredData />
 				<WebsiteStructuredData />
-				<ProfessionalServiceStructuredData />
 				<link rel="alternate" type="application/rss+xml" title={`${siteName} RSS Feed`} href="/feed.xml" />
 				<link rel="me" href={linkedInUrl} />
 				<link rel="me" href={githubUrl} />
