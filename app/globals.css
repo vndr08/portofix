@@ -1718,6 +1718,46 @@ td, th {
 	overflow: clip;
 }
 
+.corridor-canvas {
+	position: fixed;
+	inset: 0;
+	z-index: 0;
+	display: block;
+	width: 100vw;
+	height: 100svh;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 700ms cubic-bezier(.16, 1, .3, 1);
+}
+
+.immersive-home > :not(.corridor-canvas) {
+	position: relative;
+	z-index: 2;
+}
+
+.webgl-corridor-ready .corridor-canvas { opacity: 1; }
+.webgl-corridor-ready .portal-hero,
+.webgl-corridor-ready .work-section { background: transparent; }
+.webgl-corridor-ready .portal-noise { opacity: .1; }
+.webgl-corridor-ready .portal-object { opacity: 0; }
+.webgl-corridor-ready .project-viewport { opacity: 0; pointer-events: none; }
+.webgl-corridor-ready .project-atmosphere { opacity: .35; }
+.webgl-corridor-ready .project-copy {
+	max-width: 440px;
+	padding: 30px 42px 30px 0;
+	background: rgba(5, 7, 11, .88);
+	box-shadow: 46px 0 72px #05070b;
+}
+.webgl-corridor-ready .project-scene:nth-of-type(even) {
+	grid-template-columns: minmax(560px, 1.42fr) minmax(290px, .78fr);
+}
+.webgl-corridor-ready .project-scene:nth-of-type(even) .project-copy {
+	grid-column: 2;
+	padding: 30px 0 30px 42px;
+	box-shadow: -46px 0 72px #05070b;
+}
+.webgl-corridor-ready .project-scene:nth-of-type(even) .project-viewport { grid-column: 1; grid-row: 1; }
+
 .portal-hero {
 	position: relative;
 	min-height: 100svh;

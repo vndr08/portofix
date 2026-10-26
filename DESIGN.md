@@ -1,9 +1,9 @@
 ---
-name: "Spatial Systems Chamber"
-description: "An identity-first portfolio where a precise orbital chamber opens into full-viewport engineering case studies."
+name: "Spatial Film Corridor"
+description: "An identity-first portfolio whose desktop scroll becomes camera travel through a live corridor of engineering artifacts."
 colors:
-  chamber-black: "#05070b"
-  chamber-raised: "#0a0e14"
+  corridor-black: "#05070b"
+  section-black: "#0a0e14"
   depth-black: "#060a0f"
   experience-ink: "#080b10"
   paper-white: "#f1f5f2"
@@ -49,7 +49,7 @@ spacing:
 components:
   action-primary:
     backgroundColor: "{colors.warm-paper}"
-    textColor: "{colors.chamber-black}"
+    textColor: "{colors.corridor-black}"
     typography: "{typography.label}"
     rounded: "{rounded.square}"
     padding: "0 20px"
@@ -66,62 +66,65 @@ components:
     typography: "{typography.label}"
     rounded: "{rounded.square}"
     padding: "7px 10px"
-  project-viewport:
-    backgroundColor: "{colors.depth-black}"
+  project-copy-panel:
+    backgroundColor: "{colors.corridor-black}"
     textColor: "{colors.paper-white}"
     rounded: "{rounded.square}"
+    padding: "30px 42px"
 ---
 
-# Design System: Spatial Systems Chamber
+# Design System: Spatial Film Corridor
 
 ## Overview
 
-**Creative North Star: "The Spatial Systems Chamber"**
+**Creative North Star: "The Spatial Film Corridor"**
 
-The portfolio opens as an identity chamber, not a project index. Ivan’s name, engineering role, thesis, and direct actions occupy the first plane; an interactive wireframe cube, orbital rings, satellites, coordinates, moving light, and subtle texture make the interface itself evidence of technical craft. The object is abstract enough to represent AI, systems, and product together without competing with the identity.
+The portfolio opens on Ivan’s identity inside a live GPU-rendered system. A fixed transparent WebGL canvas places a rotating wireframe topology core and 120 orbiting data packets inside a long tunnel of receding frames and sparse signal particles. The first viewport contains no project imagery: the name, role, thesis, work route, and résumé route lead while the generative system establishes technical authorship.
 
-After the portal, a warm-paper manifesto resets the eye before work unfolds one system per viewport. Each project scene pairs concise engineering context with one large, depth-stacked interface image. Practice, experience, evidence, and contact then become progressively simpler. The overall experience is cinematic but legible: spectacle establishes character, while a clear reading order and explicit routes support fast recruiter evaluation.
+Scroll becomes camera travel. After one warm-paper manifesto interlude, the camera advances through three suspended project films at measured depths while the semantic DOM supplies the project name, role, explanation, stack, and case-study link. The second scene reverses the copy position to vary the passage through the corridor. Practice, experience, evidence, and contact become progressively quieter after the WebGL journey.
+
+The corridor is progressive enhancement, not a dependency. At widths below 821px, under reduced motion, after WebGL construction failure, or after context loss, the fixed canvas remains invisible and the complete CSS/DOM Spatial Systems Chamber fallback stays visible. The fallback includes the cube-and-orbit hero and depth-stacked project images; it is not the primary desktop visual world.
 
 **Key Characteristics:**
 
-- Identity-first opening with a responsive CSS 3D cube, orbital rings, and pointer-linked light.
-- Near-black spatial chamber punctuated by one warm-paper manifesto and experience interlude.
-- Bahianita display statements paired with compact Manrope evidence and controls.
-- Mint as the primary signal, with violet and orange as restrained orbital and scene accents.
-- One-project-per-viewport storytelling with layered interface depth rather than a card grid.
-- Square controls, hairline dividers, tiny coordinates, and circular geometry reserved for spatial instruments.
-- Motion is atmospheric and relational; content and routes remain complete without it.
+- Identity-first, project-free hero built around a live topology core and moving data packets.
+- Fixed Three.js canvas with scroll-smoothed camera travel through sixteen wireframe tunnel frames.
+- Three real project textures suspended as large planes with spectral wireframe echoes.
+- Semantic DOM copy remains above the canvas and owns navigation, reading order, alt text, and actions.
+- Mint, violet, and orange identify systems against a near-black fogged corridor.
+- One warm-paper manifesto and one warm-paper experience section reset the dark spatial journey.
+- CSS 3D hero and DOM project films form the complete static fallback.
 
 ## Colors
 
-The palette alternates a deep black chamber with rare warm-paper interludes; spectral color behaves like emitted signal light rather than surface decoration.
+The corridor is almost black so its emitted system colors and project textures can carry depth; warm paper is reserved for decisive editorial interludes.
 
 ### Primary
 
-- **Optic Mint:** The primary system signal for roles, active progress, navigation underlines, focus outlines, cube edges, tags, and the first project scene.
+- **Optic Mint:** The primary signal for the topology core, data packets, particles, focus states, progress, navigation underlines, and the first project plane.
 
 ### Secondary
 
-- **Prism Violet:** A secondary spatial wavelength for one orbital path and the second project scene.
+- **Prism Violet:** The alternate tunnel frame hue, the second project plane, and one fallback orbit.
 
 ### Tertiary
 
-- **Signal Orange:** A warm counter-signal for satellites, the contact core, and the third project scene.
+- **Signal Orange:** The third project plane, a fallback satellite, and the contact core.
 
 ### Neutral
 
-- **Chamber Black:** Dominant hero, work, and contact ground.
-- **Chamber Raised:** A barely lifted dark field that distinguishes the practice section without introducing a card surface.
-- **Depth Black:** The translucent-looking backing plane behind project images.
-- **Experience Ink:** Text and structural lines on warm-paper interludes.
-- **Paper White:** Primary copy and interface text on dark surfaces, reduced with alpha for secondary hierarchy.
-- **Warm Paper:** Display text on dark surfaces and the full-field manifesto/experience contrast color.
+- **Corridor Black:** Scene fog, page ground, DOM copy backing, and the visual void around project films.
+- **Section Black:** A barely lifted dark field for the post-corridor practice section.
+- **Depth Black:** Backing and fallback depth planes.
+- **Experience Ink:** Text and rules on warm-paper sections.
+- **Paper White:** Primary text on dark surfaces, reduced with alpha for explanations and structure.
+- **Warm Paper:** Display type, the filled hero action, manifesto ground, and experience ground.
 
 ### Named Rules
 
-**The Signal-Light Rule.** Mint, violet, and orange belong to active lines, indices, tags, glows, and scene identity; never use them as broad page fills.
+**The Emitted-Signal Rule.** Mint, violet, and orange belong to light, linework, indices, particles, tags, and per-project identity; never spread them across large opaque backgrounds.
 
-**The Interlude Rule.** Warm paper may take over an entire section only to reset pacing and sharpen a manifesto or experience statement; ordinary dark sections remain black.
+**The Interlude Rule.** Warm paper may fill a section only when the camera journey needs a deliberate editorial reset.
 
 ## Typography
 
@@ -130,115 +133,121 @@ The palette alternates a deep black chamber with rare warm-paper interludes; spe
 **Body Font:** Manrope (with sans-serif fallback)
 **Label Font:** Manrope (with sans-serif fallback)
 
-**Character:** Bahianita provides the tall, compressed identity voice that makes names and statements feel architectural. Manrope carries every factual layer with controlled spacing and low visual noise.
+**Character:** Bahianita gives identity and project names a tall, unmistakable silhouette that holds against the moving corridor. Manrope keeps facts, controls, and technical evidence calm and readable above both WebGL and static fallback scenes.
 
 ### Hierarchy
 
-- **Display** (400, typically 72–96px, 0.75–0.82 line-height): Multi-line identity, manifesto, project names, section statements, and contact language.
+- **Display** (400, typically 72–96px, 0.75–0.82 line-height): Identity, manifesto, project names, section declarations, and contact language.
 - **Headline** (500, typically 21–32px, 1.1–1.15 line-height): Capability and experience titles.
-- **Body** (400, typically 12–17px, 1.65–1.75 line-height): Thesis, project context, practice explanation, and experience evidence; constrain lines to roughly 38–56 characters where practical.
-- **Label** (500–600, typically 8–11px, 0.04–0.22em letter-spacing): Roles, counts, coordinates, navigation, tags, dates, and controls. Uppercase communicates instrumentation, not emphasis everywhere.
+- **Body** (400, typically 12–17px, 1.65–1.75 line-height): Thesis, project context, practice explanation, and experience evidence.
+- **Label** (500–600, typically 8–11px, 0.04–0.22em letter-spacing): Roles, coordinates, navigation, tags, dates, case indices, and controls.
 
 ### Named Rules
 
-**The Identity-Scale Rule.** Bahianita establishes the person before it names the projects; the first display statement is Ivan’s full name.
+**The Identity-Scale Rule.** Ivan’s full name is the first display statement; WebGL motion supports it and never replaces it.
 
-**The Two-Voice Rule.** Bahianita owns names and declarations. Manrope owns explanations, evidence, controls, and all operational detail.
+**The Two-Voice Rule.** Bahianita owns names and declarations. Manrope owns explanations, evidence, controls, and operational detail.
 
 ## Layout
 
-The first viewport is a three-plane chamber. A centered header spans the top between 4.5vw insets; the identity block sits near 6.3vw on the left; the cube-and-orbit object occupies the middle-right; and vertical coordinates close the far edge. The composition uses a 1500px perspective stage, substantial negative space, and no centered hero container.
+The WebGL canvas is fixed to the viewport at z-index 0 and never receives pointer events. Every direct child of the immersive page other than the canvas sits above it at z-index 2. Once the renderer is successfully created, a readiness class makes the canvas visible, makes hero and work backgrounds transparent, reduces the hero texture, hides the CSS cube, and visually hides DOM project images. Text and actions remain DOM content throughout.
 
-The manifesto is a full-height asymmetric two-column light interlude. Work begins with a 74svh chapter introduction, then each project receives at least 112svh in a two-column scene: compact copy on the left and a dominant interface viewport on the right. Practice uses a heading split followed by three full-width rows. Experience switches to warm paper in a two-column editorial timeline. Contact returns to a centered dark chamber with an oversized orbital sphere behind its actions.
+The first viewport holds a full-depth tunnel with Ivan’s copy near 6.3vw on the left, navigation along a quiet top rule, and coordinates on the far right. The manifesto remains a full-height asymmetric light section. Work begins with a 74svh introduction, followed by three scenes of at least 112svh. In WebGL mode, odd-scene copy occupies the left in an 88%-opaque black backing with a rightward shadow; the middle scene moves copy to the right with the shadow reversed. Suspended project planes alternate right, left, right in world space.
 
-At 900px and below, the header drops status and the redundant About link, while preserving Work, Résumé, and Contact. The identity block moves upward, the cube shrinks and moves behind the lower-right of the hero, and coordinates disappear. Manifesto and headings stack. Project scenes become single-column at 120svh, explicitly placing imagery before copy; depth offsets shrink but remain perceptible. Capability rows collapse to an index-plus-content layout, experience becomes one column, evidence becomes a vertical list, and contact actions stack.
+After the work section, the fixed canvas fades to zero and rendering is skipped, leaving practice, experience, and contact as ordinary DOM sections. Practice uses three border-led rows, experience uses a warm-paper two-column timeline, and contact returns to a centered dark orbital composition.
 
-**The Viewport Scene Rule.** A selected project gets a full spatial scene; never compress the three primary projects into an equal card grid.
+The renderer is disabled below 821px. The broader CSS layout switches at 900px: navigation simplifies, the static cube moves behind the lower-right hero, headings stack, project scenes become single-column with the DOM image first, capabilities collapse to index-plus-content rows, and contact actions stack. Between 821px and 900px, the compact DOM layout can coexist with WebGL on capable devices.
 
-**The Mobile Reading-Order Rule.** On narrow screens, show the project image first, then its count, name, role, detail, tags, and case-study action.
+**The Camera-Path Rule.** Primary projects occupy distinct world coordinates and scroll anchors; never collapse the desktop corridor into a conventional card grid.
+
+**The DOM-Authority Rule.** WebGL supplies atmosphere and project imagery, while the DOM remains the source of truth for text, links, image alternatives, focus order, and fallback presentation.
 
 ## Elevation & Depth
 
-Depth comes from real CSS 3D geometry in the hero and layered planes in project scenes. The cube uses six translucent faces with inset mint illumination; three differently oriented rings and colored satellites establish orbit. Project screenshots sit above two translated Z-depth echoes and cast one strong black shadow. Blurred scene atmospheres carry the current project accent without tinting the entire viewport.
+Desktop depth is a real camera system. A 46-degree perspective camera begins at z=11 and smooths toward z positions -16.5, -35.5, and -54.5 at the measured center of each project scene. Sixteen rectangular wireframe frames begin at z=3 and recede in 4.2-unit steps. Exponential fog at density 0.036 absorbs the corridor, while 280 sparse points preserve scale.
+
+The project planes sit at z=-23, -42, and -61 with alternating x offsets of 2.4, -2.2, and 2.2. Each textured plane receives three lower-opacity wireframe echoes and one brighter spectral edge. Only groups within 25 world units of the camera remain visible. The fallback replaces this with CSS perspective, two translated backing planes, and a deep black projection shadow.
 
 ### Shadow Vocabulary
 
-- **Status signal** (`0 0 15px rgba(168, 255, 234, 0.55)`): The small availability point.
-- **Cube interior** (`inset 0 0 44px rgba(168, 255, 234, 0.06)`): Barely visible inner light on every cube face.
-- **Satellite emission** (`0 0 20px rgba(168, 255, 234, 0.72)`): A tight glow around orbital points; violet and orange satellites keep their solid hues.
-- **Project projection** (`0 36px 80px rgba(0, 0, 0, 0.48)`): The only substantial surface shadow, reserved for the large interface viewport.
-- **Progress beam** (`0 0 16px rgba(168, 255, 234, 0.5)`): A narrow glow around the two-pixel page-progress line.
+- **WebGL copy isolation** (`46px 0 72px #05070b`, reversed for the middle scene): Keeps DOM text legible over a passing project plane.
+- **Fallback core depth** (`18px 28px 60px rgba(0, 0, 0, 0.28), inset 0 0 54px rgba(168, 255, 234, 0.09)`): Gives the static CSS cube form without pretending it is the desktop renderer.
+- **Fallback project projection** (`0 36px 80px rgba(0, 0, 0, 0.48)`): Lifts the DOM project image above its CSS echo planes.
+- **Status signal** (`0 0 15px rgba(168, 255, 234, 0.55)`): Availability point only.
+- **Progress beam** (`0 0 16px rgba(168, 255, 234, 0.5)`): Narrow light around the two-pixel progress line.
 
 ### Named Rules
 
-**The Constructed-Depth Rule.** Prefer perspective, overlap, Z translation, and line geometry to generic blurred card shadows.
+**The Real-Depth Rule.** Desktop depth comes from camera position, world coordinates, fog, occlusion, and project planes—not from a stack of shadowed DOM cards.
 
-**The One-Artifact Rule.** Each project scene elevates one real interface image; its backing planes support that artifact rather than introducing extra decorative panels.
+**The One-Artifact Rule.** Each stop elevates one real project texture; echoes and frames support it rather than introducing competing imagery.
 
 ## Shapes
 
-Ordinary interface geometry stays square: actions, tags, project screenshots, depth planes, timeline structures, and evidence dividers use hard corners and one-pixel strokes. Circles and ellipses are reserved for the chamber’s spatial instruments—orbital rings, satellites, status points, atmospheres, and the contact sphere. The hero cube and contact diamond provide the only strong polygonal forms.
+The dominant form is a long rectangular tunnel made from sixteen subtly rotated wireframe frames. Project artifacts are large rectangular films with square spectral edges. The topology core is a detailed wireframe icosahedron surrounded by small instanced rectangular packets; particles remain point-like. Ordinary DOM controls, tags, copy backings, images, timelines, and dividers stay square. Circles and ellipses are reserved for status, atmospheres, and the static fallback’s orbital instruments.
 
-**The Orbital Geometry Rule.** Curves signal atmosphere, position, or motion; they do not soften routine controls into pills.
+**The Topology Rule.** Complex geometry expresses systems behavior in the hero; routine controls remain plain, rectilinear, and immediately recognizable.
 
 ## Components
 
 ### Buttons
 
-- **Primary:** A 50px-high square warm-paper block with chamber-black text, 20px horizontal padding, and a signal arrow. It is used once in the hero for entry into selected work.
-- **Text Action:** Transparent Manrope label with a 14px icon gap. Project and contact variants add a low-alpha bottom rule instead of a container.
-- **Hover / Focus:** Arrow icons travel 4px right and 2px up over 350ms with an expressive ease. Keyboard focus uses a 2px optic-mint outline offset by 5px.
+- **Primary:** A 50px-high square warm-paper block with corridor-black text, 20px horizontal padding, and a signal arrow. It appears once in the hero.
+- **Text Action:** Transparent Manrope label with a 14px icon gap; project and contact variants add a low-alpha bottom rule.
+- **Hover / Focus:** Arrow icons travel 4px right and 2px up over 350ms. Keyboard focus uses a 2px optic-mint outline offset by 5px.
 
 ### Chips
 
 - **Style:** Square transparent project tags with a 1px scene-colored border, 7px by 10px padding, and 9px Manrope text.
-- **Color:** All tags within one project inherit that scene’s mint, violet, or orange accent.
+- **Color:** All tags within one project inherit that plane’s mint, violet, or orange signal.
 
 ### Cards / Containers
 
-There is no conventional card component. Project viewports are full scene artifacts: the screenshot has a low-alpha paper border, a deep projection shadow, and two same-size backing planes translated in X, Y, and Z. Practice and experience use lines, columns, and timelines rather than isolated boxes.
+There is no conventional card. In WebGL mode, project copy is an edge-faded black panel placed over the live corridor while the matching image exists as a world-space texture. In fallback mode, the DOM image, border, and two Z-offset echo planes form the complete artifact.
 
 ### Navigation
 
-The desktop header is a three-column line: wordmark, centered destination row, and right-aligned status. Navigation labels are 11px Manrope; hover draws a mint underline from left to right over 420ms. Mobile hides the status and About link but retains the three decision-critical destinations.
+The desktop header is a three-column rule: wordmark, centered destinations, and status. Navigation labels are 11px Manrope; hover draws a mint underline from left to right over 420ms. Mobile hides status and About while retaining Work, Résumé, and Contact.
 
-### Spatial Core
+### Corridor Canvas
 
-The hero signature is a six-faced CSS cube with “AI / INTELLIGENCE” and “01 / SYSTEM” face content. Its resting pose is rotated on both axes; a slow 12-second drift runs inside three independently rotating orbital rings. Desktop pointer movement adds no more than 8 degrees of X tilt and 12 degrees of Y tilt to the containing object and moves the mint aurora across a 34–66% by 38–62% field.
+The signature component is a fixed, transparent, `aria-hidden` Three.js canvas. It caps device pixel ratio at 1.15 and texture anisotropy at 8 to control GPU cost. It uses a 46-degree perspective camera, exponential black fog, sixteen line frames, 120 instanced packets, a detail-2 wireframe icosahedron, 280 particles, and three textured project groups. On context loss, remove readiness immediately so the DOM fallback reappears.
 
-### Project Scene
+### Project Stop
 
-Each scene owns a single accent, a numbered count, Bahianita project name, factual role and detail, compact tags, case-study action, and one image with meaningful alt text. Scroll progress spring-smooths the copy and viewport independently: the image passes from +110px to -110px, rotates from 8 to -7 degrees, and scales from 0.82 through 1 to 0.88.
+Each stop binds one DOM scene to one world-space plane through a measured scroll anchor. Copy includes a Bahianita name, factual role and detail, compact tags, and a case-study link. The first and third planes sit right of center; the second sits left. DOM images remain mounted with meaningful alt text and become visually transparent only while the readiness class is present.
+
+### Static Topology Fallback
+
+The fallback hero uses two depth planes, a six-faced CSS cube, three orbital rings, three signal satellites, pointer-linked tilt, and a mint aurora. It is the primary experience below 821px, for reduced-motion users, and whenever WebGL is unavailable. Do not show it simultaneously with a ready corridor on desktop.
 
 ### Capability Row
 
-Three full-width rows pair a tiny index, a medium Manrope title, and a concise technical scope. On hover, the row gains 18px inline padding and the title inherits optic mint over 450ms. On mobile, the description moves beneath the title without changing semantic order.
-
-### Experience Timeline
-
-The light experience section uses a thin vertical ink line, 7px circular nodes, compact dates, and restrained body copy. Evidence figures close the section on a single top rule and become a vertical list on mobile.
+Three full-width rows pair a tiny index, medium Manrope title, and concise technical scope. Hover adds 18px inline padding and optic mint over 450ms. Mobile moves the description beneath the title without changing the source order.
 
 ### Motion
 
-Hero pointer response uses a spring of stiffness 52, damping 18, and mass 0.85. Project scroll scenes use stiffness 72, damping 24, and mass 0.65; global progress uses stiffness 70, damping 25, and mass 0.6. CSS orbits run at 12, 18, 23, and 29 seconds. `useReducedMotion()` removes pointer tilt, project parallax, and contact rotation; `prefers-reduced-motion` disables core, ring, and scroll-signal animation and collapses interaction transitions.
+The camera target follows measured project anchors with smoothstep interpolation; each frame applies exponential damping at 3.6 per second. Scroll drives camera z through 11, -16.5, -35.5, and -54.5 while alternating x through 0, -0.9, 0.9, and -0.8. Pointer input adds up to 0.48 world units horizontally and 0.34 vertically. The topology core, packet field, particles, and project planes drift at deliberately slow independent rates.
+
+Reduced motion prevents renderer construction entirely and disables the fallback’s CSS orbit animations and decorative progress. Narrow layouts retain a static, readable fallback. Rendering pauses visually after the work section and skips drawing while the document is hidden.
 
 ## Do's and Don'ts
 
 ### Do:
 
-- **Do** establish Ivan’s identity, engineering role, thesis, work route, and résumé route within the first viewport.
-- **Do** keep the cube and orbit system abstract, precise, and subordinate to the name and thesis.
-- **Do** alternate dark chambers with rare full-field warm-paper interludes to control pacing.
-- **Do** give each primary project one full scene, one real interface artifact, and a direct case-study route.
-- **Do** retain semantic headings, articles, lists, navigation, links, useful image alt text, and logical reading order beneath the spatial composition.
-- **Do** preserve mint `:focus-visible` outlines and reduced-motion paths for every moving system.
-- **Do** keep the mobile project image before its explanatory copy and keep decision-critical header links visible.
+- **Do** keep the first WebGL viewport free of project imagery so identity and topology establish the experience.
+- **Do** add the readiness class only after a renderer exists, and remove it on cleanup or context loss.
+- **Do** keep DOM project images mounted and hide them only while WebGL is ready.
+- **Do** preserve the complete CSS fallback below 821px, under reduced motion, and after WebGL failure.
+- **Do** dispose geometries, materials, maps, listeners, animation frames, and the renderer on unmount.
+- **Do** retain semantic headings, articles, lists, links, meaningful alt text, keyboard focus, and direct résumé/contact routes.
+- **Do** cap render cost and stop visible corridor rendering after the work journey.
 
 ### Don't:
 
-- **Don't** return to a project-first contact sheet, registration rail, or equal-card portfolio grid.
-- **Don't** let the 3D object obscure the identity, thesis, actions, or mobile reading path.
-- **Don't** replace the cube with a raster illustration; its responsive interaction and geometry are part of the system.
-- **Don't** use rounded cards, pill buttons, broad spectral fills, or generic glass panels.
-- **Don't** add autonomous motion that survives reduced-motion settings or content that requires motion to understand.
-- **Don't** invent metrics, projects, outcomes, or technical claims to increase visual density.
+- **Don't** describe or extend the CSS cube as the primary desktop hero; it is the resilience layer.
+- **Don't** place project imagery in the WebGL hero or reveal a project plane before its scroll stop.
+- **Don't** remove DOM content because the same project appears in WebGL.
+- **Don't** initialize WebGL for reduced-motion users or viewports narrower than 821px.
+- **Don't** use rounded cards, pill controls, opaque spectral backgrounds, or generic glass panels.
+- **Don't** let camera travel obscure actions, alter DOM reading order, or become required to understand the work.

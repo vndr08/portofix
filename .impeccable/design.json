@@ -1,11 +1,11 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-25T16:18:54Z",
-  "title": "Design System: Spatial Systems Chamber",
+  "generatedAt": "2026-10-26T04:25:31Z",
+  "title": "Design System: Spatial Film Corridor",
   "extensions": {
     "colorMeta": {
-      "chamber-black": { "role": "neutral", "displayName": "Chamber Black", "canonical": "#05070b", "tonalRamp": ["oklch(15% 0.012 255)", "oklch(24% 0.012 255)", "oklch(35% 0.012 255)", "oklch(47% 0.012 255)", "oklch(59% 0.012 255)", "oklch(71% 0.012 255)", "oklch(83% 0.012 255)", "oklch(95% 0.012 255)"] },
-      "chamber-raised": { "role": "neutral", "displayName": "Chamber Raised", "canonical": "#0a0e14", "tonalRamp": ["oklch(15% 0.018 255)", "oklch(24% 0.018 255)", "oklch(35% 0.018 255)", "oklch(47% 0.018 255)", "oklch(59% 0.018 255)", "oklch(71% 0.018 255)", "oklch(83% 0.018 255)", "oklch(95% 0.018 255)"] },
+      "corridor-black": { "role": "neutral", "displayName": "Corridor Black", "canonical": "#05070b", "tonalRamp": ["oklch(15% 0.012 255)", "oklch(24% 0.012 255)", "oklch(35% 0.012 255)", "oklch(47% 0.012 255)", "oklch(59% 0.012 255)", "oklch(71% 0.012 255)", "oklch(83% 0.012 255)", "oklch(95% 0.012 255)"] },
+      "section-black": { "role": "neutral", "displayName": "Section Black", "canonical": "#0a0e14", "tonalRamp": ["oklch(15% 0.018 255)", "oklch(24% 0.018 255)", "oklch(35% 0.018 255)", "oklch(47% 0.018 255)", "oklch(59% 0.018 255)", "oklch(71% 0.018 255)", "oklch(83% 0.018 255)", "oklch(95% 0.018 255)"] },
       "depth-black": { "role": "neutral", "displayName": "Depth Black", "canonical": "#060a0f", "tonalRamp": ["oklch(15% 0.016 250)", "oklch(24% 0.016 250)", "oklch(35% 0.016 250)", "oklch(47% 0.016 250)", "oklch(59% 0.016 250)", "oklch(71% 0.016 250)", "oklch(83% 0.016 250)", "oklch(95% 0.016 250)"] },
       "experience-ink": { "role": "neutral", "displayName": "Experience Ink", "canonical": "#080b10", "tonalRamp": ["oklch(15% 0.014 250)", "oklch(24% 0.014 250)", "oklch(35% 0.014 250)", "oklch(47% 0.014 250)", "oklch(59% 0.014 250)", "oklch(71% 0.014 250)", "oklch(83% 0.014 250)", "oklch(95% 0.014 250)"] },
       "paper-white": { "role": "neutral", "displayName": "Paper White", "canonical": "#f1f5f2", "tonalRamp": ["oklch(15% 0.008 155)", "oklch(24% 0.008 155)", "oklch(35% 0.008 155)", "oklch(47% 0.008 155)", "oklch(59% 0.008 155)", "oklch(71% 0.008 155)", "oklch(83% 0.008 155)", "oklch(95% 0.008 155)"] },
@@ -15,28 +15,29 @@
       "signal-orange": { "role": "tertiary", "displayName": "Signal Orange", "canonical": "#ff914d", "tonalRamp": ["oklch(15% 0.16 48)", "oklch(24% 0.16 48)", "oklch(35% 0.16 48)", "oklch(47% 0.16 48)", "oklch(59% 0.16 48)", "oklch(71% 0.16 48)", "oklch(83% 0.11 48)", "oklch(95% 0.04 48)"] }
     },
     "typographyMeta": {
-      "display": { "displayName": "Spatial Display", "purpose": "Identity, manifesto, project names, section declarations, and contact language." },
+      "display": { "displayName": "Corridor Display", "purpose": "Identity, manifesto, project names, section declarations, and contact language." },
       "headline": { "displayName": "Evidence Headline", "purpose": "Capability and experience titles." },
       "body": { "displayName": "Technical Body", "purpose": "Thesis, project details, practice explanation, and experience evidence." },
-      "label": { "displayName": "Instrument Label", "purpose": "Roles, counts, coordinates, navigation, tags, dates, and controls." }
+      "label": { "displayName": "Instrument Label", "purpose": "Roles, coordinates, navigation, tags, dates, indices, and controls." }
     },
     "shadows": [
-      { "name": "status-signal", "value": "0 0 15px rgba(168, 255, 234, 0.55)", "purpose": "Availability point in the hero header." },
-      { "name": "cube-interior", "value": "inset 0 0 44px rgba(168, 255, 234, 0.06)", "purpose": "Barely visible mint light within every cube face." },
-      { "name": "satellite-emission", "value": "0 0 20px rgba(168, 255, 234, 0.72)", "purpose": "Tight glow around the primary orbital point." },
-      { "name": "project-projection", "value": "0 36px 80px rgba(0, 0, 0, 0.48)", "purpose": "Strong depth shadow reserved for a project interface image." },
-      { "name": "progress-beam", "value": "0 0 16px rgba(168, 255, 234, 0.5)", "purpose": "Narrow glow around the two-pixel page-progress line." }
+      { "name": "webgl-copy-isolation-right", "value": "46px 0 72px #05070b", "purpose": "Keeps left-side DOM copy legible over the passing project plane." },
+      { "name": "webgl-copy-isolation-left", "value": "-46px 0 72px #05070b", "purpose": "Reversed isolation for the middle right-side copy panel." },
+      { "name": "fallback-core-depth", "value": "18px 28px 60px rgba(0, 0, 0, 0.28), inset 0 0 54px rgba(168, 255, 234, 0.09)", "purpose": "Static CSS topology fallback only." },
+      { "name": "fallback-project-projection", "value": "0 36px 80px rgba(0, 0, 0, 0.48)", "purpose": "DOM project image in static fallback mode." },
+      { "name": "progress-beam", "value": "0 0 16px rgba(168, 255, 234, 0.5)", "purpose": "Narrow glow around the two-pixel page progress line." }
     ],
     "motion": [
-      { "name": "hero-pointer-spring", "value": "stiffness 52, damping 18, mass 0.85", "purpose": "Pointer tilt for the spatial object and pointer-linked aurora movement." },
-      { "name": "project-scroll-spring", "value": "stiffness 72, damping 24, mass 0.65", "purpose": "Independent copy and viewport movement through each project scene." },
-      { "name": "page-progress-spring", "value": "stiffness 70, damping 25, mass 0.6", "purpose": "Smooth top-edge reading progress." },
-      { "name": "orbital-cycle", "value": "12s, 18s, 23s, and 29s linear/ease-in-out cycles", "purpose": "Slow independent cube drift and ring rotation." },
-      { "name": "expressive-response", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Navigation underline, icon travel, capability-row shift, and scroll indicator." },
-      { "name": "reduced-motion", "value": "0.01ms transitions; CSS orbit animations disabled", "purpose": "Removes pointer tilt, project parallax, contact rotation, orbit cycles, and scroll-signal animation." }
+      { "name": "camera-damping", "value": "1 - exp(-delta * 3.6)", "purpose": "Frame-rate-independent camera smoothing toward scroll and pointer targets." },
+      { "name": "camera-scroll-path", "value": "z [11, -16.5, -35.5, -54.5]; x [0, -0.9, 0.9, -0.8]", "purpose": "Smoothstep path from identity topology through the three project stops." },
+      { "name": "camera-pointer-range", "value": "x ±0.48; y ±0.34 world units", "purpose": "Small viewpoint response without moving DOM content." },
+      { "name": "corridor-fade", "value": "700ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Canvas readiness and departure transition." },
+      { "name": "fallback-hero-spring", "value": "stiffness 52, damping 18, mass 0.85", "purpose": "Pointer tilt for the CSS topology fallback." },
+      { "name": "reduced-motion", "value": "renderer not constructed; CSS orbit animations disabled", "purpose": "Uses the complete static DOM/CSS fallback and hides decorative progress." }
     ],
     "breakpoints": [
-      { "name": "compact", "value": "900px" }
+      { "name": "webgl-minimum", "value": "821px" },
+      { "name": "compact-layout", "value": "900px" }
     ]
   },
   "components": [
@@ -48,78 +49,78 @@
     {
       "name": "Text Action", "kind": "button", "refersTo": "action-text", "description": "A quiet underlined route for case studies, résumé, archive, and contact actions.",
       "html": "<a class=\"ds-text-action\" href=\"#\"><span>Open case study</span><svg viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2.5 8h10M8.75 4.25 12.5 8l-3.75 3.75\"/></svg></a>",
-      "css": ".ds-text-action { display:inline-flex; align-items:center; gap:14px; padding-bottom:7px; border-bottom:1px solid rgba(241,245,242,.35); color:#f1f5f2; font:500 11px/1 Manrope,sans-serif; letter-spacing:.04em; text-decoration:none; } .ds-text-action svg { width:1.2em; height:1.2em; transform:rotate(-45deg); fill:none; stroke:currentColor; stroke-width:1.35; stroke-linecap:square; stroke-linejoin:miter; transition:transform 350ms cubic-bezier(.16,1,.3,1); } .ds-text-action:hover svg { transform:rotate(-45deg) translate(4px,-2px); } .ds-text-action:focus-visible { outline:2px solid #a8ffea; outline-offset:5px; } .ds-text-action:active { color:#a8ffea; }"
+      "css": ".ds-text-action { display:inline-flex; align-items:center; gap:14px; padding-bottom:7px; border-bottom:1px solid rgba(241,245,242,.35); color:#f1f5f2; font:500 11px/1 Manrope,sans-serif; letter-spacing:.04em; text-decoration:none; } .ds-text-action svg { width:1.2em; height:1.2em; transform:rotate(-45deg); fill:none; stroke:currentColor; stroke-width:1.35; stroke-linecap:square; stroke-linejoin:miter; transition:transform 350ms cubic-bezier(.16,1,.3,1); } .ds-text-action:hover svg { transform:rotate(-45deg) translate(4px,-2px); } .ds-text-action:focus-visible { outline:2px solid #a8ffea; outline-offset:5px; }"
     },
     {
-      "name": "System Tags", "kind": "chip", "refersTo": "system-tag", "description": "Square scene-colored tags for the technologies behind one project.",
+      "name": "System Tags", "kind": "chip", "refersTo": "system-tag", "description": "Square tags inheriting the current project plane's signal color.",
       "html": "<ul class=\"ds-system-tags\"><li>Next.js</li><li>FastAPI</li><li>WebSocket</li></ul>",
       "css": ".ds-system-tags { display:flex; flex-wrap:wrap; gap:8px; margin:0; padding:0; list-style:none; } .ds-system-tags li { border:1px solid rgba(168,255,234,.55); padding:7px 10px; color:#a8ffea; font:500 9px/1 Manrope,sans-serif; letter-spacing:.04em; }"
     },
     {
-      "name": "Primary Navigation", "kind": "nav", "description": "Explicit portfolio destinations centered on the hero's top rule.",
+      "name": "Primary Navigation", "kind": "nav", "description": "Explicit destinations centered on the corridor's quiet top rule.",
       "html": "<nav class=\"ds-portal-nav\" aria-label=\"Primary navigation\"><a href=\"#\">Work</a><a href=\"#\">About</a><a href=\"#\">Résumé</a><a href=\"#\">Contact</a></nav>",
       "css": ".ds-portal-nav { display:flex; align-items:center; gap:40px; font-family:Manrope,sans-serif; } .ds-portal-nav a { position:relative; padding:10px 0; color:rgba(241,245,242,.74); font-size:11px; letter-spacing:.04em; text-decoration:none; } .ds-portal-nav a::after { content:''; position:absolute; left:0; bottom:4px; width:100%; height:1px; background:#a8ffea; transform:scaleX(0); transform-origin:right; transition:transform 420ms cubic-bezier(.16,1,.3,1); } .ds-portal-nav a:hover::after { transform:scaleX(1); transform-origin:left; } .ds-portal-nav a:focus-visible { outline:2px solid #a8ffea; outline-offset:5px; }"
     },
     {
-      "name": "Spatial Core", "kind": "custom", "description": "A representative wireframe face and orbital instrumentation from the CSS 3D hero object.",
-      "html": "<div class=\"ds-spatial-core\" aria-hidden=\"true\"><span class=\"ds-orbit ds-orbit-a\"></span><span class=\"ds-orbit ds-orbit-b\"></span><div class=\"ds-core-face\"><b>AI</b><small>INTELLIGENCE</small></div><i></i></div>",
-      "css": ".ds-spatial-core { position:relative; width:280px; aspect-ratio:1; perspective:900px; } .ds-core-face { position:absolute; left:50%; top:50%; display:flex; width:126px; aspect-ratio:1; flex-direction:column; align-items:center; justify-content:center; border:1px solid rgba(168,255,234,.42); background:rgba(7,14,20,.7); box-shadow:inset 0 0 44px rgba(168,255,234,.06); transform:translate(-50%,-50%) rotateX(-12deg) rotateY(32deg); } .ds-core-face b { color:#f1ede9; font:400 64px/.8 Bahianita,sans-serif; } .ds-core-face small { margin-top:16px; color:#a8ffea; font:500 8px/1 Manrope,sans-serif; letter-spacing:.22em; } .ds-orbit { position:absolute; left:50%; top:50%; width:90%; aspect-ratio:1; border:1px solid rgba(241,245,242,.22); border-radius:50%; } .ds-orbit-a { transform:translate(-50%,-50%) rotateX(72deg); } .ds-orbit-b { transform:translate(-50%,-50%) rotateY(68deg); border-color:rgba(200,167,255,.22); } .ds-spatial-core i { position:absolute; left:8%; top:44%; width:7px; height:7px; border-radius:50%; background:#a8ffea; box-shadow:0 0 20px rgba(168,255,234,.72); }"
+      "name": "Corridor Copy Panel", "kind": "custom", "refersTo": "project-copy-panel", "description": "An edge-faded semantic copy panel placed above a moving WebGL project plane.",
+      "html": "<section class=\"ds-corridor-copy\"><h3>VANGUARD</h3><strong>Fleet Control Tower · Full-stack &amp; Product Design</strong><p>A 14-module operational cockpit unifying live vehicle mapping, routes, geofencing, replay, and alerts.</p></section>",
+      "css": ".ds-corridor-copy { max-width:440px; padding:30px 42px 30px 0; background:rgba(5,7,11,.88); color:#f1f5f2; box-shadow:46px 0 72px #05070b; } .ds-corridor-copy h3 { margin:0 0 10px; color:#f1ede9; font:400 82px/.78 Bahianita,sans-serif; } .ds-corridor-copy strong { font:500 13px/1.5 Manrope,sans-serif; } .ds-corridor-copy p { max-width:48ch; margin:27px 0 0; color:rgba(241,245,242,.62); font:400 13px/1.75 Manrope,sans-serif; }"
     },
     {
-      "name": "Project Viewport", "kind": "card", "refersTo": "project-viewport", "description": "A real interface image projected above two scene-colored depth echoes.",
-      "html": "<figure class=\"ds-project-viewport\"><span class=\"ds-depth ds-depth-back\"></span><span class=\"ds-depth ds-depth-mid\"></span><div class=\"ds-project-art\">PROJECT INTERFACE</div><figcaption>CASE / 01</figcaption></figure>",
-      "css": ".ds-project-viewport { position:relative; width:min(620px,100%); aspect-ratio:2.1/1; margin:0; perspective:1200px; transform-style:preserve-3d; } .ds-depth { position:absolute; inset:0; border:1px solid rgba(168,255,234,.35); background:rgba(6,10,15,.74); } .ds-depth-back { transform:translate3d(44px,-36px,-110px); opacity:.38; } .ds-depth-mid { transform:translate3d(22px,-18px,-55px); opacity:.65; } .ds-project-art { position:absolute; inset:0; z-index:2; display:grid; place-items:center; border:1px solid rgba(241,245,242,.28); background:linear-gradient(135deg,#08131a,#102738); color:rgba(241,245,242,.55); box-shadow:0 36px 80px rgba(0,0,0,.48); font:500 10px/1 Manrope,sans-serif; letter-spacing:.18em; } .ds-project-viewport figcaption { position:absolute; right:16px; bottom:13px; z-index:3; padding:7px 9px; background:#05070b; color:#a8ffea; font:500 8px/1 Manrope,sans-serif; letter-spacing:.14em; }"
+      "name": "Static Project Fallback", "kind": "card", "description": "The DOM project image and CSS depth echoes shown whenever the WebGL corridor is unavailable.",
+      "html": "<figure class=\"ds-project-fallback\"><span class=\"ds-depth ds-depth-back\"></span><span class=\"ds-depth ds-depth-mid\"></span><div class=\"ds-project-art\">PROJECT INTERFACE</div><figcaption>CASE / 01</figcaption></figure>",
+      "css": ".ds-project-fallback { position:relative; width:min(620px,100%); aspect-ratio:2.1/1; margin:0; perspective:1200px; transform-style:preserve-3d; } .ds-depth { position:absolute; inset:0; border:1px solid rgba(168,255,234,.35); background:rgba(6,10,15,.74); } .ds-depth-back { transform:translate3d(44px,-36px,-110px); opacity:.38; } .ds-depth-mid { transform:translate3d(22px,-18px,-55px); opacity:.65; } .ds-project-art { position:absolute; inset:0; z-index:2; display:grid; place-items:center; border:1px solid rgba(241,245,242,.28); background:linear-gradient(135deg,#08131a,#102738); color:rgba(241,245,242,.55); box-shadow:0 36px 80px rgba(0,0,0,.48); font:500 10px/1 Manrope,sans-serif; letter-spacing:.18em; } .ds-project-fallback figcaption { position:absolute; right:16px; bottom:13px; z-index:3; padding:7px 9px; background:#05070b; color:#a8ffea; font:500 8px/1 Manrope,sans-serif; letter-spacing:.14em; }"
     },
     {
-      "name": "Capability Row", "kind": "custom", "description": "A border-led practice row that connects a numbered lens to its technical scope.",
+      "name": "Static Topology Fallback", "kind": "custom", "description": "A compact preview of the CSS cube-and-orbit resilience layer, not the primary desktop corridor.",
+      "html": "<div class=\"ds-static-topology\" aria-hidden=\"true\"><span class=\"ds-orbit ds-orbit-a\"></span><span class=\"ds-orbit ds-orbit-b\"></span><div class=\"ds-core-face\"><b>AI</b><small>INTELLIGENCE</small></div><i></i></div>",
+      "css": ".ds-static-topology { position:relative; width:280px; aspect-ratio:1; perspective:900px; } .ds-core-face { position:absolute; left:50%; top:50%; display:flex; width:126px; aspect-ratio:1; flex-direction:column; align-items:center; justify-content:center; border:1px solid rgba(168,255,234,.62); background:rgba(7,14,20,.82); box-shadow:18px 28px 60px rgba(0,0,0,.28),inset 0 0 54px rgba(168,255,234,.09); transform:translate(-50%,-50%) rotateX(-12deg) rotateY(32deg); } .ds-core-face b { color:#f1ede9; font:400 64px/.8 Bahianita,sans-serif; } .ds-core-face small { margin-top:16px; color:#a8ffea; font:500 8px/1 Manrope,sans-serif; letter-spacing:.22em; } .ds-orbit { position:absolute; left:50%; top:50%; width:90%; aspect-ratio:1; border:1px solid rgba(241,245,242,.22); border-radius:50%; } .ds-orbit-a { transform:translate(-50%,-50%) rotateX(72deg); } .ds-orbit-b { transform:translate(-50%,-50%) rotateY(68deg); border-color:rgba(200,167,255,.22); } .ds-static-topology i { position:absolute; left:8%; top:44%; width:7px; height:7px; border-radius:50%; background:#a8ffea; box-shadow:0 0 20px rgba(168,255,234,.72); }"
+    },
+    {
+      "name": "Capability Row", "kind": "custom", "description": "A border-led practice row connecting a numbered lens to its technical scope.",
       "html": "<div class=\"ds-capability-row\"><span>01</span><h3>Applied intelligence</h3><p>LLM orchestration · retrieval · NLP · OCR · workflow automation</p></div>",
       "css": ".ds-capability-row { display:grid; grid-template-columns:70px .8fr 1.2fr; align-items:center; gap:28px; min-height:120px; border-block:1px solid rgba(241,245,242,.16); color:#f1f5f2; transition:padding 450ms cubic-bezier(.16,1,.3,1),color 300ms ease; font-family:Manrope,sans-serif; } .ds-capability-row:hover { padding-inline:18px; color:#a8ffea; } .ds-capability-row span { color:rgba(241,245,242,.38); font-size:9px; } .ds-capability-row h3 { margin:0; font-size:28px; font-weight:500; line-height:1.1; } .ds-capability-row p { margin:0; color:rgba(241,245,242,.55); font-size:12px; line-height:1.65; }"
-    },
-    {
-      "name": "Experience Timeline", "kind": "custom", "description": "A light editorial timeline with compact date, ink node, and concise role evidence.",
-      "html": "<article class=\"ds-experience-item\"><time>2026 — NOW</time><h3>Software Engineering Partnership</h3><p>Co-managing product delivery and improving internal engineering systems with business stakeholders.</p></article>",
-      "css": ".ds-experience-item { position:relative; padding:0 0 64px 34px; border-left:1px solid rgba(8,11,16,.25); color:#080b10; font-family:Manrope,sans-serif; } .ds-experience-item::before { content:''; position:absolute; left:-4px; top:3px; width:7px; height:7px; border-radius:50%; background:#080b10; } .ds-experience-item time { font-size:9px; font-weight:600; letter-spacing:.14em; } .ds-experience-item h3 { max-width:26ch; margin:18px 0 14px; font-size:26px; font-weight:500; line-height:1.15; } .ds-experience-item p { max-width:56ch; margin:0; color:rgba(8,11,16,.67); font-size:13px; line-height:1.75; }"
     }
   ],
   "narrative": {
-    "northStar": "The Spatial Systems Chamber",
-    "overview": "The portfolio opens as an identity chamber, not a project index. Ivan’s name, engineering role, thesis, and direct actions occupy the first plane; an interactive wireframe cube, orbital rings, satellites, coordinates, moving light, and subtle texture make the interface itself evidence of technical craft. The object is abstract enough to represent AI, systems, and product together without competing with the identity.\n\nAfter the portal, a warm-paper manifesto resets the eye before work unfolds one system per viewport. Each project scene pairs concise engineering context with one large, depth-stacked interface image. Practice, experience, evidence, and contact then become progressively simpler. The overall experience is cinematic but legible: spectacle establishes character, while a clear reading order and explicit routes support fast recruiter evaluation.",
+    "northStar": "The Spatial Film Corridor",
+    "overview": "The portfolio opens on Ivan’s identity inside a live GPU-rendered system. A fixed transparent WebGL canvas places a rotating wireframe topology core and 120 orbiting data packets inside a long tunnel of receding frames and sparse signal particles. The first viewport contains no project imagery: the name, role, thesis, work route, and résumé route lead while the generative system establishes technical authorship.\n\nScroll becomes camera travel. After one warm-paper manifesto interlude, the camera advances through three suspended project films at measured depths while the semantic DOM supplies the project name, role, explanation, stack, and case-study link. The second scene reverses the copy position to vary the passage through the corridor. Practice, experience, evidence, and contact become progressively quieter after the WebGL journey.\n\nThe corridor is progressive enhancement, not a dependency. At widths below 821px, under reduced motion, after WebGL construction failure, or after context loss, the fixed canvas remains invisible and the complete CSS/DOM Spatial Systems Chamber fallback stays visible. The fallback includes the cube-and-orbit hero and depth-stacked project images; it is not the primary desktop visual world.",
     "keyCharacteristics": [
-      "Identity-first opening with a responsive CSS 3D cube, orbital rings, and pointer-linked light.",
-      "Near-black spatial chamber punctuated by one warm-paper manifesto and experience interlude.",
-      "Bahianita display statements paired with compact Manrope evidence and controls.",
-      "Mint as the primary signal, with violet and orange as restrained orbital and scene accents.",
-      "One-project-per-viewport storytelling with layered interface depth rather than a card grid.",
-      "Square controls, hairline dividers, tiny coordinates, and circular geometry reserved for spatial instruments.",
-      "Motion is atmospheric and relational; content and routes remain complete without it."
+      "Identity-first, project-free hero built around a live topology core and moving data packets.",
+      "Fixed Three.js canvas with scroll-smoothed camera travel through sixteen wireframe tunnel frames.",
+      "Three real project textures suspended as large planes with spectral wireframe echoes.",
+      "Semantic DOM copy remains above the canvas and owns navigation, reading order, alt text, and actions.",
+      "Mint, violet, and orange identify systems against a near-black fogged corridor.",
+      "One warm-paper manifesto and one warm-paper experience section reset the dark spatial journey.",
+      "CSS 3D hero and DOM project films form the complete static fallback."
     ],
     "rules": [
-      { "name": "The Signal-Light Rule", "body": "Mint, violet, and orange belong to active lines, indices, tags, glows, and scene identity; never use them as broad page fills.", "section": "colors" },
-      { "name": "The Interlude Rule", "body": "Warm paper may take over an entire section only to reset pacing and sharpen a manifesto or experience statement; ordinary dark sections remain black.", "section": "colors" },
-      { "name": "The Identity-Scale Rule", "body": "Bahianita establishes the person before it names the projects; the first display statement is Ivan’s full name.", "section": "typography" },
-      { "name": "The Two-Voice Rule", "body": "Bahianita owns names and declarations. Manrope owns explanations, evidence, controls, and all operational detail.", "section": "typography" },
-      { "name": "The Viewport Scene Rule", "body": "A selected project gets a full spatial scene; never compress the three primary projects into an equal card grid.", "section": "layout" },
-      { "name": "The Mobile Reading-Order Rule", "body": "On narrow screens, show the project image first, then its count, name, role, detail, tags, and case-study action.", "section": "layout" },
-      { "name": "The Constructed-Depth Rule", "body": "Prefer perspective, overlap, Z translation, and line geometry to generic blurred card shadows.", "section": "elevation" },
-      { "name": "The One-Artifact Rule", "body": "Each project scene elevates one real interface image; its backing planes support that artifact rather than introducing extra decorative panels.", "section": "elevation" },
-      { "name": "The Orbital Geometry Rule", "body": "Curves signal atmosphere, position, or motion; they do not soften routine controls into pills.", "section": "shapes" }
+      { "name": "The Emitted-Signal Rule", "body": "Mint, violet, and orange belong to light, linework, indices, particles, tags, and per-project identity; never spread them across large opaque backgrounds.", "section": "colors" },
+      { "name": "The Interlude Rule", "body": "Warm paper may fill a section only when the camera journey needs a deliberate editorial reset.", "section": "colors" },
+      { "name": "The Identity-Scale Rule", "body": "Ivan’s full name is the first display statement; WebGL motion supports it and never replaces it.", "section": "typography" },
+      { "name": "The Two-Voice Rule", "body": "Bahianita owns names and declarations. Manrope owns explanations, evidence, controls, and operational detail.", "section": "typography" },
+      { "name": "The Camera-Path Rule", "body": "Primary projects occupy distinct world coordinates and scroll anchors; never collapse the desktop corridor into a conventional card grid.", "section": "layout" },
+      { "name": "The DOM-Authority Rule", "body": "WebGL supplies atmosphere and project imagery, while the DOM remains the source of truth for text, links, image alternatives, focus order, and fallback presentation.", "section": "layout" },
+      { "name": "The Real-Depth Rule", "body": "Desktop depth comes from camera position, world coordinates, fog, occlusion, and project planes—not from a stack of shadowed DOM cards.", "section": "elevation" },
+      { "name": "The One-Artifact Rule", "body": "Each stop elevates one real project texture; echoes and frames support it rather than introducing competing imagery.", "section": "elevation" },
+      { "name": "The Topology Rule", "body": "Complex geometry expresses systems behavior in the hero; routine controls remain plain, rectilinear, and immediately recognizable.", "section": "shapes" }
     ],
     "dos": [
-      "Do establish Ivan’s identity, engineering role, thesis, work route, and résumé route within the first viewport.",
-      "Do keep the cube and orbit system abstract, precise, and subordinate to the name and thesis.",
-      "Do alternate dark chambers with rare full-field warm-paper interludes to control pacing.",
-      "Do give each primary project one full scene, one real interface artifact, and a direct case-study route.",
-      "Do retain semantic headings, articles, lists, navigation, links, useful image alt text, and logical reading order beneath the spatial composition.",
-      "Do preserve mint :focus-visible outlines and reduced-motion paths for every moving system.",
-      "Do keep the mobile project image before its explanatory copy and keep decision-critical header links visible."
+      "Do keep the first WebGL viewport free of project imagery so identity and topology establish the experience.",
+      "Do add the readiness class only after a renderer exists, and remove it on cleanup or context loss.",
+      "Do keep DOM project images mounted and hide them only while WebGL is ready.",
+      "Do preserve the complete CSS fallback below 821px, under reduced motion, and after WebGL failure.",
+      "Do dispose geometries, materials, maps, listeners, animation frames, and the renderer on unmount.",
+      "Do retain semantic headings, articles, lists, links, meaningful alt text, keyboard focus, and direct résumé/contact routes.",
+      "Do cap render cost and stop visible corridor rendering after the work journey."
     ],
     "donts": [
-      "Don't return to a project-first contact sheet, registration rail, or equal-card portfolio grid.",
-      "Don't let the 3D object obscure the identity, thesis, actions, or mobile reading path.",
-      "Don't replace the cube with a raster illustration; its responsive interaction and geometry are part of the system.",
-      "Don't use rounded cards, pill buttons, broad spectral fills, or generic glass panels.",
-      "Don't add autonomous motion that survives reduced-motion settings or content that requires motion to understand.",
-      "Don't invent metrics, projects, outcomes, or technical claims to increase visual density."
+      "Don't describe or extend the CSS cube as the primary desktop hero; it is the resilience layer.",
+      "Don't place project imagery in the WebGL hero or reveal a project plane before its scroll stop.",
+      "Don't remove DOM content because the same project appears in WebGL.",
+      "Don't initialize WebGL for reduced-motion users or viewports narrower than 821px.",
+      "Don't use rounded cards, pill controls, opaque spectral backgrounds, or generic glass panels.",
+      "Don't let camera travel obscure actions, alter DOM reading order, or become required to understand the work."
     ]
   }
 }
