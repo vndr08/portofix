@@ -1,5 +1,5 @@
 // Service Worker for Ivander Portfolio PWA
-const CACHE_NAME = 'ivander-portfolio-v1';
+const CACHE_NAME = 'ivander-portfolio-v3';
 const STATIC_ASSETS = [
   '/',
   '/offline',
@@ -41,6 +41,23 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+	// Pages must be network-first so a new deployment never remains hidden
+	// behind an old cached portfolio. The cached page is only an offline fallback.
+	if (event.request.mode === 'navigate') {
+		event.respondWith(
+			fetch(event.request)
+				.then((networkResponse) => {
+					if (networkResponse.ok) {
+						const responseClone = networkResponse.clone();
+						event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.put(event.request, responseClone)));
+					}
+					return networkResponse;
+				})
+				.catch(async () => (await caches.match(event.request)) || caches.match('/offline'))
+		);
+		return;
+	}
+
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       if (cachedResponse) {
@@ -70,10 +87,6 @@ self.addEventListener('fetch', (event) => {
           return networkResponse;
         })
         .catch(() => {
-          // Offline fallback for navigation requests
-          if (event.request.mode === 'navigate') {
-            return caches.match('/offline');
-          }
           return new Response('Offline', { status: 503 });
         });
     })
@@ -86,8 +99,8 @@ self.addEventListener('push', (event) => {
     const data = event.data.json();
     self.registration.showNotification(data.title, {
       body: data.body,
-      icon: '/icons/icon-192x192.png',
-      badge: '/icons/icon-72x72.png',
+		icon: '/icon.svg',
+		badge: '/icon.svg',
     });
   }
 });

@@ -1,9 +1,11 @@
 ---
-name: "Registered Lightfield Folio"
-description: "A near-black editorial portfolio that registers engineering evidence across luminous optical film planes."
+name: "Spatial Systems Chamber"
+description: "An identity-first portfolio where a precise orbital chamber opens into full-viewport engineering case studies."
 colors:
-  gallery-black: "#070a10"
-  film-black: "#0b1119"
+  chamber-black: "#05070b"
+  chamber-raised: "#0a0e14"
+  depth-black: "#060a0f"
+  experience-ink: "#080b10"
   paper-white: "#f1f5f2"
   warm-paper: "#f1ede9"
   optic-mint: "#a8ffea"
@@ -12,115 +14,114 @@ colors:
 typography:
   display:
     fontFamily: "Bahianita, sans-serif"
-    fontSize: "clamp(4.625rem, 8vw, 8.375rem)"
+    fontSize: "clamp(4.5rem, 8vw, 6rem)"
     fontWeight: 400
     lineHeight: 0.78
     letterSpacing: "0.015em"
   headline:
     fontFamily: "Manrope, sans-serif"
-    fontSize: "clamp(1.5625rem, 2.4vw, 2.4375rem)"
+    fontSize: "clamp(1.3125rem, 2vw, 2rem)"
     fontWeight: 500
-    lineHeight: 1.05
+    lineHeight: 1.15
     letterSpacing: "normal"
   body:
     fontFamily: "Manrope, sans-serif"
     fontSize: "0.8125rem"
     fontWeight: 400
-    lineHeight: 1.7
+    lineHeight: 1.75
     letterSpacing: "normal"
   label:
     fontFamily: "Manrope, sans-serif"
-    fontSize: "0.6875rem"
+    fontSize: "0.625rem"
     fontWeight: 500
-    lineHeight: 1.4
+    lineHeight: 1
     letterSpacing: "0.14em"
 rounded:
   square: "0"
-  tag: "6px"
-  circular: "999px"
+  signal: "50%"
 spacing:
   micro: "8px"
-  xs: "11px"
-  sm: "14px"
-  md: "18px"
-  control: "22px"
-  panel: "42px"
+  xs: "14px"
+  sm: "20px"
+  md: "28px"
+  lg: "34px"
+  section-inline: "7vw"
 components:
   action-primary:
     backgroundColor: "{colors.warm-paper}"
-    textColor: "{colors.gallery-black}"
+    textColor: "{colors.chamber-black}"
     typography: "{typography.label}"
     rounded: "{rounded.square}"
-    padding: "19px 22px"
-    height: "52px"
-  action-secondary:
+    padding: "0 20px"
+    height: "50px"
+  action-text:
     backgroundColor: "transparent"
     textColor: "{colors.paper-white}"
     typography: "{typography.label}"
     rounded: "{rounded.square}"
-    padding: "19px 22px"
-    height: "52px"
-  technology-tag:
+    padding: "0 0 7px"
+  system-tag:
     backgroundColor: "transparent"
     textColor: "{colors.optic-mint}"
     typography: "{typography.label}"
-    rounded: "{rounded.tag}"
-    padding: "0 10px"
-    height: "24px"
-  film-record:
-    backgroundColor: "{colors.film-black}"
+    rounded: "{rounded.square}"
+    padding: "7px 10px"
+  project-viewport:
+    backgroundColor: "{colors.depth-black}"
     textColor: "{colors.paper-white}"
     rounded: "{rounded.square}"
-    padding: "42px"
 ---
 
-# Design System: Registered Lightfield Folio
+# Design System: Spatial Systems Chamber
 
 ## Overview
 
-**Creative North Star: "The Registered Lightfield Folio"**
+**Creative North Star: "The Spatial Systems Chamber"**
 
-The portfolio behaves like an editorial contact sheet laid on a dark inspection table. Engineering evidence is the artwork: project interfaces sit inside translucent optical film, while hairline rules, registration marks, indices, and compact metadata make the composition feel measured rather than ornamental. The visual world is cinematic and spatial, but its purpose is fast evaluation by recruiters.
+The portfolio opens as an identity chamber, not a project index. Ivan’s name, engineering role, thesis, and direct actions occupy the first plane; an interactive wireframe cube, orbital rings, satellites, coordinates, moving light, and subtle texture make the interface itself evidence of technical craft. The object is abstract enough to represent AI, systems, and product together without competing with the identity.
 
-Density is intentional. Large, narrow display type establishes chapters; compact Manrope text carries facts; and broad areas of near-black preserve focus around the project planes. Mint, violet, and warm orange appear as controlled refractions, never as broad decorative fills. Active Theory informs the spatial confidence and motion, while ambiguous navigation is explicitly excluded: work, résumé, project details, and contact remain visible, semantic actions.
+After the portal, a warm-paper manifesto resets the eye before work unfolds one system per viewport. Each project scene pairs concise engineering context with one large, depth-stacked interface image. Practice, experience, evidence, and contact then become progressively simpler. The overall experience is cinematic but legible: spectacle establishes character, while a clear reading order and explicit routes support fast recruiter evaluation.
 
 **Key Characteristics:**
 
-- Near-black editorial gallery with off-white type and hairline registration structure.
-- Project screenshots presented as luminous, translucent film planes rather than generic cards.
-- Bahianita display typography paired with compact, highly legible Manrope UI and body text.
-- Mint, violet, and orange accents used as optical signals, indices, and edge light.
-- Square actions, clipped planes, and precise coordinate-like alignment.
-- CSS perspective and restrained Framer Motion create depth without gating content.
+- Identity-first opening with a responsive CSS 3D cube, orbital rings, and pointer-linked light.
+- Near-black spatial chamber punctuated by one warm-paper manifesto and experience interlude.
+- Bahianita display statements paired with compact Manrope evidence and controls.
+- Mint as the primary signal, with violet and orange as restrained orbital and scene accents.
+- One-project-per-viewport storytelling with layered interface depth rather than a card grid.
+- Square controls, hairline dividers, tiny coordinates, and circular geometry reserved for spatial instruments.
+- Motion is atmospheric and relational; content and routes remain complete without it.
 
 ## Colors
 
-The palette is dark and material: paper whites establish editorial hierarchy while three spectral accents distinguish interaction, technology, and optical depth.
+The palette alternates a deep black chamber with rare warm-paper interludes; spectral color behaves like emitted signal light rather than surface decoration.
 
 ### Primary
 
-- **Optic Mint:** The principal interactive signal for hover states, focus outlines, progress, active points, and first-position technology tags.
+- **Optic Mint:** The primary system signal for roles, active progress, navigation underlines, focus outlines, cube edges, tags, and the first project scene.
 
 ### Secondary
 
-- **Prism Violet:** A secondary refraction for alternate tags, film borders, and selected depth contours.
+- **Prism Violet:** A secondary spatial wavelength for one orbital path and the second project scene.
 
 ### Tertiary
 
-- **Signal Orange:** A warm indexing color for record labels, project numbers, and the third tag in a sequence.
+- **Signal Orange:** A warm counter-signal for satellites, the contact core, and the third project scene.
 
 ### Neutral
 
-- **Gallery Black:** The uninterrupted page ground. Keep it dominant across every immersive surface.
-- **Film Black:** The slightly lifted, translucent-looking base of records and archive cells.
-- **Paper White:** Primary body and interface text, often reduced with alpha for supporting copy and rules.
-- **Warm Paper:** Large display headlines and filled primary actions; its slight warmth prevents the gallery from feeling clinical.
+- **Chamber Black:** Dominant hero, work, and contact ground.
+- **Chamber Raised:** A barely lifted dark field that distinguishes the practice section without introducing a card surface.
+- **Depth Black:** The translucent-looking backing plane behind project images.
+- **Experience Ink:** Text and structural lines on warm-paper interludes.
+- **Paper White:** Primary copy and interface text on dark surfaces, reduced with alpha for secondary hierarchy.
+- **Warm Paper:** Display text on dark surfaces and the full-field manifesto/experience contrast color.
 
 ### Named Rules
 
-**The Refraction Rule.** Mint, violet, and orange identify signals and depth; they do not become large background fields.
+**The Signal-Light Rule.** Mint, violet, and orange belong to active lines, indices, tags, glows, and scene identity; never use them as broad page fills.
 
-**The Alpha Hierarchy Rule.** Use paper white at full strength for key facts, around 60–78% for explanations, and around 14–34% for registration rules and structural borders.
+**The Interlude Rule.** Warm paper may take over an entire section only to reset pacing and sharpen a manifesto or experience statement; ordinary dark sections remain black.
 
 ## Typography
 
@@ -129,109 +130,115 @@ The palette is dark and material: paper whites establish editorial hierarchy whi
 **Body Font:** Manrope (with sans-serif fallback)
 **Label Font:** Manrope (with sans-serif fallback)
 
-**Character:** Bahianita gives the folio its tall, compressed editorial voice; Manrope supplies calm technical precision. Their contrast is the identity: expressive chapter statements surrounded by controlled, readable evidence.
+**Character:** Bahianita provides the tall, compressed identity voice that makes names and statements feel architectural. Manrope carries every factual layer with controlled spacing and low visual noise.
 
 ### Hierarchy
 
-- **Display** (400, responsive clamp, 0.78 line-height): Uppercase identity and section statements. It may run very large and tightly stacked, but must remain readable at the shipped viewport.
-- **Headline** (500–600, responsive 25–39px range, 1.05 line-height): Project, experience, and system names in Manrope when a quieter voice is needed.
-- **Body** (400, typically 12–16px, 1.45–1.75 line-height): Explanations and evidence. Wider introductions stay near 470–590px; dense records stay shorter.
-- **Label** (500, typically 8–12px, 0.07–0.16em letter-spacing): Indices, dates, roles, rails, and technical metadata. Uppercase is reserved for this coordinate-like layer.
+- **Display** (400, typically 72–96px, 0.75–0.82 line-height): Multi-line identity, manifesto, project names, section statements, and contact language.
+- **Headline** (500, typically 21–32px, 1.1–1.15 line-height): Capability and experience titles.
+- **Body** (400, typically 12–17px, 1.65–1.75 line-height): Thesis, project context, practice explanation, and experience evidence; constrain lines to roughly 38–56 characters where practical.
+- **Label** (500–600, typically 8–11px, 0.04–0.22em letter-spacing): Roles, counts, coordinates, navigation, tags, dates, and controls. Uppercase communicates instrumentation, not emphasis everywhere.
 
 ### Named Rules
 
-**The Two-Voice Rule.** Bahianita owns identity and chapter-scale statements; Manrope owns facts, controls, project names, and operational detail.
+**The Identity-Scale Rule.** Bahianita establishes the person before it names the projects; the first display statement is Ivan’s full name.
 
-**The Tall-Type Rule.** Never replace Bahianita with a generic bold grotesk or stretch Manrope to imitate it; the narrow, irregular display silhouette is foundational.
+**The Two-Voice Rule.** Bahianita owns names and declarations. Manrope owns explanations, evidence, controls, and all operational detail.
 
 ## Layout
 
-Desktop composition uses a 1536:1024 first-frame reference and percentage-positioned project planes inside a perspective stage. Identity and direct actions occupy the left third, while the dominant VANGUARD plane fills the right. WhatsApp and Kalbe continue the visual ribbon through the lower frame. Subsequent sections use approximately 6.3% outer insets, fine vertical rails near 2.7%, and intentionally asymmetric stages rather than a centered container.
+The first viewport is a three-plane chamber. A centered header spans the top between 4.5vw insets; the identity block sits near 6.3vw on the left; the cube-and-orbit object occupies the middle-right; and vertical coordinates close the far edge. The composition uses a 1500px perspective stage, substantial negative space, and no centered hero container.
 
-The spacing rhythm alternates between tight evidence clusters and large areas of black. Small gaps of 8–22px organize labels and controls; 28–42px padding defines records; 64–112px separates chapters on compact screens. Hairline rules and aligned indices provide continuity when content changes scale.
+The manifesto is a full-height asymmetric two-column light interlude. Work begins with a 74svh chapter introduction, then each project receives at least 112svh in a two-column scene: compact copy on the left and a dominant interface viewport on the right. Practice uses a heading split followed by three full-width rows. Experience switches to warm paper in a two-column editorial timeline. Contact returns to a centered dark chamber with an oversized orbital sphere behind its actions.
 
-At 900px and below, the fixed-aspect hero becomes a roughly 1900px stacked sequence. Navigation simplifies, the secondary About link and nonessential microcopy disappear, the three project films become wide horizontal bands, and dense desktop metadata is removed. Later sections leave absolute positioning, discard decorative prisms, flatten records and archive items into one column, and make contact actions full width. Content order and every core destination remain intact.
+At 900px and below, the header drops status and the redundant About link, while preserving Work, Résumé, and Contact. The identity block moves upward, the cube shrinks and moves behind the lower-right of the hero, and coordinates disappear. Manifesto and headings stack. Project scenes become single-column at 120svh, explicitly placing imagery before copy; depth offsets shrink but remain perceptible. Capability rows collapse to an index-plus-content layout, experience becomes one column, evidence becomes a vertical list, and contact actions stack.
 
-**The Registered Edge Rule.** Major content aligns to the recurring left rails and section insets; do not center ordinary sections merely to fill space.
+**The Viewport Scene Rule.** A selected project gets a full spatial scene; never compress the three primary projects into an equal card grid.
+
+**The Mobile Reading-Order Rule.** On narrow screens, show the project image first, then its count, name, role, detail, tags, and case-study action.
 
 ## Elevation & Depth
 
-Depth is optical, not conventionally card-like. The system combines CSS perspective, restrained Y-axis rotation, translucent dark planes, thin spectral edges, glow, blur, and overlapping film artwork. Broad drop shadows are absent; light appears as a narrow response along edges, progress beams, status points, and orbital lines.
+Depth comes from real CSS 3D geometry in the hero and layered planes in project scenes. The cube uses six translucent faces with inset mint illumination; three differently oriented rings and colored satellites establish orbit. Project screenshots sit above two translated Z-depth echoes and cast one strong black shadow. Blurred scene atmospheres carry the current project accent without tinting the entire viewport.
 
 ### Shadow Vocabulary
 
-- **Mint status glow** (`0 0 14px rgba(100, 255, 180, 0.48)`): Availability only.
-- **Film atmosphere** (`0 0 38px rgba(42, 240, 218, 0.08), inset 0 0 42px rgba(174, 139, 255, 0.04)`): Experience records and translucent prisms.
-- **Registered edge** (`0 0 22px rgba(100, 233, 209, 0.55)`): One narrow illuminated edge on a selected record.
-- **Scroll beam** (`0 0 16px rgba(168, 255, 234, 0.7), 0 0 32px rgba(200, 167, 255, 0.36)`): The page-progress signal at the top edge.
+- **Status signal** (`0 0 15px rgba(168, 255, 234, 0.55)`): The small availability point.
+- **Cube interior** (`inset 0 0 44px rgba(168, 255, 234, 0.06)`): Barely visible inner light on every cube face.
+- **Satellite emission** (`0 0 20px rgba(168, 255, 234, 0.72)`): A tight glow around orbital points; violet and orange satellites keep their solid hues.
+- **Project projection** (`0 36px 80px rgba(0, 0, 0, 0.48)`): The only substantial surface shadow, reserved for the large interface viewport.
+- **Progress beam** (`0 0 16px rgba(168, 255, 234, 0.5)`): A narrow glow around the two-pixel page-progress line.
 
 ### Named Rules
 
-**The Edge-Light Rule.** Depth comes from overlapping planes and illuminated edges; never lift every surface with a soft generic shadow.
+**The Constructed-Depth Rule.** Prefer perspective, overlap, Z translation, and line geometry to generic blurred card shadows.
 
-**The Motion-Is-Registration Rule.** Pointer and scroll motion should reveal how layers relate. It must remain subtle, spring-smoothed, and removable without losing information.
+**The One-Artifact Rule.** Each project scene elevates one real interface image; its backing planes support that artifact rather than introducing extra decorative panels.
 
 ## Shapes
 
-Rectangles are square by default. Primary and secondary controls, records, archive cells, and navigation surfaces use hard corners and one-pixel rules. Technology tags are the deliberate exception with a restrained 6px radius. Circles belong to optical instrumentation—registration crosshairs, status dots, axis points, and the contact orbit—not to ordinary buttons or cards. Arrow icons use square caps and miter joins to match the drafting language.
+Ordinary interface geometry stays square: actions, tags, project screenshots, depth planes, timeline structures, and evidence dividers use hard corners and one-pixel strokes. Circles and ellipses are reserved for the chamber’s spatial instruments—orbital rings, satellites, status points, atmospheres, and the contact sphere. The hero cube and contact diamond provide the only strong polygonal forms.
 
-**The Instrument Geometry Rule.** Reserve circles for signals and measurement; keep actionable surfaces rectilinear.
+**The Orbital Geometry Rule.** Curves signal atmosphere, position, or motion; they do not soften routine controls into pills.
 
 ## Components
 
 ### Buttons
 
-- **Shape:** Square, horizontal controls with 1px structure and a compact label.
-- **Primary:** Warm-paper fill with gallery-black text and a right-aligned signal arrow; hover refracts to optic mint.
-- **Secondary:** Transparent with a semi-opaque paper border; hover shifts border and text to prism violet in the hero, or optic mint in contact contexts.
-- **Hover / Focus:** Color changes complete in about 220ms. Keyboard focus uses a 2px optic-mint outline offset by 4–5px. Keep the label and arrow visible in every state.
+- **Primary:** A 50px-high square warm-paper block with chamber-black text, 20px horizontal padding, and a signal arrow. It is used once in the hero for entry into selected work.
+- **Text Action:** Transparent Manrope label with a 14px icon gap. Project and contact variants add a low-alpha bottom rule instead of a container.
+- **Hover / Focus:** Arrow icons travel 4px right and 2px up over 350ms with an expressive ease. Keyboard focus uses a 2px optic-mint outline offset by 5px.
 
 ### Chips
 
-- **Style:** Transparent 24px-high technology tags with a 1px spectral border, 6px corners, and compact Manrope text.
-- **Sequence:** The first tag is mint, the second violet, and the third orange. On mobile they grow to 28px high for touch readability.
+- **Style:** Square transparent project tags with a 1px scene-colored border, 7px by 10px padding, and 9px Manrope text.
+- **Color:** All tags within one project inherit that scene’s mint, violet, or orange accent.
 
 ### Cards / Containers
 
-- **Corner Style:** Square.
-- **Background:** Near-opaque film black over gallery black; use translucency or backdrop blur only where overlapping planes justify it.
-- **Shadow Strategy:** Optical glow is concentrated on a single edge or shallow atmospheric halo.
-- **Border:** 1px paper-white rules at low alpha, with occasional mint, violet, or orange emphasis.
-- **Internal Padding:** 42px on full desktop records, 28px on compact records, and 24–32px on archive cells.
+There is no conventional card component. Project viewports are full scene artifacts: the screenshot has a low-alpha paper border, a deep projection shadow, and two same-size backing planes translated in X, Y, and Z. Practice and experience use lines, columns, and timelines rather than isolated boxes.
 
 ### Navigation
 
-Navigation rests on the quiet top registration rule with 11px Manrope labels. Links inherit off-white, underline on hover with a 5px offset, and shift to optic mint. Mobile keeps the primary destinations visible in a compact right-aligned row; only the redundant in-page About link is omitted.
+The desktop header is a three-column line: wordmark, centered destination row, and right-aligned status. Navigation labels are 11px Manrope; hover draws a mint underline from left to right over 420ms. Mobile hides the status and About link but retains the three decision-critical destinations.
 
-### Film Planes
+### Spatial Core
 
-Project screenshots are authored optical plates with glow and edge treatment embedded in the imagery. They may overlap, bleed, crop, and rotate slightly in 3D, but must use meaningful alternative text. Pointer tilt is disabled for touch and reduced-motion users.
+The hero signature is a six-faced CSS cube with “AI / INTELLIGENCE” and “01 / SYSTEM” face content. Its resting pose is rotated on both axes; a slow 12-second drift runs inside three independently rotating orbital rings. Desktop pointer movement adds no more than 8 degrees of X tilt and 12 degrees of Y tilt to the containing object and moves the mint aurora across a 34–66% by 38–62% field.
 
-### Registration Rails
+### Project Scene
 
-Hairline vertical rails, circular crosshairs, tiny indices, and chapter labels establish a measured coordinate system. They are decorative and hidden from assistive technology; they must never replace semantic headings or navigation.
+Each scene owns a single accent, a numbered count, Bahianita project name, factual role and detail, compact tags, case-study action, and one image with meaningful alt text. Scroll progress spring-smooths the copy and viewport independently: the image passes from +110px to -110px, rotates from 8 to -7 degrees, and scales from 0.82 through 1 to 0.88.
+
+### Capability Row
+
+Three full-width rows pair a tiny index, a medium Manrope title, and a concise technical scope. On hover, the row gains 18px inline padding and the title inherits optic mint over 450ms. On mobile, the description moves beneath the title without changing semantic order.
+
+### Experience Timeline
+
+The light experience section uses a thin vertical ink line, 7px circular nodes, compact dates, and restrained body copy. Evidence figures close the section on a single top rule and become a vertical list on mobile.
 
 ### Motion
 
-Framer Motion drives spring-smoothed pointer tilt, scroll parallax, a horizontal progress beam, archive drift, and a rotating contact orbit. The standard spring is stiffness 120, damping 24, mass 0.7; scroll progress uses stiffness 90, damping 28, mass 0.5. Motion stops under `prefers-reduced-motion`, touch pointers do not tilt the films, and CSS transitions collapse to effectively zero duration.
+Hero pointer response uses a spring of stiffness 52, damping 18, and mass 0.85. Project scroll scenes use stiffness 72, damping 24, and mass 0.65; global progress uses stiffness 70, damping 25, and mass 0.6. CSS orbits run at 12, 18, 23, and 29 seconds. `useReducedMotion()` removes pointer tilt, project parallax, and contact rotation; `prefers-reduced-motion` disables core, ring, and scroll-signal animation and collapses interaction transitions.
 
 ## Do's and Don'ts
 
 ### Do:
 
-- **Do** lead with real project evidence and keep the work, résumé, and contact routes obvious.
-- **Do** maintain the near-black ground, warm editorial display type, and restrained three-color refraction system.
-- **Do** use semantic sections, headings, navigation, links, lists, and descriptions underneath the spatial composition.
-- **Do** preserve 2px optic-mint `:focus-visible` outlines with clear offset on every immersive link.
-- **Do** give meaningful project imagery useful alt text while marking registration marks and purely optical layers decorative.
-- **Do** provide the stacked 900px fallback and test that it remains usable at browser zoom and narrow phone widths.
-- **Do** honor both `useReducedMotion()` and `prefers-reduced-motion`; core content must not depend on tilt, parallax, or the progress beam.
+- **Do** establish Ivan’s identity, engineering role, thesis, work route, and résumé route within the first viewport.
+- **Do** keep the cube and orbit system abstract, precise, and subordinate to the name and thesis.
+- **Do** alternate dark chambers with rare full-field warm-paper interludes to control pacing.
+- **Do** give each primary project one full scene, one real interface artifact, and a direct case-study route.
+- **Do** retain semantic headings, articles, lists, navigation, links, useful image alt text, and logical reading order beneath the spatial composition.
+- **Do** preserve mint `:focus-visible` outlines and reduced-motion paths for every moving system.
+- **Do** keep the mobile project image before its explanatory copy and keep decision-critical header links visible.
 
 ### Don't:
 
-- **Don't** turn the experience into a centered developer headline followed by equal rounded cards.
-- **Don't** use large accent-color fills, rainbow gradients, pill-shaped actions, or generic glassmorphism as the primary visual language.
-- **Don't** add motion that delays access, creates a hidden navigation model, or changes the reading order.
-- **Don't** use circles for routine controls or soften the square film geometry with broad corner radii.
-- **Don't** invent project metrics, outcomes, or imagery to make a plane look busier.
-- **Don't** preserve desktop absolute positioning on mobile; flatten the structure and keep evidence readable.
+- **Don't** return to a project-first contact sheet, registration rail, or equal-card portfolio grid.
+- **Don't** let the 3D object obscure the identity, thesis, actions, or mobile reading path.
+- **Don't** replace the cube with a raster illustration; its responsive interaction and geometry are part of the system.
+- **Don't** use rounded cards, pill buttons, broad spectral fills, or generic glass panels.
+- **Don't** add autonomous motion that survives reduced-motion settings or content that requires motion to understand.
+- **Don't** invent metrics, projects, outcomes, or technical claims to increase visual density.
