@@ -4,9 +4,9 @@ import { useEffect, useRef } from "react";
 import * as THREE from "three";
 
 const PROJECTS = [
-	{ selector: ".project-scene:nth-of-type(1)", z: -23, x: 2.4, image: "/image/lightfield/vanguard-ui.webp", color: 0xa8ffea, aspect: 1800 / 1034 },
-	{ selector: ".project-scene:nth-of-type(2)", z: -42, x: -2.2, image: "/image/lightfield/whatsapp-ui.webp", color: 0xc8a7ff, aspect: 1800 / 1019 },
-	{ selector: ".project-scene:nth-of-type(3)", z: -61, x: 2.2, image: "/image/lightfield/kalbe-ui.webp", color: 0xff914d, aspect: 1691 / 1100 },
+	{ selector: ".project-scene:nth-of-type(1)", z: -23, x: 2.4, color: 0xa8ffea, aspect: 1800 / 1034 },
+	{ selector: ".project-scene:nth-of-type(2)", z: -42, x: -2.2, color: 0xc8a7ff, aspect: 1800 / 1019 },
+	{ selector: ".project-scene:nth-of-type(3)", z: -61, x: 2.2, color: 0xff914d, aspect: 1691 / 1100 },
 ];
 
 function interpolateAnchors(scrollY, anchors, values) {
@@ -111,7 +111,6 @@ export default function SpatialCorridor() {
 		const speedLines = new THREE.LineSegments(speedLineGeometry, speedLineMaterial);
 		world.add(speedLines);
 
-		const textureLoader = new THREE.TextureLoader();
 		const projectGroups = [];
 		PROJECTS.forEach((project, index) => {
 			const group = new THREE.Group();
@@ -119,15 +118,11 @@ export default function SpatialCorridor() {
 			group.rotation.y = project.x > 0 ? -0.08 : 0.08;
 			const height = 4.65;
 			const width = height * project.aspect;
-			const texture = textureLoader.load(project.image);
-			texture.colorSpace = THREE.SRGBColorSpace;
-			texture.anisotropy = Math.min(renderer.capabilities.getMaxAnisotropy(), 8);
-			const imageMaterial = new THREE.MeshBasicMaterial({ map: texture, transparent: true, opacity: 0.98, toneMapped: false });
-			imageMaterial.userData.baseOpacity = 0.98;
-			const image = new THREE.Mesh(new THREE.PlaneGeometry(width, height), imageMaterial);
-			group.add(image);
+			const fieldMaterial = new THREE.MeshBasicMaterial({ color: 0x05070b, transparent: true, opacity: 0.18, depthWrite: false });
+			fieldMaterial.userData.baseOpacity = 0.18;
+			group.add(new THREE.Mesh(new THREE.PlaneGeometry(width, height), fieldMaterial));
 			for (let layer = 1; layer <= 3; layer += 1) {
-				const echoMaterial = new THREE.MeshBasicMaterial({ map: layer < 3 ? texture : null, color: project.color, wireframe: layer === 3, transparent: true, opacity: layer === 1 ? 0.16 : layer === 2 ? 0.08 : 0.055, depthWrite: false, toneMapped: false });
+				const echoMaterial = new THREE.MeshBasicMaterial({ color: project.color, wireframe: true, transparent: true, opacity: layer === 1 ? 0.13 : layer === 2 ? 0.08 : 0.05, depthWrite: false, toneMapped: false });
 				echoMaterial.userData.baseOpacity = echoMaterial.opacity;
 				const echo = new THREE.Mesh(new THREE.PlaneGeometry(width, height), echoMaterial);
 				echo.position.set((project.x > 0 ? -1 : 1) * layer * 0.22, layer * 0.13, -layer * 0.32);

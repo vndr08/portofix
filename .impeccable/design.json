@@ -88,7 +88,7 @@
     "keyCharacteristics": [
       "Identity-first, project-free hero built around a live topology core and moving data packets.",
       "Fixed Three.js canvas with scroll-smoothed camera travel through sixteen wireframe tunnel frames.",
-      "Three real project textures suspended as large planes with spectral wireframe echoes.",
+      "Three real DOM project films move through perspective while WebGL supplies spectral wireframe fields behind them.",
       "Semantic DOM copy remains above the canvas and owns navigation, reading order, alt text, and actions.",
       "Mint, violet, and orange identify systems against a near-black fogged corridor.",
       "One warm-paper operating model and one warm-paper career section reset the dark spatial journey.",
@@ -107,7 +107,7 @@
       { "name": "The Camera-Path Rule", "body": "Primary projects occupy distinct world coordinates and scroll anchors; never collapse the desktop corridor into a conventional card grid.", "section": "layout" },
       { "name": "The DOM-Authority Rule", "body": "WebGL supplies atmosphere and project imagery, while the DOM remains the source of truth for text, links, image alternatives, focus order, and fallback presentation.", "section": "layout" },
       { "name": "The Real-Depth Rule", "body": "Desktop depth comes from camera position, world coordinates, fog, occlusion, and project planes—not from a stack of shadowed DOM cards.", "section": "elevation" },
-      { "name": "The One-Artifact Rule", "body": "Each stop elevates one real project texture; echoes and frames support it rather than introducing competing imagery.", "section": "elevation" },
+      { "name": "The One-Artifact Rule", "body": "Each stop elevates one real DOM project film; WebGL echoes and frames support it without duplicating the screenshot.", "section": "elevation" },
       { "name": "The Topology Rule", "body": "Complex geometry expresses systems behavior in the hero; routine controls remain plain, rectilinear, and immediately recognizable.", "section": "shapes" }
     ],
     "dos": [

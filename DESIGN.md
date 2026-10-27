@@ -93,7 +93,7 @@ Ten projects use screenshots supplied in the repository. Four projects without o
 
 - Identity-first, project-free hero built around a live topology core and moving data packets.
 - Fixed Three.js canvas with scroll-smoothed camera travel through sixteen wireframe tunnel frames.
-- Three real project textures suspended as large planes with spectral wireframe echoes.
+- Three real DOM project films move through perspective while WebGL supplies spectral wireframe fields behind them.
 - Semantic DOM copy remains above the canvas and owns navigation, reading order, alt text, and actions.
 - Mint, violet, and orange identify systems against a near-black fogged corridor.
 - One warm-paper operating model and one warm-paper career section reset the dark spatial journey.
@@ -105,7 +105,7 @@ Ten projects use screenshots supplied in the repository. Four projects without o
 
 ## Colors
 
-The corridor is almost black so its emitted system colors and project textures can carry depth; warm paper is reserved for decisive editorial interludes.
+The corridor is almost black so its emitted system colors, project films, and wireframe fields can carry depth; warm paper is reserved for decisive editorial interludes.
 
 ### Primary
 
@@ -158,7 +158,7 @@ The corridor is almost black so its emitted system colors and project textures c
 
 ## Layout
 
-The WebGL canvas is fixed to the viewport at z-index 0 and never receives pointer events. Every direct child of the immersive page other than the canvas sits above it at z-index 2. The readiness class is added only after the first successful rendered frame; it reveals the atmospheric canvas and makes hero and work backgrounds transparent without hiding the CSS cube or DOM project images. Text, actions, and real interface evidence remain visible DOM content throughout.
+The WebGL canvas is fixed to the viewport at z-index 0 and never receives pointer events. Every direct child of the immersive page other than the canvas sits above it at z-index 2. The readiness class is added only after the first successful rendered frame; it reveals the atmospheric canvas, makes hero and work backgrounds transparent, and fades out the CSS cube so it cannot duplicate the live topology. DOM project films are never hidden. Text, actions, and real interface evidence remain visible DOM content throughout.
 
 The first viewport holds a full-depth tunnel with Ivan’s copy near 6.3vw on the left, one shared navigation rail, and coordinates on the far right. The operating model is an asymmetric light section containing a scroll-responsive four-plane object and a four-stage delivery path. Work begins with a 74svh proof statement, followed by three scenes of at least 112svh. In WebGL mode, odd-scene copy occupies the left in an 88%-opaque black backing with a rightward shadow; the middle scene moves copy to the right with the shadow reversed. Suspended project planes alternate right, left, right in world space.
 
@@ -174,7 +174,7 @@ The renderer is disabled below 821px. The broader CSS layout switches at 900px: 
 
 Desktop depth is a real camera system. A 46-degree perspective camera begins at z=11 and smooths toward z positions -16.5, -35.5, and -54.5 at the measured center of each project scene. Sixteen rectangular wireframe frames begin at z=3 and recede in 4.2-unit steps. Exponential fog at density 0.036 absorbs the corridor, while 280 sparse points preserve scale.
 
-The project planes sit at z=-23, -42, and -61 with alternating x offsets of 2.4, -2.2, and 2.2. Each textured plane receives three lower-opacity wireframe echoes and one brighter spectral edge. Only groups within 25 world units of the camera remain visible. The fallback replaces this with CSS perspective, two translated backing planes, and a deep black projection shadow.
+The atmospheric project fields sit at z=-23, -42, and -61 with alternating x offsets of 2.4, -2.2, and 2.2. Each is an untextured dark field with three low-opacity wireframe echoes and one brighter spectral edge. The actual screenshot exists only once, in the DOM film above it. Only WebGL groups within 25 world units of the camera remain visible.
 
 ### Shadow Vocabulary
 
@@ -188,7 +188,7 @@ The project planes sit at z=-23, -42, and -61 with alternating x offsets of 2.4,
 
 **The Real-Depth Rule.** Desktop depth comes from camera position, world coordinates, fog, occlusion, and project planes—not from a stack of shadowed DOM cards.
 
-**The One-Artifact Rule.** Each stop elevates one real project texture; echoes and frames support it rather than introducing competing imagery.
+**The One-Artifact Rule.** Each stop elevates one real DOM project film; WebGL echoes and frames support it without duplicating the screenshot.
 
 ## Shapes
 
@@ -211,7 +211,7 @@ The dominant form is a long rectangular tunnel made from sixteen subtly rotated 
 
 ### Cards / Containers
 
-There is no conventional card. In WebGL mode, project copy is an edge-faded black panel placed over the live corridor while the matching image exists as a world-space texture. In fallback mode, the DOM image, border, and two Z-offset echo planes form the complete artifact.
+There is no conventional card. The project copy is an edge-faded black panel placed over the live corridor. The matching DOM film stays visible in every mode and combines resting perspective, scroll travel, pointer tilt, a projected light pool, and two Z-offset echo planes.
 
 ### Navigation
 
@@ -219,7 +219,7 @@ One fixed navigation is shared by every route: wordmark, Home, Projects, About, 
 
 ### Corridor Canvas
 
-The signature component is a fixed, transparent, `aria-hidden` Three.js canvas. It caps device pixel ratio at 1.15 and texture anisotropy at 8 to control GPU cost. It uses a 46-degree perspective camera, exponential black fog, sixteen line frames, 120 instanced packets, a detail-2 wireframe icosahedron, 280 particles, and three textured project groups. On context loss, remove readiness immediately so the DOM fallback reappears.
+The signature component is a fixed, transparent, `aria-hidden` Three.js canvas. It caps device pixel ratio at 1.05 to control GPU cost. It uses a 46-degree perspective camera, exponential black fog, sixteen line frames, 120 instanced packets, a detail-2 wireframe icosahedron, 220 particles, and three untextured project fields. On context loss, remove readiness immediately so the CSS hero topology reappears; project evidence is unaffected.
 
 ### Project Stop
 

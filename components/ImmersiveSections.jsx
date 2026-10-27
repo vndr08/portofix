@@ -33,10 +33,15 @@ function ProjectScene({ project, index }) {
 	const pointerRotateX = useSpring(pointerY, { stiffness: 180, damping: 24, mass: 0.45 });
 	const pointerRotateY = useSpring(pointerX, { stiffness: 180, damping: 24, mass: 0.45 });
 	const imageY = useTransform(smooth, [0, 0.5, 1], [52, 0, -52]);
+	const imageX = useTransform(smooth, [0, 0.5, 1], index % 2 === 0 ? [82, 0, -28] : [-82, 0, 28]);
 	const scrollRotate = useTransform(smooth, [0, 0.5, 1], [3.5, 0, -3.5]);
 	const imageRotateX = useTransform([scrollRotate, pointerRotateX], ([scrollValue, pointerValue]) => scrollValue + pointerValue);
-	const copyY = useTransform(smooth, [0, 0.5, 1], [24, 0, -20]);
-	const depth = useTransform(smooth, [0, 0.5, 1], [0.94, 1, 0.96]);
+	const imageRotateZ = useTransform(smooth, [0, 0.5, 1], index % 2 === 0 ? [1.4, 0, -0.8] : [-1.4, 0, 0.8]);
+	const imageOpacity = useTransform(smooth, [0, 0.22, 0.72, 1], [0.68, 1, 1, 0.78]);
+	const copyX = useTransform(smooth, [0, 0.5, 1], index % 2 === 0 ? [-34, 0, 14] : [34, 0, -14]);
+	const copyY = useTransform(smooth, [0, 0.5, 1], [28, 0, -20]);
+	const copyOpacity = useTransform(smooth, [0, 0.22, 0.78, 1], [0.62, 1, 1, 0.72]);
+	const depth = useTransform(smooth, [0, 0.5, 1], [0.9, 1, 0.95]);
 	const handlePointerMove = (event) => {
 		if (reduceMotion || event.pointerType === "touch") return;
 		const bounds = event.currentTarget.getBoundingClientRect();
@@ -51,13 +56,13 @@ function ProjectScene({ project, index }) {
 	return (
 		<article ref={ref} className={`project-scene tone-${project.tone}`}>
 			<div className="project-atmosphere" aria-hidden="true" />
-			<motion.div className="project-copy" style={reduceMotion ? undefined : { y: copyY }}>
+			<motion.div className="project-copy" style={reduceMotion ? undefined : { x: copyX, y: copyY, opacity: copyOpacity }}>
 				<h3>{project.name}</h3>
 				<p className="project-role">{project.role}</p><p className="project-detail">{project.detail}</p>
 				<ul>{project.stack.map((item) => <li key={item}>{item}</li>)}</ul>
 				<Link href={`/projects/${project.slug}`}>Open case study <SignalIcon direction="up-right" /></Link>
 			</motion.div>
-			<motion.div className="project-viewport" onPointerMove={handlePointerMove} onPointerLeave={resetPointer} style={reduceMotion ? undefined : { y: imageY, rotateX: imageRotateX, rotateY: pointerRotateY, scale: depth, transformPerspective: 1400 }}>
+			<motion.div className="project-viewport" onPointerMove={handlePointerMove} onPointerLeave={resetPointer} style={reduceMotion ? undefined : { x: imageX, y: imageY, rotateX: imageRotateX, rotateY: pointerRotateY, rotateZ: imageRotateZ, opacity: imageOpacity, scale: depth, transformPerspective: 1400 }}>
 				<div className="project-depth depth-back" aria-hidden="true" /><div className="project-depth depth-mid" aria-hidden="true" />
 				<Image src={project.image} width={project.width} height={project.height} sizes="(max-width: 900px) 86vw, 58vw" alt={project.alt} /><span className="viewport-index" aria-hidden="true">ACTUAL UI / 0{index + 1}</span>
 			</motion.div>
@@ -124,13 +129,15 @@ function CareerTrajectory() {
 	const smooth = useSpring(scrollYProgress, { stiffness: 55, damping: 22, mass: 0.7 });
 	const orbitRotate = useTransform(smooth, [0, 1], [-28, 118]);
 	const orbitScale = useTransform(smooth, [0, 0.5, 1], [0.88, 1, 0.92]);
+	const orbitOpacity = useTransform(smooth, [0, 0.14, 0.52, 0.66, 0.75], [0.2, 1, 1, 0.3, 0]);
+	const orbitY = useTransform(smooth, [0, 0.58, 0.75], [38, 0, -110]);
 
 	return (
 		<section ref={ref} className="career-trajectory" aria-labelledby="career-trajectory-title">
 			<div className="career-intro">
 				<h2 id="career-trajectory-title">FROM AI PROTOTYPES<br />TO ENTERPRISE OWNERSHIP.</h2>
 				<p>Two consecutive roles at PT Jababeka trace one clear progression: understanding operational problems, shipping applied AI, then co-owning the lifecycle and interface of an enterprise financial system.</p>
-				<motion.div className="career-orbit-v2" style={reduceMotion ? undefined : { rotate: orbitRotate, scale: orbitScale }} aria-hidden="true">
+				<motion.div className="career-orbit-v2" style={reduceMotion ? undefined : { rotate: orbitRotate, scale: orbitScale, opacity: orbitOpacity, y: orbitY }} aria-hidden="true">
 					<i /><i /><i /><span>ASK</span><span>BUILD</span><span>OWN</span><b>01→02</b>
 				</motion.div>
 			</div>
