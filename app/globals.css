@@ -2021,8 +2021,7 @@ td, th {
 
 .practice-section { padding: 18vh 7vw; background: #0a0e14; }
 .practice-heading { display: grid; grid-template-columns: 1.15fr .85fr; gap: 8vw; align-items: end; margin-bottom: 14vh; }
-.practice-heading h2,
-.experience-section-v2 > h2 { margin: 0; font: 400 clamp(4.5rem, 8vw, 6rem)/.78 'Bahianita',sans-serif !important; color: #f1ede9; }
+.practice-heading h2 { margin: 0; font: 400 clamp(4.5rem, 8vw, 6rem)/.78 'Bahianita',sans-serif !important; color: #f1ede9; }
 .practice-heading p { max-width: 45ch; margin: 0; color: rgba(241,245,242,.62); font: 400 14px/1.75 'Manrope',sans-serif; }
 .capability-row { display: grid; grid-template-columns: 70px .8fr 1.2fr; align-items: center; gap: 28px; min-height: 120px; border-top: 1px solid rgba(241,245,242,.16); transition: padding 450ms cubic-bezier(.16,1,.3,1), color 300ms ease; }
 .capability-row:last-child { border-bottom: 1px solid rgba(241,245,242,.16); }
@@ -2031,15 +2030,47 @@ td, th {
 .capability-row h3 { margin: 0; font: 500 clamp(21px,2vw,31px)/1.1 'Manrope',sans-serif; }
 .capability-row p { margin: 0; color: rgba(241,245,242,.55); font: 400 12px/1.65 'Manrope',sans-serif; }
 
-.experience-section-v2 { display: grid; grid-template-columns: .9fr 1.1fr; gap: 9vw; padding: 18vh 7vw; background: #f1ede9; color: #080b10; }
-.experience-section-v2 > h2 { color: #080b10; }
-.experience-line article { position: relative; padding: 0 0 64px 34px; border-left: 1px solid rgba(8,11,16,.25); }
-.experience-line article::before { content: ''; position: absolute; left: -4px; top: 3px; width: 7px; height: 7px; border-radius: 50%; background: #080b10; }
-.experience-line time { font: 600 9px/1 'Manrope',sans-serif; letter-spacing: .14em; }
-.experience-line h3 { max-width: 26ch; margin: 18px 0 14px; font: 500 clamp(21px,2.2vw,32px)/1.15 'Manrope',sans-serif; }
-.experience-line p { max-width: 56ch; margin: 0; font: 400 13px/1.75 'Manrope',sans-serif; color: rgba(8,11,16,.67); }
-.evidence-line { grid-column: 1/-1; display: flex; justify-content: space-between; margin-top: 10vh; padding-top: 26px; border-top: 1px solid rgba(8,11,16,.25); font: 500 11px/1 'Manrope',sans-serif; }
-.evidence-line b { margin-right: 8px; font-size: 22px; font-weight: 500; }
+.career-trajectory {
+	position: relative;
+	display: grid;
+	grid-template-columns: minmax(300px,.78fr) minmax(0,1.22fr);
+	column-gap: 10vw;
+	padding: 16vh 7vw 0;
+	overflow: clip;
+	background: #f1ede9;
+	color: #080b10;
+}
+.career-intro { position: sticky; top: 118px; align-self: start; min-height: calc(100svh - 150px); }
+.career-intro h2 { position: relative; z-index: 2; max-width: 10ch; margin: 0; font: 400 clamp(4.5rem,7.4vw,7.2rem)/.76 'Bahianita',sans-serif !important; }
+.career-intro > p { position: relative; z-index: 2; max-width: 43ch; margin: 36px 0 0; color: rgba(8,11,16,.66); font: 400 13px/1.75 'Manrope',sans-serif; }
+.career-orbit-v2 { position: relative; width: min(32vw,430px); aspect-ratio: 1; margin: 7vh 0 0 4vw; transform-style: preserve-3d; will-change: transform; }
+.career-orbit-v2 i { position: absolute; inset: 5%; border: 1px solid rgba(8,11,16,.22); border-radius: 50%; transform: rotateX(68deg); }
+.career-orbit-v2 i:nth-child(2) { inset: 16%; border-color: rgba(20,124,111,.45); transform: rotateY(68deg); }
+.career-orbit-v2 i:nth-child(3) { inset: 28%; border-color: rgba(104,72,150,.34); transform: rotateX(60deg) rotateY(38deg); }
+.career-orbit-v2::before,.career-orbit-v2::after { content: ''; position: absolute; left: 50%; top: 50%; width: 82%; height: 1px; background: rgba(8,11,16,.2); transform: translate(-50%,-50%) rotate(28deg); }
+.career-orbit-v2::after { transform: translate(-50%,-50%) rotate(-34deg); }
+.career-orbit-v2 > span { position: absolute; z-index: 2; padding: 7px 9px; background: #f1ede9; color: rgba(8,11,16,.55); font: 600 8px/1 Manrope,sans-serif; letter-spacing: .12em; }
+.career-orbit-v2 > span:nth-of-type(1) { left: 1%; top: 45%; }
+.career-orbit-v2 > span:nth-of-type(2) { right: 9%; top: 11%; }
+.career-orbit-v2 > span:nth-of-type(3) { right: 2%; bottom: 21%; }
+.career-orbit-v2 b { position: absolute; left: 50%; top: 50%; z-index: 3; display: grid; place-items: center; width: 30%; aspect-ratio: 1; border: 1px solid rgba(8,11,16,.35); background: #f1ede9; font: 400 36px/1 'Bahianita',sans-serif; transform: translate(-50%,-50%) rotate(45deg); }
+.career-records { border-top: 1px solid rgba(8,11,16,.24); }
+.career-records article { min-height: 86vh; padding: 8vh 0 11vh; border-bottom: 1px solid rgba(8,11,16,.24); }
+.career-records article > header { display: grid; grid-template-columns: 44px 1fr auto; gap: 18px; align-items: center; color: rgba(8,11,16,.5); font: 600 9px/1 Manrope,sans-serif; letter-spacing: .1em; text-transform: uppercase; }
+.career-records article > header span { color: #087c6f; }
+.career-records article > header b { color: rgba(8,11,16,.7); font-weight: 600; }
+.career-records h3 { max-width: 18ch; margin: 7vh 0 24px; font: 500 clamp(2.5rem,4.5vw,4.8rem)/.98 Manrope,sans-serif; letter-spacing: -.035em; }
+.career-records article > p { max-width: 58ch; margin: 0; color: rgba(8,11,16,.67); font: 400 14px/1.75 Manrope,sans-serif; }
+.career-records ul { margin: 6vh 0 0; padding: 0; border-top: 1px solid rgba(8,11,16,.18); }
+.career-records li { display: grid; grid-template-columns: 34px 1fr; gap: 16px; padding: 17px 0; border-bottom: 1px solid rgba(8,11,16,.14); font: 400 12px/1.6 Manrope,sans-serif; }
+.career-records li::before { content: '↳'; color: #087c6f; }
+.career-records article > div { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 5vh; }
+.career-records article > div span { padding: 7px 9px; border: 1px solid rgba(8,11,16,.24); font: 500 9px/1 Manrope,sans-serif; }
+.career-proof-band { grid-column: 1/-1; display: grid; grid-template-columns: repeat(4,1fr); margin: 3vh -7vw 0; padding: 32px 7vw 38px; background: #080b10; color: rgba(241,245,242,.52); }
+.career-proof-band span { display: grid; gap: 9px; padding-right: 28px; border-right: 1px solid rgba(241,245,242,.15); font: 500 9px/1.4 Manrope,sans-serif; letter-spacing: .06em; text-transform: uppercase; }
+.career-proof-band span:last-child { border-right: 0; padding-left: 28px; }
+.career-proof-band span:not(:first-child) { padding-left: 28px; }
+.career-proof-band b { color: #a8ffea; font-size: 13px; font-weight: 500; }
 
 .contact-stage { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100svh; padding: 14vh 7vw 45px; text-align: center; overflow: hidden; }
 .contact-stage > p { position: relative; z-index: 2; margin: 28px 0 0; color: #a8ffea; font: 500 10px/1.5 'Manrope',sans-serif; letter-spacing: .1em; }
@@ -2095,11 +2126,17 @@ td, th {
 	.all-work-link { margin: 0 7vw 14vh; }
 	.practice-section { padding: 14vh 7vw; }
 	.practice-heading { grid-template-columns: 1fr; gap: 42px; margin-bottom: 11vh; }
-	.practice-heading h2,.experience-section-v2 > h2 { font-size: clamp(4rem, 19vw, 5.5rem); }
+	.practice-heading h2 { font-size: clamp(4rem, 19vw, 5.5rem); }
 	.capability-row { grid-template-columns: 34px 1fr; gap: 12px; padding-block: 26px; }
 	.capability-row p { grid-column: 2; }
-	.experience-section-v2 { grid-template-columns: 1fr; gap: 11vh; padding: 14vh 7vw; }
-	.evidence-line { display: grid; grid-template-columns: 1fr; gap: 18px; }
+	.career-trajectory { grid-template-columns: 1fr; row-gap: 10vh; padding: 14vh 7vw 0; }
+	.career-intro { position: relative; top: auto; min-height: auto; }
+	.career-intro h2 { max-width: 11ch; font-size: clamp(4rem,12vw,6.2rem); }
+	.career-orbit-v2 { width: min(66vw,430px); margin: 6vh auto 0; }
+	.career-records article { min-height: auto; padding: 10vh 0; }
+	.career-proof-band { grid-template-columns: repeat(2,1fr); margin-inline: -7vw; }
+	.career-proof-band span:nth-child(2) { border-right: 0; }
+	.career-proof-band span:nth-child(n+3) { margin-top: 28px; padding-top: 28px; border-top: 1px solid rgba(241,245,242,.15); }
 	.contact-stage h2 { font-size: clamp(4.8rem, 23vw, 6rem); }
 	.contact-sphere { width: 105vw; }
 	.contact-stage-actions { flex-direction: column; gap: 20px; }

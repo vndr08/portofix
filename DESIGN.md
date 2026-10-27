@@ -232,6 +232,10 @@ The fallback hero uses two depth planes, a six-faced CSS cube, three orbital rin
 
 Three full-width rows pair a tiny index, medium Manrope title, and concise technical scope. Hover adds 18px inline padding and optic mint over 450ms. Mobile moves the description beneath the title without changing the source order.
 
+### Career Trajectory
+
+The homepage career section tells a progression rather than repeating a résumé timeline: applied-AI delivery becomes enterprise product ownership across two consecutive PT Jababeka roles. A sticky statement and scroll-responsive ASK → BUILD → OWN orbit lead on desktop while two long-form delivery records expose summaries, verified contributions, and technology trails. Mobile restores a single linear reading order. The closing proof band names four concrete work surfaces—AI Agent, JIFAS, Telerik migration, and Python finance automation—without inventing outcome metrics.
+
 ### Motion
 
 The camera target follows measured project anchors with smoothstep interpolation; each frame applies exponential damping at 3.6 per second. Scroll drives camera z through 11, -16.5, -35.5, and -54.5 while alternating x through 0, -0.9, 0.9, and -0.8. Pointer input adds up to 0.48 world units horizontally and 0.34 vertically. The topology core, packet field, particles, and project planes drift at deliberately slow independent rates.

@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
 import profile from "@/json/profile.json";
+import resume from "@/json/resume.json";
 import SignalIcon from "@/components/SignalIcon";
 import ProjectConstellation from "@/components/ProjectConstellation";
 
@@ -47,6 +48,46 @@ function ProjectScene({ project, index }) {
 	);
 }
 
+function CareerTrajectory() {
+	const ref = useRef(null);
+	const reduceMotion = useReducedMotion();
+	const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+	const smooth = useSpring(scrollYProgress, { stiffness: 55, damping: 22, mass: 0.7 });
+	const orbitRotate = useTransform(smooth, [0, 1], [-28, 118]);
+	const orbitScale = useTransform(smooth, [0, 0.5, 1], [0.88, 1, 0.92]);
+
+	return (
+		<section ref={ref} className="career-trajectory" aria-labelledby="career-trajectory-title">
+			<div className="career-intro">
+				<h2 id="career-trajectory-title">FROM AI PROTOTYPES<br />TO ENTERPRISE OWNERSHIP.</h2>
+				<p>Two consecutive roles at PT Jababeka trace one clear progression: understanding operational problems, shipping applied AI, then co-owning the lifecycle and interface of an enterprise financial system.</p>
+				<motion.div className="career-orbit-v2" style={reduceMotion ? undefined : { rotate: orbitRotate, scale: orbitScale }} aria-hidden="true">
+					<i /><i /><i /><span>ASK</span><span>BUILD</span><span>OWN</span><b>01→02</b>
+				</motion.div>
+			</div>
+
+			<div className="career-records">
+				{resume.experience.map((experience, index) => (
+					<motion.article key={`${experience.role}-${experience.period}`} initial={false} whileInView={reduceMotion ? undefined : { y: [28, 0], opacity: [0.82, 1] }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}>
+						<header><span>0{index + 1}</span><time>{experience.period}</time><b>{experience.company}</b></header>
+						<h3>{experience.role}</h3>
+						<p>{experience.summary}</p>
+						<ul>{experience.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}</ul>
+						<div>{experience.skills.map((skill) => <span key={skill}>{skill}</span>)}</div>
+					</motion.article>
+				))}
+			</div>
+
+			<div className="career-proof-band" aria-label="Career delivery evidence">
+				<span><b>AI AGENT</b>Product lead</span>
+				<span><b>JIFAS</b>Lifecycle co-management</span>
+				<span><b>TELERIK</b>Interface migration</span>
+				<span><b>PYTHON</b>Finance automation</span>
+			</div>
+		</section>
+	);
+}
+
 export default function ImmersiveSections() {
 	const reduceMotion = useReducedMotion();
 	const contactRef = useRef(null);
@@ -77,14 +118,7 @@ export default function ImmersiveSections() {
 
 			<ProjectConstellation />
 
-			<section className="experience-section-v2" aria-labelledby="experience-title-v2">
-				<h2 id="experience-title-v2">BUILT WITH<br />JABABEKA.</h2>
-				<div className="experience-line">
-					<article><time>MAR — AUG 2026</time><h3>Software Engineering Partnership</h3><p>Co-managed the JIFAS enterprise financial system lifecycle, led its Telerik UI/UX migration, and collaborated with stakeholders on an internal AI chatbot.</p></article>
-					<article><time>AUG 2025 — FEB 2026</time><h3>AI Engineer Intern</h3><p>Served as technical product lead for an internal AI Agent and built a Python duplicate-detection tool for financial reporting.</p></article>
-				</div>
-				<div className="evidence-line"><span><b>3.76</b> GPA</span><span><b>3rd</b> SETSsail Biz Accel</span><span><b>75%</b> scholarship</span></div>
-			</section>
+			<CareerTrajectory />
 
 			<section ref={contactRef} id="contact" className="contact-stage" aria-labelledby="contact-title-v2">
 				<motion.div className="contact-sphere" style={reduceMotion ? undefined : { x: "-50%", y: "-50%", rotate: orbit }} aria-hidden="true"><i /><i /><i /><b /></motion.div>
