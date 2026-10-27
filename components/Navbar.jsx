@@ -8,8 +8,8 @@ import profile from "@/json/profile.json";
 
 const links = [
 	{ href: "/", label: "Home", match: (path) => path === "/" },
-	{ href: "/projects", label: "Work", match: (path) => path.startsWith("/projects") },
-	{ href: "/about", label: "Profile", match: (path) => path === "/about" },
+	{ href: "/projects", label: "Projects", match: (path) => path.startsWith("/projects") },
+	{ href: "/about", label: "About", match: (path) => path === "/about" },
 	{ href: "/#contact", label: "Contact", match: () => false },
 ];
 

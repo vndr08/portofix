@@ -214,7 +214,7 @@ There is no conventional card. In WebGL mode, project copy is an edge-faded blac
 
 ### Navigation
 
-The desktop header is a three-column rule: wordmark, centered destinations, and status. Navigation labels are 11px Manrope; hover draws a mint underline from left to right over 420ms. Mobile hides status and About while retaining Work, Résumé, and Contact.
+One fixed navigation is shared by every route: wordmark, Home, Projects, About, Contact, and Résumé. Navigation labels are 10–11px Manrope; hover and current-route states draw a mint underline from left to right. Below 1100px, the same information architecture moves into a full-screen menu rather than changing labels or introducing a separate homepage header.
 
 ### Corridor Canvas
 
@@ -222,7 +222,7 @@ The signature component is a fixed, transparent, `aria-hidden` Three.js canvas. 
 
 ### Project Stop
 
-Each stop binds one DOM scene to one world-space plane through a measured scroll anchor. Copy includes a Bahianita name, factual role and detail, compact tags, and a case-study link. The first and third planes sit right of center; the second sits left. DOM images remain mounted with meaningful alt text and become visually transparent only while the readiness class is present.
+Each stop binds one DOM scene to one world-space plane through a measured scroll anchor. Copy includes a Bahianita name, factual role and detail, compact tags, and a case-study link. The first and third planes sit right of center; the second sits left. All three planes use resized derivatives of supplied project screenshots—not generated substitute imagery—and fade in only around their own scroll anchor. DOM images remain mounted with meaningful alt text and become visually transparent only while the readiness class is present.
 
 ### Static Topology Fallback
 

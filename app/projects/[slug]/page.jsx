@@ -52,7 +52,7 @@ export default async function Page({ params }) {
 					<p>{isConcept ? "Conceptual cover · original interface not supplied" : "Original project capture"}</p>
 				</div>
 				<div className="case-hero-spec" aria-label="Project facts">
-					<span><b>{String(projectIndex + 1).padStart(2, "0")}</b>Archive position</span>
+					<span><b>{String(projectIndex + 1).padStart(2, "0")} / {projects.length}</b>Project collection</span>
 					<span><b>{project.tech.length}</b>Technologies</span>
 					<span><b>{project.category.includes(2) ? "AI" : "SW"}</b>Primary field</span>
 				</div>

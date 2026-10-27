@@ -27,7 +27,7 @@ export default function Page() {
 				<div className="atlas-hero-copy">
 					<h1>THE<br />SYSTEM<br />ATLAS.</h1>
 					<p>Fourteen products, prototypes, and operational systems—mapped as evidence of how I think, build, and ship.</p>
-					<div className="atlas-hero-actions"><a href="#atlas-index">Enter the archive ↓</a><Link href="/about">Read my profile ↗</Link></div>
+					<div className="atlas-hero-actions"><a href="#atlas-index">Browse all projects ↓</a><Link href="/about">Read my profile ↗</Link></div>
 				</div>
 				<div className="atlas-stack" aria-label="Selected project previews">
 					{heroProjects.map((project, index) => (

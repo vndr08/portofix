@@ -79,7 +79,6 @@ body:has(.immersive-home) > main {
 }
 
 body:has(.immersive-home) .navbar,
-body:has(.immersive-home) .system-nav,
 body:has(.immersive-home) .scroll-progress,
 body:has(.immersive-home) .back-to-top,
 body:has(.immersive-home) > footer {
@@ -1799,55 +1798,6 @@ td, th {
 	pointer-events: none;
 }
 
-.portal-header {
-	position: absolute;
-	top: 0;
-	left: 4.5vw;
-	right: 4.5vw;
-	z-index: 10;
-	display: grid;
-	grid-template-columns: 1fr auto 1fr;
-	align-items: center;
-	height: 88px;
-	border-bottom: 1px solid rgba(241, 245, 242, 0.18);
-	font-family: 'Manrope', sans-serif;
-}
-
-.portal-wordmark {
-	justify-self: start;
-	color: #f1f5f2;
-	font-size: 20px;
-	font-weight: 500;
-	letter-spacing: 0.26em;
-	text-decoration: none;
-}
-
-.portal-wordmark span { color: #a8ffea; font-size: 7px; vertical-align: top; }
-.portal-header nav { display: flex; gap: clamp(24px, 3vw, 52px); }
-.portal-header nav a,
-.portal-status {
-	color: rgba(241, 245, 242, 0.74);
-	font-size: 11px;
-	letter-spacing: 0.04em;
-	text-decoration: none;
-}
-.portal-header nav a { position: relative; padding-block: 10px; }
-.portal-header nav a::after {
-	content: '';
-	position: absolute;
-	left: 0;
-	bottom: 4px;
-	width: 100%;
-	height: 1px;
-	background: #a8ffea;
-	transform: scaleX(0);
-	transform-origin: right;
-	transition: transform 420ms cubic-bezier(.16, 1, .3, 1);
-}
-.portal-header nav a:hover::after { transform: scaleX(1); transform-origin: left; }
-.portal-status { justify-self: end; display: flex; align-items: center; gap: 9px; margin: 0; }
-.portal-status i { width: 6px; height: 6px; border-radius: 50%; background: #a8ffea; box-shadow: 0 0 15px rgba(168, 255, 234, 0.55); }
-
 .portal-copy {
 	position: absolute;
 	left: 6.3vw;
@@ -2050,6 +2000,18 @@ td, th {
 .project-copy li { border: 1px solid color-mix(in srgb, var(--scene-accent) 55%, transparent); padding: 7px 10px; color: var(--scene-accent); font: 500 9px/1 'Manrope',sans-serif; letter-spacing: .04em; }
 .project-copy a { padding-bottom: 7px; border-bottom: 1px solid rgba(241,245,242,.35); }
 .project-viewport { position: relative; z-index: 2; transform-style: preserve-3d; will-change: transform; }
+.project-viewport::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	z-index: 4;
+	pointer-events: none;
+	background: linear-gradient(110deg, transparent 28%, rgba(168,255,234,.16) 46%, rgba(241,237,233,.2) 50%, transparent 67%);
+	background-position: 120% 0;
+	background-size: 240% 100%;
+	mix-blend-mode: screen;
+	animation: interface-scan 7s cubic-bezier(.16,1,.3,1) infinite;
+}
 .project-viewport img { position: relative; z-index: 3; display: block; width: 100%; height: auto; border: 1px solid rgba(241,245,242,.28); box-shadow: 0 36px 80px rgba(0,0,0,.48); }
 .project-depth { position: absolute; inset: 0; border: 1px solid color-mix(in srgb, var(--scene-accent) 35%, transparent); background: rgba(6,10,15,.74); }
 .depth-back { transform: translate3d(44px,-36px,-110px); opacity: .38; }
@@ -2102,14 +2064,10 @@ td, th {
 @keyframes ring-spin-b { to { transform: translate(-50%,-50%) rotateY(68deg) rotateZ(360deg); } }
 @keyframes ring-spin-c { to { transform: translate(-50%,-50%) rotateX(35deg) rotateY(48deg) rotateZ(360deg); } }
 @keyframes scroll-signal { 0% { transform: translateX(-120%); } 55%,100% { transform: translateX(240%); } }
+@keyframes interface-scan { 0%,58% { background-position: 120% 0; opacity: 0; } 66% { opacity: .55; } 86%,100% { background-position: -120% 0; opacity: 0; } }
 
 @media (max-width: 900px) {
 	.portal-hero { min-height: 100svh; }
-	.portal-header { left: 6vw; right: 6vw; grid-template-columns: 1fr auto; height: 68px; }
-	.portal-header nav { gap: 16px; }
-	.portal-header nav a { font-size: 10px; }
-	.portal-header nav a:nth-child(2) { display: none; }
-	.portal-status { display: none; }
 	.portal-copy { left: 7vw; top: 31%; width: 86vw; transform: none; }
 	.portal-role { margin-top: 16px; }
 	.portal-copy h1 { font-size: clamp(4.1rem, 20vw, 5.75rem); }
@@ -2151,8 +2109,9 @@ td, th {
 
 @media (prefers-reduced-motion: reduce) {
 	.portal-core,.portal-ring,.portal-scroll span::after { animation: none !important; }
+	.project-viewport::after { animation: none !important; opacity: 0; }
 	.page-progress { display: none; }
-	.portal-header nav a::after,.portal-actions a svg,.project-copy a svg,.all-work-link svg,.contact-stage-actions a svg,.capability-row { transition-duration: .01ms !important; }
+	.portal-actions a svg,.project-copy a svg,.all-work-link svg,.contact-stage-actions a svg,.capability-row { transition-duration: .01ms !important; }
 }
 
 /* Spatial portfolio world — shared across every public route */

@@ -9,9 +9,9 @@ import SignalIcon from "@/components/SignalIcon";
 import ProjectConstellation from "@/components/ProjectConstellation";
 
 const projects = [
-	{ slug: "vanguard", name: "VANGUARD", role: "Fleet Control Tower · July 2026", detail: "A 14-module realtime fleet-monitoring web app with live mapping, geofencing, and automated alerts for logistics dispatchers.", image: "/image/lightfield/vanguard-film.webp", width: 2030, height: 966, alt: "VANGUARD fleet control tower interface shown across layered screens", stack: ["FastAPI", "SQLAlchemy", "WebSocket", "PostgreSQL"], tone: "mint" },
-	{ slug: "whatsapp-issue-reporting", name: "AI WHATSAPP", role: "Capstone · PT Andakara Informatika Nusantara", detail: "An AI chatbot and analytics dashboard that turns WhatsApp issue reports into structured workflows integrated with TRAMOS Web.", image: "/image/lightfield/whatsapp-visual.webp", width: 1550, height: 564, alt: "WhatsApp issue report transformed into a structured support workflow", stack: ["Claude AI", "WhatsApp Gateway", "TRAMOS Web"], tone: "violet" },
-	{ slug: "kalbe-dashboard", name: "KALBE OPS", role: "Bootcamp client project · June—July 2025", detail: "Energy, work orders, equipment performance, MTTR, MTBF, and CAPA translated into one clear engineering decision surface.", image: "/image/lightfield/kalbe-visual.webp", width: 1658, height: 592, alt: "Kalbe operational metrics dashboard", stack: ["Requirements", "Dashboard", "Engineering ops"], tone: "orange" },
+	{ slug: "vanguard", name: "VANGUARD", role: "Fleet Control Tower · July 2026", detail: "A 14-module realtime fleet-monitoring web app with live mapping, geofencing, and automated alerts for logistics dispatchers.", image: "/image/lightfield/vanguard-ui.webp", width: 1800, height: 1034, alt: "Actual VANGUARD fleet control tower interface with realtime vehicle map", stack: ["FastAPI", "SQLAlchemy", "WebSocket", "PostgreSQL"], tone: "mint" },
+	{ slug: "whatsapp-issue-reporting", name: "AI WHATSAPP", role: "Capstone · PT Andakara Informatika Nusantara", detail: "An AI chatbot and analytics dashboard that turns WhatsApp issue reports into structured workflows integrated with TRAMOS Web.", image: "/image/lightfield/whatsapp-ui.webp", width: 1800, height: 1019, alt: "Actual TRAMOS issue reporting analytics interface", stack: ["Claude AI", "WhatsApp Gateway", "TRAMOS Web"], tone: "violet" },
+	{ slug: "kalbe-dashboard", name: "KALBE OPS", role: "Bootcamp client project · June—July 2025", detail: "Energy, work orders, equipment performance, MTTR, MTBF, and CAPA translated into one clear engineering decision surface.", image: "/image/lightfield/kalbe-ui.webp", width: 1691, height: 1100, alt: "Actual Kalbe engineering operations dashboard", stack: ["Requirements", "Dashboard", "Engineering ops"], tone: "orange" },
 ];
 
 const capabilities = [
@@ -41,7 +41,7 @@ function ProjectScene({ project, index }) {
 			</motion.div>
 			<motion.div className="project-viewport" style={reduceMotion ? undefined : { y: imageY, rotateX: imageRotate, scale: depth }}>
 				<div className="project-depth depth-back" aria-hidden="true" /><div className="project-depth depth-mid" aria-hidden="true" />
-				<Image src={project.image} width={project.width} height={project.height} sizes="(max-width: 900px) 86vw, 58vw" alt={project.alt} /><span className="viewport-index" aria-hidden="true">CASE / 0{index + 1}</span>
+				<Image src={project.image} width={project.width} height={project.height} sizes="(max-width: 900px) 86vw, 58vw" alt={project.alt} /><span className="viewport-index" aria-hidden="true">ACTUAL UI / 0{index + 1}</span>
 			</motion.div>
 		</article>
 	);
@@ -67,7 +67,7 @@ export default function ImmersiveSections() {
 			<section id="work" className="work-section" aria-labelledby="work-title">
 				<header className="work-heading"><h2 id="work-title">SELECTED<br />SYSTEMS</h2><p>Real tools for operational work. Each scene opens into the engineering decisions behind it.</p></header>
 				{projects.map((project, index) => <ProjectScene key={project.slug} project={project} index={index} />)}
-				<Link className="all-work-link" href="/projects">View the complete project archive <SignalIcon /></Link>
+				<Link className="all-work-link" href="/projects">Explore all 14 projects <SignalIcon /></Link>
 			</section>
 
 			<section id="about" className="practice-section" aria-labelledby="practice-title">

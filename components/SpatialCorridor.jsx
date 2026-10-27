@@ -4,9 +4,9 @@ import { useEffect, useRef } from "react";
 import * as THREE from "three";
 
 const PROJECTS = [
-	{ selector: ".project-scene:nth-of-type(1)", z: -23, x: 2.4, image: "/image/lightfield/vanguard-film.webp", color: 0xa8ffea, aspect: 2030 / 966 },
-	{ selector: ".project-scene:nth-of-type(2)", z: -42, x: -2.2, image: "/image/lightfield/whatsapp-visual.webp", color: 0xc8a7ff, aspect: 1550 / 564 },
-	{ selector: ".project-scene:nth-of-type(3)", z: -61, x: 2.2, image: "/image/lightfield/kalbe-visual.webp", color: 0xff914d, aspect: 1658 / 592 },
+	{ selector: ".project-scene:nth-of-type(1)", z: -23, x: 2.4, image: "/image/lightfield/vanguard-ui.webp", color: 0xa8ffea, aspect: 1800 / 1034 },
+	{ selector: ".project-scene:nth-of-type(2)", z: -42, x: -2.2, image: "/image/lightfield/whatsapp-ui.webp", color: 0xc8a7ff, aspect: 1800 / 1019 },
+	{ selector: ".project-scene:nth-of-type(3)", z: -61, x: 2.2, image: "/image/lightfield/kalbe-ui.webp", color: 0xff914d, aspect: 1691 / 1100 },
 ];
 
 function interpolateAnchors(scrollY, anchors, values) {
@@ -37,7 +37,7 @@ export default function SpatialCorridor() {
 		}
 
 		document.documentElement.classList.add("webgl-corridor-ready");
-		renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.15));
+		renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.05));
 		renderer.setSize(window.innerWidth, window.innerHeight, false);
 		renderer.outputColorSpace = THREE.SRGBColorSpace;
 
@@ -86,7 +86,7 @@ export default function SpatialCorridor() {
 		core.position.z = -0.8;
 		world.add(core);
 
-		const particleCount = 280;
+		const particleCount = 220;
 		const particlePositions = new Float32Array(particleCount * 3);
 		for (let index = 0; index < particleCount; index += 1) {
 			particlePositions[index * 3] = (Math.random() - 0.5) * 26;
@@ -124,15 +124,19 @@ export default function SpatialCorridor() {
 			texture.colorSpace = THREE.SRGBColorSpace;
 			texture.anisotropy = Math.min(renderer.capabilities.getMaxAnisotropy(), 8);
 			const imageMaterial = new THREE.MeshBasicMaterial({ map: texture, transparent: true, opacity: 0.98, toneMapped: false });
+			imageMaterial.userData.baseOpacity = 0.98;
 			const image = new THREE.Mesh(new THREE.PlaneGeometry(width, height), imageMaterial);
 			group.add(image);
 			for (let layer = 1; layer <= 3; layer += 1) {
-				const echoMaterial = new THREE.MeshBasicMaterial({ color: project.color, wireframe: true, transparent: true, opacity: 0.13 - layer * 0.022 });
+				const echoMaterial = new THREE.MeshBasicMaterial({ map: layer < 3 ? texture : null, color: project.color, wireframe: layer === 3, transparent: true, opacity: layer === 1 ? 0.16 : layer === 2 ? 0.08 : 0.055, depthWrite: false, toneMapped: false });
+				echoMaterial.userData.baseOpacity = echoMaterial.opacity;
 				const echo = new THREE.Mesh(new THREE.PlaneGeometry(width, height), echoMaterial);
 				echo.position.set((project.x > 0 ? -1 : 1) * layer * 0.22, layer * 0.13, -layer * 0.32);
 				group.add(echo);
 			}
-			const edge = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.PlaneGeometry(width + 0.16, height + 0.16)), new THREE.LineBasicMaterial({ color: project.color, transparent: true, opacity: 0.64 }));
+			const edgeMaterial = new THREE.LineBasicMaterial({ color: project.color, transparent: true, opacity: 0.64 });
+			edgeMaterial.userData.baseOpacity = 0.64;
+			const edge = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.PlaneGeometry(width + 0.16, height + 0.16)), edgeMaterial);
 			edge.position.z = 0.03;
 			group.add(edge);
 			world.add(group);
@@ -170,7 +174,7 @@ export default function SpatialCorridor() {
 		const onResize = () => {
 			camera.aspect = window.innerWidth / window.innerHeight;
 			camera.updateProjectionMatrix();
-			renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.15));
+			renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.05));
 			renderer.setSize(window.innerWidth, window.innerHeight, false);
 			updateAnchors();
 		};
@@ -201,7 +205,12 @@ export default function SpatialCorridor() {
 			speedLineMaterial.opacity = 0.055 + Math.abs(scrollVelocity) * 0.22;
 			world.position.z = scrollVelocity * 0.38;
 			projectGroups.forEach((group, index) => {
-				group.visible = Math.abs(cameraZ - group.position.z) < 25;
+				const sceneDistance = Math.abs(currentScroll - anchors[index + 1]);
+				const reveal = THREE.MathUtils.clamp(1 - (sceneDistance - window.innerHeight * 0.28) / (window.innerHeight * 0.72), 0, 1);
+				group.visible = reveal > 0.01 && Math.abs(cameraZ - group.position.z) < 25;
+				group.traverse((child) => {
+					if (child.material?.userData?.baseOpacity != null) child.material.opacity = child.material.userData.baseOpacity * reveal;
+				});
 				group.rotation.z = Math.sin(time * 0.00032 + index) * 0.012;
 				group.position.y = Math.sin(time * 0.00042 + index * 1.7) * 0.09 + scrollVelocity * (index % 2 ? -0.18 : 0.18);
 			});

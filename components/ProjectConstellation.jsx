@@ -8,7 +8,7 @@ export default function ProjectConstellation() {
 	const projects = data.Projects.filter((project) => project.show);
 	return (
 		<section className="project-constellation" aria-labelledby="constellation-title">
-			<header><h2 id="constellation-title">THE WORK<br />CONTINUES.</h2><p>Featured scenes are only the entrance. The full archive holds {projects.length} systems across AI, enterprise software, dashboards, web, mobile, and creative technology.</p></header>
+			<header><h2 id="constellation-title">ALL PROJECTS.<br />ONE PRACTICE.</h2><p>The three featured builds are only the entrance. Explore all {projects.length} projects across AI, enterprise software, dashboards, web, mobile, and creative technology.</p></header>
 			<div className="constellation-track">
 				{projects.map((project, index) => (
 					<Link href={`/projects/${project.slug}`} key={project.slug} className="constellation-item" style={{ "--constellation-shift": `${(index % 4) * 12}px` }}>
@@ -17,7 +17,7 @@ export default function ProjectConstellation() {
 					</Link>
 				))}
 			</div>
-			<Link className="constellation-all" href="/projects">Enter all {projects.length} project worlds ↗</Link>
+			<Link className="constellation-all" href="/projects">Open the complete project collection ↗</Link>
 		</section>
 	);
 }

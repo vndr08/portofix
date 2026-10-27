@@ -57,8 +57,8 @@
       "css": ".ds-system-tags { display:flex; flex-wrap:wrap; gap:8px; margin:0; padding:0; list-style:none; } .ds-system-tags li { border:1px solid rgba(168,255,234,.55); padding:7px 10px; color:#a8ffea; font:500 9px/1 Manrope,sans-serif; letter-spacing:.04em; }"
     },
     {
-      "name": "Primary Navigation", "kind": "nav", "description": "Explicit destinations centered on the corridor's quiet top rule.",
-      "html": "<nav class=\"ds-portal-nav\" aria-label=\"Primary navigation\"><a href=\"#\">Work</a><a href=\"#\">About</a><a href=\"#\">Résumé</a><a href=\"#\">Contact</a></nav>",
+      "name": "Primary Navigation", "kind": "nav", "description": "One fixed set of explicit destinations shared across every route.",
+      "html": "<nav class=\"ds-portal-nav\" aria-label=\"Primary navigation\"><a href=\"#\">Home</a><a href=\"#\">Projects</a><a href=\"#\">About</a><a href=\"#\">Contact</a><a href=\"#\">Résumé</a></nav>",
       "css": ".ds-portal-nav { display:flex; align-items:center; gap:40px; font-family:Manrope,sans-serif; } .ds-portal-nav a { position:relative; padding:10px 0; color:rgba(241,245,242,.74); font-size:11px; letter-spacing:.04em; text-decoration:none; } .ds-portal-nav a::after { content:''; position:absolute; left:0; bottom:4px; width:100%; height:1px; background:#a8ffea; transform:scaleX(0); transform-origin:right; transition:transform 420ms cubic-bezier(.16,1,.3,1); } .ds-portal-nav a:hover::after { transform:scaleX(1); transform-origin:left; } .ds-portal-nav a:focus-visible { outline:2px solid #a8ffea; outline-offset:5px; }"
     },
     {
