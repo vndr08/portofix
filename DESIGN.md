@@ -83,7 +83,7 @@ The portfolio opens on Ivan’s identity inside a live GPU-rendered system. A fi
 
 The story is deliberately scoped around one promise: **Ivan turns operational friction into production-ready AI and software systems.** After the hero, a warm-paper operating model makes that promise concrete through Understand → Architect → Build → Operationalize. Scroll then becomes camera travel through three proof systems while the semantic DOM supplies the project name, role, explanation, stack, and case-study link. The complete project collection, career progression, and contact follow as supporting evidence rather than competing introductions.
 
-The corridor is progressive enhancement, not a dependency. At widths below 821px, under reduced motion, after WebGL construction failure, or after context loss, the fixed canvas remains invisible and the complete CSS/DOM Spatial Systems Chamber fallback stays visible. The fallback includes the cube-and-orbit hero and depth-stacked project images; it is not the primary desktop visual world.
+The corridor is progressive enhancement, not a dependency. The CSS/DOM Spatial Systems Chamber is always present: the cube-and-orbit hero and pointer-responsive depth-stacked project images remain visible whether or not WebGL succeeds. WebGL adds atmosphere, scale, and spatial signals behind that authoritative layer; it never gates project evidence.
 
 The corridor is only the entrance. The project index becomes a **System Atlas** exposing all fourteen projects; individual projects become **Evidence Rooms** with real interface artifacts and build decisions; About becomes a **Career Constellation**; Archive becomes a compact **Technical Index**; loading, offline, and not-found states become coherent signal states. Shared route geometry, atmospheric particles, pointer-responsive project frames, and restrained spectral accents make these pages feel like chambers of the same world rather than leftover templates.
 
@@ -98,7 +98,7 @@ Ten projects use screenshots supplied in the repository. Four projects without o
 - Mint, violet, and orange identify systems against a near-black fogged corridor.
 - One warm-paper operating model and one warm-paper career section reset the dark spatial journey.
 - Six clear homepage chapters: Identity → Operating Model → Three Proofs → Complete Collection → Career Progression → Contact.
-- CSS 3D hero and DOM project films form the complete static fallback.
+- CSS 3D hero and DOM project films remain the visible, interactive evidence layer in every rendering mode.
 - Every major route has a specific visual job instead of reusing a generic card page.
 - Fourteen projects remain discoverable, while real screenshots are prioritized as evidence.
 - Generated concept imagery is visibly labeled and separated from implementation proof.
@@ -158,7 +158,7 @@ The corridor is almost black so its emitted system colors and project textures c
 
 ## Layout
 
-The WebGL canvas is fixed to the viewport at z-index 0 and never receives pointer events. Every direct child of the immersive page other than the canvas sits above it at z-index 2. Once the renderer is successfully created, a readiness class makes the canvas visible, makes hero and work backgrounds transparent, reduces the hero texture, hides the CSS cube, and visually hides DOM project images. Text and actions remain DOM content throughout.
+The WebGL canvas is fixed to the viewport at z-index 0 and never receives pointer events. Every direct child of the immersive page other than the canvas sits above it at z-index 2. The readiness class is added only after the first successful rendered frame; it reveals the atmospheric canvas and makes hero and work backgrounds transparent without hiding the CSS cube or DOM project images. Text, actions, and real interface evidence remain visible DOM content throughout.
 
 The first viewport holds a full-depth tunnel with Ivan’s copy near 6.3vw on the left, one shared navigation rail, and coordinates on the far right. The operating model is an asymmetric light section containing a scroll-responsive four-plane object and a four-stage delivery path. Work begins with a 74svh proof statement, followed by three scenes of at least 112svh. In WebGL mode, odd-scene copy occupies the left in an 88%-opaque black backing with a rightward shadow; the middle scene moves copy to the right with the shadow reversed. Suspended project planes alternate right, left, right in world space.
 
@@ -223,7 +223,7 @@ The signature component is a fixed, transparent, `aria-hidden` Three.js canvas. 
 
 ### Project Stop
 
-Each stop binds one DOM scene to one world-space plane through a measured scroll anchor. Copy includes a Bahianita name, factual role and detail, compact tags, and a case-study link. The first and third planes sit right of center; the second sits left. All three planes use resized derivatives of supplied project screenshots—not generated substitute imagery—and fade in only around their own scroll anchor. DOM images remain mounted with meaningful alt text and become visually transparent only while the readiness class is present.
+Each stop binds one DOM scene to one world-space plane through a measured scroll anchor. Copy includes a Bahianita name, factual role and detail, compact tags, and a case-study link. The first and third planes sit right of center; the second sits left. All three DOM films use resized derivatives of supplied project screenshots—not generated substitute imagery—and remain visible with meaningful alt text. A resting perspective, Z-offset echoes, projected light, scroll tilt, and pointer tilt make their depth legible even without WebGL.
 
 ### Static Topology Fallback
 
@@ -249,7 +249,7 @@ Reduced motion prevents renderer construction entirely and disables the fallback
 
 - **Do** keep the first WebGL viewport free of project imagery so identity and topology establish the experience.
 - **Do** add the readiness class only after a renderer exists, and remove it on cleanup or context loss.
-- **Do** keep DOM project images mounted and hide them only while WebGL is ready.
+- **Do** keep DOM project images visible in every rendering mode; WebGL is enhancement, never evidence gating.
 - **Do** preserve the complete CSS fallback below 821px, under reduced motion, and after WebGL failure.
 - **Do** dispose geometries, materials, maps, listeners, animation frames, and the renderer on unmount.
 - **Do** retain semantic headings, articles, lists, links, meaningful alt text, keyboard focus, and direct résumé/contact routes.

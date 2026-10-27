@@ -36,7 +36,6 @@ export default function SpatialCorridor() {
 			return;
 		}
 
-		document.documentElement.classList.add("webgl-corridor-ready");
 		renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.05));
 		renderer.setSize(window.innerWidth, window.innerHeight, false);
 		renderer.outputColorSpace = THREE.SRGBColorSpace;
@@ -165,6 +164,7 @@ export default function SpatialCorridor() {
 		let lastTime = performance.now();
 		let lastScroll = window.scrollY;
 		let scrollVelocity = 0;
+		let hasRendered = false;
 
 		const onPointerMove = (event) => {
 			mouseX = (event.clientX / window.innerWidth - 0.5) * 2;
@@ -225,6 +225,10 @@ export default function SpatialCorridor() {
 			});
 
 			renderer.render(scene, camera);
+			if (!hasRendered) {
+				hasRendered = true;
+				document.documentElement.classList.add("webgl-corridor-ready");
+			}
 			frameId = requestAnimationFrame(animate);
 		};
 

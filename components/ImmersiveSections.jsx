@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
+import { motion, useMotionValue, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
 import profile from "@/json/profile.json";
 import resume from "@/json/resume.json";
 import SignalIcon from "@/components/SignalIcon";
@@ -25,12 +25,28 @@ const operatingStages = [
 function ProjectScene({ project, index }) {
 	const ref = useRef(null);
 	const reduceMotion = useReducedMotion();
+	const restingTilt = index % 2 === 0 ? -5 : 5;
 	const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
 	const smooth = useSpring(scrollYProgress, { stiffness: 72, damping: 24, mass: 0.65 });
+	const pointerX = useMotionValue(restingTilt);
+	const pointerY = useMotionValue(1.5);
+	const pointerRotateX = useSpring(pointerY, { stiffness: 180, damping: 24, mass: 0.45 });
+	const pointerRotateY = useSpring(pointerX, { stiffness: 180, damping: 24, mass: 0.45 });
 	const imageY = useTransform(smooth, [0, 0.5, 1], [52, 0, -52]);
-	const imageRotate = useTransform(smooth, [0, 0.5, 1], [3.5, 0, -3.5]);
+	const scrollRotate = useTransform(smooth, [0, 0.5, 1], [3.5, 0, -3.5]);
+	const imageRotateX = useTransform([scrollRotate, pointerRotateX], ([scrollValue, pointerValue]) => scrollValue + pointerValue);
 	const copyY = useTransform(smooth, [0, 0.5, 1], [24, 0, -20]);
 	const depth = useTransform(smooth, [0, 0.5, 1], [0.94, 1, 0.96]);
+	const handlePointerMove = (event) => {
+		if (reduceMotion || event.pointerType === "touch") return;
+		const bounds = event.currentTarget.getBoundingClientRect();
+		pointerX.set(restingTilt + ((event.clientX - bounds.left) / bounds.width - 0.5) * 7);
+		pointerY.set(1.5 + ((event.clientY - bounds.top) / bounds.height - 0.5) * -6);
+	};
+	const resetPointer = () => {
+		pointerX.set(restingTilt);
+		pointerY.set(1.5);
+	};
 
 	return (
 		<article ref={ref} className={`project-scene tone-${project.tone}`}>
@@ -41,7 +57,7 @@ function ProjectScene({ project, index }) {
 				<ul>{project.stack.map((item) => <li key={item}>{item}</li>)}</ul>
 				<Link href={`/projects/${project.slug}`}>Open case study <SignalIcon direction="up-right" /></Link>
 			</motion.div>
-			<motion.div className="project-viewport" style={reduceMotion ? undefined : { y: imageY, rotateX: imageRotate, scale: depth }}>
+			<motion.div className="project-viewport" onPointerMove={handlePointerMove} onPointerLeave={resetPointer} style={reduceMotion ? undefined : { y: imageY, rotateX: imageRotateX, rotateY: pointerRotateY, scale: depth, transformPerspective: 1400 }}>
 				<div className="project-depth depth-back" aria-hidden="true" /><div className="project-depth depth-mid" aria-hidden="true" />
 				<Image src={project.image} width={project.width} height={project.height} sizes="(max-width: 900px) 86vw, 58vw" alt={project.alt} /><span className="viewport-index" aria-hidden="true">ACTUAL UI / 0{index + 1}</span>
 			</motion.div>
@@ -77,6 +93,27 @@ function OperatingModel() {
 				))}
 			</div>
 		</section>
+	);
+}
+
+function WorkThreshold() {
+	const ref = useRef(null);
+	const reduceMotion = useReducedMotion();
+	const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+	const smooth = useSpring(scrollYProgress, { stiffness: 70, damping: 25, mass: 0.65 });
+	const rotateY = useTransform(smooth, [0, 1], [-18, 18]);
+	const rotateX = useTransform(smooth, [0, 0.5, 1], [7, 0, -7]);
+	const y = useTransform(smooth, [0, 1], [32, -32]);
+
+	return (
+		<header ref={ref} className="work-heading">
+			<h2 id="work-title">THREE SYSTEMS.<br />THREE PROOFS.</h2>
+			<motion.div className="work-threshold" style={reduceMotion ? undefined : { rotateX, rotateY, y }} aria-hidden="true">
+				{["OPERATIONS", "WORKFLOWS", "INTELLIGENCE"].map((label, index) => <i key={label} style={{ "--proof-plane": index }}><span>{label}</span></i>)}
+				<b>PRODUCTION<br />EVIDENCE</b>
+			</motion.div>
+			<p>Realtime operations, AI-assisted workflows, and decision intelligence—shown through the actual interfaces and engineering decisions behind them.</p>
+		</header>
 	);
 }
 
@@ -134,7 +171,7 @@ export default function ImmersiveSections() {
 			<OperatingModel />
 
 			<section id="work" className="work-section" aria-labelledby="work-title">
-				<header className="work-heading"><h2 id="work-title">THREE SYSTEMS.<br />THREE PROOFS.</h2><p>Realtime operations, AI-assisted workflows, and decision intelligence—shown through the actual interfaces and engineering decisions behind them.</p></header>
+				<WorkThreshold />
 				{projects.map((project, index) => <ProjectScene key={project.slug} project={project} index={index} />)}
 				<Link className="all-work-link" href="/projects">Explore all 14 projects <SignalIcon /></Link>
 			</section>
