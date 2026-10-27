@@ -144,12 +144,15 @@ export default function SpatialCorridor() {
 		});
 
 		let anchors = [0, 2600, 4300, 6000];
+		let workEnd = document.body.scrollHeight;
 		const updateAnchors = () => {
 			const resolved = PROJECTS.map((project) => document.querySelector(project.selector)).filter(Boolean);
 			if (resolved.length === 3) anchors = [0, ...resolved.map((element) => {
 				const bounds = element.getBoundingClientRect();
 				return bounds.top + window.scrollY + bounds.height * 0.5 - window.innerHeight * 0.5;
 			})];
+			const work = document.querySelector(".work-section");
+			workEnd = work ? work.offsetTop + work.offsetHeight : document.body.scrollHeight;
 		};
 		updateAnchors();
 
@@ -183,13 +186,19 @@ export default function SpatialCorridor() {
 			const delta = Math.min((time - lastTime) / 1000, 0.05);
 			lastTime = time;
 			const currentScroll = window.scrollY;
+			const corridorVisible = currentScroll <= workEnd - window.innerHeight * 0.1;
+			canvas.style.opacity = corridorVisible ? "1" : "0";
+			if (!corridorVisible || document.hidden) {
+				frameId = requestAnimationFrame(animate);
+				return;
+			}
 			const rawVelocity = delta > 0 ? (currentScroll - lastScroll) / delta : 0;
 			lastScroll = currentScroll;
 			scrollVelocity = THREE.MathUtils.lerp(scrollVelocity, THREE.MathUtils.clamp(rawVelocity / 1800, -1, 1), 1 - Math.exp(-delta * 7));
 			const targetZ = interpolateAnchors(currentScroll, anchors, [11, -16.5, -35.5, -54.5]);
 			const targetX = interpolateAnchors(currentScroll, anchors, [0, -0.9, 0.9, -0.8]) + mouseX * 0.48;
 			const targetY = mouseY * -0.34;
-			const damping = 1 - Math.exp(-delta * 3.6);
+			const damping = 1 - Math.exp(-delta * 6.2);
 			cameraZ = THREE.MathUtils.lerp(cameraZ, targetZ, damping);
 			cameraX = THREE.MathUtils.lerp(cameraX, targetX, damping);
 			cameraY = THREE.MathUtils.lerp(cameraY, targetY, damping);
@@ -215,11 +224,7 @@ export default function SpatialCorridor() {
 				group.position.y = Math.sin(time * 0.00042 + index * 1.7) * 0.09 + scrollVelocity * (index % 2 ? -0.18 : 0.18);
 			});
 
-			const work = document.querySelector(".work-section");
-			const workEnd = work ? work.offsetTop + work.offsetHeight : document.body.scrollHeight;
-			const corridorVisible = window.scrollY <= workEnd - window.innerHeight * 0.1;
-			canvas.style.opacity = corridorVisible ? "1" : "0";
-			if (corridorVisible && !document.hidden) renderer.render(scene, camera);
+			renderer.render(scene, camera);
 			frameId = requestAnimationFrame(animate);
 		};
 

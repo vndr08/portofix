@@ -15,10 +15,11 @@ const projects = [
 	{ slug: "kalbe-dashboard", name: "KALBE OPS", role: "Bootcamp client project · June—July 2025", detail: "Energy, work orders, equipment performance, MTTR, MTBF, and CAPA translated into one clear engineering decision surface.", image: "/image/lightfield/kalbe-ui.webp", width: 1691, height: 1100, alt: "Actual Kalbe engineering operations dashboard", stack: ["Requirements", "Dashboard", "Engineering ops"], tone: "orange" },
 ];
 
-const capabilities = [
-	["AI & architecture", "LLMs · RAG · NLP · REST APIs · AWS / GCP cloud deployment"],
-	["Software systems", "Python · React · C# / .NET · PostgreSQL · MySQL · Docker"],
-	["Product leadership", "Product lifecycle · requirements · UI/UX strategy · B2B negotiation · Agile / Scrum"],
+const operatingStages = [
+	["Understand", "Requirements, user pain points, stakeholder goals, and operational constraints."],
+	["Architect", "Data flows, AI behavior, system boundaries, APIs, and interface hierarchy."],
+	["Build", "Python, FastAPI, React, C# / .NET, SQL, LLM integration, and automation."],
+	["Operationalize", "Testing, deployment, monitoring, iteration, documentation, and rollout."],
 ];
 
 function ProjectScene({ project, index }) {
@@ -26,10 +27,10 @@ function ProjectScene({ project, index }) {
 	const reduceMotion = useReducedMotion();
 	const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
 	const smooth = useSpring(scrollYProgress, { stiffness: 72, damping: 24, mass: 0.65 });
-	const imageY = useTransform(smooth, [0, 0.5, 1], [110, 0, -110]);
-	const imageRotate = useTransform(smooth, [0, 0.5, 1], [8, 0, -7]);
-	const copyY = useTransform(smooth, [0, 0.5, 1], [55, 0, -45]);
-	const depth = useTransform(smooth, [0, 0.5, 1], [0.82, 1, 0.88]);
+	const imageY = useTransform(smooth, [0, 0.5, 1], [52, 0, -52]);
+	const imageRotate = useTransform(smooth, [0, 0.5, 1], [3.5, 0, -3.5]);
+	const copyY = useTransform(smooth, [0, 0.5, 1], [24, 0, -20]);
+	const depth = useTransform(smooth, [0, 0.5, 1], [0.94, 1, 0.96]);
 
 	return (
 		<article ref={ref} className={`project-scene tone-${project.tone}`}>
@@ -45,6 +46,37 @@ function ProjectScene({ project, index }) {
 				<Image src={project.image} width={project.width} height={project.height} sizes="(max-width: 900px) 86vw, 58vw" alt={project.alt} /><span className="viewport-index" aria-hidden="true">ACTUAL UI / 0{index + 1}</span>
 			</motion.div>
 		</article>
+	);
+}
+
+function OperatingModel() {
+	const ref = useRef(null);
+	const reduceMotion = useReducedMotion();
+	const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+	const smooth = useSpring(scrollYProgress, { stiffness: 72, damping: 28, mass: 0.6 });
+	const objectRotate = useTransform(smooth, [0, 1], [-10, 22]);
+	const objectY = useTransform(smooth, [0, 1], [34, -30]);
+	const lineProgress = useTransform(smooth, [0.18, 0.82], [0, 1]);
+
+	return (
+		<section ref={ref} id="method" className="operating-model" aria-labelledby="operating-title">
+			<header>
+				<h2 id="operating-title">FROM OPERATIONAL FRICTION<br />TO WORKING SYSTEMS.</h2>
+				<p>My role is translation with accountability: understand the real workflow, design the system around it, build the product, and stay through rollout.</p>
+			</header>
+			<motion.div className="operating-object" style={reduceMotion ? undefined : { rotateY: objectRotate, y: objectY }} aria-hidden="true">
+				{["ASK", "MODEL", "BUILD", "SHIP"].map((label, index) => <i key={label} style={{ "--plane": index }}><span>{label}</span><b>0{index + 1}</b></i>)}
+			</motion.div>
+			<div className="operating-path">
+				<motion.i className="operating-line-horizontal" style={reduceMotion ? undefined : { scaleX: lineProgress }} aria-hidden="true" />
+				<motion.i className="operating-line-vertical" style={reduceMotion ? undefined : { scaleY: lineProgress }} aria-hidden="true" />
+				{operatingStages.map(([title, detail], index) => (
+					<motion.article key={title} initial={false} whileInView={reduceMotion ? undefined : { y: [16, 0], opacity: [0.86, 1], filter: ["blur(3px)", "blur(0px)"] }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.32, delay: index * 0.035, ease: [0.16, 1, 0.3, 1] }}>
+						<span>0{index + 1}</span><h3>{title}</h3><p>{detail}</p>
+					</motion.article>
+				))}
+			</div>
+		</section>
 	);
 }
 
@@ -68,7 +100,7 @@ function CareerTrajectory() {
 
 			<div className="career-records">
 				{resume.experience.map((experience, index) => (
-					<motion.article key={`${experience.role}-${experience.period}`} initial={false} whileInView={reduceMotion ? undefined : { y: [28, 0], opacity: [0.82, 1] }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}>
+					<motion.article key={`${experience.role}-${experience.period}`} initial={false} whileInView={reduceMotion ? undefined : { y: [18, 0], opacity: [0.88, 1] }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.38, ease: [0.16, 1, 0.3, 1] }}>
 						<header><span>0{index + 1}</span><time>{experience.period}</time><b>{experience.company}</b></header>
 						<h3>{experience.role}</h3>
 						<p>{experience.summary}</p>
@@ -99,21 +131,12 @@ export default function ImmersiveSections() {
 	return (
 		<>
 			<motion.div className="page-progress" style={reduceMotion ? undefined : { scaleX: progress }} aria-hidden="true" />
-			<section id="manifesto" className="manifesto-section" aria-labelledby="manifesto-title">
-				<p>Software should feel less like machinery<br />and more like clarity arriving.</p>
-				<h2 id="manifesto-title">I connect product requirements, system architecture, and interface design—then carry the work through implementation and rollout.</h2>
-				<div className="manifesto-axis" aria-hidden="true"><span>ASK</span><i /><span>MODEL</span><i /><span>BUILD</span><i /><span>SHIP</span></div>
-			</section>
+			<OperatingModel />
 
 			<section id="work" className="work-section" aria-labelledby="work-title">
-				<header className="work-heading"><h2 id="work-title">SELECTED<br />SYSTEMS</h2><p>Real tools for operational work. Each scene opens into the engineering decisions behind it.</p></header>
+				<header className="work-heading"><h2 id="work-title">THREE SYSTEMS.<br />THREE PROOFS.</h2><p>Realtime operations, AI-assisted workflows, and decision intelligence—shown through the actual interfaces and engineering decisions behind them.</p></header>
 				{projects.map((project, index) => <ProjectScene key={project.slug} project={project} index={index} />)}
 				<Link className="all-work-link" href="/projects">Explore all 14 projects <SignalIcon /></Link>
-			</section>
-
-			<section id="about" className="practice-section" aria-labelledby="practice-title">
-				<div className="practice-heading"><h2 id="practice-title">ONE PRACTICE.<br />THREE LENSES.</h2><p>My Information Systems background lets me move between AI behavior, enterprise architecture, and product decisions without losing sight of the people using the system.</p></div>
-				<div className="capability-list">{capabilities.map(([title, detail], index) => <div className="capability-row" key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{detail}</p></div>)}</div>
 			</section>
 
 			<ProjectConstellation />

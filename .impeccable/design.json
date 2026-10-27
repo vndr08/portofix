@@ -15,7 +15,7 @@
       "signal-orange": { "role": "tertiary", "displayName": "Signal Orange", "canonical": "#ff914d", "tonalRamp": ["oklch(15% 0.16 48)", "oklch(24% 0.16 48)", "oklch(35% 0.16 48)", "oklch(47% 0.16 48)", "oklch(59% 0.16 48)", "oklch(71% 0.16 48)", "oklch(83% 0.11 48)", "oklch(95% 0.04 48)"] }
     },
     "typographyMeta": {
-      "display": { "displayName": "Corridor Display", "purpose": "Identity, manifesto, project names, section declarations, and contact language." },
+      "display": { "displayName": "Corridor Display", "purpose": "Identity, operating-model statements, project names, section declarations, and contact language." },
       "headline": { "displayName": "Evidence Headline", "purpose": "Capability and experience titles." },
       "body": { "displayName": "Technical Body", "purpose": "Thesis, project details, practice explanation, and experience evidence." },
       "label": { "displayName": "Instrument Label", "purpose": "Roles, coordinates, navigation, tags, dates, indices, and controls." }
@@ -28,10 +28,10 @@
       { "name": "progress-beam", "value": "0 0 16px rgba(168, 255, 234, 0.5)", "purpose": "Narrow glow around the two-pixel page progress line." }
     ],
     "motion": [
-      { "name": "camera-damping", "value": "1 - exp(-delta * 3.6)", "purpose": "Frame-rate-independent camera smoothing toward scroll and pointer targets." },
+      { "name": "camera-damping", "value": "1 - exp(-delta * 6.2)", "purpose": "Frame-rate-independent camera smoothing that catches up quickly without snapping." },
       { "name": "camera-scroll-path", "value": "z [11, -16.5, -35.5, -54.5]; x [0, -0.9, 0.9, -0.8]", "purpose": "Smoothstep path from identity topology through the three project stops." },
       { "name": "camera-pointer-range", "value": "x ±0.48; y ±0.34 world units", "purpose": "Small viewpoint response without moving DOM content." },
-      { "name": "corridor-fade", "value": "700ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Canvas readiness and departure transition." },
+      { "name": "corridor-fade", "value": "350ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Canvas readiness and departure transition." },
       { "name": "fallback-hero-spring", "value": "stiffness 52, damping 18, mass 0.85", "purpose": "Pointer tilt for the CSS topology fallback." },
       { "name": "reduced-motion", "value": "renderer not constructed; CSS orbit animations disabled", "purpose": "Uses the complete static DOM/CSS fallback and hides decorative progress." }
     ],
@@ -77,9 +77,9 @@
       "css": ".ds-static-topology { position:relative; width:280px; aspect-ratio:1; perspective:900px; } .ds-core-face { position:absolute; left:50%; top:50%; display:flex; width:126px; aspect-ratio:1; flex-direction:column; align-items:center; justify-content:center; border:1px solid rgba(168,255,234,.62); background:rgba(7,14,20,.82); box-shadow:18px 28px 60px rgba(0,0,0,.28),inset 0 0 54px rgba(168,255,234,.09); transform:translate(-50%,-50%) rotateX(-12deg) rotateY(32deg); } .ds-core-face b { color:#f1ede9; font:400 64px/.8 Bahianita,sans-serif; } .ds-core-face small { margin-top:16px; color:#a8ffea; font:500 8px/1 Manrope,sans-serif; letter-spacing:.22em; } .ds-orbit { position:absolute; left:50%; top:50%; width:90%; aspect-ratio:1; border:1px solid rgba(241,245,242,.22); border-radius:50%; } .ds-orbit-a { transform:translate(-50%,-50%) rotateX(72deg); } .ds-orbit-b { transform:translate(-50%,-50%) rotateY(68deg); border-color:rgba(200,167,255,.22); } .ds-static-topology i { position:absolute; left:8%; top:44%; width:7px; height:7px; border-radius:50%; background:#a8ffea; box-shadow:0 0 20px rgba(168,255,234,.72); }"
     },
     {
-      "name": "Capability Row", "kind": "custom", "description": "A border-led practice row connecting a numbered lens to its technical scope.",
-      "html": "<div class=\"ds-capability-row\"><span>01</span><h3>Applied intelligence</h3><p>LLM orchestration · retrieval · NLP · OCR · workflow automation</p></div>",
-      "css": ".ds-capability-row { display:grid; grid-template-columns:70px .8fr 1.2fr; align-items:center; gap:28px; min-height:120px; border-block:1px solid rgba(241,245,242,.16); color:#f1f5f2; transition:padding 450ms cubic-bezier(.16,1,.3,1),color 300ms ease; font-family:Manrope,sans-serif; } .ds-capability-row:hover { padding-inline:18px; color:#a8ffea; } .ds-capability-row span { color:rgba(241,245,242,.38); font-size:9px; } .ds-capability-row h3 { margin:0; font-size:28px; font-weight:500; line-height:1.1; } .ds-capability-row p { margin:0; color:rgba(241,245,242,.55); font-size:12px; line-height:1.65; }"
+      "name": "Operating Model", "kind": "custom", "description": "A four-stage delivery path with a scroll-responsive stack of ASK, MODEL, BUILD, and SHIP planes.",
+      "html": "<section class=\"ds-operating-model\"><h2>From operational friction to working systems.</h2><ol><li>Understand</li><li>Architect</li><li>Build</li><li>Operationalize</li></ol></section>",
+      "css": ".ds-operating-model { display:grid; grid-template-columns:.95fr 1.05fr; background:#f1ede9; color:#080b10; perspective:1400px; } .ds-operating-model ol { grid-column:1/-1; display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid rgba(8,11,16,.22); list-style:none; } .ds-operating-model li { min-height:180px; padding:30px; border-right:1px solid rgba(8,11,16,.16); }"
     }
   ],
   "narrative": {
@@ -91,7 +91,8 @@
       "Three real project textures suspended as large planes with spectral wireframe echoes.",
       "Semantic DOM copy remains above the canvas and owns navigation, reading order, alt text, and actions.",
       "Mint, violet, and orange identify systems against a near-black fogged corridor.",
-      "One warm-paper manifesto and one warm-paper experience section reset the dark spatial journey.",
+      "One warm-paper operating model and one warm-paper career section reset the dark spatial journey.",
+      "The homepage has six clear chapters: identity, operating model, three proofs, complete collection, career progression, and contact.",
       "CSS 3D hero and DOM project films form the complete static fallback.",
       "Every major route has a specific visual role instead of reusing a generic card page.",
       "All fourteen projects remain discoverable while real screenshots are prioritized as evidence.",

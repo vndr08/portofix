@@ -81,7 +81,7 @@ components:
 
 The portfolio opens on Ivan’s identity inside a live GPU-rendered system. A fixed transparent WebGL canvas places a rotating wireframe topology core and 120 orbiting data packets inside a long tunnel of receding frames and sparse signal particles. The first viewport contains no project imagery: the name, role, thesis, work route, and résumé route lead while the generative system establishes technical authorship.
 
-Scroll becomes camera travel. After one warm-paper manifesto interlude, the camera advances through three suspended project films at measured depths while the semantic DOM supplies the project name, role, explanation, stack, and case-study link. The second scene reverses the copy position to vary the passage through the corridor. Practice, experience, evidence, and contact become progressively quieter after the WebGL journey.
+The story is deliberately scoped around one promise: **Ivan turns operational friction into production-ready AI and software systems.** After the hero, a warm-paper operating model makes that promise concrete through Understand → Architect → Build → Operationalize. Scroll then becomes camera travel through three proof systems while the semantic DOM supplies the project name, role, explanation, stack, and case-study link. The complete project collection, career progression, and contact follow as supporting evidence rather than competing introductions.
 
 The corridor is progressive enhancement, not a dependency. At widths below 821px, under reduced motion, after WebGL construction failure, or after context loss, the fixed canvas remains invisible and the complete CSS/DOM Spatial Systems Chamber fallback stays visible. The fallback includes the cube-and-orbit hero and depth-stacked project images; it is not the primary desktop visual world.
 
@@ -96,7 +96,8 @@ Ten projects use screenshots supplied in the repository. Four projects without o
 - Three real project textures suspended as large planes with spectral wireframe echoes.
 - Semantic DOM copy remains above the canvas and owns navigation, reading order, alt text, and actions.
 - Mint, violet, and orange identify systems against a near-black fogged corridor.
-- One warm-paper manifesto and one warm-paper experience section reset the dark spatial journey.
+- One warm-paper operating model and one warm-paper career section reset the dark spatial journey.
+- Six clear homepage chapters: Identity → Operating Model → Three Proofs → Complete Collection → Career Progression → Contact.
 - CSS 3D hero and DOM project films form the complete static fallback.
 - Every major route has a specific visual job instead of reusing a generic card page.
 - Fourteen projects remain discoverable, while real screenshots are prioritized as evidence.
@@ -121,11 +122,11 @@ The corridor is almost black so its emitted system colors and project textures c
 ### Neutral
 
 - **Corridor Black:** Scene fog, page ground, DOM copy backing, and the visual void around project films.
-- **Section Black:** A barely lifted dark field for the post-corridor practice section.
+- **Section Black:** A barely lifted dark field for collection and supporting evidence sections.
 - **Depth Black:** Backing and fallback depth planes.
 - **Experience Ink:** Text and rules on warm-paper sections.
 - **Paper White:** Primary text on dark surfaces, reduced with alpha for explanations and structure.
-- **Warm Paper:** Display type, the filled hero action, manifesto ground, and experience ground.
+- **Warm Paper:** Display type, the filled hero action, operating-model ground, and career ground.
 
 ### Named Rules
 
@@ -144,7 +145,7 @@ The corridor is almost black so its emitted system colors and project textures c
 
 ### Hierarchy
 
-- **Display** (400, typically 72–96px, 0.75–0.82 line-height): Identity, manifesto, project names, section declarations, and contact language.
+- **Display** (400, typically 72–96px, 0.75–0.82 line-height): Identity, operating-model statements, project names, section declarations, and contact language.
 - **Headline** (500, typically 21–32px, 1.1–1.15 line-height): Capability and experience titles.
 - **Body** (400, typically 12–17px, 1.65–1.75 line-height): Thesis, project context, practice explanation, and experience evidence.
 - **Label** (500–600, typically 8–11px, 0.04–0.22em letter-spacing): Roles, coordinates, navigation, tags, dates, case indices, and controls.
@@ -159,11 +160,11 @@ The corridor is almost black so its emitted system colors and project textures c
 
 The WebGL canvas is fixed to the viewport at z-index 0 and never receives pointer events. Every direct child of the immersive page other than the canvas sits above it at z-index 2. Once the renderer is successfully created, a readiness class makes the canvas visible, makes hero and work backgrounds transparent, reduces the hero texture, hides the CSS cube, and visually hides DOM project images. Text and actions remain DOM content throughout.
 
-The first viewport holds a full-depth tunnel with Ivan’s copy near 6.3vw on the left, navigation along a quiet top rule, and coordinates on the far right. The manifesto remains a full-height asymmetric light section. Work begins with a 74svh introduction, followed by three scenes of at least 112svh. In WebGL mode, odd-scene copy occupies the left in an 88%-opaque black backing with a rightward shadow; the middle scene moves copy to the right with the shadow reversed. Suspended project planes alternate right, left, right in world space.
+The first viewport holds a full-depth tunnel with Ivan’s copy near 6.3vw on the left, one shared navigation rail, and coordinates on the far right. The operating model is an asymmetric light section containing a scroll-responsive four-plane object and a four-stage delivery path. Work begins with a 74svh proof statement, followed by three scenes of at least 112svh. In WebGL mode, odd-scene copy occupies the left in an 88%-opaque black backing with a rightward shadow; the middle scene moves copy to the right with the shadow reversed. Suspended project planes alternate right, left, right in world space.
 
-After the work section, the fixed canvas fades to zero and rendering is skipped, leaving practice, experience, and contact as ordinary DOM sections. Practice uses three border-led rows, experience uses a warm-paper two-column timeline, and contact returns to a centered dark orbital composition.
+After the work section, the fixed canvas fades to zero and rendering is skipped. A native horizontal collection exposes all projects without autonomous movement, the career section uses a warm-paper two-column progression, and contact returns to a centered dark orbital composition.
 
-The renderer is disabled below 821px. The broader CSS layout switches at 900px: navigation simplifies, the static cube moves behind the lower-right hero, headings stack, project scenes become single-column with the DOM image first, capabilities collapse to index-plus-content rows, and contact actions stack. Between 821px and 900px, the compact DOM layout can coexist with WebGL on capable devices.
+The renderer is disabled below 821px. The broader CSS layout switches at 900px: navigation becomes a full-screen menu with the same destinations, the static cube moves behind the lower-right hero, headings stack, the operating path becomes vertical, project scenes become single-column with the DOM image first, and contact actions stack. Between 821px and 900px, the compact DOM layout can coexist with WebGL on capable devices.
 
 **The Camera-Path Rule.** Primary projects occupy distinct world coordinates and scroll anchors; never collapse the desktop corridor into a conventional card grid.
 
@@ -228,9 +229,9 @@ Each stop binds one DOM scene to one world-space plane through a measured scroll
 
 The fallback hero uses two depth planes, a six-faced CSS cube, three orbital rings, three signal satellites, pointer-linked tilt, and a mint aurora. It is the primary experience below 821px, for reduced-motion users, and whenever WebGL is unavailable. Do not show it simultaneously with a ready corridor on desktop.
 
-### Capability Row
+### Operating Model
 
-Three full-width rows pair a tiny index, medium Manrope title, and concise technical scope. Hover adds 18px inline padding and optic mint over 450ms. Mobile moves the description beneath the title without changing the source order.
+Four numbered stages—Understand, Architect, Build, and Operationalize—make the portfolio's working method explicit. A scroll-responsive stack of ASK, MODEL, BUILD, and SHIP planes supplies depth without becoming a second hero. Desktop uses a horizontal progress rail; mobile preserves the same source order as a vertical rail.
 
 ### Career Trajectory
 
@@ -238,9 +239,9 @@ The homepage career section tells a progression rather than repeating a résumé
 
 ### Motion
 
-The camera target follows measured project anchors with smoothstep interpolation; each frame applies exponential damping at 3.6 per second. Scroll drives camera z through 11, -16.5, -35.5, and -54.5 while alternating x through 0, -0.9, 0.9, and -0.8. Pointer input adds up to 0.48 world units horizontally and 0.34 vertically. The topology core, packet field, particles, and project planes drift at deliberately slow independent rates.
+The camera target follows measured project anchors with smoothstep interpolation; each frame applies exponential damping at 6.2 per second so the camera catches up without feeling loose. Scroll drives camera z through 11, -16.5, -35.5, and -54.5 while alternating x through 0, -0.9, 0.9, and -0.8. Pointer input adds up to 0.48 world units horizontally and 0.34 vertically. UI transitions stay short, use ease-out, and prefer transform and opacity; continuous motion is reserved for spatial atmosphere.
 
-Reduced motion prevents renderer construction entirely and disables the fallback’s CSS orbit animations and decorative progress. Narrow layouts retain a static, readable fallback. Rendering pauses visually after the work section and skips drawing while the document is hidden.
+Reduced motion prevents renderer construction entirely and disables the fallback’s CSS orbit animations and decorative progress. Narrow layouts retain a static, readable fallback. Rendering stops after the featured-work corridor leaves view and skips drawing while the document is hidden. The project collection is user-driven through native drag/scroll and scroll snapping, never an automatic marquee.
 
 ## Do's and Don'ts
 

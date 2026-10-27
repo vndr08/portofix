@@ -39,7 +39,7 @@ export default function ImmersiveHero() {
 			<div className="portal-copy">
 				<h1 id="portal-title"><span>IVANDER</span><span>JOHANA</span><span>PRATAMA</span></h1>
 				<p className="portal-role">AI engineer · software engineer</p>
-				<p className="portal-thesis">I build AI-powered products and enterprise systems end-to-end—from requirements to operational rollout.</p>
+				<p className="portal-thesis">I turn operational friction into production-ready AI and software systems—from requirements and UX to architecture, deployment, and rollout.</p>
 				<div className="portal-actions">
 					<a href="#work">Enter selected work <SignalIcon /></a>
 					<a href={profile.cvUrl} target="_blank" rel="noopener noreferrer">Open résumé <SignalIcon direction="up-right" /></a>
@@ -60,7 +60,7 @@ export default function ImmersiveHero() {
 			</motion.div>
 
 			<div className="portal-coordinates" aria-hidden="true"><span>06°12&apos;S</span><span>106°49&apos;E</span><span>2026 / PORTFOLIO</span></div>
-			<a className="portal-scroll" href="#manifesto"><span /> Scroll to explore</a>
+			<a className="portal-scroll" href="#method"><span /> See how I work</a>
 		</section>
 	);
 }

@@ -33,11 +33,12 @@ export default function Navbar() {
 			<nav className="system-nav" aria-label="Primary navigation">
 				<Link href="/" className="system-nav-mark" aria-label="Ivan portfolio home">IVAN<span>®</span></Link>
 				<div className="system-nav-links">
-					{links.map((link) => (
-						<Link key={link.href} href={link.href} aria-current={link.match(pathname) ? "page" : undefined}>
-							{link.label}<i aria-hidden="true" />
+					{links.map((link) => {
+						const current = link.match(pathname);
+						return <Link key={link.href} href={link.href} aria-current={current ? "page" : undefined}>
+							<motion.span whileHover={{ y: -2 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.16, ease: [0.16, 1, 0.3, 1] }}>{link.label}</motion.span><i aria-hidden="true" />
 						</Link>
-					))}
+					})}
 				</div>
 				<a className="system-nav-resume" href={profile.cvUrl} target="_blank" rel="noopener noreferrer">Résumé ↗</a>
 				<button className="system-nav-toggle" type="button" aria-expanded={open} aria-controls="system-mobile-nav" onClick={() => setOpen((value) => !value)}>
@@ -47,10 +48,10 @@ export default function Navbar() {
 
 			<AnimatePresence>
 				{open && (
-					<motion.div id="system-mobile-nav" className="system-mobile-nav" initial={{ clipPath: "inset(0 0 100% 0)" }} animate={{ clipPath: "inset(0 0 0% 0)" }} exit={{ clipPath: "inset(0 0 100% 0)" }} transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}>
+					<motion.div id="system-mobile-nav" className="system-mobile-nav" initial={{ clipPath: "inset(0 0 100% 0)", opacity: 0.96 }} animate={{ clipPath: "inset(0 0 0% 0)", opacity: 1 }} exit={{ clipPath: "inset(0 0 100% 0)", opacity: 0.96 }} transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}>
 						<div className="mobile-nav-orbit" aria-hidden="true"><i /><i /><i /></div>
 						{links.map((link, index) => (
-							<motion.div key={link.href} initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.08 + index * 0.055 }}>
+							<motion.div key={link.href} initial={{ opacity: 0, y: 18, filter: "blur(3px)" }} animate={{ opacity: 1, y: 0, filter: "blur(0px)" }} transition={{ duration: 0.24, delay: 0.035 + index * 0.03, ease: [0.16, 1, 0.3, 1] }}>
 								<Link href={link.href} onClick={() => setOpen(false)}><span>0{index + 1}</span>{link.label}</Link>
 							</motion.div>
 						))}
