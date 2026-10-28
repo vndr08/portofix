@@ -4,9 +4,9 @@ import { useEffect, useRef } from "react";
 import * as THREE from "three";
 
 const PROJECTS = [
-	{ selector: ".project-scene:nth-of-type(1)", z: -23, x: 2.4, color: 0xa8ffea, aspect: 1800 / 1034 },
-	{ selector: ".project-scene:nth-of-type(2)", z: -42, x: -2.2, color: 0xc8a7ff, aspect: 1800 / 1019 },
-	{ selector: ".project-scene:nth-of-type(3)", z: -61, x: 2.2, color: 0xff914d, aspect: 1691 / 1100 },
+	{ selector: ".project-anchor:nth-child(1)", z: -23, x: 2.4, color: 0xa8ffea, aspect: 1800 / 1034 },
+	{ selector: ".project-anchor:nth-child(2)", z: -42, x: -2.2, color: 0xc8a7ff, aspect: 1800 / 1019 },
+	{ selector: ".project-anchor:nth-child(3)", z: -61, x: 2.2, color: 0xff914d, aspect: 1691 / 1100 },
 ];
 
 function interpolateAnchors(scrollY, anchors, values) {

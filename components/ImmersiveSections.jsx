@@ -1,9 +1,9 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, useMotionValue, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
+import { motion, useMotionValue, useMotionValueEvent, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
 import profile from "@/json/profile.json";
 import resume from "@/json/resume.json";
 import SignalIcon from "@/components/SignalIcon";
@@ -22,26 +22,20 @@ const operatingStages = [
 	["Operationalize", "Testing, deployment, monitoring, iteration, documentation, and rollout."],
 ];
 
-function ProjectScene({ project, index }) {
-	const ref = useRef(null);
-	const reduceMotion = useReducedMotion();
+function JourneyPanel({ project, index, progress, range, active, reduceMotion }) {
 	const restingTilt = index % 2 === 0 ? -5 : 5;
-	const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-	const smooth = useSpring(scrollYProgress, { stiffness: 72, damping: 24, mass: 0.65 });
 	const pointerX = useMotionValue(restingTilt);
 	const pointerY = useMotionValue(1.5);
 	const pointerRotateX = useSpring(pointerY, { stiffness: 180, damping: 24, mass: 0.45 });
 	const pointerRotateY = useSpring(pointerX, { stiffness: 180, damping: 24, mass: 0.45 });
-	const imageY = useTransform(smooth, [0, 0.5, 1], [52, 0, -52]);
-	const imageX = useTransform(smooth, [0, 0.5, 1], index % 2 === 0 ? [82, 0, -28] : [-82, 0, 28]);
-	const scrollRotate = useTransform(smooth, [0, 0.5, 1], [3.5, 0, -3.5]);
-	const imageRotateX = useTransform([scrollRotate, pointerRotateX], ([scrollValue, pointerValue]) => scrollValue + pointerValue);
-	const imageRotateZ = useTransform(smooth, [0, 0.5, 1], index % 2 === 0 ? [1.4, 0, -0.8] : [-1.4, 0, 0.8]);
-	const imageOpacity = useTransform(smooth, [0, 0.22, 0.72, 1], [0.68, 1, 1, 0.78]);
-	const copyX = useTransform(smooth, [0, 0.5, 1], index % 2 === 0 ? [-34, 0, 14] : [34, 0, -14]);
-	const copyY = useTransform(smooth, [0, 0.5, 1], [28, 0, -20]);
-	const copyOpacity = useTransform(smooth, [0, 0.22, 0.78, 1], [0.62, 1, 1, 0.72]);
-	const depth = useTransform(smooth, [0, 0.5, 1], [0.9, 1, 0.95]);
+	const entry = Math.max(0, range[0] - 0.08);
+	const exit = Math.min(1, range[1] + 0.08);
+	const opacity = useTransform(progress, [entry, range[0], range[1], exit], [0, 1, 1, 0]);
+	const x = useTransform(progress, [entry, range[0], range[1], exit], index % 2 === 0 ? [180, 0, 0, -140] : [-180, 0, 0, 140]);
+	const y = useTransform(progress, [entry, range[0], range[1], exit], [80, 0, 0, -70]);
+	const scale = useTransform(progress, [entry, range[0], range[1], exit], [0.82, 1, 1, 0.9]);
+	const rotateY = useTransform(progress, [entry, range[0], range[1], exit], index % 2 === 0 ? [13, 0, 0, -9] : [-13, 0, 0, 9]);
+	const blur = useTransform(progress, [entry, range[0], range[1], exit], ["blur(8px)", "blur(0px)", "blur(0px)", "blur(5px)"]);
 	const handlePointerMove = (event) => {
 		if (reduceMotion || event.pointerType === "touch") return;
 		const bounds = event.currentTarget.getBoundingClientRect();
@@ -54,19 +48,59 @@ function ProjectScene({ project, index }) {
 	};
 
 	return (
-		<article ref={ref} className={`project-scene tone-${project.tone}`}>
-			<div className="project-atmosphere" aria-hidden="true" />
-			<motion.div className="project-copy" style={reduceMotion ? undefined : { x: copyX, y: copyY, opacity: copyOpacity }}>
+		<motion.article className={`journey-panel tone-${project.tone}`} aria-hidden={reduceMotion ? undefined : !active} style={reduceMotion ? undefined : { x, y, scale, rotateY, opacity, filter: blur, pointerEvents: active ? "auto" : "none" }}>
+			<div className="journey-copy">
+				<span className="journey-count">0{index + 1} / 03</span>
 				<h3>{project.name}</h3>
 				<p className="project-role">{project.role}</p><p className="project-detail">{project.detail}</p>
 				<ul>{project.stack.map((item) => <li key={item}>{item}</li>)}</ul>
-				<Link href={`/projects/${project.slug}`}>Open case study <SignalIcon direction="up-right" /></Link>
-			</motion.div>
-			<motion.div className="project-viewport" onPointerMove={handlePointerMove} onPointerLeave={resetPointer} style={reduceMotion ? undefined : { x: imageX, y: imageY, rotateX: imageRotateX, rotateY: pointerRotateY, rotateZ: imageRotateZ, opacity: imageOpacity, scale: depth, transformPerspective: 1400 }}>
-				<div className="project-depth depth-back" aria-hidden="true" /><div className="project-depth depth-mid" aria-hidden="true" />
+				<Link tabIndex={reduceMotion || active ? 0 : -1} href={`/projects/${project.slug}`}>Open case study <SignalIcon direction="up-right" /></Link>
+			</div>
+			<motion.div className="journey-artifact" onPointerMove={handlePointerMove} onPointerLeave={resetPointer} style={reduceMotion ? undefined : { rotateX: pointerRotateX, rotateY: pointerRotateY, transformPerspective: 1400 }}>
+				<div className="journey-depth depth-back" aria-hidden="true" /><div className="journey-depth depth-mid" aria-hidden="true" />
 				<Image src={project.image} width={project.width} height={project.height} sizes="(max-width: 900px) 86vw, 58vw" alt={project.alt} /><span className="viewport-index" aria-hidden="true">ACTUAL UI / 0{index + 1}</span>
 			</motion.div>
-		</article>
+		</motion.article>
+	);
+}
+
+function ProjectJourney() {
+	const ref = useRef(null);
+	const reduceMotion = useReducedMotion();
+	const [active, setActive] = useState(0);
+	const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
+	const progress = useSpring(scrollYProgress, { stiffness: 72, damping: 26, mass: 0.62 });
+	const introOpacity = useTransform(progress, [0, 0.08, 0.15, 0.2], [1, 1, 0.24, 0]);
+	const introY = useTransform(progress, [0, 0.12, 0.2], [0, -20, -90]);
+	const outroOpacity = useTransform(progress, [0.86, 0.94, 1], [0, 1, 1]);
+	const outroY = useTransform(progress, [0.86, 0.94, 1], [60, 0, 0]);
+	const railOpacity = useTransform(progress, [0, 0.14, 0.2, 0.84, 0.92, 1], [0, 0, 1, 1, 0, 0]);
+	const ranges = [[0.18, 0.39], [0.42, 0.63], [0.66, 0.85]];
+
+	useMotionValueEvent(progress, "change", (value) => {
+		const next = value < 0.405 ? 0 : value < 0.645 ? 1 : 2;
+		setActive((current) => current === next ? current : next);
+	});
+
+	return (
+		<section ref={ref} id="work" className={`work-section project-journey${reduceMotion ? " is-static" : ""}`} aria-labelledby="work-title">
+			<div className="journey-stage">
+				<motion.header className="journey-intro" style={reduceMotion ? undefined : { opacity: introOpacity, y: introY }}>
+					<h2 id="work-title">THREE SYSTEMS.<br />THREE PROOFS.</h2>
+					<p>Realtime operations, AI-assisted workflows, and decision intelligence—shown through actual interfaces and engineering decisions.</p>
+				</motion.header>
+				{projects.map((project, index) => <JourneyPanel key={project.slug} project={project} index={index} progress={progress} range={ranges[index]} active={active === index} reduceMotion={reduceMotion} />)}
+				<motion.nav className="journey-rail" aria-label="Featured project progress" style={reduceMotion ? undefined : { opacity: railOpacity }}>
+					<span>SELECTED SYSTEMS</span>
+					<ol>{projects.map((project, index) => <li key={project.slug} className={active === index ? "is-active" : ""}><i />{project.name}</li>)}</ol>
+				</motion.nav>
+				<motion.div className="journey-outro" style={reduceMotion ? undefined : { opacity: outroOpacity, y: outroY }}>
+					<span>14 projects across AI, enterprise software, dashboards, web, mobile, and creative technology.</span>
+					<Link href="/projects">Explore the complete collection <SignalIcon /></Link>
+				</motion.div>
+			</div>
+			<div className="journey-anchors" aria-hidden="true">{projects.map((project) => <i key={project.slug} className="project-anchor" />)}</div>
+		</section>
 	);
 }
 
@@ -101,45 +135,14 @@ function OperatingModel() {
 	);
 }
 
-function WorkThreshold() {
-	const ref = useRef(null);
-	const reduceMotion = useReducedMotion();
-	const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-	const smooth = useSpring(scrollYProgress, { stiffness: 70, damping: 25, mass: 0.65 });
-	const rotateY = useTransform(smooth, [0, 1], [-18, 18]);
-	const rotateX = useTransform(smooth, [0, 0.5, 1], [7, 0, -7]);
-	const y = useTransform(smooth, [0, 1], [32, -32]);
-
-	return (
-		<header ref={ref} className="work-heading">
-			<h2 id="work-title">THREE SYSTEMS.<br />THREE PROOFS.</h2>
-			<motion.div className="work-threshold" style={reduceMotion ? undefined : { rotateX, rotateY, y }} aria-hidden="true">
-				{["OPERATIONS", "WORKFLOWS", "INTELLIGENCE"].map((label, index) => <i key={label} style={{ "--proof-plane": index }}><span>{label}</span></i>)}
-				<b>PRODUCTION<br />EVIDENCE</b>
-			</motion.div>
-			<p>Realtime operations, AI-assisted workflows, and decision intelligence—shown through the actual interfaces and engineering decisions behind them.</p>
-		</header>
-	);
-}
-
 function CareerTrajectory() {
-	const ref = useRef(null);
 	const reduceMotion = useReducedMotion();
-	const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-	const smooth = useSpring(scrollYProgress, { stiffness: 55, damping: 22, mass: 0.7 });
-	const orbitRotate = useTransform(smooth, [0, 1], [-28, 118]);
-	const orbitScale = useTransform(smooth, [0, 0.5, 1], [0.88, 1, 0.92]);
-	const orbitOpacity = useTransform(smooth, [0, 0.14, 0.52, 0.66, 0.75], [0.2, 1, 1, 0.3, 0]);
-	const orbitY = useTransform(smooth, [0, 0.58, 0.75], [38, 0, -110]);
 
 	return (
-		<section ref={ref} className="career-trajectory" aria-labelledby="career-trajectory-title">
+		<section className="career-trajectory" aria-labelledby="career-trajectory-title">
 			<div className="career-intro">
 				<h2 id="career-trajectory-title">FROM AI PROTOTYPES<br />TO ENTERPRISE OWNERSHIP.</h2>
 				<p>Two consecutive roles at PT Jababeka trace one clear progression: understanding operational problems, shipping applied AI, then co-owning the lifecycle and interface of an enterprise financial system.</p>
-				<motion.div className="career-orbit-v2" style={reduceMotion ? undefined : { rotate: orbitRotate, scale: orbitScale, opacity: orbitOpacity, y: orbitY }} aria-hidden="true">
-					<i /><i /><i /><span>ASK</span><span>BUILD</span><span>OWN</span><b>01→02</b>
-				</motion.div>
 			</div>
 
 			<div className="career-records">
@@ -177,11 +180,7 @@ export default function ImmersiveSections() {
 			<motion.div className="page-progress" style={reduceMotion ? undefined : { scaleX: progress }} aria-hidden="true" />
 			<OperatingModel />
 
-			<section id="work" className="work-section" aria-labelledby="work-title">
-				<WorkThreshold />
-				{projects.map((project, index) => <ProjectScene key={project.slug} project={project} index={index} />)}
-				<Link className="all-work-link" href="/projects">Explore all 14 projects <SignalIcon /></Link>
-			</section>
+			<ProjectJourney />
 
 			<ProjectConstellation />
 

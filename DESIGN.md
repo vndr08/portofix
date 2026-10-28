@@ -66,7 +66,7 @@ components:
     typography: "{typography.label}"
     rounded: "{rounded.square}"
     padding: "7px 10px"
-  project-copy-panel:
+  journey-copy-panel:
     backgroundColor: "{colors.corridor-black}"
     textColor: "{colors.paper-white}"
     rounded: "{rounded.square}"
@@ -81,7 +81,7 @@ components:
 
 The portfolio opens on Ivan’s identity inside a live GPU-rendered system. A fixed transparent WebGL canvas places a rotating wireframe topology core and 120 orbiting data packets inside a long tunnel of receding frames and sparse signal particles. The first viewport contains no project imagery: the name, role, thesis, work route, and résumé route lead while the generative system establishes technical authorship.
 
-The story is deliberately scoped around one promise: **Ivan turns operational friction into production-ready AI and software systems.** After the hero, a warm-paper operating model makes that promise concrete through Understand → Architect → Build → Operationalize. Scroll then becomes camera travel through three proof systems while the semantic DOM supplies the project name, role, explanation, stack, and case-study link. The complete project collection, career progression, and contact follow as supporting evidence rather than competing introductions.
+The story is deliberately scoped around one promise: **Ivan turns operational friction into production-ready AI and software systems.** After the hero, a warm-paper operating model makes that promise concrete through Understand → Architect → Build → Operationalize. The three featured proofs then share one sticky cinematic stage: scroll brings each real interface into the same spatial viewport, carries the previous system away, and advances the WebGL camera behind it. The complete project collection, career progression, and contact follow as supporting evidence rather than competing introductions.
 
 The corridor is progressive enhancement, not a dependency. The CSS/DOM Spatial Systems Chamber is always present: the cube-and-orbit hero and pointer-responsive depth-stacked project images remain visible whether or not WebGL succeeds. WebGL adds atmosphere, scale, and spatial signals behind that authoritative layer; it never gates project evidence.
 
@@ -160,11 +160,11 @@ The corridor is almost black so its emitted system colors, project films, and wi
 
 The WebGL canvas is fixed to the viewport at z-index 0 and never receives pointer events. Every direct child of the immersive page other than the canvas sits above it at z-index 2. The readiness class is added only after the first successful rendered frame; it reveals the atmospheric canvas, makes hero and work backgrounds transparent, and fades out the CSS cube so it cannot duplicate the live topology. DOM project films are never hidden. Text, actions, and real interface evidence remain visible DOM content throughout.
 
-The first viewport holds a full-depth tunnel with Ivan’s copy near 6.3vw on the left, one shared navigation rail, and coordinates on the far right. The operating model is an asymmetric light section containing a scroll-responsive four-plane object and a four-stage delivery path. Work begins with a 74svh proof statement, followed by three scenes of at least 112svh. In WebGL mode, odd-scene copy occupies the left in an 88%-opaque black backing with a rightward shadow; the middle scene moves copy to the right with the shadow reversed. Suspended project planes alternate right, left, right in world space.
+The first viewport holds a full-depth tunnel with Ivan’s copy near 6.3vw on the left, one shared navigation rail, and coordinates on the far right. The operating model is an asymmetric light section containing a scroll-responsive four-plane object and a four-stage delivery path. Featured work occupies a 430svh scroll track around one sticky 100svh stage. An intro, three project films, and a collection handoff enter that stage in sequence; only one proof owns the viewport at a time. Each film moves through x/y travel, scale, Y rotation, focus blur, opacity, and pointer-linked artifact tilt while a quiet bottom rail communicates progress.
 
 After the work section, the fixed canvas fades to zero and rendering is skipped. A native horizontal collection exposes all projects without autonomous movement, the career section uses a warm-paper two-column progression, and contact returns to a centered dark orbital composition.
 
-The renderer is disabled below 821px. The broader CSS layout switches at 900px: navigation becomes a full-screen menu with the same destinations, the static cube moves behind the lower-right hero, headings stack, the operating path becomes vertical, project scenes become single-column with the DOM image first, and contact actions stack. Between 821px and 900px, the compact DOM layout can coexist with WebGL on capable devices.
+The renderer is disabled below 821px. The broader CSS layout switches at 900px: navigation becomes a full-screen menu with the same destinations, the static cube moves behind the lower-right hero, headings stack, the operating path becomes vertical, and the sticky project stage changes to an image-first single-column composition while keeping the same scroll sequence. Contact actions stack. Between 821px and 900px, the compact DOM layout can coexist with WebGL on capable devices.
 
 **The Camera-Path Rule.** Primary projects occupy distinct world coordinates and scroll anchors; never collapse the desktop corridor into a conventional card grid.
 
@@ -211,7 +211,7 @@ The dominant form is a long rectangular tunnel made from sixteen subtly rotated 
 
 ### Cards / Containers
 
-There is no conventional card. The project copy is an edge-faded black panel placed over the live corridor. The matching DOM film stays visible in every mode and combines resting perspective, scroll travel, pointer tilt, a projected light pool, and two Z-offset echo planes.
+There is no conventional card. Each project’s copy and real interface film share one full-viewport journey panel. The film combines scroll travel, pointer tilt, a projected light pool, and two Z-offset echo planes; the copy remains unboxed so the artifact, not a container, owns the scene.
 
 ### Navigation
 
@@ -221,9 +221,9 @@ One fixed navigation is shared by every route: wordmark, Home, Projects, About, 
 
 The signature component is a fixed, transparent, `aria-hidden` Three.js canvas. It caps device pixel ratio at 1.05 to control GPU cost. It uses a 46-degree perspective camera, exponential black fog, sixteen line frames, 120 instanced packets, a detail-2 wireframe icosahedron, 220 particles, and three untextured project fields. On context loss, remove readiness immediately so the CSS hero topology reappears; project evidence is unaffected.
 
-### Project Stop
+### Project Journey
 
-Each stop binds one DOM scene to one world-space plane through a measured scroll anchor. Copy includes a Bahianita name, factual role and detail, compact tags, and a case-study link. The first and third planes sit right of center; the second sits left. All three DOM films use resized derivatives of supplied project screenshots—not generated substitute imagery—and remain visible with meaningful alt text. A resting perspective, Z-offset echoes, projected light, scroll tilt, and pointer tilt make their depth legible even without WebGL.
+The three featured proofs share one pinned stage and three measured scroll anchors. Each panel combines a Bahianita project name, factual role and detail, compact tags, case-study link, and one real interface film. Scroll moves panels into and out of the same spatial frame with depth, focus, and directional travel; pointer movement changes only the active artifact’s viewing angle. Z-offset echoes and projected light keep depth legible without WebGL. Reduced motion converts the sequence into three ordinary full-height DOM sections without hiding content.
 
 ### Static Topology Fallback
 
@@ -235,7 +235,7 @@ Four numbered stages—Understand, Architect, Build, and Operationalize—make t
 
 ### Career Trajectory
 
-The homepage career section tells a progression rather than repeating a résumé timeline: applied-AI delivery becomes enterprise product ownership across two consecutive PT Jababeka roles. A sticky statement and scroll-responsive ASK → BUILD → OWN orbit lead on desktop while two long-form delivery records expose summaries, verified contributions, and technology trails. Mobile restores a single linear reading order. The closing proof band names four concrete work surfaces—AI Agent, JIFAS, Telerik migration, and Python finance automation—without inventing outcome metrics.
+The homepage career section tells a progression rather than repeating a résumé timeline: applied-AI delivery becomes enterprise product ownership across two consecutive PT Jababeka roles. A quiet sticky statement leads on desktop while two long-form delivery records expose summaries, verified contributions, and technology trails. Decorative orbit geometry is intentionally absent so the career evidence remains calm after the cinematic project stage. Mobile restores a single linear reading order. The closing proof band names four concrete work surfaces—AI Agent, JIFAS, Telerik migration, and Python finance automation—without inventing outcome metrics.
 
 ### Motion
 
