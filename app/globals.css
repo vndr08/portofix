@@ -3458,3 +3458,223 @@ body:has(.portfolio-guide) .system-back-to-top { bottom:max(84px,calc(env(safe-a
 	.guide-typing i,.guide-robot-eyes i,.guide-robot-mouth i,.guide-voice i { animation:none !important; }
 	.guide-launcher .signal-icon { transition-duration:.01ms; }
 }
+
+/* Mobile composition — reflow the spatial experience instead of shrinking desktop. */
+@media (max-width:1100px) {
+	.system-nav-resume { display:none !important; }
+	.mobile-resume { min-height:44px; }
+}
+
+@media (max-width:767px) {
+	.portfolio-guide { right:14px; bottom:max(14px,env(safe-area-inset-bottom)); left:auto; }
+	.guide-launcher {
+		grid-template-columns:1fr;
+		place-items:center;
+		width:54px;
+		min-width:54px;
+		height:54px;
+		min-height:54px;
+		margin:0;
+		padding:0;
+		box-shadow:10px 16px 34px rgba(0,0,0,.42);
+	}
+	.guide-launcher-copy,
+	.guide-launcher > .signal-icon { display:none; }
+}
+
+@media (max-width:640px) {
+	html { scroll-padding-top:64px; }
+	.system-nav {
+		height:64px;
+		padding-inline:max(20px,env(safe-area-inset-left));
+		box-shadow:0 12px 28px rgba(0,0,0,.22);
+	}
+	.system-nav-mark { font-size:16px; letter-spacing:.2em; }
+	.system-nav-toggle {
+		top:10px;
+		right:max(20px,env(safe-area-inset-right));
+		min-width:72px;
+		padding:0;
+		font-size:11px;
+	}
+	.system-mobile-nav {
+		gap:8px;
+		padding:92px max(24px,env(safe-area-inset-left)) max(42px,env(safe-area-inset-bottom));
+	}
+	.system-mobile-nav > div:not(.mobile-nav-orbit) a {
+		min-height:64px;
+		font-size:clamp(3.7rem,17vw,5rem);
+	}
+
+	.portal-hero {
+		min-height:1080px;
+		overflow:hidden;
+	}
+	.portal-copy {
+		position:relative;
+		top:auto;
+		bottom:auto;
+		left:auto;
+		display:block;
+		width:auto;
+		padding:112px 24px 0;
+	}
+	.portal-copy h1 {
+		max-width:100%;
+		font-size:clamp(4rem,20.5vw,5rem);
+		line-height:.79;
+	}
+	.portal-role {
+		margin-top:18px;
+		font-size:10px;
+		line-height:1.5;
+		letter-spacing:.13em;
+	}
+	.portal-thesis {
+		max-width:34ch;
+		margin-top:20px;
+		font-size:14px;
+		line-height:1.65;
+	}
+	.portal-actions {
+		display:grid;
+		grid-template-columns:1fr;
+		justify-items:start;
+		gap:6px;
+		margin-top:24px;
+	}
+	.portal-actions a {
+		min-height:44px;
+		font-size:11px;
+	}
+	.portal-actions a:first-child {
+		width:min(100%,280px);
+		min-height:50px;
+		justify-content:space-between;
+		padding-inline:18px;
+	}
+	.portal-availability {
+		display:grid;
+		grid-template-columns:1fr;
+		gap:10px;
+		margin-top:18px;
+		font-size:10px;
+		line-height:1.2;
+	}
+	.portal-availability b {
+		padding-left:14px;
+		border-left:0;
+	}
+	.portal-object {
+		left:50%;
+		top:auto;
+		bottom:42px;
+		width:min(84vw,330px);
+		opacity:.94;
+		transform:translateX(-50%) !important;
+	}
+	.portal-core { width:clamp(112px,34vw,142px); }
+	.face-front { transform:translateZ(clamp(56px,17vw,71px)); }
+	.face-back { transform:rotateY(180deg) translateZ(clamp(56px,17vw,71px)); }
+	.face-left { transform:rotateY(-90deg) translateZ(clamp(56px,17vw,71px)); }
+	.face-right { transform:rotateY(90deg) translateZ(clamp(56px,17vw,71px)); }
+	.face-top { transform:rotateX(90deg) translateZ(clamp(56px,17vw,71px)); }
+	.face-bottom { transform:rotateX(-90deg) translateZ(clamp(56px,17vw,71px)); }
+	.portal-module { width:112px; padding:8px; }
+	.portal-module span { grid-row:1; font-size:7px; }
+	.portal-module b { font-size:8px; }
+	.module-discover { top:10%; left:-1%; }
+	.module-build { top:48%; right:-1%; }
+	.module-ship { bottom:5%; left:4%; }
+	.portal-ring { width:86%; }
+	.ring-c { width:108%; }
+
+	.operating-model {
+		gap:56px;
+		padding:104px 24px 88px;
+	}
+	.operating-model > header h2 {
+		font-size:clamp(3.85rem,17vw,4.8rem);
+		line-height:.78;
+	}
+	.operating-model > header p { margin-top:26px; font-size:13px; }
+	.operating-object { width:min(86vw,360px); }
+	.operating-object > i { padding:18px; }
+	.operating-path article,
+	.operating-path article:not(:first-of-type) { padding:26px 0 30px 26px; }
+
+	.project-journey.is-static .journey-intro {
+		min-height:auto;
+		padding:104px 24px 78px;
+	}
+	.journey-intro h2 { font-size:clamp(4rem,18.5vw,5rem); }
+	.project-journey.is-static .journey-panel {
+		min-height:auto;
+		padding:88px 24px 96px;
+	}
+	.journey-copy h3 { font-size:clamp(3.6rem,16vw,4.5rem); }
+	.journey-artifact { margin-top:8px; }
+	.project-journey.is-static .journey-outro {
+		min-height:520px;
+		padding:96px 24px;
+	}
+
+	.project-constellation { padding:104px 24px 96px; }
+	.project-constellation header { gap:24px; margin-bottom:56px; }
+	.project-constellation header p { font-size:13px; }
+	.project-index-layout { gap:46px; }
+	.project-preview-echo { transform:translate3d(10px,-8px,-50px); }
+	.project-preview-echo.echo-two { transform:translate3d(20px,-16px,-100px); }
+	.project-index-row { min-height:64px; }
+
+	.career-trajectory {
+		row-gap:64px;
+		padding:104px 24px 0;
+	}
+	.career-intro h2 {
+		font-size:clamp(3.8rem,16.5vw,4.7rem);
+		line-height:.79;
+	}
+	.career-intro > p { margin-top:28px; font-size:13px; }
+	.career-records article { padding:72px 0; }
+	.career-records article > header { grid-template-columns:28px 1fr; }
+	.career-records article > header b { grid-column:2; margin-top:5px; }
+	.career-records h3 { margin-top:38px; font-size:clamp(2.1rem,10vw,3rem); }
+	.career-proof-band {
+		margin-inline:-24px;
+		padding:28px 24px 34px;
+	}
+	.career-proof-band span,
+	.career-proof-band span:not(:first-child),
+	.career-proof-band span:last-child { padding-inline:14px; }
+	.career-proof-band span:nth-child(odd) { padding-left:0; }
+
+	.contact-stage {
+		min-height:760px;
+		padding:110px 24px 136px;
+	}
+	.contact-stage h2 {
+		font-size:clamp(4.4rem,20vw,5.4rem);
+		clip-path:none !important;
+		transform:none !important;
+	}
+	.contact-stage > p,
+	.contact-stage-actions { opacity:1 !important; }
+	.contact-sphere { width:118vw; }
+	.contact-stage footer { right:24px; bottom:24px; left:24px; }
+
+	.guide-panel { height:min(82svh,680px); }
+	body:has(.portfolio-guide) .system-back-to-top { right:14px; bottom:max(82px,calc(env(safe-area-inset-bottom) + 82px)); }
+}
+
+@media (max-width:360px) {
+	.portal-copy { padding-inline:20px; }
+	.portal-copy h1 { font-size:clamp(3.7rem,20vw,4.45rem); }
+	.portal-thesis { font-size:13px; }
+	.portal-object { width:min(88vw,310px); }
+	.operating-model,
+	.project-journey.is-static .journey-intro,
+	.project-journey.is-static .journey-panel,
+	.project-constellation,
+	.career-trajectory { padding-right:20px; padding-left:20px; }
+}
