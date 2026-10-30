@@ -31,7 +31,10 @@ export default function SpatialCorridor() {
 
 		let renderer;
 		try {
-			renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true, powerPreference: "high-performance" });
+			const contextAttributes = { alpha: true, antialias: true, powerPreference: "high-performance" };
+			const context = canvas.getContext("webgl2", contextAttributes) || canvas.getContext("webgl", contextAttributes);
+			if (!context) return;
+			renderer = new THREE.WebGLRenderer({ canvas, context, ...contextAttributes });
 		} catch {
 			return;
 		}
@@ -190,6 +193,9 @@ export default function SpatialCorridor() {
 			const rawVelocity = delta > 0 ? (currentScroll - lastScroll) / delta : 0;
 			lastScroll = currentScroll;
 			scrollVelocity = THREE.MathUtils.lerp(scrollVelocity, THREE.MathUtils.clamp(rawVelocity / 1800, -1, 1), 1 - Math.exp(-delta * 7));
+			const heroRelease = THREE.MathUtils.smoothstep(currentScroll, window.innerHeight * 0.18, window.innerHeight * 0.82);
+			coreMaterial.opacity = THREE.MathUtils.lerp(0.055, 0.38, heroRelease);
+			packetMaterial.opacity = THREE.MathUtils.lerp(0.16, 0.76, heroRelease);
 			const targetZ = interpolateAnchors(currentScroll, anchors, [11, -16.5, -35.5, -54.5]);
 			const targetX = interpolateAnchors(currentScroll, anchors, [0, -0.9, 0.9, -0.8]) + mouseX * 0.48;
 			const targetY = mouseY * -0.34;

@@ -46,3 +46,6 @@ next-env.d.ts
 /.impeccable/comp-options.json
 /.impeccable/direction-options.json
 /assets/plates/
+
+# Local source capture; production uses the optimized WebP derivative.
+/public/image/amanteken/Screenshot 2026-10-29 at 13.03.37.png

@@ -1,13 +1,13 @@
 import ImmersiveHero from "@/components/ImmersiveHero";
 import ImmersiveSections from "@/components/ImmersiveSections";
-import SpatialCorridor from "@/components/SpatialCorridor";
+import LazySpatialCorridor from "@/components/LazySpatialCorridor";
 
 export default function MyPage() {
 	return (
-		<div className="immersive-home">
-			<SpatialCorridor />
+		<main className="immersive-home">
+			<LazySpatialCorridor />
 			<ImmersiveHero />
 			<ImmersiveSections />
-		</div>
+		</main>
 	);
 }

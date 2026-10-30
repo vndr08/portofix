@@ -3,10 +3,8 @@ import Navbar from "@/components/Navbar";
 import ThemeScript from "@/components/ThemeScript";
 import ScrollProgress from "@/components/ScrollProgress";
 import BackToTop from "@/components/BackToTop";
+import RouteKinetics from "@/components/RouteKinetics";
 import { PersonStructuredData, WebsiteStructuredData } from "@/components/structured-data";
-import { config } from "@fortawesome/fontawesome-svg-core";
-import "@fortawesome/fontawesome-svg-core/styles.css";
-config.autoAddCss = false;
 import { Analytics } from "@vercel/analytics/react";
 import { PWAProvider } from "@/components/PWAProvider";
 import profile from "@/json/profile.json";
@@ -89,9 +87,6 @@ export const metadata = {
 		site: twitterHandle,
 		creator: twitterHandle,
 	},
-	verification: {
-		google: "your-google-verification-code",
-	},
 	manifest: "/manifest.json",
 	appleWebApp: {
 		capable: true,
@@ -124,16 +119,15 @@ export default function RootLayout({ children }) {
 			<body>
 				<PWAProvider>
 					<ScrollProgress />
+					<RouteKinetics />
 					<BackToTop />
-					<a
-						href="#main-content"
-						className="sr-only left-4 top-4 z-[100] rounded-lg bg-emerald-500 px-4 py-2 text-white focus:not-sr-only focus:absolute">
+					<a href="#main-content" className="system-skip-link">
 						Skip to main content
 					</a>
 					<Navbar />
-					<main id="main-content" tabIndex={-1}>
+					<div id="main-content" tabIndex={-1}>
 						{children}
-					</main>
+					</div>
 					{process.env.VERCEL ? <Analytics /> : null}
 				</PWAProvider>
 			</body>

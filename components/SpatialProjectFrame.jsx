@@ -2,11 +2,12 @@
 
 import { useRef } from "react";
 import Image from "next/image";
-import { motion, useMotionValue, useReducedMotion, useSpring, useTransform } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import useSafeReducedMotion from "@/components/useSafeReducedMotion";
 
 export default function SpatialProjectFrame({ src, alt, priority = false, portrait = false, className = "" }) {
 	const frameRef = useRef(null);
-	const reduceMotion = useReducedMotion();
+	const reduceMotion = useSafeReducedMotion();
 	const x = useMotionValue(0);
 	const y = useMotionValue(0);
 	const smoothX = useSpring(x, { stiffness: 95, damping: 22, mass: 0.55 });

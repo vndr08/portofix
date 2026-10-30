@@ -2,11 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import SignalIcon from "@/components/SignalIcon";
+import useSafeReducedMotion from "@/components/useSafeReducedMotion";
 
 export default function BackToTop() {
 	const [isVisible, setIsVisible] = useState(false);
+	const reduceMotion = useSafeReducedMotion();
 
 	useEffect(() => {
 		const toggleVisibility = () => {
@@ -28,14 +29,14 @@ export default function BackToTop() {
 		<AnimatePresence>
 			{isVisible && (
 				<motion.button
-					initial={{ opacity: 0, scale: 0.8, y: 20 }}
+					initial={reduceMotion ? false : { opacity: 0, scale: 0.86, y: 16 }}
 					animate={{ opacity: 1, scale: 1, y: 0 }}
-					exit={{ opacity: 0, scale: 0.8, y: 20 }}
-					transition={{ duration: 0.2 }}
+					exit={reduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.9, y: 12 }}
+					transition={{ duration: reduceMotion ? 0.01 : 0.22, ease: [0.16, 1, 0.3, 1] }}
 					onClick={scrollToTop}
-					className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500 text-white shadow-lg theme-button-shadow hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
+					className="system-back-to-top"
 					aria-label="Scroll back to top">
-					<FontAwesomeIcon icon={faArrowUp} className="h-5 w-5" />
+					<SignalIcon direction="up" />
 				</motion.button>
 			)}
 		</AnimatePresence>

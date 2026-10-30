@@ -1,0 +1,15 @@
+# Source-only and superseded assets that are not needed by the production build.
+app/Meta Business Suite.html
+json/data.json.backup
+CV_IVANDERJP.pdf
+
+public/image/amanteken/Screenshot 2026-10-29 at 13.03.37.png
+public/image/projects/ai/whatsapp-issue-reporting/tramos2.png
+
+# Exact portrait duplicates retained locally for provenance; production uses me2.jpg and ivander.jpg.
+public/image/me1.jpg
+public/image/me3.jpg
+public/image/me4.jpeg
+public/image/me5.jpg
+public/image/me6.jpg
+public/image/projects.png

@@ -1,45 +1,25 @@
+import data from "@/json/data.json";
+import profile from "@/json/profile.json";
+
+const escapeXml = (value = "") => String(value)
+  .replaceAll("&", "&amp;")
+  .replaceAll("<", "&lt;")
+  .replaceAll(">", "&gt;")
+  .replaceAll('"', "&quot;")
+  .replaceAll("'", "&apos;");
+
 export async function GET() {
-  const siteUrl = "https://ivanderjp.vercel.app";
-  const siteName = "Ivander Portfolio";
-  const authorName = "Ivander Johana Pratama";
-  const authorEmail = "ivanderjohanapratama@gmail.com";
-
-  // Sample blog posts - in production, fetch from your data source
-  const posts = [
-    {
-      slug: "building-ai-chatbot-with-langchain",
-      title: "Building an AI Chatbot with LangChain and FastAPI",
-      excerpt: "A practical guide to building production-ready AI chatbots using LangChain for orchestration and FastAPI for the backend API.",
-      date: "2025-12-15",
-      author: authorName,
-    },
-    {
-      slug: "nextjs-performance-optimization",
-      title: "Next.js Performance Optimization Techniques",
-      excerpt: "Essential tips and tricks to make your Next.js applications blazing fast.",
-      date: "2025-11-20",
-      author: authorName,
-    },
-    {
-      slug: "enterprise-software-development-lessons",
-      title: "Lessons from Enterprise Software Development",
-      excerpt: "Key takeaways from working on enterprise applications.",
-      date: "2025-10-10",
-      author: authorName,
-    },
-  ];
-
-  const rssItems = posts
+  const siteUrl = profile.canonicalUrl.replace(/\/$/, "");
+  const projects = data.Projects.filter((project) => project.show);
+  const rssItems = projects
     .map(
-      (post) => `
+      (project) => `
     <item>
-      <title><![CDATA[${post.title}]]></title>
-      <link>${siteUrl}/blog/${post.slug}</link>
-      <guid isPermaLink="true">${siteUrl}/blog/${post.slug}</guid>
-      <description><![CDATA[${post.excerpt}]]></description>
-      <pubDate>${new Date(post.date).toUTCString()}</pubDate>
-      <author:${authorEmail}>${post.author}</author:${authorEmail}>
-      <dc:creator><![CDATA[${post.author}]]></dc:creator>
+      <title>${escapeXml(project.title)}</title>
+      <link>${siteUrl}/projects/${escapeXml(project.slug)}</link>
+      <guid isPermaLink="true">${siteUrl}/projects/${escapeXml(project.slug)}</guid>
+      <description>${escapeXml(project.summary || project.desc?.[0] || "")}</description>
+      <dc:creator>${escapeXml(profile.name)}</dc:creator>
     </item>`
     )
     .join("\n");
@@ -50,15 +30,15 @@ export async function GET() {
   xmlns:dc="http://purl.org/dc/elements/1.1/"
   xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>${siteName}</title>
+    <title>Ivander Portfolio — Project Feed</title>
     <link>${siteUrl}</link>
-    <description>AI Engineer and Software Engineer portfolio - Technical blog and insights</description>
+    <description>AI, software engineering, and operational product work by ${escapeXml(profile.name)}.</description>
     <language>en-us</language>
-    <managingEditor>${authorEmail} (${authorName})</managingEditor>
-    <webMaster>${authorEmail} (${authorName})</webMaster>
+    <managingEditor>${escapeXml(profile.email)} (${escapeXml(profile.name)})</managingEditor>
+    <webMaster>${escapeXml(profile.email)} (${escapeXml(profile.name)})</webMaster>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${siteUrl}/feed.xml" rel="self" type="application/rss+xml"/>
-    <ttl>60</ttl>
+    <ttl>1440</ttl>
     ${rssItems}
   </channel>
 </rss>`;

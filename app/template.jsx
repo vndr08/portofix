@@ -1,16 +1,17 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
+import useSafeReducedMotion from "@/components/useSafeReducedMotion";
 
 export default function Template({ children }) {
-	const reduceMotion = useReducedMotion();
+	const reduceMotion = useSafeReducedMotion();
 
 	return (
 		<motion.div
 			className="route-transition"
-			initial={reduceMotion ? false : { opacity: 0.94, y: 8, filter: "blur(4px)" }}
-			animate={reduceMotion ? undefined : { opacity: 1, y: 0, filter: "blur(0px)" }}
-			transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}>
+			initial={reduceMotion ? false : { opacity: 0.96, y: 5, clipPath: "inset(0 0 2.5% 0)" }}
+			animate={reduceMotion ? undefined : { opacity: 1, y: 0, clipPath: "inset(0 0 0% 0)" }}
+			transition={{ duration: 0.34, ease: [0.16, 1, 0.3, 1] }}>
 			{children}
 		</motion.div>
 	);

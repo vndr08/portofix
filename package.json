@@ -18,30 +18,30 @@
     "generate-resume": "python3 scripts/generate-resume-pdf.py"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.7.2",
-    "@fortawesome/free-brands-svg-icons": "^6.7.2",
-    "@fortawesome/free-regular-svg-icons": "^6.7.2",
-    "@fortawesome/free-solid-svg-icons": "^6.7.2",
-    "@fortawesome/react-fontawesome": "^0.2.2",
-    "@tailwindcss/postcss": "^4.0.14",
     "@vercel/analytics": "^1.5.0",
-    "eslint": "9.22.0",
-    "eslint-config-next": "15.2.3",
     "framer-motion": "^12.5.0",
-    "next": "15.2.8",
-    "postcss": "^8.5.3",
-    "prop-types": "^15.8.1",
+    "next": "15.5.28",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "sharp": "^0.33.5",
-    "sitemap": "^8.0.0",
-    "swr": "^2.3.3",
-    "tailwindcss": "^4.0.14",
+    "sharp": "^0.35.5",
+    "sitemap": "^8.0.1",
     "three": "^0.186.1"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "15.2.3",
+    "@next/bundle-analyzer": "15.5.28",
+    "@tailwindcss/postcss": "^4.3.3",
     "@types/react": "19.1.5",
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "eslint": "9.39.1",
+    "eslint-config-next": "15.5.28",
+    "postcss": "^8.5.32",
+    "tailwindcss": "^4.3.3"
+  },
+  "pnpm": {
+    "overrides": {
+      "nanoid": "3.3.18",
+      "postcss": "8.5.32",
+      "source-map-js": "1.2.2"
+    }
   }
 }

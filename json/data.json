@@ -63,7 +63,7 @@
       "thumbnail": "/image/projects/ai/whatsapp-issue-reporting/tramos.png",
       "images": [
         "/image/projects/ai/whatsapp-issue-reporting/tramos.png",
-        "/image/projects/ai/whatsapp-issue-reporting/tramos2.png"
+        "/image/projects/ai/whatsapp-issue-reporting/tramos2.webp"
       ],
       "tech": [
       "Claude AI",
@@ -100,9 +100,9 @@
       "year": "May 2026",
       "preview": "",
       "code": "",
-      "thumbnail": "/image/projects/concept-covers/amanteken.webp",
+      "thumbnail": "/image/amanteken/amanteken-interface.webp",
       "images": [
-        "/image/projects/concept-covers/amanteken.webp"
+        "/image/amanteken/amanteken-interface.webp"
       ],
       "tech": [
         "React",

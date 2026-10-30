@@ -1,8 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import SpatialPageBackground from "@/components/SpatialPageBackground";
 import SpatialProjectFrame from "@/components/SpatialProjectFrame";
+import CaseArtifactFigure from "@/components/CaseArtifactFigure";
+import CaseNarrativeMotion from "@/components/CaseNarrativeMotion";
 import data from "@/json/data.json";
 import profile from "@/json/profile.json";
 
@@ -53,7 +54,7 @@ export default async function Page({ params }) {
 				</div>
 				<div className="case-hero-spec" aria-label="Project facts">
 					<span><b>{String(projectIndex + 1).padStart(2, "0")} / {projects.length}</b>Project collection</span>
-					<span><b>{project.tech.length}</b>Technologies</span>
+					<span className="case-role-fact"><b>{project.role || "Project builder"}</b>Role &amp; delivery scope</span>
 					<span><b>{project.category.includes(2) ? "AI" : "SW"}</b>Primary field</span>
 				</div>
 			</section>
@@ -68,27 +69,14 @@ export default async function Page({ params }) {
 						<a href={`mailto:${profile.email}?subject=${encodeURIComponent(`About ${project.title}`)}`}>Ask about this work ↗</a>
 					</nav>
 				</aside>
-				<div className="case-narrative">
-					<h2>FROM CONTEXT<br />TO SYSTEM.</h2>
-					{project.desc.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-					{project.impact && <blockquote><span>What changed</span>{project.impact}</blockquote>}
-					{project.highlights?.length > 0 && (
-						<div className="case-evidence">
-							<h3>ENGINEERING EVIDENCE</h3>
-							{project.highlights.map((highlight, index) => <article key={highlight}><b>{String(index + 1).padStart(2, "0")}</b><p>{highlight}</p></article>)}
-						</div>
-					)}
-				</div>
+				<CaseNarrativeMotion description={project.desc} impact={project.impact} highlights={project.highlights} />
 			</section>
 
 			<section className="case-gallery" aria-labelledby="case-gallery-title">
 				<header><h2 id="case-gallery-title">ARTIFACTS<br />IN DEPTH.</h2><p>Real screenshots are shown as supplied. Conceptual covers are labeled instead of posing as product UI.</p></header>
 				<div className="case-gallery-stack">
 					{gallery.map((image, index) => (
-						<figure key={`${image}-${index}`} className={project.slug === "bersuara" ? "portrait-capture" : ""}>
-							<div><Image src={image} alt={`${project.title} artifact ${index + 1}`} width={1920} height={1080} sizes="(max-width: 900px) 92vw, 78vw" /></div>
-							<figcaption>{isConcept ? "Concept cover" : "Project capture"} · {String(index + 1).padStart(2, "0")}</figcaption>
-						</figure>
+						<CaseArtifactFigure key={`${image}-${index}`} image={image} title={project.title} index={index} concept={isConcept} portrait={project.slug === "bersuara"} />
 					))}
 				</div>
 			</section>
