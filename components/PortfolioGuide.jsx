@@ -70,28 +70,88 @@ function GuideLink({ item }) {
 	return <a href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}>{content}</a>;
 }
 
+function RobotAvatar({ speaking = false, compact = false }) {
+	return (
+		<div className={`guide-robot${speaking ? " is-speaking" : ""}${compact ? " is-compact" : ""}`} aria-hidden="true">
+			<i className="guide-robot-antenna"><b /></i>
+			<div className="guide-robot-face">
+				<span className="guide-robot-eyes"><i /><i /></span>
+				<span className="guide-robot-mouth"><i /><i /><i /></span>
+			</div>
+		</div>
+	);
+}
+
 export default function PortfolioGuide() {
 	const [isOpen, setIsOpen] = useState(false);
 	const [input, setInput] = useState("");
 	const [isTyping, setIsTyping] = useState(false);
+	const [isSpeaking, setIsSpeaking] = useState(false);
+	const [voiceEnabled, setVoiceEnabled] = useState(false);
+	const [voiceAvailable, setVoiceAvailable] = useState(false);
 	const [messages, setMessages] = useState([{ id: "welcome", from: "guide", ...responseMap.fallback }]);
 	const reduceMotion = useSafeReducedMotion();
 	const inputRef = useRef(null);
 	const logRef = useRef(null);
 	const timerRef = useRef(null);
+	const speakingTimerRef = useRef(null);
+
+	useEffect(() => {
+		setVoiceAvailable("speechSynthesis" in window && "SpeechSynthesisUtterance" in window);
+		return () => {
+			window.clearTimeout(speakingTimerRef.current);
+			window.speechSynthesis?.cancel();
+		};
+	}, []);
+
+	const stopSpeaking = () => {
+		window.clearTimeout(speakingTimerRef.current);
+		window.speechSynthesis?.cancel();
+		setIsSpeaking(false);
+	};
+
+	const speak = (text, force = false) => {
+		if ((!voiceEnabled && !force) || !voiceAvailable) {
+			setIsSpeaking(true);
+			window.clearTimeout(speakingTimerRef.current);
+			speakingTimerRef.current = window.setTimeout(() => setIsSpeaking(false), reduceMotion ? 0 : 920);
+			return;
+		}
+		window.speechSynthesis.cancel();
+		const utterance = new SpeechSynthesisUtterance(text);
+		utterance.lang = "en-US";
+		utterance.rate = 0.96;
+		utterance.pitch = 0.92;
+		utterance.onstart = () => setIsSpeaking(true);
+		utterance.onend = () => setIsSpeaking(false);
+		utterance.onerror = () => setIsSpeaking(false);
+		window.speechSynthesis.speak(utterance);
+	};
+
+	const closeGuide = () => {
+		stopSpeaking();
+		setIsOpen(false);
+	};
+
+	const toggleVoice = () => {
+		const next = !voiceEnabled;
+		setVoiceEnabled(next);
+		if (next) speak("Voice enabled. Ask me about Ivan's work.", true);
+		else stopSpeaking();
+	};
 
 	useEffect(() => {
 		if (!isOpen) return undefined;
 		const focusTimer = window.setTimeout(() => inputRef.current?.focus(), reduceMotion ? 0 : 260);
 		const closeOnEscape = (event) => {
-			if (event.key === "Escape") setIsOpen(false);
+			if (event.key === "Escape") closeGuide();
 		};
 		window.addEventListener("keydown", closeOnEscape);
 		return () => {
 			window.clearTimeout(focusTimer);
 			window.removeEventListener("keydown", closeOnEscape);
 		};
-	}, [isOpen, reduceMotion]);
+	}, [isOpen, reduceMotion]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	useEffect(() => {
 		if (logRef.current) logRef.current.scrollTo({ top: logRef.current.scrollHeight, behavior: reduceMotion ? "auto" : "smooth" });
@@ -107,6 +167,7 @@ export default function PortfolioGuide() {
 		timerRef.current = window.setTimeout(() => {
 			setMessages((current) => [...current, { id: `guide-${Date.now()}`, from: "guide", ...response }]);
 			setIsTyping(false);
+			speak(response.text);
 		}, reduceMotion ? 0 : 420);
 	};
 
@@ -133,8 +194,11 @@ export default function PortfolioGuide() {
 						exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 18, scale: 0.98 }}
 						transition={{ duration: reduceMotion ? 0.01 : 0.32, ease: [0.16, 1, 0.3, 1] }}>
 						<header className="guide-head">
-							<div><span><i />Portfolio guide</span><p>Rule-based · no AI · no data leaves this page</p></div>
-							<button type="button" onClick={() => setIsOpen(false)} aria-label="Close portfolio guide"><i /><i /></button>
+							<div className="guide-identity"><RobotAvatar speaking={isTyping || isSpeaking} /><div><span>Ivan&apos;s robot guide</span><p>Rule-based · no AI · no data leaves this page</p></div></div>
+							<div className="guide-head-actions">
+								{voiceAvailable ? <button className="guide-voice" type="button" onClick={toggleVoice} aria-label={`${voiceEnabled ? "Disable" : "Enable"} robot voice`} aria-pressed={voiceEnabled}><span><i /><i /><i /></span></button> : null}
+								<button className="guide-close" type="button" onClick={closeGuide} aria-label="Close portfolio guide"><i /><i /></button>
+							</div>
 						</header>
 
 						<div className="guide-log" ref={logRef} aria-live="polite" aria-relevant="additions">
@@ -164,11 +228,13 @@ export default function PortfolioGuide() {
 			<motion.button
 				type="button"
 				className="guide-launcher"
-				onClick={() => setIsOpen((current) => !current)}
+				onClick={() => isOpen ? closeGuide() : setIsOpen(true)}
 				aria-expanded={isOpen}
 				aria-controls="portfolio-guide"
 				whileTap={reduceMotion ? undefined : { scale: 0.97 }}>
-				<span><i />{isOpen ? "Close guide" : "Ask Ivan"}</span><SignalIcon direction={isOpen ? "down" : "up-right"} />
+				<RobotAvatar speaking={isTyping || isSpeaking} compact />
+				<span className="guide-launcher-copy"><b>{isOpen ? "Close guide" : "Ask Ivan"}</b><small>{isSpeaking ? "Speaking" : "Online"}</small></span>
+				<SignalIcon direction={isOpen ? "down" : "up-right"} />
 			</motion.button>
 		</div>
 	);
