@@ -1,6 +1,4 @@
 # Source-only and superseded assets that are not needed by the production build.
-app/Meta Business Suite.html
-json/data.json.backup
 CV_IVANDERJP.pdf
 
 public/image/amanteken/Screenshot 2026-10-29 at 13.03.37.png
