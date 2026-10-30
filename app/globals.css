@@ -1757,7 +1757,7 @@ td, th {
 .webgl-corridor-ready .portal-hero,
 .webgl-corridor-ready .work-section { background: transparent; }
 .webgl-corridor-ready .portal-noise { opacity: .1; }
-.webgl-corridor-ready .portal-object { opacity: 1; }
+.webgl-corridor-ready .portal-object { opacity: 0 !important; pointer-events: none; }
 
 .portal-hero {
 	position: relative;
@@ -1910,7 +1910,7 @@ td, th {
 	border: 1px solid rgba(168, 255, 234, 0.62);
 	background: rgba(7, 14, 20, 0.82);
 	box-shadow: 18px 28px 60px rgba(0, 0, 0, .28), inset 0 0 54px rgba(168, 255, 234, 0.09);
-	backface-visibility: visible;
+	backface-visibility: hidden;
 }
 .core-face b { font: 400 clamp(54px, 6vw, 88px)/.8 'Bahianita', sans-serif; color: #f1ede9; }
 .core-face small { margin-top: 18px; font: 500 8px/1 'Manrope', sans-serif; letter-spacing: .22em; color: #a8ffea; }
