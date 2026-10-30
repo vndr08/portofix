@@ -52,10 +52,10 @@ export default function SpatialCorridor() {
 		scene.add(world);
 
 		const frameGeometry = new THREE.EdgesGeometry(new THREE.BoxGeometry(13.8, 8.2, 0.08));
-		for (let index = 0; index < 16; index += 1) {
-			const material = new THREE.LineBasicMaterial({ color: index % 3 === 1 ? 0x725b94 : 0x406f69, transparent: true, opacity: Math.max(0.08, 0.34 - index * 0.011) });
+		for (let index = 0; index < 8; index += 1) {
+			const material = new THREE.LineBasicMaterial({ color: index % 3 === 1 ? 0x725b94 : 0x406f69, transparent: true, opacity: Math.max(0.045, 0.14 - index * 0.012) });
 			const frame = new THREE.LineSegments(frameGeometry, material);
-			frame.position.z = 3 - index * 4.2;
+			frame.position.z = 3 - index * 8.4;
 			frame.rotation.z = index % 2 ? -0.018 : 0.018;
 			frame.scale.setScalar(1 + (index % 4) * 0.025);
 			world.add(frame);
@@ -141,6 +141,7 @@ export default function SpatialCorridor() {
 		});
 
 		let anchors = [0, 2600, 4300, 6000];
+		let workStart = window.innerHeight * 1.5;
 		let workEnd = document.body.scrollHeight;
 		const updateAnchors = () => {
 			const resolved = PROJECTS.map((project) => document.querySelector(project.selector)).filter(Boolean);
@@ -149,6 +150,7 @@ export default function SpatialCorridor() {
 				return bounds.top + window.scrollY + bounds.height * 0.5 - window.innerHeight * 0.5;
 			})];
 			const work = document.querySelector(".work-section");
+			workStart = work ? work.offsetTop : window.innerHeight * 1.5;
 			workEnd = work ? work.offsetTop + work.offsetHeight : document.body.scrollHeight;
 		};
 		updateAnchors();
@@ -171,6 +173,7 @@ export default function SpatialCorridor() {
 		const onContextLost = (event) => {
 			event.preventDefault();
 			document.documentElement.classList.remove("webgl-corridor-ready");
+			document.documentElement.classList.remove("webgl-corridor-active");
 		};
 		const onResize = () => {
 			camera.aspect = window.innerWidth / window.innerHeight;
@@ -184,9 +187,11 @@ export default function SpatialCorridor() {
 			const delta = Math.min((time - lastTime) / 1000, 0.05);
 			lastTime = time;
 			const currentScroll = window.scrollY;
-			const corridorVisible = currentScroll <= workEnd - window.innerHeight * 0.1;
+			const corridorVisible = currentScroll >= workStart - window.innerHeight * 0.85 && currentScroll <= workEnd - window.innerHeight * 0.1;
+			document.documentElement.classList.toggle("webgl-corridor-active", corridorVisible);
 			canvas.style.opacity = corridorVisible ? "1" : "0";
 			if (!corridorVisible || document.hidden) {
+				lastScroll = currentScroll;
 				frameId = requestAnimationFrame(animate);
 				return;
 			}
@@ -244,6 +249,7 @@ export default function SpatialCorridor() {
 			window.removeEventListener("resize", onResize);
 			canvas.removeEventListener("webglcontextlost", onContextLost);
 			document.documentElement.classList.remove("webgl-corridor-ready");
+			document.documentElement.classList.remove("webgl-corridor-active");
 			frameGeometry.dispose();
 			packetGeometry.dispose();
 			packetMaterial.dispose();

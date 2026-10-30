@@ -13,12 +13,7 @@ export default function LazySpatialCorridor() {
 
 	useEffect(() => {
 		if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || window.innerWidth < 821) return undefined;
-		const activate = () => setReady(true);
-		if ("requestIdleCallback" in window) {
-			const idleId = window.requestIdleCallback(activate, { timeout: 900 });
-			return () => window.cancelIdleCallback(idleId);
-		}
-		const timerId = window.setTimeout(activate, 320);
+		const timerId = window.setTimeout(() => setReady(true), 240);
 		return () => window.clearTimeout(timerId);
 	}, []);
 

@@ -1753,11 +1753,9 @@ td, th {
 	z-index: 2;
 }
 
-.webgl-corridor-ready .corridor-canvas { opacity: 1; }
-.webgl-corridor-ready .portal-hero,
-.webgl-corridor-ready .work-section { background: transparent; }
-.webgl-corridor-ready .portal-noise { opacity: .1; }
-.webgl-corridor-ready .portal-object { opacity: 0 !important; pointer-events: none; }
+.webgl-corridor-active .corridor-canvas { opacity: 1; }
+.webgl-corridor-active .work-section { background: transparent; }
+.webgl-corridor-active .portal-object { opacity: 0 !important; pointer-events: none; }
 
 .portal-hero {
 	position: relative;
@@ -1875,19 +1873,6 @@ td, th {
 }
 
 .portal-object-motion { position:absolute; inset:0; transform-style:preserve-3d; will-change:transform,opacity; }
-
-.portal-depth-plane {
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	width: 54%;
-	height: 72%;
-	border: 1px solid rgba(241, 245, 242, 0.18);
-	background: rgba(9, 16, 22, 0.26);
-	transform-style: preserve-3d;
-}
-.plane-far { transform: translate3d(-72%, -58%, -180px) rotateY(28deg); opacity: .38; }
-.plane-near { transform: translate3d(-18%, -38%, 150px) rotateY(-18deg); border-color: rgba(200, 167, 255, .32); box-shadow: 22px 28px 60px rgba(0, 0, 0, .3); }
 
 .portal-core {
 	position: absolute;

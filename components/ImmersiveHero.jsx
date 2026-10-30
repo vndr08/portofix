@@ -70,8 +70,6 @@ export default function ImmersiveHero() {
 
 			<motion.div className="portal-object" initial={reduceMotion ? false : { opacity: 0, scale: 0.82, filter: "blur(10px)" }} animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }} transition={{ duration: reduceMotion ? 0 : 0.8, delay: 0.18, ease: easeOut }} style={reduceMotion ? undefined : { x: "-50%", y: "-50%", rotateX, rotateY }} aria-hidden="true">
 				<motion.div className="portal-object-motion" style={reduceMotion ? undefined : { y: objectY, scale: objectScale, opacity: objectOpacity }}>
-					<div className="portal-depth-plane plane-far" />
-					<div className="portal-depth-plane plane-near" />
 					<div className="portal-core">
 						<span className="core-face face-front"><b>AI</b><small>SYSTEMS / SHIPPED</small></span>
 						<span className="core-face face-back"><b>01</b><small>PRODUCTION</small></span>
