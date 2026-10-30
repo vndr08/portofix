@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import ThemeScript from "@/components/ThemeScript";
 import ScrollProgress from "@/components/ScrollProgress";
 import BackToTop from "@/components/BackToTop";
+import PortfolioGuide from "@/components/PortfolioGuide";
 import RouteKinetics from "@/components/RouteKinetics";
 import { PersonStructuredData, WebsiteStructuredData } from "@/components/structured-data";
 import { Analytics } from "@vercel/analytics/react";
@@ -124,6 +125,7 @@ export default function RootLayout({ children }) {
 					<ScrollProgress />
 					<RouteKinetics />
 					<BackToTop />
+					<PortfolioGuide />
 					<a href="#main-content" className="system-skip-link">
 						Skip to main content
 					</a>
