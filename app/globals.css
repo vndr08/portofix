@@ -3465,7 +3465,7 @@ body:has(.portfolio-guide) .system-back-to-top { bottom:max(84px,calc(env(safe-a
 	.mobile-resume { min-height:44px; }
 }
 
-@media (max-width:767px) {
+@media (max-width:900px) {
 	.portfolio-guide { right:14px; bottom:max(14px,env(safe-area-inset-bottom)); left:auto; }
 	.guide-launcher {
 		grid-template-columns:1fr;
@@ -3480,6 +3480,32 @@ body:has(.portfolio-guide) .system-back-to-top { bottom:max(84px,calc(env(safe-a
 	}
 	.guide-launcher-copy,
 	.guide-launcher > .signal-icon { display:none; }
+}
+
+@media (min-width:641px) and (max-width:900px) {
+	.portal-hero { min-height:1180px; }
+	.portal-copy { top:128px; }
+	.portal-object {
+		left:50%;
+		top:auto;
+		bottom:58px;
+		width:min(68vw,500px);
+		transform:translateX(-50%) !important;
+	}
+	.portal-core { width:clamp(150px,25vw,200px); }
+	.face-front { transform:translateZ(clamp(75px,12.5vw,100px)); }
+	.face-back { transform:rotateY(180deg) translateZ(clamp(75px,12.5vw,100px)); }
+	.face-left { transform:rotateY(-90deg) translateZ(clamp(75px,12.5vw,100px)); }
+	.face-right { transform:rotateY(90deg) translateZ(clamp(75px,12.5vw,100px)); }
+	.face-top { transform:rotateX(90deg) translateZ(clamp(75px,12.5vw,100px)); }
+	.face-bottom { transform:rotateX(-90deg) translateZ(clamp(75px,12.5vw,100px)); }
+	.portal-scroll { display:none !important; }
+}
+
+@media (min-width:641px) and (max-width:900px) and (max-height:500px) {
+	.portal-hero { min-height:980px; }
+	.portal-copy { top:88px; }
+	.portal-object { bottom:50px; width:min(58vw,400px); }
 }
 
 @media (max-width:640px) {
