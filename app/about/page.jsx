@@ -35,7 +35,7 @@ export default function Page() {
 			<SpatialPageBackground variant="about" />
 			<section ref={heroRef} className="profile-hero">
 				<motion.div className="profile-hero-copy" style={reduceMotion ? undefined : { y: copyY, opacity: copyOpacity }}>
-					<h1>ENGINEER.<br />TRANSLATOR.<br />BUILDER.</h1>
+					<h1>AI ENGINEER.<br />SOFTWARE ENGINEER.<br />SYSTEM BUILDER.</h1>
 					<div>{resume.summary.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
 					<nav><a href={profile.cvUrl} target="_blank" rel="noopener noreferrer">Open résumé ↗</a><a href={`mailto:${profile.email}`}>Start a conversation ↗</a></nav>
 				</motion.div>
@@ -49,7 +49,7 @@ export default function Page() {
 			</section>
 
 			<section ref={careerRef} className="career-orbit" aria-labelledby="career-title">
-				<header><h2 id="career-title">CAREER<br />SIGNAL.</h2><p>A progression from applied AI delivery into enterprise product lifecycle ownership.</p></header>
+				<header><h2 id="career-title">CAREER<br />SIGNAL.</h2><p>A progression from action-capable AI workflow automation into full-stack development and maintenance of an enterprise finance ERP.</p></header>
 				<div className="career-timeline">
 					<motion.i className="career-signal-progress" style={reduceMotion ? undefined : { scaleY: careerProgress }} aria-hidden="true" />
 					{resume.experience.map((item, index) => (
@@ -62,7 +62,7 @@ export default function Page() {
 			</section>
 
 			<section ref={capabilityRef} className="capability-field" aria-labelledby="capability-title">
-				<header><h2 id="capability-title">CAPABILITY<br />FIELD.</h2><p>Not a stack for display—a working range used to move from requirements to rollout.</p></header>
+				<header><h2 id="capability-title">CAPABILITY<br />FIELD.</h2><p>A working range across AI automation, backend and frontend development, data, infrastructure, integration, system engineering, testing, and troubleshooting.</p></header>
 				<div className="capability-orbit">
 					<motion.div className="capability-core-motion" style={reduceMotion ? undefined : { y: capabilityY, rotateZ: capabilityRotate, scale: capabilityScale }} aria-hidden="true"><div className="capability-core"><span>END</span><span>TO</span><span>END</span></div></motion.div>
 					{resume.skills.map((group, index) => (

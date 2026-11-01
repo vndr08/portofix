@@ -13,8 +13,7 @@ import profile from "@/json/profile.json";
 const siteUrl = profile.canonicalUrl;
 const siteName = "Ivander Portfolio";
 const title = `${profile.name} | ${profile.headline}`;
-const description =
-	"Ivander Johana Pratama builds AI-powered products and enterprise systems end-to-end, from product requirements to operational rollout.";
+const description = profile.pitch;
 const imageUrl = `${siteUrl}/opengraph-image`;
 const twitterHandle = "@ivanderjp";
 const linkedInUrl = "https://linkedin.com/in/ivanderjohanapratama";
@@ -55,6 +54,10 @@ export const metadata = {
 		"portfolio",
 		"langchain",
 		"fastapi",
+		"asp.net",
+		"c# .net",
+		"workflow orchestration",
+		"ai agents",
 		"nextjs",
 		"machine learning",
 		"python",

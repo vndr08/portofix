@@ -11,9 +11,9 @@ import ProjectConstellation from "@/components/ProjectConstellation";
 import useSafeReducedMotion from "@/components/useSafeReducedMotion";
 
 const projects = [
-	{ slug: "vanguard", name: "VANGUARD", role: "Fleet Control Tower · July 2026", ownership: "Product requirements + full-stack engineering", outcome: "Turned dispatch workflow into realtime fleet monitoring", detail: "A 14-module realtime fleet-monitoring web app with live mapping, geofencing, and automated alerts for logistics dispatchers.", image: "/image/lightfield/vanguard-ui.webp", width: 1800, height: 1034, alt: "Actual VANGUARD fleet control tower interface with realtime vehicle map", stack: ["FastAPI", "SQLAlchemy", "WebSocket", "PostgreSQL"], signals: ["Realtime map", "Geofencing", "Automated alerts"], tone: "mint" },
-	{ slug: "whatsapp-issue-reporting", name: "AI WHATSAPP", role: "Capstone · PT Andakara Informatika Nusantara", ownership: "Product lead + AI / backend development", outcome: "Made issue intake structured and trends visible", detail: "An AI chatbot and analytics dashboard that turns WhatsApp issue reports into structured workflows integrated with TRAMOS Web.", image: "/image/lightfield/whatsapp-ui.webp", width: 1800, height: 1019, alt: "Actual TRAMOS issue reporting analytics interface", stack: ["Claude AI", "WhatsApp Gateway", "TRAMOS Web"], signals: ["Issue intake", "AI classification", "TRAMOS workflow"], tone: "violet" },
-	{ slug: "kalbe-dashboard", name: "KALBE OPS", role: "Bootcamp client project · June—July 2025", ownership: "Requirements + dashboard delivery", outcome: "Consolidated maintenance data into one decision surface", detail: "Energy, work orders, equipment performance, MTTR, MTBF, and CAPA translated into one clear engineering decision surface.", image: "/image/lightfield/kalbe-ui.webp", width: 1691, height: 1100, alt: "Actual Kalbe engineering operations dashboard", stack: ["Requirements", "Dashboard", "Engineering ops"], signals: ["Energy", "Maintenance", "CAPA"], tone: "orange" },
+	{ slug: "vanguard", name: "VANGUARD", role: "Fleet Control Tower · July 2026", ownership: "Full-stack development", outcome: "Delivered 14 modules and 13 operational report types", detail: "A real-time Fleet Control Tower for dispatchers and supervisors covering monitoring, tasks, geofencing, incidents, history, evidence, and reporting.", image: "/image/lightfield/vanguard-ui.webp", width: 1800, height: 1034, alt: "Actual VANGUARD fleet control tower interface with realtime vehicle map", stack: ["Next.js 14", "TypeScript", "FastAPI", "WebSocket"], signals: ["Live tracking", "Geofence alerts", "13 report types"], tone: "mint" },
+	{ slug: "whatsapp-issue-reporting", name: "AI WHATSAPP", role: "Capstone · PT Andakara Informatika Nusantara", ownership: "AI development + backend integration", outcome: "Automated structured intake, escalation, and ticket creation", detail: "A WhatsApp issue-reporting system with intent detection, knowledge-base troubleshooting, osTicket integration, email notification, and operational analytics.", image: "/image/lightfield/whatsapp-ui.webp", width: 1800, height: 1019, alt: "Actual TRAMOS issue reporting analytics interface", stack: ["Python", "FastAPI", "PostgreSQL", "osTicket"], signals: ["Intent detection", "Ticket automation", "Analytics"], tone: "violet" },
+	{ slug: "kalbe-dashboard", name: "KALBE OPS", role: "Bootcamp client project · June—July 2025", ownership: "Requirements + full-stack development", outcome: "Centralized engineering operations monitoring", detail: "An interactive dashboard for energy usage, work orders, equipment performance, MTTR, MTBF, and CAPA based on direct client requirements.", image: "/image/lightfield/kalbe-ui.webp", width: 1691, height: 1100, alt: "Actual Kalbe engineering operations dashboard", stack: ["Requirements", "Interactive dashboard", "MTTR / MTBF", "CAPA"], signals: ["Energy", "Work orders", "Equipment"], tone: "orange" },
 ];
 
 const operatingStages = [
@@ -176,7 +176,7 @@ function CareerTrajectory() {
 		<section className="career-trajectory" aria-labelledby="career-trajectory-title">
 			<div className="career-intro">
 				<h2 id="career-trajectory-title">FROM AI PROTOTYPES<br />TO ENTERPRISE OWNERSHIP.</h2>
-				<p>Two consecutive roles at PT Jababeka trace one clear progression: understanding operational problems, shipping applied AI, then co-owning the lifecycle and interface of an enterprise financial system.</p>
+				<p>Two consecutive roles at PT Jababeka trace a progression from an action-capable AI Agent and workflow orchestration into full-stack development and maintenance of JIFAS, the company’s enterprise finance ERP.</p>
 			</div>
 
 			<div className="career-records">
@@ -192,10 +192,10 @@ function CareerTrajectory() {
 			</div>
 
 			<div className="career-proof-band" aria-label="Career delivery evidence">
-				<span><b>AI AGENT</b>Product lead</span>
-				<span><b>JIFAS</b>Lifecycle co-management</span>
-				<span><b>Telerik</b>Interface migration</span>
-				<span><b>PYTHON</b>Finance automation</span>
+				<span><b>AI AGENT</b>Action-capable workflows</span>
+				<span><b>JIFAS</b>Enterprise finance ERP</span>
+				<span><b>TELERIK</b>Kendo UI delivery</span>
+				<span><b>PYTHON</b>FastAPI integrations</span>
 			</div>
 		</section>
 	);

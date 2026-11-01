@@ -25,14 +25,19 @@ export default function PersonStructuredData() {
     },
     knowsAbout: [
       "Artificial Intelligence",
-      "Machine Learning",
+      "AI Agents and Agentic Workflows",
+      "Workflow Orchestration",
+      "Retrieval Augmented Generation",
       "Python",
-      "LangChain",
       "FastAPI",
+      "ASP.NET and C#/.NET",
+      "REST API Design and Integration",
       "React",
       "Next.js",
-      "Product Lifecycle Management",
-      "Data Science"
+      "Telerik Kendo UI",
+      "SQL and Data Modeling",
+      "System Design",
+      "Testing and Troubleshooting"
     ],
     mainEntityOfPage: {
       "@type": "WebPage",

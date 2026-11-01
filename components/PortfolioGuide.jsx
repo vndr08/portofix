@@ -23,11 +23,11 @@ const responseMap = {
 		links: featuredProjects.map((project) => ({ label: project.title, href: `/projects/${project.slug}` })),
 	},
 	experience: {
-		text: `${resume.experience[0].role} and ${resume.experience[1].role} at ${resume.experience[0].company}. The work spans enterprise finance workflows, UI migration, internal AI agents, requirements, and data automation.`,
+		text: `${resume.experience[0].role} and ${resume.experience[1].role} at ${resume.experience[0].company}. The work spans JIFAS enterprise finance workflows, ASP.NET/.NET C#, Telerik Kendo UI, action-capable AI agents, FastAPI, ticket automation, and email automation.`,
 		links: [{ label: "Read the full profile", href: "/about" }],
 	},
 	skills: {
-		text: `Core technical range: ${resume.skills[0].items.slice(0, 7).join(", ")}. Delivery strengths include ${resume.skills[1].items.slice(0, 4).join(", ")}.`,
+		text: `AI and automation: ${resume.skills[0].items.slice(0, 6).join(", ")}. Backend and API: ${resume.skills[1].items.slice(0, 6).join(", ")}. Frontend: ${resume.skills[2].items.slice(0, 5).join(", ")}.`,
 		links: [{ label: "Open technical index", href: "/projects/archive" }],
 	},
 	availability: {
@@ -35,7 +35,7 @@ const responseMap = {
 		links: [{ label: "Email Ivan", href: `mailto:${profile.email}` }, { label: "Open résumé", href: profile.cvUrl }],
 	},
 	education: {
-		text: `${resume.education.program} at ${resume.education.school}, ${resume.education.period}. Current GPA: ${resume.education.gpa}.`,
+		text: `${resume.education.program} at ${resume.education.school}, ${resume.education.period}. GPA: ${resume.education.gpa}.`,
 		links: [{ label: "See education and credentials", href: "/about" }],
 	},
 	contact: {

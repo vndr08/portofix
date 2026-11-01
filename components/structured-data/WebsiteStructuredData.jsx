@@ -4,7 +4,7 @@ export default function WebsiteStructuredData() {
     "@type": "WebSite",
     name: "Ivander Portfolio",
     url: "https://ivanderjp.vercel.app",
-    description: "AI Engineer and Software Engineer portfolio showcasing AI-powered products, enterprise systems, and operational software delivery.",
+    description: "AI Engineer and Software Engineer portfolio showcasing action-capable AI automation, enterprise applications, APIs, and full-stack systems.",
     author: {
       "@type": "Person",
       name: "Ivander Johana Pratama",

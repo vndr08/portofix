@@ -1,11 +1,11 @@
 {
   "name": "Ivander Johana Pratama",
   "shortName": "Ivan",
-  "headline": "AI Engineer, Software Engineer, and Product-Minded Builder",
+  "headline": "AI Engineer and Software Engineer",
   "roleFocus": [
     "AI Engineer",
     "Software Engineer",
-    "Product-Minded Builder"
+    "Full-Stack Developer"
   ],
   "email": "ivanderjohanapratama@gmail.com",
   "phone": "+62 821 7515 4739",
@@ -15,6 +15,6 @@
   "github": "https://github.com/vndr08",
   "linkedin": "https://linkedin.com/in/ivanderjohanapratama",
   "cvUrl": "/docs/CV_IVANDERJP_ATS.pdf",
-  "pitch": "Information Systems professional building AI-powered products and enterprise systems end-to-end, from product requirements and system architecture to implementation and operational rollout.",
+  "pitch": "Information Systems graduate with a Data Science concentration building AI-powered automation, enterprise applications, and full-stack systems across the complete development lifecycle.",
   "availability": "Open to AI Engineer and Software Engineer opportunities."
 }

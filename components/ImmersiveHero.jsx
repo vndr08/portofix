@@ -59,7 +59,7 @@ export default function ImmersiveHero() {
 			<motion.div className="portal-copy" style={reduceMotion ? undefined : { y: copyY, opacity: copyOpacity }}>
 				<h1 id="portal-title">{["IVANDER", "JOHANA", "PRATAMA"].map((line, index) => <span className="portal-line" key={line}><motion.span custom={index} variants={lineVariants} initial={reduceMotion ? false : "hidden"} animate="visible">{line}</motion.span></span>)}</h1>
 				<motion.p className="portal-role" custom={0.28} variants={supportVariants} initial={reduceMotion ? false : "hidden"} animate="visible">AI engineer · software engineer</motion.p>
-				<motion.p className="portal-thesis" custom={0.36} variants={supportVariants} initial={reduceMotion ? false : "hidden"} animate="visible">I design and ship AI-powered software for real operational work—from requirements and interface decisions to production rollout.</motion.p>
+				<motion.p className="portal-thesis" custom={0.36} variants={supportVariants} initial={reduceMotion ? false : "hidden"} animate="visible">I build action-capable AI automation, enterprise applications, and full-stack systems—from business requirements and system-flow design to integration, testing, and deployment.</motion.p>
 				<motion.div className="portal-actions" custom={0.44} variants={supportVariants} initial={reduceMotion ? false : "hidden"} animate="visible">
 					<a href="#work">Enter selected work <SignalIcon /></a>
 					<Link href="/projects/archive">Recruiter-fast index <SignalIcon direction="up-right" /></Link>

@@ -3,7 +3,7 @@ export default function ProfessionalServiceStructuredData() {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     name: "Ivander Johana Pratama",
-    description: "AI Engineer and Software Engineer building AI-powered products and enterprise systems end-to-end.",
+    description: "AI Engineer and Software Engineer building action-capable AI automation, enterprise applications, APIs, and full-stack systems.",
     url: "https://ivanderjp.vercel.app",
     image: "https://ivanderjp.vercel.app/image/ivander.jpg",
     email: "ivanderjohanapratama@gmail.com",
@@ -36,7 +36,7 @@ export default function ProfessionalServiceStructuredData() {
           itemOffered: {
             "@type": "Service",
             name: "AI Engineering",
-            description: "AI agents, retrieval workflows, NLP, data automation, and model-driven tools"
+            description: "Action-capable AI agents, workflow orchestration, retrieval, NLP, ticket automation, and email automation"
           }
         },
         {
@@ -44,7 +44,7 @@ export default function ProfessionalServiceStructuredData() {
           itemOffered: {
             "@type": "Service",
             name: "Software Engineering",
-            description: "Enterprise finance modules, bug fixing, UI migration, and reliable workflow delivery"
+            description: "ASP.NET/.NET C#, Python/FastAPI, React/Next.js, SQL systems, enterprise finance modules, testing, and troubleshooting"
           }
         },
         {
@@ -52,7 +52,7 @@ export default function ProfessionalServiceStructuredData() {
           itemOffered: {
             "@type": "Service",
             name: "Product Engineering",
-            description: "Requirements, system architecture, backend integrations, and operational interfaces"
+            description: "Requirement analysis, system-flow design, REST API integration, full-stack development, and deployment"
           }
         }
       ]

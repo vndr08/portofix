@@ -190,6 +190,15 @@ def main():
             textColor=MUTED,
             spaceAfter=2,
         ),
+        "Compact": ParagraphStyle(
+            "Compact",
+            parent=base["BodyText"],
+            fontName="Helvetica",
+            fontSize=7.1,
+            leading=8.5,
+            textColor=MUTED,
+            spaceAfter=1,
+        ),
     }
 
     story = []
@@ -247,7 +256,7 @@ def main():
         highlights = project.get("highlights", [])
         if project.get("impact"):
             highlights = [project["impact"]] + highlights
-        story.append(role_block(title, meta, summary, highlights, project.get("tech", []), styles))
+        story.append(role_block(title, meta, summary, highlights[:2], project.get("tech", []), styles))
         story.append(Spacer(1, 3))
 
     story.extend(section("Education", styles))
@@ -255,7 +264,7 @@ def main():
     story.append(
         role_block(
             f"{education['program']} - {education['school']}",
-            f"{education['period']} | Current GPA: {education['gpa']}",
+            f"{education['period']} | GPA: {education['gpa']}",
             education["description"],
             [],
             [],
@@ -264,22 +273,38 @@ def main():
     )
 
     story.extend(section("Leadership, Achievements, and Certifications", styles))
-    featured_leadership = {
-        "PUSH Cup Dormitory Games 2024",
-        "COMPUTING Sport Olympiad CSGO 2024",
-        "President University Sport Tournament",
-    }
     leadership = [
-        org["summary"]
+        f"{org['organization']} — {org['role']}"
         for org in resume["organizations"]
-        if org["organization"] in featured_leadership
     ]
     achievement_items = resume["achievements"] + leadership
-    story.append(bullets(achievement_items[:7], styles["Body"], gap=2))
+    achievement_cells = [
+        Paragraph(f'<font color="#059669">•</font>&nbsp; {esc(item)}', styles["Compact"])
+        for item in achievement_items
+    ]
+    if len(achievement_cells) % 2:
+        achievement_cells.append(Paragraph("", styles["Compact"]))
+    achievement_rows = [
+        achievement_cells[index:index + 2]
+        for index in range(0, len(achievement_cells), 2)
+    ]
+    achievement_table = Table(achievement_rows, colWidths=[87 * mm, 87 * mm], hAlign="LEFT")
+    achievement_table.setStyle(
+        TableStyle(
+            [
+                ("VALIGN", (0, 0), (-1, -1), "TOP"),
+                ("LEFTPADDING", (0, 0), (-1, -1), 0),
+                ("RIGHTPADDING", (0, 0), (-1, -1), 8),
+                ("TOPPADDING", (0, 0), (-1, -1), 1),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 2),
+            ]
+        )
+    )
+    story.append(achievement_table)
     for group in resume["certifications"]:
-        story.append(Paragraph(f"<b>{esc(group['group'])}:</b> {esc(', '.join(group['items']))}", styles["Small"]))
+        story.append(Paragraph(f"<b>{esc(group['group'])}:</b> {esc(', '.join(group['items']))}", styles["Compact"]))
     languages = ", ".join([f"{item['language']} ({item['level']})" for item in resume["languages"]])
-    story.append(Paragraph(f"<b>Languages:</b> {esc(languages)}", styles["Small"]))
+    story.append(Paragraph(f"<b>Languages:</b> {esc(languages)}", styles["Compact"]))
 
     doc.build(story)
     print(OUTPUT)

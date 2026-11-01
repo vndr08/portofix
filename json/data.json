@@ -4,18 +4,18 @@
       "show": true,
       "title": "VANGUARD - Fleet Control Tower",
       "desc": [
-        "Defined product requirements and built a 14-module realtime fleet-monitoring web application for logistics dispatchers.",
-        "Delivered live mapping, geofencing, and automated alerts to support day-to-day fleet visibility and operational response.",
-        "Built the backend with FastAPI REST APIs, SQLAlchemy, PostgreSQL or SQLite, and WebSocket-based live telemetry."
+        "Designed and developed a real-time Fleet Control Tower for dispatchers and supervisors, covering vehicle monitoring, task management, geofencing, incident handling, trip history, evidence, and operational reporting.",
+        "Built the Next.js 14 and TypeScript frontend plus a Python FastAPI backend with REST APIs, SQLAlchemy, PostgreSQL or SQLite, WebSocket live updates, Leaflet mapping, and Docker.",
+        "Delivered 14 functional modules and 13 report types, including live monitoring, Task Monitor, vehicle and driver registries, history replay, accident logs, camera evidence, dashcam monitoring, and report generation."
       ],
       "featured": true,
-      "summary": "A 14-module realtime Fleet Control Tower with live mapping, geofencing, and automated alerts.",
-      "role": "Product Requirements & Full-stack Engineering",
-      "impact": "Turned a logistics-dispatch workflow into an end-to-end monitoring product backed by realtime telemetry.",
+      "summary": "A real-time Fleet Control Tower for dispatchers and supervisors spanning 14 operational modules and 13 report types.",
+      "role": "Full-Stack Developer",
+      "impact": "Centralized fleet monitoring, task management, geofencing, incident handling, trip history, evidence, and operational reporting.",
       "highlights": [
-        "Defined the requirements for a 14-module operational web application.",
-        "Implemented live mapping, geofencing, and automated alerts.",
-        "Developed FastAPI REST APIs with SQLAlchemy, WebSocket telemetry, and PostgreSQL or SQLite."
+        "Implemented real-time vehicle tracking, route visualization, speeding, geofence, and GPS-delay alerts.",
+        "Built the Next.js 14 and TypeScript frontend with a Python FastAPI backend.",
+        "Delivered 14 functional modules and 13 operational report types."
       ],
       "year": "Jul 2026",
       "preview": "",
@@ -25,14 +25,14 @@
         "/image/projects/vanguard/vanguard.png"
       ],
       "tech": [
-        "Next.js",
+        "Next.js 14",
         "TypeScript",
-        "Tailwind CSS",
-        "MapLibre GL",
         "FastAPI",
+        "REST APIs",
         "SQLAlchemy",
         "WebSocket",
-        "PostgreSQL",
+        "PostgreSQL / SQLite",
+        "Leaflet",
         "Docker"
       ],
       "slug": "vanguard",
@@ -44,18 +44,18 @@
       "show": true,
       "title": "WhatsApp-Based Issue Reporting & Analytics Dashboard",
       "desc": [
-      "Led product delivery for an AI-powered WhatsApp chatbot for automated issue reporting, intent detection, and ticket creation for PT Andakara Informatika Nusantara.",
-        "Built a comprehensive analytics dashboard to visualize issue trends, reporting frequencies, and resolution statistics for management decision-making.",
-      "Handled chatbot core logic, WhatsApp Gateway integration, NLP using Claude AI, and backend integration with the TRAMOS Web system."
+        "Developed the AI chatbot and backend integration for a WhatsApp-based issue-reporting system used with TRAMOS, covering message flows, intent detection, issue classification, knowledge-base troubleshooting, and automated escalation.",
+        "Built a workflow that collects required issue information, generates structured support tickets, integrates with osTicket through REST APIs, and notifies support operators by email.",
+        "Implemented the backend with Python, FastAPI, PostgreSQL, WhatsApp Gateway and webhooks, AI and LLM services, Docker and VPS deployment, with conversation and ticket data feeding an analytics dashboard."
       ],
       "featured": true,
-      "summary": "AI-powered WhatsApp issue reporting and an analytics dashboard integrated with TRAMOS Web.",
-      "role": "Product Lead & AI / Backend Developer",
-      "impact": "Aligned client business needs with technical constraints and made issue trends visible through a dedicated dashboard.",
+      "summary": "AI-assisted WhatsApp issue reporting, structured ticket automation, and operational analytics integrated with TRAMOS.",
+      "role": "AI Developer",
+      "impact": "Replaced issue reporting through a single administrator with structured intake, troubleshooting, escalation, ticket creation, and operator notification.",
       "highlights": [
-        "Led product delivery from client requirements through technical integration.",
-        "Built chatbot logic with a WhatsApp Gateway and Claude AI NLP.",
-        "Integrated the backend with TRAMOS Web and visualized issue trends."
+        "Implemented intent detection, issue classification, knowledge-base troubleshooting, and escalation.",
+        "Integrated structured ticket creation with osTicket REST APIs and email notifications.",
+        "Connected conversation and ticket data to an analytics dashboard for operational monitoring."
       ],
       "year": "Dec 2025 - Jun 2026",
       "preview": "",
@@ -66,13 +66,14 @@
         "/image/projects/ai/whatsapp-issue-reporting/tramos2.webp"
       ],
       "tech": [
-      "Claude AI",
+        "Python",
         "FastAPI",
-        "React",
-        "NodeJS",
-        "MySQL",
-        "WhatsApp Gateway",
-        "TRAMOS Web"
+        "PostgreSQL",
+        "WhatsApp Gateway / Webhooks",
+        "AI / LLM Services",
+        "REST APIs",
+        "osTicket",
+        "Docker / VPS"
       ],
       "slug": "whatsapp-issue-reporting",
       "category": [
@@ -84,18 +85,18 @@
       "show": true,
       "title": "AmanTeken - AI Legal Document Risk Analyzer",
       "desc": [
-        "Built an AI legal-tech product that turns uploaded PDF documents into an actionable risk score.",
-        "Combined multimodal document analysis with text-to-speech summaries to make legal risks easier to review.",
-        "Delivered the product with React and Vite, Django REST Framework, Python, Docker, Nginx, and Google Cloud Run for #JuaraVibeCoding 2026."
+        "Developed an AI-powered legal document analysis application for #JuaraVibeCoding 2026.",
+        "Built the interface with React and Vite and the backend with Django REST Framework and Python.",
+        "Containerized and deployed the multimodal AI application with Docker, Nginx, and Google Cloud Run."
       ],
       "featured": true,
-      "summary": "AI legal document analysis that converts PDFs into risk scores and spoken summaries.",
-      "role": "Full-stack AI Product Developer",
-      "impact": "Made document risk easier to inspect through a focused upload-to-analysis workflow.",
+      "summary": "AI-powered legal document analysis built as a full-stack, containerized multimodal application.",
+      "role": "Full-Stack Developer",
+      "impact": "Delivered an end-to-end legal document analysis application for #JuaraVibeCoding 2026.",
       "highlights": [
-        "Designed an actionable legal-document risk scoring experience.",
-        "Implemented multimodal analysis and text-to-speech summaries.",
-        "Deployed a containerized application on Google Cloud Run."
+        "Built the frontend with React and Vite.",
+        "Developed the backend with Django REST Framework and Python.",
+        "Deployed the Docker and Nginx application on Google Cloud Run."
       ],
       "year": "May 2026",
       "preview": "",
@@ -123,14 +124,14 @@
       "show": true,
       "title": "Kalbe Engineering System Dashboard",
       "desc": [
-        "Built an interactive web dashboard for PT Kalbio Global Medika to monitor energy consumption, work orders, MTTR (Mean Time To Repair), MTBF (Mean Time Between Failures), and CAPA (Corrective and Preventive Actions).",
-        "Implemented real-time data visualization and monitoring capabilities. Presented and implemented solution based on client needs, delivering a professional dashboard for engineering team oversight and performance tracking.",
-        "The dashboard provides critical insights for operational efficiency and helps identify areas for improvement in maintenance workflows."
+        "Gathered requirements and presented product solutions directly to PT Kalbio Global Medika.",
+        "Delivered an interactive engineering dashboard for monitoring energy usage, work orders, equipment performance, MTTR, MTBF, and CAPA.",
+        "Translated client needs into a centralized operational monitoring experience for the engineering team."
       ],
       "featured": true,
-      "summary": "Engineering dashboard for monitoring energy, work orders, maintenance metrics, and CAPA workflows.",
-      "role": "Requirements & Dashboard Delivery",
-      "impact": "Consolidated energy, work-order, and equipment-performance data into a clearer decision surface for the client.",
+      "summary": "Interactive engineering dashboard for energy usage, work orders, equipment performance, MTTR, MTBF, and CAPA.",
+      "role": "Full-Stack Developer",
+      "impact": "Turned direct client requirements into a centralized monitoring experience for engineering operations.",
       "highlights": [
         "Built dashboard views for energy consumption, work orders, MTTR, MTBF, and CAPA.",
         "Translated client needs into a professional monitoring interface.",
@@ -144,13 +145,7 @@
         "/image/projects/web/kalbe-dashboard/kalbio1.jpeg",
         "/image/projects/web/kalbe-dashboard/kalbio2.jpeg"
       ],
-      "tech": [
-        "NextJS",
-        "Typescript",
-        "Tailwind CSS",
-        "PostgreSQL",
-        "Real-time Data"
-      ],
+      "tech": ["Requirement Analysis", "Interactive Dashboard", "Energy Monitoring", "Work Orders", "MTTR / MTBF", "CAPA"],
       "slug": "kalbe-dashboard",
       "category": [
         1
@@ -197,22 +192,22 @@
     },
     {
       "show": true,
-      "title": "AI Agent Chatbot System - PT Jababeka Tbk",
+      "title": "JIFAS Action-Capable AI Agent - PT Jababeka Tbk",
       "desc": [
-        "Developed an enterprise-level internal AI Agent chatbot using LangChain, FastAPI, and Ollama to automate employee support. The chatbot integrates machine learning, NLP, OCR, and automated ticket creation capabilities.",
-        "Features include knowledge-base retrieval for quick answers, intelligent troubleshooting, and automated helpdesk ticket creation. The system handles employee inquiries efficiently and escalates complex issues to the appropriate support team.",
-        "Successfully deployed in production environment at PT Jababeka Tbk, reducing support response time and improving employee satisfaction with technical support services."
+        "Designed and developed an action-capable AI Agent embedded in JIFAS to support Finance and Accounting users with JIFAS and company knowledge while connecting responses to operational workflows.",
+        "Built multi-step orchestration for helpdesk ticket creation, email reading, email generation and sending, and combined actions from a single natural-language instruction.",
+        "Developed the AI and backend integration with Python, FastAPI, LLM services, REST APIs, knowledge retrieval, and ticket and email integrations."
       ],
       "featured": true,
-      "summary": "Internal AI agent chatbot for employee support with retrieval, troubleshooting, OCR, and ticket creation.",
-      "role": "AI Application Developer",
-      "impact": "Improved internal support workflows by automating answers, troubleshooting, and helpdesk ticket creation.",
+      "summary": "Action-capable AI Agent embedded in JIFAS for knowledge support and multi-step workflow automation.",
+      "role": "AI Engineer",
+      "impact": "Turned an internal question-and-answer interface into a workflow assistant for tickets, email, and combined actions.",
       "highlights": [
-        "Built an AI support system with LangChain, FastAPI, and Ollama.",
-        "Integrated NLP, OCR, knowledge-base retrieval, and ticket creation.",
-        "Designed for enterprise employee-support workflows."
+        "Connected JIFAS and company knowledge to Finance and Accounting workflows.",
+        "Orchestrated ticket creation, email reading, generation, sending, and combined actions.",
+        "Built the integration with Python, FastAPI, LLM services, REST APIs, and knowledge retrieval."
       ],
-      "year": "2025",
+      "year": "Aug 2025 - Feb 2026",
       "preview": "",
       "code": "",
       "thumbnail": "/image/projects/ai/jababeka-chatbot/aichatbot1.jpeg",
@@ -220,13 +215,13 @@
         "/image/projects/ai/jababeka-chatbot/aichatbot1.jpeg"
       ],
       "tech": [
-        "LangChain",
-        "FastAPI",
-        "Ollama",
         "Python",
-        "NLP",
-        "OCR",
-        "Machine Learning"
+        "FastAPI",
+        "LLM Services",
+        "REST APIs",
+        "Knowledge Retrieval",
+        "Ticket Automation",
+        "Email Automation"
       ],
       "slug": "jababeka-chatbot",
       "category": [

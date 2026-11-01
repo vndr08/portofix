@@ -1,187 +1,111 @@
 {
   "summary": [
-    "Information Systems professional who builds AI-powered products and enterprise systems end-to-end.",
-    "Combines software engineering across Python, REST APIs, React, and LLM integration with product lifecycle ownership and stakeholder collaboration.",
-    "Focused on aligning technical delivery with user needs, business goals, and reliable operational rollout."
+    "Information Systems graduate with a Data Science concentration and hands-on experience building AI-powered automation, enterprise applications, and full-stack systems.",
+    "Experienced in action-capable AI agents, workflow orchestration, REST APIs, .NET/C# applications, Python/FastAPI backends, React/Next.js interfaces, and SQL-based systems.",
+    "Works across the full development lifecycle—from business requirements and system-flow design to development, API integration, testing, troubleshooting, and deployment."
   ],
   "education": {
     "school": "President University",
-    "program": "Information System - Data Science",
+    "program": "Bachelor of Computer Science — Information Systems, Data Science concentration",
     "period": "2023 - 2026",
-    "gpa": "3.76",
-    "description": "Developed strong skills in programming, data analysis, and application development through coursework and projects."
+    "gpa": "3.76 / 4.00",
+    "description": "Information Systems program with a Data Science concentration. Jababeka Scholarship Awardee with 75% tuition coverage."
   },
   "recruiterHighlights": [
-    {
-      "value": "3.76",
-      "label": "Current GPA",
-      "detail": "Information System - Data Science"
-    },
-    {
-      "value": "10+",
-      "label": "Brand partners",
-      "detail": "Secured for President University Fashion Week 2024"
-    },
-    {
-      "value": "20+",
-      "label": "Sponsors",
-      "detail": "Secured for Mr. & Ms. President University 2024"
-    },
-    {
-      "value": "75%",
-      "label": "Tuition covered",
-      "detail": "Jababeka Scholarship Awardee"
-    }
+    { "value": "3.76", "label": "GPA", "detail": "Bachelor of Computer Science" },
+    { "value": "75%", "label": "Tuition scholarship", "detail": "Jababeka Scholarship Awardee" },
+    { "value": "3rd", "label": "SETSsail Biz Accel", "detail": "Service Category, 2024" },
+    { "value": "14 / 13", "label": "VANGUARD modules / reports", "detail": "Fleet Control Tower" }
   ],
   "experience": [
     {
       "company": "PT Jababeka Tbk",
-      "role": "Software Engineering Partnership",
+      "role": "Software Engineering Intern",
       "period": "Mar 2026 - Aug 2026",
       "location": "Jakarta, Indonesia",
-      "summary": "Co-managed the product lifecycle of JIFAS, an enterprise financial system, while delivering feature and UI improvements across accounting and finance workflows.",
+      "summary": "Expanded from AI development into full-stack development and maintenance of JIFAS, Jababeka’s enterprise finance ERP, delivering technical improvements across Finance and Accounting workflows.",
       "highlights": [
-        "Identified user pain points and delivered feature enhancements across accounting and finance modules.",
-        "Spearheaded the front-end UI/UX migration to the Telerik framework for improved usability and responsiveness.",
-        "Collaborated with business stakeholders to refine and integrate an internal AI chatbot into JIFAS workflows."
+        "Developed and maintained JIFAS with ASP.NET/.NET C#, JavaScript, Telerik Kendo UI, and SQL; delivered features, bug fixes, UI improvements, and system validation.",
+        "Improved Balance Sheet, Cash Flow, Bulk Posting, PUM Realization, Invoice, and Bank Transaction workflows by translating user issues and business requirements into technical solutions.",
+        "Integrated the internal AI assistant into JIFAS so Finance and Accounting users could access system knowledge and operational support directly from the application."
       ],
-      "skills": ["ASP.NET", "Kendo UI Telerik", "Finance Modules", "SQL", "AI Chatbot"]
+      "skills": ["ASP.NET / .NET C#", "JavaScript", "Telerik Kendo UI", "SQL", "JIFAS"]
     },
     {
       "company": "PT Jababeka Tbk",
       "role": "AI Engineer Intern",
       "period": "Aug 2025 - Feb 2026",
       "location": "Jakarta, Indonesia",
-      "summary": "Led requirements and technical delivery for internal AI and data automation tools supporting employee and financial workflows.",
+      "summary": "Designed and developed an action-capable AI Agent embedded in JIFAS to connect company and system knowledge with real Finance and Accounting workflows.",
       "highlights": [
-        "Acted as technical product lead for an internal AI Agent chatbot supporting ticket creation and knowledge retrieval.",
-        "Designed and implemented a Python duplicate-data detection tool for financial reporting workflows.",
-        "Gathered requirements from employee support teams and aligned automation behavior with operational needs."
+        "Built multi-step AI workflow orchestration for helpdesk ticket creation, email reading, email generation and sending, and combined actions from a single natural-language instruction.",
+        "Developed the AI and backend integration with Python, FastAPI, LLM services, REST APIs, knowledge retrieval, and ticket and email integrations.",
+        "Turned the chatbot from a question-and-answer interface into an internal workflow automation assistant for Finance and Accounting users."
       ],
-      "skills": ["LangChain", "FastAPI", "Ollama", "Python", "Streamlit"]
+      "skills": ["Python", "FastAPI", "LLM Services", "REST APIs", "Knowledge Retrieval", "Ticket Automation", "Email Automation"]
     }
   ],
   "workExperience": [
-    {
-      "role": "PIC Sponsorship",
-      "organization": "President University Fashion Week",
-      "period": "Sep - Dec 2024",
-      "summary": "Secured 10+ corporate partners, negotiated benefits, and managed external B2B communication."
-    },
-    {
-      "role": "PIC Sponsorship",
-      "organization": "Mr. & Ms. President University",
-      "period": "Jan - Mar 2024",
-      "summary": "Coordinated 20+ sponsors, vendors, internal teams, and sponsor-benefit delivery."
-    },
-    {
-      "role": "Volunteer",
-      "organization": "AIESEC ImpactED 1.0",
-      "period": "Dec 2023 - Jan 2024",
-      "summary": "Facilitated hygiene-awareness learning for elementary students through public speaking and empathetic communication."
-    }
+    { "role": "PIC Sponsorship", "organization": "President University Fashion Week", "period": "Sep - Dec 2024", "summary": "Led sponsorship strategy, secured 10+ corporate partners, negotiated benefits, and managed external B2B communication." },
+    { "role": "PIC Sponsorship", "organization": "Student Awarding Night", "period": "Sep - Nov 2024", "summary": "Drove fundraising initiatives and managed sponsor-branding strategy for the university’s annual awards night." },
+    { "role": "PIC Sponsorship", "organization": "Mr. & Ms. President University", "period": "Jan - Mar 2024", "summary": "Secured 20+ sponsors and coordinated vendors, internal teams, and sponsor-benefit delivery." },
+    { "role": "Volunteer", "organization": "AIESEC ImpactED 1.0", "period": "Dec 2023 - Jan 2024", "summary": "Delivered hygiene-awareness education to elementary students through public speaking, empathy, and group facilitation." }
   ],
   "organizations": [
-    {
-      "role": "PIC Sponsorship",
-      "organization": "President University Fashion Week (PUFW) 2024",
-      "period": "Sep - Dec 2024",
-      "summary": "Led sponsorship strategy, secured 10+ brand partners, negotiated benefits, and maintained external communication."
-    },
-    {
-      "role": "PIC Sponsorship",
-      "organization": "Student Awarding Night (SAN) 2024",
-      "period": "Sep - Nov 2024",
-      "summary": "Assisted fundraising and sponsor branding for the annual awards night."
-    },
-    {
-      "role": "PIC Sponsorship",
-      "organization": "Mr. & Ms. President University 2024",
-      "period": "Jan - Mar 2024",
-      "summary": "Secured 20+ sponsors, coordinated with vendors, and oversaw benefit delivery."
-    },
-    {
-      "role": "PIC Mobile Legends",
-      "organization": "PUSH Cup Dormitory Games 2024",
-      "period": "Jun 2024",
-      "summary": "Designed tournament systems and rules while coordinating technical and event logistics."
-    },
-    {
-      "role": "PIC Fundraising",
-      "organization": "COMPUTING Sport Olympiad CSGO 2024",
-      "period": "Sep - Nov 2024",
-      "summary": "Supported fundraising execution and sponsor-branding delivery."
-    },
-    {
-      "role": "PIC Event Organizer",
-      "organization": "President University Sport Tournament",
-      "period": "Sep - Dec 2023",
-      "summary": "Coordinated event operations, logistics, and cross-team delivery."
-    },
-    {
-      "role": "Volunteer",
-      "organization": "AIESEC ImpactED 1.0",
-      "period": "Dec 2023 - Jan 2024",
-      "summary": "Delivered hygiene awareness lessons to elementary students in Cikarang and strengthened public speaking skills."
-    }
+    { "role": "PIC Sponsorship", "organization": "President University Fashion Week (PUFW)", "period": "Sep - Dec 2024", "summary": "Led the end-to-end sponsorship strategy, secured 10+ corporate partners, negotiated benefits, and ensured sponsor obligations were delivered." },
+    { "role": "PIC Sponsorship", "organization": "Student Awarding Night (SAN)", "period": "Sep - Nov 2024", "summary": "Drove fundraising initiatives and managed sponsor-branding strategy for the university’s annual awards night." },
+    { "role": "PIC Sponsorship", "organization": "Mr. & Ms. President University", "period": "Jan - Mar 2024", "summary": "Secured 20+ sponsors, coordinated third-party vendors and internal teams, and oversaw sponsor-benefit delivery." },
+    { "role": "Volunteer", "organization": "AIESEC ImpactED 1.0", "period": "Dec 2023 - Jan 2024", "summary": "Delivered hygiene-awareness educational content to elementary students and strengthened public speaking, empathy, and facilitation skills." }
   ],
   "achievements": [
-    "3rd Place - SETSsail Biz Accel Exhibition 2024, Service Category",
-    "Jababeka Scholarship Awardee - covers 75% of tuition at President University",
-    "Secured 10+ corporate partners for President University Fashion Week 2024",
-    "Coordinated 20+ sponsors for Mr. & Ms. President University 2024"
+    "Jababeka Scholarship Awardee — 75% tuition coverage at President University",
+    "3rd Place — SETSsail Biz Accel Exhibition 2024, Service Category",
+    "Secured 10+ corporate partners for President University Fashion Week",
+    "Secured and coordinated 20+ sponsors for Mr. & Ms. President University"
   ],
   "certifications": [
     {
-      "group": "AWS Training & Certification",
+      "group": "President Development Center",
+      "items": ["President English Short Course — Grade 81"]
+    },
+    {
+      "group": "AWS Training & Certifications",
       "items": [
         "Amazon QuickSight: Getting Started",
         "Fundamentals of Machine Learning and Artificial Intelligence",
         "Introduction to Generative AI: Art of the Possible",
         "Introduction to Machine Learning: Art of the Possible",
-        "Executive’s Guide to Generative AI Success",
+        "An Executive’s Guide to Generative AI Success",
         "Fundamentals of Prompt Engineering with Claude",
         "Building a Generative AI-Ready Organization",
-        "Designing Secure RAG Applications with AWS",
-        "Developing Generative AI Solutions",
+        "Designing Secure Retrieval Augmented Generation / RAG Applications with AWS",
+        "Developing Generative Artificial Intelligence Solutions",
         "Generative AI for Executives",
         "Optimizing Foundation Models",
         "Planning a Generative AI Project"
       ]
     },
     {
-      "group": "AI, Data & Developer Programs",
+      "group": "Additional AI & Data Training",
       "items": [
-        "GDG #JuaraVibeCoding 2026",
-        "GDG Vibe Coding Study Jam",
-        "Snowflake AI & Data Platform Training",
-        "Snowflake Discover AI",
-        "Future-Ready Industrial Parks: AI Trends & Agentic Workflows — 7-Network / JETData.AI"
+        "Google Developer Groups — #JuaraVibeCoding, Vibe Coding Study Jam",
+        "Snowflake — AI & Data Platform Training / Discover AI",
+        "7-Network Pte Ltd / JETData.AI — Future-Ready Industrial Parks: Mastering AI Trends & Agentic Workflows"
       ]
     }
   ],
   "skills": [
-    {
-      "group": "Tools & Technologies",
-      "items": ["Python", "React", "C# / .NET", "PostgreSQL", "MySQL", "Docker", "LangChain", "Gemini AI", "Claude AI", "Ollama"]
-    },
-    {
-      "group": "Product & Delivery",
-      "items": ["Product Lifecycle Management", "Requirement Gathering", "Stakeholder Communication", "B2B Negotiation", "Cross-Functional Leadership", "UI/UX Strategy", "Agile / Scrum"]
-    },
-    {
-      "group": "Technical Foundations",
-      "items": ["AI / ML Integration", "LLMs", "RAG", "NLP", "System Architecture", "RESTful APIs", "AWS", "GCP"]
-    }
+    { "group": "AI & Automation", "items": ["Generative AI", "LLM Integration", "AI Agents", "Agentic Workflows", "Workflow Orchestration", "RAG / Knowledge Retrieval", "Prompt Engineering", "NLP", "Intent Detection", "AI Automation", "LangChain", "Ollama", "Gemini AI", "Claude AI", "Scikit-learn"] },
+    { "group": "Backend & API", "items": ["Python", "FastAPI", "Django REST Framework", "C# / .NET", "ASP.NET", "REST API Design & Integration", "Webhooks", "JSON", "Backend Services", "Business Logic", "Node.js Fundamentals", "Java Fundamentals", "PHP"] },
+    { "group": "Frontend", "items": ["React", "Next.js", "TypeScript", "JavaScript", "Vite", "HTML", "CSS", "Tailwind CSS", "Telerik Kendo UI", "Bootstrap", "Responsive UI"] },
+    { "group": "Database & Data", "items": ["PostgreSQL", "MySQL", "SQL", "SQLAlchemy", "Firebase", "Database Design", "Data Modeling", "SQL Optimization", "Pandas", "NumPy", "Data Processing & Validation"] },
+    { "group": "Integration & Automation", "items": ["Email Automation", "Helpdesk / Ticket Automation", "osTicket Integration", "WhatsApp API / Gateway Integration", "Multi-step AI Actions", "System Integration", "API Orchestration"] },
+    { "group": "Cloud & Infrastructure", "items": ["Docker", "Docker Compose", "Nginx", "Git", "CI/CD Concepts", "Google Cloud Run", "AWS Fundamentals", "VPS Deployment", "WebSocket", "Ngrok"] },
+    { "group": "System Engineering", "items": ["Requirement Analysis", "Business Process Analysis", "System Design", "SDLC", "Agile / Scrum", "ERD", "UML", "Sequence Diagram", "API Documentation", "Data Dictionary", "Technical Documentation"] },
+    { "group": "Testing & Troubleshooting", "items": ["Functional Testing", "Integration Testing", "End-to-End Testing", "UAT", "API Testing", "Debugging", "Root Cause Analysis", "Application Troubleshooting"] }
   ],
   "languages": [
-    {
-      "language": "Indonesian",
-      "level": "Native"
-    },
-    {
-      "language": "English",
-      "level": "Professional Working Proficiency"
-    }
+    { "language": "Indonesian", "level": "Native" },
+    { "language": "English", "level": "Professional" }
   ]
 }

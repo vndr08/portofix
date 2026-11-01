@@ -2560,6 +2560,49 @@ body:has(.spatial-page) .route-kinetics { position:fixed; inset:0; z-index:42; d
 .capability-node.node-2 { top: 19%; right: 2%; }
 .capability-node.node-3 { bottom: 4%; left: 14%; }
 
+@media (min-width:1101px) {
+	.capability-field { min-height:auto; }
+	.capability-orbit {
+		display:grid;
+		grid-template-columns:minmax(0,1fr) 190px minmax(0,1fr);
+		grid-template-rows:repeat(4,auto);
+		gap:24px 48px;
+		align-items:stretch;
+		min-height:0;
+	}
+	.capability-core-motion {
+		position:relative;
+		top:auto;
+		left:auto;
+		grid-column:2;
+		grid-row:1 / 5;
+		align-self:center;
+		justify-self:center;
+		width:180px;
+		translate:0 0;
+	}
+	.capability-node,
+	.capability-node.node-1,
+	.capability-node.node-2,
+	.capability-node.node-3 {
+		position:relative;
+		top:auto;
+		right:auto;
+		bottom:auto;
+		left:auto;
+		width:auto;
+		padding:22px 0;
+	}
+	.capability-node.node-1 { grid-column:1; grid-row:1; }
+	.capability-node.node-2 { grid-column:3; grid-row:1; }
+	.capability-node.node-3 { grid-column:1; grid-row:2; }
+	.capability-node.node-4 { grid-column:3; grid-row:2; }
+	.capability-node.node-5 { grid-column:1; grid-row:3; }
+	.capability-node.node-6 { grid-column:3; grid-row:3; }
+	.capability-node.node-7 { grid-column:1; grid-row:4; }
+	.capability-node.node-8 { grid-column:3; grid-row:4; }
+}
+
 .education-transmission { display: grid; grid-template-columns: .9fr 1.1fr; min-height: 85vh; background: #f1ede9; color: #080b10; }
 .education-record { display: flex; flex-direction: column; justify-content: flex-end; padding: 8vw 7vw; border-right: 1px solid rgba(8,11,16,.22); }
 .education-record > span { font-size: 9px; font-weight: 600; letter-spacing: .13em; }
