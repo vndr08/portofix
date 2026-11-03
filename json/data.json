@@ -18,7 +18,7 @@
         "Delivered 14 functional modules and 13 operational report types."
       ],
       "year": "Jul 2026",
-      "preview": "",
+      "preview": "https://vanguard-control.vercel.app/dashboard",
       "code": "https://github.com/vndr08/VANGUARD",
       "thumbnail": "/image/projects/vanguard/vanguard.png",
       "images": [
@@ -99,7 +99,7 @@
         "Deployed the Docker and Nginx application on Google Cloud Run."
       ],
       "year": "May 2026",
-      "preview": "",
+      "preview": "https://amanteken-154220017794.asia-southeast2.run.app/",
       "code": "",
       "thumbnail": "/image/amanteken/amanteken-interface.webp",
       "images": [
