@@ -37,6 +37,7 @@ export default async function Page({ params }) {
 	const nextProject = projects[(projectIndex + 1) % projects.length];
 	const gallery = project.images.length ? project.images : [project.thumbnail];
 	const isConcept = project.thumbnail.includes("concept-covers");
+	const artifactLabel = isConcept ? "Concept cover" : `${gallery.length} original capture${gallery.length === 1 ? "" : "s"}`;
 
 	return (
 		<main className="spatial-page case-world" style={{ "--case-hue": project.category.includes(2) ? "168 255 234" : "255 145 77" }}>
@@ -63,6 +64,11 @@ export default async function Page({ params }) {
 				<aside className="case-rail">
 					<h2>BUILD RECORD</h2>
 					<div>{project.tech.map((tech) => <span key={tech}>{tech}</span>)}</div>
+					<dl className="case-proof-status">
+						<div><dt>Artifact evidence</dt><dd>{artifactLabel}</dd></div>
+						<div><dt>Source</dt><dd>{project.code ? "Public repository linked" : "Source link not supplied"}</dd></div>
+						<div><dt>Live build</dt><dd>{project.preview ? "Public demo linked" : "Public demo not supplied"}</dd></div>
+					</dl>
 					<nav>
 						{project.preview && <a href={project.preview} target="_blank" rel="noopener noreferrer">Open live project ↗</a>}
 						{project.code && <a href={project.code} target="_blank" rel="noopener noreferrer">Inspect source ↗</a>}
@@ -73,7 +79,7 @@ export default async function Page({ params }) {
 			</section>
 
 			<section className="case-gallery" aria-labelledby="case-gallery-title">
-				<header><h2 id="case-gallery-title">ARTIFACTS<br />IN DEPTH.</h2><p>Real screenshots are shown as supplied. Conceptual covers are labeled instead of posing as product UI.</p></header>
+				<header><h2 id="case-gallery-title">{gallery.length === 1 ? <>ARTIFACT<br />IN DEPTH.</> : <>ARTIFACTS<br />IN DEPTH.</>}</h2><p>Real screenshots are shown as supplied. Conceptual covers and unavailable public links are labeled explicitly instead of overstating the evidence.</p></header>
 				<div className="case-gallery-stack">
 					{gallery.map((image, index) => (
 						<CaseArtifactFigure key={`${image}-${index}`} image={image} title={project.title} index={index} concept={isConcept} portrait={project.slug === "bersuara"} />

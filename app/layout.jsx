@@ -114,9 +114,9 @@ export default function RootLayout({ children }) {
 		<html lang="en" data-theme="light" suppressHydrationWarning>
 			<head>
 				<ThemeScript />
-				<link rel="preload" href="/fonts/bahianita-regular.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
-				<link rel="preload" href="/fonts/manrope-400.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
-				<link rel="preload" href="/fonts/manrope-600.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
+				<link rel="preload" href="/fonts/bahianita-regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+				<link rel="preload" href="/fonts/manrope-400.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+				<link rel="preload" href="/fonts/manrope-600.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
 				<PersonStructuredData />
 				<WebsiteStructuredData />
 				<link rel="alternate" type="application/rss+xml" title={`${siteName} RSS Feed`} href="/feed.xml" />

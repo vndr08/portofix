@@ -93,6 +93,7 @@ export default function PortfolioGuide() {
 	const reduceMotion = useSafeReducedMotion();
 	const inputRef = useRef(null);
 	const logRef = useRef(null);
+	const launcherRef = useRef(null);
 	const timerRef = useRef(null);
 	const speakingTimerRef = useRef(null);
 
@@ -131,6 +132,7 @@ export default function PortfolioGuide() {
 	const closeGuide = () => {
 		stopSpeaking();
 		setIsOpen(false);
+		window.requestAnimationFrame(() => launcherRef.current?.focus());
 	};
 
 	const toggleVoice = () => {
@@ -226,11 +228,13 @@ export default function PortfolioGuide() {
 			</AnimatePresence>
 
 			<motion.button
+				ref={launcherRef}
 				type="button"
 				className="guide-launcher"
 				onClick={() => isOpen ? closeGuide() : setIsOpen(true)}
 				aria-expanded={isOpen}
 				aria-controls="portfolio-guide"
+				aria-label={isOpen ? "Close Ivan portfolio guide" : "Open Ivan portfolio guide"}
 				whileTap={reduceMotion ? undefined : { scale: 0.97 }}>
 				<RobotAvatar speaking={isTyping || isSpeaking} compact />
 				<span className="guide-launcher-copy"><b>{isOpen ? "Close guide" : "Ask Ivan"}</b><small>{isSpeaking ? "Speaking" : "Online"}</small></span>

@@ -25,6 +25,9 @@ export default function SpatialProjectFrame({ src, alt, priority = false, portra
 	};
 
 	const reset = () => { x.set(0); y.set(0); };
+	const imageSizes = portrait
+		? "(max-width: 560px) calc(100vw - 72px), (max-width: 1100px) 78vw, 34vw"
+		: "(max-width: 560px) calc(100vw - 56px), (max-width: 1100px) 86vw, 54vw";
 
 	return (
 		<motion.div
@@ -36,7 +39,7 @@ export default function SpatialProjectFrame({ src, alt, priority = false, portra
 			<div className="spatial-frame-echo echo-one" aria-hidden="true" />
 			<div className="spatial-frame-echo echo-two" aria-hidden="true" />
 			<motion.div className="spatial-frame-image" style={reduceMotion ? undefined : { x: imageX, y: imageY }}>
-				<Image src={src} alt={alt} fill priority={priority} sizes="(max-width: 900px) 92vw, 54vw" className="object-cover" />
+				<Image src={src} alt={alt} fill priority={priority} sizes={imageSizes} quality={70} className="object-cover" />
 			</motion.div>
 			<span className="spatial-frame-glint" aria-hidden="true" />
 		</motion.div>

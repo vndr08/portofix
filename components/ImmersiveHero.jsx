@@ -10,16 +10,6 @@ import useSafeReducedMotion from "@/components/useSafeReducedMotion";
 const spring = { stiffness: 52, damping: 18, mass: 0.85 };
 const easeOut = [0.16, 1, 0.3, 1];
 
-const lineVariants = {
-	hidden: { y: "108%", rotate: 1.5 },
-	visible: (index) => ({ y: "0%", rotate: 0, transition: { duration: 0.72, delay: 0.08 + index * 0.075, ease: easeOut } }),
-};
-
-const supportVariants = {
-	hidden: { opacity: 0, y: 16, filter: "blur(6px)" },
-	visible: (delay = 0.3) => ({ opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.58, delay, ease: easeOut } }),
-};
-
 export default function ImmersiveHero() {
 	const frameRef = useRef(null);
 	const reduceMotion = useSafeReducedMotion();
@@ -57,15 +47,15 @@ export default function ImmersiveHero() {
 			<motion.div className="portal-aurora" style={reduceMotion ? undefined : { left: lightX, top: lightY }} aria-hidden="true" />
 
 			<motion.div className="portal-copy" style={reduceMotion ? undefined : { y: copyY, opacity: copyOpacity }}>
-				<h1 id="portal-title">{["IVANDER", "JOHANA", "PRATAMA"].map((line, index) => <span className="portal-line" key={line}><motion.span custom={index} variants={lineVariants} initial={reduceMotion ? false : "hidden"} animate="visible">{line}</motion.span></span>)}</h1>
-				<motion.p className="portal-role" custom={0.28} variants={supportVariants} initial={reduceMotion ? false : "hidden"} animate="visible">AI engineer · software engineer</motion.p>
-				<motion.p className="portal-thesis" custom={0.36} variants={supportVariants} initial={reduceMotion ? false : "hidden"} animate="visible">I build action-capable AI automation, enterprise applications, and full-stack systems—from business requirements and system-flow design to integration, testing, and deployment.</motion.p>
-				<motion.div className="portal-actions" custom={0.44} variants={supportVariants} initial={reduceMotion ? false : "hidden"} animate="visible">
+				<h1 id="portal-title">{["IVANDER", "JOHANA", "PRATAMA"].map((line) => <span className="portal-line" key={line}><span>{line}</span></span>)}</h1>
+				<p className="portal-role">AI engineer · software engineer</p>
+				<p className="portal-thesis">I build action-capable AI automation, enterprise applications, and full-stack systems—from business requirements and system-flow design to integration, testing, and deployment.</p>
+				<div className="portal-actions">
 					<a href="#work">Enter selected work <SignalIcon /></a>
 					<Link href="/projects/archive">Recruiter-fast index <SignalIcon direction="up-right" /></Link>
 					<a href={profile.cvUrl} target="_blank" rel="noopener noreferrer">Open résumé <SignalIcon direction="up-right" /></a>
-				</motion.div>
-				<motion.div className="portal-availability" custom={0.52} variants={supportVariants} initial={reduceMotion ? false : "hidden"} animate="visible"><span><i />Available for opportunities</span><b>Jakarta, Indonesia</b></motion.div>
+				</div>
+				<div className="portal-availability"><span><i />Available for opportunities</span><b>Jakarta, Indonesia</b></div>
 			</motion.div>
 
 			<motion.div className="portal-object" initial={reduceMotion ? false : { opacity: 0, scale: 0.82, filter: "blur(10px)" }} animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }} transition={{ duration: reduceMotion ? 0 : 0.8, delay: 0.18, ease: easeOut }} style={reduceMotion ? undefined : { x: "-50%", y: "-50%", rotateX, rotateY }} aria-hidden="true">

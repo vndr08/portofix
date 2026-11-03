@@ -7,7 +7,7 @@ import { motion, useInView, useMotionValue, useMotionValueEvent, useScroll, useS
 import profile from "@/json/profile.json";
 import resume from "@/json/resume.json";
 import SignalIcon from "@/components/SignalIcon";
-import ProjectConstellation from "@/components/ProjectConstellation";
+import CopyEmailButton from "@/components/CopyEmailButton";
 import useSafeReducedMotion from "@/components/useSafeReducedMotion";
 
 const projects = [
@@ -220,14 +220,12 @@ export default function ImmersiveSections() {
 
 			<ProjectJourney />
 
-			<ProjectConstellation />
-
 			<CareerTrajectory />
 
 			<section ref={contactRef} id="contact" className={`contact-stage${contactInView ? " is-in-view" : ""}`} aria-labelledby="contact-title-v2">
 				<motion.div className="contact-sphere" style={reduceMotion ? undefined : { x: "-50%", y: "-50%", rotate: orbit }} aria-hidden="true"><i /><i /><i /><b /></motion.div>
 				<motion.h2 id="contact-title-v2" style={reduceMotion ? undefined : { y: contactY, clipPath: contactClip }}>LET&apos;S MAKE<br />IT REAL.</motion.h2><motion.p style={reduceMotion ? undefined : { opacity: contactOpacity }}>Have an ambitious system in mind?</motion.p>
-				<motion.div className="contact-stage-actions" style={reduceMotion ? undefined : { opacity: contactOpacity }}><a href={`mailto:${profile.email}`}>Start a conversation <SignalIcon direction="up-right" /></a><a href={profile.cvUrl} target="_blank" rel="noopener noreferrer">Download résumé <SignalIcon direction="down" /></a></motion.div>
+				<motion.div className="contact-stage-actions" style={reduceMotion ? undefined : { opacity: contactOpacity }}><a href={`mailto:${profile.email}`}>Email Ivan <SignalIcon direction="up-right" /></a><CopyEmailButton email={profile.email} /><a href={profile.cvUrl} target="_blank" rel="noopener noreferrer">Download résumé <SignalIcon direction="down" /></a></motion.div>
 				<footer><a href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a><a href={profile.github} target="_blank" rel="noopener noreferrer">GitHub</a><span>Jakarta · Indonesia · 2026</span></footer>
 			</section>
 		</>

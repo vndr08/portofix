@@ -97,7 +97,7 @@ Ten projects use screenshots supplied in the repository. Four projects without o
 - Semantic DOM copy remains above the canvas and owns navigation, reading order, alt text, and actions.
 - Mint, violet, and orange identify systems against a near-black fogged corridor.
 - The homepage remains one continuous dark spatial world; warm paper is reserved for long-form case-study reading surfaces.
-- Six clear homepage chapters: Identity → Operating Model → Three Proofs → Complete Collection → Career Progression → Contact.
+- Five clear homepage chapters: Identity → Operating Model → Three Proofs → Career Progression → Contact. The complete collection lives on the dedicated Projects and Archive routes instead of repeating on the homepage.
 - CSS 3D hero and DOM project films remain the visible, interactive evidence layer in every rendering mode.
 - Every major route has a specific visual job instead of reusing a generic card page.
 - Fourteen projects remain discoverable, while real screenshots are prioritized as evidence.
@@ -162,7 +162,9 @@ The WebGL canvas is fixed to the viewport at z-index 0 and never receives pointe
 
 The first viewport holds a full-depth tunnel with Ivan’s copy near 6.3vw on the left, one shared navigation rail, and coordinates on the far right. The copy is a recruiter path: name, role, delivery proposition, selected-work action, résumé action, availability, and Jakarta location. Opposite it, one pointer-responsive system assembly combines an AI cube with three factual workflow planes—Discover, Build, and Ship. The operating model continues the dark spatial surface with a scroll-responsive four-plane object and a four-stage delivery path. Its active plane and matching delivery stage brighten together, so the motion communicates process rather than decoration. Featured work occupies a 430svh scroll track around one sticky 100svh stage. A recruiter-facing intro names the evidence, previews all three systems, and instructs the visitor to scroll; three project films and a collection handoff then enter that stage in sequence. Only one proof owns the viewport at a time. Each film moves through x/y travel, scale, Y rotation, focus blur, opacity, mask reveal, and pointer-linked artifact tilt while a quiet bottom rail communicates progress.
 
-After the work section, the fixed canvas fades to zero and rendering is skipped. A two-column project index exposes all fourteen projects as stable rows beside one sticky preview; Framer Motion replaces that preview through a directional clip mask on hover and keyboard focus. The dark career progression and centered orbital contact continue the same visual world.
+After the work section, the fixed canvas fades to zero and rendering is skipped. The homepage moves directly into career progression and contact; dedicated Projects and Archive routes expose all fourteen projects without duplicating that index inside the recruiter journey.
+
+Internal-route Three.js backgrounds are progressively enhanced only above 1100px and are loaded dynamically after the semantic page is available. Mobile and tablet routes keep the authored CSS/DOM depth system without downloading or initializing the renderer.
 
 The renderer is disabled below 821px. The broader CSS layout switches at 900px: navigation becomes a full-screen menu with the same destinations, the static cube moves behind the lower-right hero, headings stack, the operating path becomes vertical, and the sticky project stage changes to an image-first single-column composition while keeping the same scroll sequence. Contact actions stack. Between 821px and 900px, the compact DOM layout can coexist with WebGL on capable devices.
 

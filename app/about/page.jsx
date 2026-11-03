@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, useInView, useScroll, useSpring, useTransform } from "framer-motion";
 import SpatialPageBackground from "@/components/SpatialPageBackground";
 import SpatialProjectFrame from "@/components/SpatialProjectFrame";
+import CopyEmailButton from "@/components/CopyEmailButton";
 import useSafeReducedMotion from "@/components/useSafeReducedMotion";
 import profile from "@/json/profile.json";
 import resume from "@/json/resume.json";
@@ -37,7 +38,7 @@ export default function Page() {
 				<motion.div className="profile-hero-copy" style={reduceMotion ? undefined : { y: copyY, opacity: copyOpacity }}>
 					<h1>AI ENGINEER.<br />SOFTWARE ENGINEER.<br />SYSTEM BUILDER.</h1>
 					<div>{resume.summary.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
-					<nav><a href={profile.cvUrl} target="_blank" rel="noopener noreferrer">Open résumé ↗</a><a href={`mailto:${profile.email}`}>Start a conversation ↗</a></nav>
+					<nav><a href={profile.cvUrl} target="_blank" rel="noopener noreferrer">Open résumé ↗</a><a href={`mailto:${profile.email}`}>Email Ivan ↗</a></nav>
 				</motion.div>
 				<motion.div className="profile-portrait-stage" style={reduceMotion ? undefined : { y: portraitY, rotateZ: portraitRotate }}>
 					<SpatialProjectFrame src="/image/me2.jpg" alt="Ivander Johana Pratama" priority portrait />
@@ -88,7 +89,7 @@ export default function Page() {
 
 			<section ref={closeRef} className={`profile-close${closeInView ? " is-in-view" : ""}`}>
 				<motion.h2 initial={false} whileInView={reduceMotion ? undefined : { clipPath: ["inset(0 0 100% 0)", "inset(0 0 0% 0)"], y: [22, 0] }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.64, ease: [0.16, 1, 0.3, 1] }}>BUILDING FOR<br />REAL WORK.</motion.h2><p>Jakarta, Indonesia · Indonesian / English</p>
-				<div><Link href="/projects">Explore project atlas ↗</Link><a href={`mailto:${profile.email}`}>{profile.email} ↗</a></div>
+				<div><Link href="/projects">Explore project atlas ↗</Link><a href={`mailto:${profile.email}`}>{profile.email} ↗</a><CopyEmailButton email={profile.email} /></div>
 			</section>
 		</main>
 	);

@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import * as THREE from "three";
 
 const PALETTES = {
 	projects: [0xa8ffea, 0xc8a7ff, 0xff914d],
@@ -15,14 +14,20 @@ export default function SpatialPageBackground({ variant = "projects" }) {
 
 	useEffect(() => {
 		const canvas = canvasRef.current;
-		if (!canvas || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return undefined;
+		if (!canvas || window.innerWidth <= 1100 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return undefined;
 
-		let renderer;
-		try {
-			renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true, powerPreference: "high-performance" });
-		} catch {
-			return undefined;
-		}
+		let disposed = false;
+		let cleanup = () => {};
+		const setup = async () => {
+			const THREE = await import("three");
+			if (disposed) return;
+
+			let renderer;
+			try {
+				renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true, powerPreference: "high-performance" });
+			} catch {
+				return;
+			}
 
 		const palette = PALETTES[variant] || PALETTES.projects;
 		const scene = new THREE.Scene();
@@ -130,7 +135,7 @@ export default function SpatialPageBackground({ variant = "projects" }) {
 		window.addEventListener("resize", handleResize);
 		frameId = requestAnimationFrame(animate);
 
-		return () => {
+		cleanup = () => {
 			cancelAnimationFrame(frameId);
 			window.removeEventListener("pointermove", handlePointer);
 			window.removeEventListener("resize", handleResize);
@@ -143,6 +148,13 @@ export default function SpatialPageBackground({ variant = "projects" }) {
 			particleGeometry.dispose();
 			particleMaterial.dispose();
 			renderer.dispose();
+		};
+		};
+
+		void setup();
+		return () => {
+			disposed = true;
+			cleanup();
 		};
 	}, [variant]);
 
